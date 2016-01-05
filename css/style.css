@@ -1099,6 +1099,21 @@ a.article-title:hover {
   line-height: 1.6em;
   font-size: 0.85em;
 }
+#link {
+  overflow: hidden;
+  max-width: 1220px;
+  text-align: center;
+}
+#link a {
+  color: #383535;
+  font-size: 10px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+#link a:hover {
+  text-decoration: none;
+  color: #999;
+}
 .article-entry pre,
 .article-entry .highlight {
   background: #2d2d2d;
