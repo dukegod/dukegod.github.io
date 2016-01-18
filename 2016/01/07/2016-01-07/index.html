@@ -5,16 +5,31 @@
   
   <title>webapp 点击效果总结 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="屏蔽ios和android下点击元素时出现的 阴影块a&amp;#123;-webkit-tap-highlight-color:rgba(255,255,255,0);font-size: 20px;&amp;#125;``` 先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。#### hover 属性 **阴影点**可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点">
+  <meta name="description" content="屏蔽ios和android下点击元素时出现的 阴影块a{
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    font-size: 20px;
+}
+先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。
+hover 属性 阴影点可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点击的时候，确实可以出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webapp 点击效果总结">
 <meta property="og:url" content="http://dukegod.github.io/2016/01/07/2016-01-07/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="屏蔽ios和android下点击元素时出现的 阴影块a&amp;#123;-webkit-tap-highlight-color:rgba(255,255,255,0);font-size: 20px;&amp;#125;``` 先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。#### hover 属性 **阴影点**可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点">
-<meta property="og:updated_time" content="2016-01-18T11:01:31.000Z">
+<meta property="og:description" content="屏蔽ios和android下点击元素时出现的 阴影块a{
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    font-size: 20px;
+}
+先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。
+hover 属性 阴影点可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点击的时候，确实可以出">
+<meta property="og:updated_time" content="2016-01-18T11:26:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webapp 点击效果总结">
-<meta name="twitter:description" content="屏蔽ios和android下点击元素时出现的 阴影块a&amp;#123;-webkit-tap-highlight-color:rgba(255,255,255,0);font-size: 20px;&amp;#125;``` 先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。#### hover 属性 **阴影点**可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点">
+<meta name="twitter:description" content="屏蔽ios和android下点击元素时出现的 阴影块a{
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    font-size: 20px;
+}
+先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。
+hover 属性 阴影点可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点击的时候，确实可以出">
   
     <link rel="alternate" href="/atom.xml" title="Hello World" type="application/atom+xml">
   
@@ -87,13 +102,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="u5C4F_u853Dios_u548Candroid_u4E0B_u70B9_u51FB_u5143_u7D20_u65F6_u51FA_u73B0_u7684__u9634_u5F71_u5757"><a href="#u5C4F_u853Dios_u548Candroid_u4E0B_u70B9_u51FB_u5143_u7D20_u65F6_u51FA_u73B0_u7684__u9634_u5F71_u5757" class="headerlink" title="屏蔽ios和android下点击元素时出现的 阴影块"></a>屏蔽ios和android下点击元素时出现的 <strong>阴影块</strong></h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">a</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"><span class="function">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">20px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。</span><br><span class="line"></span><br><span class="line">#### <span class="tag">hover</span> 属性 **阴影点**</span><br><span class="line"></span><br><span class="line">可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点击的时候，确实可以出现效果，但是这个效果就一直存在，除非我们刷新页面。还有就是只要自己的手放上去就会有触发，体验不好。</span><br><span class="line"></span><br><span class="line">#### <span class="tag">active</span> 属性</span><br></pre></td></tr></table></figure>
-<p>a{<br>    -webkit-tap-highlight-color:rgba(255,255,255,0);<br>    font-size: 20px;<br>    display: block;<br>    margin-top: 10px;<br>}<br>a:hover{<br>    color: black;<br>}<br>a:active{<br>    color: red;<br>    font-size: 24px;<br>}</p>
-<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">实际上效果，在iPhone上没有active效果，但是在红米上有效果，UC浏览器也没有active效果。手机兼容性不是很好。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#### 原生js实现</span></span><br><span class="line"></span><br><span class="line">通过一系列的探索，又回到了js上。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">##### 国外有个激活css的active效果</span></span><br></pre></td></tr></table></figure>
-<p>document.addEventListener(“touchstart”, function(){}, true)</p>
-<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">这次iPhone没有问题了，但是在Android手上有问题了，红米上反应迟钝，UC没有效果</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#### 绑定ontouchstart和ontouchend来控制按钮的类名</span></span><br></pre></td></tr></table></figure>
-<p>var btn = document.querySelector(‘.btn-blue’);<br>btn.addEventListener(“touchstart”, function(){<br>    console.log(‘stat’);<br>    this.className = ‘btn-blue btn-blue-on’<br>}, false)<br>btn.addEventListener(“touchend”, function(){<br>    console.log(‘end’);<br>    this.className = ‘btn-blue’<br>}, false)</p>
-<p>```</p>
+        <h4 id="u5C4F_u853Dios_u548Candroid_u4E0B_u70B9_u51FB_u5143_u7D20_u65F6_u51FA_u73B0_u7684__u9634_u5F71_u5757"><a href="#u5C4F_u853Dios_u548Candroid_u4E0B_u70B9_u51FB_u5143_u7D20_u65F6_u51FA_u73B0_u7684__u9634_u5F71_u5757" class="headerlink" title="屏蔽ios和android下点击元素时出现的 阴影块"></a>屏蔽ios和android下点击元素时出现的 <strong>阴影块</strong></h4><pre><code>a{
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    font-size: 20px;
+}
+</code></pre><p>先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。</p>
+<h4 id="hover__u5C5E_u6027__u9634_u5F71_u70B9"><a href="#hover__u5C5E_u6027__u9634_u5F71_u70B9" class="headerlink" title="hover 属性 阴影点"></a>hover 属性 <strong>阴影点</strong></h4><p>可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点击的时候，确实可以出现效果，但是这个效果就一直存在，除非我们刷新页面。还有就是只要自己的手放上去就会有触发，体验不好。</p>
+<h4 id="active__u5C5E_u6027"><a href="#active__u5C5E_u6027" class="headerlink" title="active 属性"></a>active 属性</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">a</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"><span class="function">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">20px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">margin-top</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> black</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:active</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>实际上效果，在iPhone上没有active效果，但是在红米上有效果，UC浏览器也没有active效果。手机兼容性不是很好。</p>
+<h4 id="u539F_u751Fjs_u5B9E_u73B0"><a href="#u539F_u751Fjs_u5B9E_u73B0" class="headerlink" title="原生js实现"></a>原生js实现</h4><p>通过一系列的探索，又回到了js上。</p>
+<h5 id="u56FD_u5916_u6709_u4E2A_u6FC0_u6D3Bcss_u7684active_u6548_u679C"><a href="#u56FD_u5916_u6709_u4E2A_u6FC0_u6D3Bcss_u7684active_u6548_u679C" class="headerlink" title="国外有个激活css的active效果"></a>国外有个激活css的active效果</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"touchstart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+<p>这次iPhone没有问题了，但是在Android手上有问题了，红米上反应迟钝，UC没有效果</p>
+<h4 id="u7ED1_u5B9Aontouchstart_u548Contouchend_u6765_u63A7_u5236_u6309_u94AE_u7684_u7C7B_u540D"><a href="#u7ED1_u5B9Aontouchstart_u548Contouchend_u6765_u63A7_u5236_u6309_u94AE_u7684_u7C7B_u540D" class="headerlink" title="绑定ontouchstart和ontouchend来控制按钮的类名"></a>绑定ontouchstart和ontouchend来控制按钮的类名</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btn-blue'</span>);</span><br><span class="line">btn.addEventListener(<span class="string">"touchstart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'stat'</span>);</span><br><span class="line">	<span class="keyword">this</span>.className = <span class="string">'btn-blue btn-blue-on'</span></span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br><span class="line">btn.addEventListener(<span class="string">"touchend"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'end'</span>);</span><br><span class="line">	<span class="keyword">this</span>.className = <span class="string">'btn-blue'</span></span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<p><strong><a href="https://github.com/dukegod/h5-demos/tree/master/demos/appHover" target="_blank" rel="external">项目地址</a></strong></p>
 <h3 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h3><p><a href="http://jsfiddle.net/prud/x9y6cfhg/" target="_blank" rel="external">http://jsfiddle.net/prud/x9y6cfhg/</a></p>
 
       
