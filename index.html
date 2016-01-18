@@ -66,6 +66,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-01-07" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/07/2016-01-07/" class="article-date">
+  <time datetime="2016-01-06T16:00:00.000Z" itemprop="datePublished">2016-01-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/07/2016-01-07/">webapp 点击效果总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="u5C4F_u853Dios_u548Candroid_u4E0B_u70B9_u51FB_u5143_u7D20_u65F6_u51FA_u73B0_u7684__u9634_u5F71_u5757"><a href="#u5C4F_u853Dios_u548Candroid_u4E0B_u70B9_u51FB_u5143_u7D20_u65F6_u51FA_u73B0_u7684__u9634_u5F71_u5757" class="headerlink" title="屏蔽ios和android下点击元素时出现的 阴影块"></a>屏蔽ios和android下点击元素时出现的 <strong>阴影块</strong></h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">a</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"><span class="function">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">20px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。</span><br><span class="line"></span><br><span class="line">#### <span class="tag">hover</span> 属性 **阴影点**</span><br><span class="line"></span><br><span class="line">可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点击的时候，确实可以出现效果，但是这个效果就一直存在，除非我们刷新页面。还有就是只要自己的手放上去就会有触发，体验不好。</span><br><span class="line"></span><br><span class="line">#### <span class="tag">active</span> 属性</span><br></pre></td></tr></table></figure>
+<p>a{<br>    -webkit-tap-highlight-color:rgba(255,255,255,0);<br>    font-size: 20px;<br>    display: block;<br>    margin-top: 10px;<br>}<br>a:hover{<br>    color: black;<br>}<br>a:active{<br>    color: red;<br>    font-size: 24px;<br>}</p>
+<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">实际上效果，在iPhone上没有active效果，但是在红米上有效果，UC浏览器也没有active效果。手机兼容性不是很好。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#### 原生js实现</span></span><br><span class="line"></span><br><span class="line">通过一系列的探索，又回到了js上。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">##### 国外有个激活css的active效果</span></span><br></pre></td></tr></table></figure>
+<p>document.addEventListener(“touchstart”, function(){}, true)</p>
+<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">这次iPhone没有问题了，但是在Android手上有问题了，红米上反应迟钝，UC没有效果</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#### 绑定ontouchstart和ontouchend来控制按钮的类名</span></span><br></pre></td></tr></table></figure>
+<p>var btn = document.querySelector(‘.btn-blue’);<br>btn.addEventListener(“touchstart”, function(){<br>    console.log(‘stat’);<br>    this.className = ‘btn-blue btn-blue-on’<br>}, false)<br>btn.addEventListener(“touchend”, function(){<br>    console.log(‘end’);<br>    this.className = ‘btn-blue’<br>}, false)</p>
+<p>```</p>
+<h3 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h3><p><a href="http://jsfiddle.net/prud/x9y6cfhg/" target="_blank" rel="external">http://jsfiddle.net/prud/x9y6cfhg/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/07/2016-01-07/" data-id="cijjuxsk30005dkq4yq60dtk5" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/07/2016-01-07/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/app/">app</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-01-06" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/06/2016-01-06/" class="article-date">
@@ -108,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/06/2016-01-06/" data-id="cij40tmb70000zpq4mc0ygduy" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/06/2016-01-06/" data-id="cijjuxsk50008dkq45fybx2xn" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/06/2016-01-06/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -167,11 +215,12 @@
 <p>Todo</p>
 <h4 id="u652F_u6301_u6570_u636E_u7EDF_u8BA1"><a href="#u652F_u6301_u6570_u636E_u7EDF_u8BA1" class="headerlink" title="支持数据统计"></a>支持数据统计</h4><p>可以<a href="http://ibruce.info/2013/12/22/count-views-of-hexo/" target="_blank" rel="external">参考</a>，我是修改的主题中的footer.ejs模板，样式随便修改了下</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">style</span>=<span class="value">"margin-top:10px"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"busuanzi_container_site_pv"</span>&gt;</span></span><br><span class="line">        本站总访问量<span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>次</span><br><span class="line">      <span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">async</span> <span class="attribute">src</span>=<span class="value">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="u90E8_u7F72_Hexo__u9759_u6001_u535A_u5BA2_u81F3_u4E03_u725B"><a href="#u90E8_u7F72_Hexo__u9759_u6001_u535A_u5BA2_u81F3_u4E03_u725B" class="headerlink" title="部署 Hexo 静态博客至七牛"></a><a href="http://lukang.me/2014/hexo-qiniu.html" target="_blank" rel="external">部署 Hexo 静态博客至七牛</a></h4><h4 id="u6DFB_u52A0_u7F51_u7AD9_u5730_u56FE_uFF0CCDN"><a href="#u6DFB_u52A0_u7F51_u7AD9_u5730_u56FE_uFF0CCDN" class="headerlink" title="添加网站地图，CDN"></a><a href="http://lukang.me/2015/optimization-of-hexo-2.html" target="_blank" rel="external">添加网站地图，CDN</a></h4>
+<h4 id="u90E8_u7F72_Hexo__u9759_u6001_u535A_u5BA2_u81F3_u4E03_u725B"><a href="#u90E8_u7F72_Hexo__u9759_u6001_u535A_u5BA2_u81F3_u4E03_u725B" class="headerlink" title="部署 Hexo 静态博客至七牛"></a><a href="http://lukang.me/2014/hexo-qiniu.html" target="_blank" rel="external">部署 Hexo 静态博客至七牛</a></h4><h4 id="u6DFB_u52A0_u7F51_u7AD9_u5730_u56FE_uFF0CCDN"><a href="#u6DFB_u52A0_u7F51_u7AD9_u5730_u56FE_uFF0CCDN" class="headerlink" title="添加网站地图，CDN"></a><a href="http://lukang.me/2015/optimization-of-hexo-2.html" target="_blank" rel="external">添加网站地图，CDN</a></h4><h4 id="u90E8_u7F72_u53D1_u5E03"><a href="#u90E8_u7F72_u53D1_u5E03" class="headerlink" title="部署发布"></a>部署发布</h4><figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">hexo s -<span class="keyword">g</span> <span class="comment">// test </span></span><br><span class="line"></span><br><span class="line">hexo <span class="keyword">d</span> -<span class="keyword">g</span> <span class="comment">// deploy</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/05/2016-01-05/" data-id="cij114i1n0000jwq4r0a7kbjo" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/05/2016-01-05/" data-id="cijjuxsk7000bdkq4mreohhpe" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/05/2016-01-05/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -221,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/04/2016-01-04/" data-id="ciizre7880003o5q4iuftk8kr" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/04/2016-01-04/" data-id="cijjuxsjh0000dkq4fsli6sq2" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/04/2016-01-04/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -247,7 +296,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
     </div>
   </div>
 
@@ -257,7 +306,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/生活点滴/" style="font-size: 10px;">生活点滴</a>
+      <a href="/tags/app/" style="font-size: 10px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/生活点滴/" style="font-size: 10px;">生活点滴</a>
     </div>
   </div>
 
@@ -277,6 +326,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/01/07/2016-01-07/">webapp 点击效果总结</a>
+          </li>
         
           <li>
             <a href="/2016/01/06/2016-01-06/">background-size</a>
