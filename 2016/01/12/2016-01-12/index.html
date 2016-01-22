@@ -3,72 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World</title>
+  <title>移动端滚动与内置浏览器出界问题 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="刘辉的个人简历 
-
-## 个人信息
-
-**姓名**：  刘辉
-
-**性别**：  男
-
-**毕业院校**： 大连工业大学 
-
-**专业**： 信息管理与信息系统
-
-**邮箱**： dukehui1991@163.com
-
-## 技术能力
-
-熟练掌握JavaScript、HTMl、CSS以及JavaScript框架来搭建web应用。了解原生JavaScript和JavaScript类库的使用。
-
-*">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://dukegod.github.io/resume.html">
+  <meta name="description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端滚动与内置浏览器出界问题">
+<meta property="og:url" content="http://dukegod.github.io/2016/01/12/2016-01-12/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="刘辉的个人简历 
-
-## 个人信息
-
-**姓名**：  刘辉
-
-**性别**：  男
-
-**毕业院校**： 大连工业大学 
-
-**专业**： 信息管理与信息系统
-
-**邮箱**： dukehui1991@163.com
-
-## 技术能力
-
-熟练掌握JavaScript、HTMl、CSS以及JavaScript框架来搭建web应用。了解原生JavaScript和JavaScript类库的使用。
-
-*">
-<meta property="og:updated_time" content="2016-01-05T07:07:15.000Z">
+<meta property="og:description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
+<meta property="og:updated_time" content="2016-01-22T16:59:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="刘辉的个人简历 
-
-## 个人信息
-
-**姓名**：  刘辉
-
-**性别**：  男
-
-**毕业院校**： 大连工业大学 
-
-**专业**： 信息管理与信息系统
-
-**邮箱**： dukehui1991@163.com
-
-## 技术能力
-
-熟练掌握JavaScript、HTMl、CSS以及JavaScript框架来搭建web应用。了解原生JavaScript和JavaScript类库的使用。
-
-*">
+<meta name="twitter:title" content="移动端滚动与内置浏览器出界问题">
+<meta name="twitter:description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
   
     <link rel="alternate" href="/atom.xml" title="Hello World" type="application/atom+xml">
   
@@ -119,95 +65,83 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-01-12" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/resume.html" class="article-date">
-  <time datetime="2016-01-05T07:07:15.000Z" itemprop="datePublished">2016-01-05</time>
+    <a href="/2016/01/12/2016-01-12/" class="article-date">
+  <time datetime="2016-01-11T16:00:00.000Z" itemprop="datePublished">2016-01-12</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动端滚动与内置浏览器出界问题
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <html>
-<head>
-	<title></title>
-</head>
-<body>
-<h1>刘辉的个人简历</h1> 
-
-## 个人信息
-
-**姓名**：  刘辉
-
-**性别**：  男
-
-**毕业院校**： 大连工业大学 
-
-**专业**： 信息管理与信息系统
-
-**邮箱**： dukehui1991@163.com
-
-## 技术能力
-
-熟练掌握JavaScript、HTMl、CSS以及JavaScript框架来搭建web应用。了解原生JavaScript和JavaScript类库的使用。
-
-* 掌握的JavaScript类库：jQuery、Zepto
-* 掌握的JavaScript框架：BackBone
-* 掌握的CSS预编译器：LessCss、Sass
-* 掌握JavaScript模块加载器：RequireJS
-* 掌握项目构建工具：Grunt、Gulp
-* 掌握项目管理和协同工具的使用：SVN、Git
-* 掌握前端测试框架以及工具：Jasmine、Mocha
-* 掌握基本后端开发：NodeJS
-* 掌握数据库：MongoDB、MySQL
-* 了解其他的语言：java（学校期间接触），php（工作的时候接触）
-
-## 个人经历
-
-2010 年进入大学，开始我不断学习
-
-大二的时候开始接触计算机，开始不断的了解计算机组成原理，计算机网络协议，操作系统，最终的是开始接触C语言，开始码农生活
-
-大二下学期，接触java，更随老师做javaweb项目，开始了解基本的前端技能。开始入手学习MySQL，SqlServer数据库及相关的数据库操作
-
-大三开始不断的了解前端，发现自己的兴趣也在前端。
-
-大四 在一家P2P互联网实习，全职做web前端，真正的开始自己的前端生活。
-
-## 作品
-
-### 实习的大同航（互联网金融）
-
-主要做web开发
-
-### 群生健康管理有限公司（互联网医疗）
-
-主要做webapp开发,开始了解组件开发，模块化开发方式
-</body>
-</html>
-
-
-
-
-
-
-
+        <h3 id="u5FEB_u901F_u56DE_u5F39_u6EDA_u52A8_u4EE5_u53CA_u5FAE_u4FE1_u67B6_u6784_u9875_u9762_u7684_u601D_u8003"><a href="#u5FEB_u901F_u56DE_u5F39_u6EDA_u52A8_u4EE5_u53CA_u5FAE_u4FE1_u67B6_u6784_u9875_u9762_u7684_u601D_u8003" class="headerlink" title="快速回弹滚动以及微信架构页面的思考"></a>快速回弹滚动以及微信架构页面的思考</h3><p>我们先来看看回弹滚动在手机浏览器发展的历史：<br>早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;<br>Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；<br>Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；<br>iOS从5.0开始解决了滚动条不可见及增加了快速回弹滚动效果</p>
+<h4 id="u6EDA_u52A8_u8BF4_u660E"><a href="#u6EDA_u52A8_u8BF4_u660E" class="headerlink" title="滚动说明"></a>滚动说明</h4><p>全局滚动， 滚动条在body节点或更顶层<br>局部滚动， 滚动条在body下某一个dom节点上</p>
+<h3 id="ios"><a href="#ios" class="headerlink" title="ios"></a>ios</h3><pre><code>body{
+-webkit-overflow-scrolling: touch;
+}
+</code></pre><p>这个属性可以实现类似原生的效果，快速回弹。<br>但是会出项出界问题，就是当你在微信或者QQ中打开页面的时候，滚动的时候，你会看看‘网页通过‘’提供支持’一个黑色的背景样式。</p>
+<h5 id="u8003_u8651_u6362_u4E00_u4E2A_u601D_u60F3_uFF0C_u5C40_u90E8_u6EDA_u52A8"><a href="#u8003_u8651_u6362_u4E00_u4E2A_u601D_u60F3_uFF0C_u5C40_u90E8_u6EDA_u52A8" class="headerlink" title="考虑换一个思想，局部滚动"></a>考虑换一个思想，局部滚动</h5><ul>
+<li>body加上-webkit-overflow-scrolling: touch;</li>
+<li>通过 <a href="https://github.com/joelambert/ScrollFix" target="_blank" rel="external">ScrollFix</a> 解决出界问题</li>
+</ul>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>-webkit-overflow-scrolling: touch 在Android在没有效果，而且用类似ios那个方法比较的坑爹，滚动条不能实时滚动</p>
+<h4 id="u7528_u5168_u5C40_u6EDA_u52A8_u6548_u679C"><a href="#u7528_u5168_u5C40_u6EDA_u52A8_u6548_u679C" class="headerlink" title="用全局滚动效果"></a>用全局滚动效果</h4><ul>
+<li>header, footer 用fixed属性固定</li>
+<li>内容区域用padding 填充上下的高度问题</li>
+</ul>
+<h2 id="u6700_u7EC8_u5B9E_u73B0_u65B9_u6848"><a href="#u6700_u7EC8_u5B9E_u73B0_u65B9_u6848" class="headerlink" title="最终实现方案"></a>最终实现方案</h2><ul>
+<li>第一步先通过 UA判断 客户端类型 <a href="https://github.com/dukegod/isClient" target="_blank" rel="external">检测客户端</a></li>
+<li>分不同的客户端加载不同的样式 </li>
+<li>对于需要固定部分，取消默认的touchmove 属性</li>
+</ul>
+<p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/fastScroll" target="_blank" rel="external">项目地址</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/resume.html" data-id="cijjuxsjt0003dkq4847732xk" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12/" data-id="cijpxob920000dvs63y22bljy" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/resume.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/01/12/2016-01-12/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/app/">app</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/01/18/2016-01-18/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          诗
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/11/2016-01-11/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">npm basic operation</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -326,7 +260,7 @@
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/resume.html';
+  var disqus_url = 'http://dukegod.github.io/2016/01/12/2016-01-12/';
   
   (function(){
     var dsq = document.createElement('script');

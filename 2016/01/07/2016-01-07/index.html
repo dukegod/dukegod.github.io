@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://dukegod.github.io/2016/01/07/2016-01-07/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="移动页面300ms延迟产生的原因2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双">
-<meta property="og:updated_time" content="2016-01-22T02:30:32.000Z">
+<meta property="og:updated_time" content="2016-01-22T02:44:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动开发点击事件">
 <meta name="twitter:description" content="移动页面300ms延迟产生的原因2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双">
@@ -111,7 +111,8 @@
 <h5 id="u56FD_u5916_u6709_u4E2A_u6FC0_u6D3Bcss_u7684active_u6548_u679C"><a href="#u56FD_u5916_u6709_u4E2A_u6FC0_u6D3Bcss_u7684active_u6548_u679C" class="headerlink" title="国外有个激活css的active效果"></a>国外有个激活css的active效果</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"touchstart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
 <p>这次iPhone没有问题了，但是在Android手上有问题了，红米上反应迟钝，UC没有效果</p>
 <h4 id="u7ED1_u5B9Aontouchstart_u548Contouchend_u6765_u63A7_u5236_u6309_u94AE_u7684_u7C7B_u540D"><a href="#u7ED1_u5B9Aontouchstart_u548Contouchend_u6765_u63A7_u5236_u6309_u94AE_u7684_u7C7B_u540D" class="headerlink" title="绑定ontouchstart和ontouchend来控制按钮的类名"></a>绑定ontouchstart和ontouchend来控制按钮的类名</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btn-blue'</span>);</span><br><span class="line">btn.addEventListener(<span class="string">"touchstart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'stat'</span>);</span><br><span class="line">	<span class="keyword">this</span>.className = <span class="string">'btn-blue btn-blue-on'</span></span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br><span class="line">btn.addEventListener(<span class="string">"touchend"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'end'</span>);</span><br><span class="line">	<span class="keyword">this</span>.className = <span class="string">'btn-blue'</span></span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
-<p><strong><a href="https://github.com/dukegod/h5-demos/tree/master/demos/appHover" target="_blank" rel="external">项目地址</a></strong></p>
+<h4 id="u5C01_u88C5_u4E00_u4E2A_u7528jquery_u63D2_u4EF6"><a href="#u5C01_u88C5_u4E00_u4E2A_u7528jquery_u63D2_u4EF6" class="headerlink" title="封装一个用jquery插件"></a>封装一个用jquery插件</h4><p>可以修改相应事件，背景色</p>
+<p><strong><a href="https://github.com/dukegod/jqueryTapTrace" target="_blank" rel="external">项目地址</a></strong></p>
 <h3 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h3><p><a href="http://jsfiddle.net/prud/x9y6cfhg/" target="_blank" rel="external">http://jsfiddle.net/prud/x9y6cfhg/</a></p>
 
       
@@ -207,15 +208,15 @@
           </li>
         
           <li>
+            <a href="/2016/01/12/2016-01-12/">移动端滚动与内置浏览器出界问题</a>
+          </li>
+        
+          <li>
             <a href="/2016/01/11/2016-01-11/">npm basic operation</a>
           </li>
         
           <li>
             <a href="/2016/01/10/2016-01-10/">前端开发字体研究</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/09/2016-01-09/">移动开发常用的META设置</a>
           </li>
         
       </ul>
