@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>移动开发webkit | Hello World</title>
+  <title>jQuery插件开发 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="-webkit-tap-highlight-color:rgba(255,255,255,0)可以同时屏蔽ios和android下点击元素时出现的阴影。 
-备注：transparent的属性值在android下无效。
--webkit-appearance:none可以同时屏蔽输入框怪异的内阴影。
--webkit-transform:translate3d(0, 0, 0)在ios下可以让动画更加流">
+  <meta name="description" content="就我自己喜欢开发的模式，总结下jquery插件开发需要注意点。主要是扩展jquery原型，防止变量污染；
+自己喜欢的开发模式：
+;(function($) &amp;#123;$.fn.taptrace = function(options) &amp;#123;	var defauts = &amp;#123;		bgcolor: &apos;blue&apos;,		timeLasting: &apos;20&apos;	&amp;#125;	if (option">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动开发webkit">
-<meta property="og:url" content="http://dukegod.github.io/2016/01/08/2016-01-08/index.html">
+<meta property="og:title" content="jQuery插件开发">
+<meta property="og:url" content="http://dukegod.github.io/2016/01/20/2016-01-20/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="-webkit-tap-highlight-color:rgba(255,255,255,0)可以同时屏蔽ios和android下点击元素时出现的阴影。 
-备注：transparent的属性值在android下无效。
--webkit-appearance:none可以同时屏蔽输入框怪异的内阴影。
--webkit-transform:translate3d(0, 0, 0)在ios下可以让动画更加流">
-<meta property="og:updated_time" content="2016-01-22T02:31:28.000Z">
+<meta property="og:description" content="就我自己喜欢开发的模式，总结下jquery插件开发需要注意点。主要是扩展jquery原型，防止变量污染；
+自己喜欢的开发模式：
+;(function($) &amp;#123;$.fn.taptrace = function(options) &amp;#123;	var defauts = &amp;#123;		bgcolor: &apos;blue&apos;,		timeLasting: &apos;20&apos;	&amp;#125;	if (option">
+<meta property="og:updated_time" content="2016-01-27T07:44:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动开发webkit">
-<meta name="twitter:description" content="-webkit-tap-highlight-color:rgba(255,255,255,0)可以同时屏蔽ios和android下点击元素时出现的阴影。 
-备注：transparent的属性值在android下无效。
--webkit-appearance:none可以同时屏蔽输入框怪异的内阴影。
--webkit-transform:translate3d(0, 0, 0)在ios下可以让动画更加流">
+<meta name="twitter:title" content="jQuery插件开发">
+<meta name="twitter:description" content="就我自己喜欢开发的模式，总结下jquery插件开发需要注意点。主要是扩展jquery原型，防止变量污染；
+自己喜欢的开发模式：
+;(function($) &amp;#123;$.fn.taptrace = function(options) &amp;#123;	var defauts = &amp;#123;		bgcolor: &apos;blue&apos;,		timeLasting: &apos;20&apos;	&amp;#125;	if (option">
   
     <link rel="alternate" href="/atom.xml" title="Hello World" type="application/atom+xml">
   
@@ -74,10 +71,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-01-08" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-01-20" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/08/2016-01-08/" class="article-date">
-  <time datetime="2016-01-07T16:00:00.000Z" itemprop="datePublished">2016-01-08</time>
+    <a href="/2016/01/20/2016-01-20/" class="article-date">
+  <time datetime="2016-01-19T16:00:00.000Z" itemprop="datePublished">2016-01-20</time>
 </a>
     
   </div>
@@ -88,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      移动开发webkit
+      jQuery插件开发
     </h1>
   
 
@@ -96,32 +93,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="webkit-tap-highlight-color_3Argba_28255_2C255_2C255_2C0_29"><a href="#webkit-tap-highlight-color_3Argba_28255_2C255_2C255_2C0_29" class="headerlink" title="-webkit-tap-highlight-color:rgba(255,255,255,0)"></a>-webkit-tap-highlight-color:rgba(255,255,255,0)</h3><p>可以同时屏蔽ios和android下点击元素时出现的<strong>阴影</strong>。 </p>
-<p>备注：transparent的属性值在android下无效。</p>
-<h3 id="webkit-appearance_3Anone"><a href="#webkit-appearance_3Anone" class="headerlink" title="-webkit-appearance:none"></a>-webkit-appearance:none</h3><p>可以同时屏蔽输入框怪异的内阴影。</p>
-<h3 id="webkit-transform_3Atranslate3d_280_2C_0_2C_0_29"><a href="#webkit-transform_3Atranslate3d_280_2C_0_2C_0_29" class="headerlink" title="-webkit-transform:translate3d(0, 0, 0)"></a>-webkit-transform:translate3d(0, 0, 0)</h3><p>在ios下可以让动画更加流畅（这个属性会调用硬件加速模式），但是在android下不可乱用，很多见所未见的bug就是因为这个。</p>
-<h3 id="webkit-background-size"><a href="#webkit-background-size" class="headerlink" title="-webkit-background-size"></a>-webkit-background-size</h3><p>可以做高清图标，不过一些低版本的android只能识别background-size，所以有必要两个都要写上；用这个属性的时候推荐树勇cover这个值，可以自动去匹配宽和高。</p>
-<h3 id="webkit-touch-callout_3A_none_3B"><a href="#webkit-touch-callout_3A_none_3B" class="headerlink" title="-webkit-touch-callout: none;"></a>-webkit-touch-callout: none;</h3><p>长按时不触发系统的菜单, 可用在图片上加这个属性禁止下载图片;</p>
-<p>亲测iOS可以，Android不支持</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">img</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-touch-callout</span>:<span class="value"> none</span></span>; </span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="webkit-user-select"><a href="#webkit-user-select" class="headerlink" title="-webkit-user-select"></a>-webkit-user-select</h3><p>不是标准属性</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">-webkit-user-select</span>: none; <span class="comment">//文档中不让文本选择</span></span><br><span class="line"><span class="attribute">-webkit-user-select</span>: text; <span class="comment">//文档中只可以操作文本</span></span><br><span class="line"><span class="attribute">-webkit-user-select</span>: all;</span><br></pre></td></tr></table></figure>
-<h3 id="webkit-text-size-adjust"><a href="#webkit-text-size-adjust" class="headerlink" title="-webkit-text-size-adjust"></a>-webkit-text-size-adjust</h3><p>主要是兼容Google对于字体的兼容性问题</p>
-<p>当移动设备横竖屏切换时，文本的大小会重新计算，进行相应的缩放，当我们不需要这种情况时，可以选择禁止</p>
-<p>需要注意的是，PC端的该属性已经被移除，该属性在移动端要生效，必须设置 meta viewport。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-text-size-adjust</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="u63A8_u8350_u8D44_u6E90"><a href="#u63A8_u8350_u8D44_u6E90" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://ued.ctrip.com/webkitcss/" target="_blank" rel="external">webkit前缀(携程)</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Webkit_Extensions" target="_blank" rel="external">mozilla_ webkit</a></p>
+        <p>就我自己喜欢开发的模式，总结下jquery插件开发需要注意点。<br>主要是扩展jquery原型，防止变量污染；</p>
+<p>自己喜欢的开发模式：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">$.fn.taptrace = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> defauts = &#123;</span><br><span class="line">		bgcolor: <span class="string">'blue'</span>,</span><br><span class="line">		timeLasting: <span class="string">'20'</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (options) &#123;</span><br><span class="line">		$.extend(defauts, options);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> $el = <span class="keyword">this</span>;</span><br><span class="line">	<span class="keyword">var</span> events = <span class="string">'ontouchstart'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? [<span class="string">'touchstart'</span>, <span class="string">'touchmove touchend touchcancel'</span>] : [<span class="string">'mousedown'</span>, <span class="string">'mousemove mouseup'</span>];</span><br><span class="line">	<span class="keyword">var</span> timer;</span><br><span class="line">	<span class="keyword">var</span> start = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (timer) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		timer = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			$el.css(<span class="string">'background-color'</span>, defauts.bgcolor);</span><br><span class="line">		&#125;, <span class="number">5</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> stop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">window</span>.clearTimeout(timer);</span><br><span class="line">		timer = <span class="literal">null</span>;</span><br><span class="line">		setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			$el.css(<span class="string">'background-color'</span>, <span class="string">''</span>);</span><br><span class="line">		&#125;, defauts.timeLasting)</span><br><span class="line">	&#125;</span><br><span class="line">	$el.on(events[<span class="number">0</span>], start);</span><br><span class="line">	$el.on(events[<span class="number">1</span>], stop);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)(jQuery)</span><br></pre></td></tr></table></figure>
+<p>1： ;最外面的分号是为了预防别人代码因为没有结束，带来的影响</p>
+<p>2： 封装在闭包里面，防止代码的污染</p>
+<p>3：default放在自己是放在属性里面进行引入的，也可以提出放在最外层</p>
+<p>4： $.extend(defauts, options); 扩展默认值</p>
+<p>调用</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'.pure-css'</span>).taptrace(&#123;</span><br><span class="line"><span class="string">bgcolor:</span><span class="string">'red'</span>,</span><br><span class="line"><span class="string">timeLasting:</span><span class="string">'10'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/dukegod/jqueryTapTrace" target="_blank" rel="external">项目地址</a></p>
+<h2 id="u63A8_u8350_u9605_u8BFB"><a href="#u63A8_u8350_u9605_u8BFB" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><p><a href="http://www.cnblogs.com/cyStyle/archive/2013/05/18/jQuery%E6%8F%92%E4%BB%B6%E8%AF%A6%E7%BB%86%E5%BC%80%E5%8F%91.html" target="_blank" rel="external">jQuery插件开发的模式和结构</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/08/2016-01-08/" data-id="cijl2pjhh000043q409d7dc78" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20/" data-id="cijwiyye90000v8q44kqlrfbt" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/01/08/2016-01-08/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/01/20/2016-01-20/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/app/">app</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webkit/">webkit</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
     </footer>
   </div>
@@ -129,19 +121,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/09/2016-01-09/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          移动开发常用的META设置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/07/2016-01-07/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/19/2016-01-19/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">移动开发点击事件</div>
+      <div class="article-nav-title">天冷了</div>
     </a>
   
 </nav>
@@ -264,7 +247,7 @@
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/01/08/2016-01-08/';
+  var disqus_url = 'http://dukegod.github.io/2016/01/20/2016-01-20/';
   
   (function(){
     var dsq = document.createElement('script');
