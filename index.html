@@ -66,6 +66,119 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-01-22" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/22/2016-01-22/" class="article-date">
+  <time datetime="2016-01-21T16:00:00.000Z" itemprop="datePublished">2016-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/22/2016-01-22/">ajax note</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ajax的全称是Asynchronous JavaScript and XML</p>
+<h3 id="u539F_u7406_u4E0E_u4E3B_u8981_u7684_u6280_u672F_u70B9"><a href="#u539F_u7406_u4E0E_u4E3B_u8981_u7684_u6280_u672F_u70B9" class="headerlink" title="原理与主要的技术点"></a>原理与主要的技术点</h3><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。</p>
+<h4 id="XMLHttpRequest_u5BF9_u8C61"><a href="#XMLHttpRequest_u5BF9_u8C61" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h4><h5 id="u4E3B_u8981_u65B9_u6CD5_uFF1A"><a href="#u4E3B_u8981_u65B9_u6CD5_uFF1A" class="headerlink" title="主要方法："></a>主要方法：</h5><ul>
+<li>open(“method”,”URL”,[asyncFlag],[“userName”],[“password”]):</li>
+</ul>
+<p>建立对服务器的调用。method参数可以是GET、POST或PUT。url参数可以是相对URL或绝对URL。这个方法还包括3个可选的参数，是否异步，用户名，密码;</p>
+<ul>
+<li>send(content)</li>
+</ul>
+<p>向服务器发送请求</p>
+<ul>
+<li>setRequestHeader</li>
+</ul>
+<p>把指定首部设置为所提供的值。在设置任何首部之前必须先调用open()。设置header并和请求一起发送 (‘post’方法一定要 )</p>
+<h5 id="u4E3B_u8981_u5C5E_u6027"><a href="#u4E3B_u8981_u5C5E_u6027" class="headerlink" title="主要属性"></a>主要属性</h5><ul>
+<li>onreadystatechange    </li>
+</ul>
+<p>状态改变的事件触发器，每个状态改变时都会触发这个事件处理器，通常会调用一个JavaScript函数</p>
+<ul>
+<li>readyState    </li>
+</ul>
+<p>请求的状态。有5个可取值：0 = 未初始化，1 = 正在加载，2 = 已加载，3 = 交互中，4 = 完成</p>
+<ul>
+<li>responseText    </li>
+</ul>
+<p>服务器的响应，返回数据的文本。</p>
+<ul>
+<li>responseXML    </li>
+</ul>
+<p>服务器的响应，返回数据的兼容DOM的XML文档对象 ，这个对象可以解析为一个DOM对象。</p>
+<ul>
+<li>responseBody     </li>
+</ul>
+<p>服务器返回的主题（非文本格式）</p>
+<ul>
+<li>responseStream    </li>
+</ul>
+<p>服务器返回的数据流</p>
+<ul>
+<li>status    </li>
+</ul>
+<p>服务器的HTTP状态码（如：404 = “文件末找到” 、200 =”成功” ，等等）</p>
+<ul>
+<li>statusText    </li>
+</ul>
+<p>服务器返回的状态文本信息 ，HTTP状态码的相应文本（OK或Not Found（未找到）等等）</p>
+<h4 id="u7B80_u5355_u7684_u5C01_u88C5_uFF08_u4E0D_u8003_u8651IE_uFF09"><a href="#u7B80_u5355_u7684_u5C01_u88C5_uFF08_u4E0D_u8003_u8651IE_uFF09" class="headerlink" title="简单的封装（不考虑IE）"></a>简单的封装（不考虑IE）</h4><p>get方法</p>
+<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> ajaxGet()&#123; </span><br><span class="line">	var <span class="built_in">request</span> = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	<span class="built_in">request</span>.open(<span class="string">"GET"</span>, <span class="string">"server.php?number="</span> + document.getElementById(<span class="string">"keyword"</span>).value);</span><br><span class="line">	<span class="built_in">request</span>.send();</span><br><span class="line">	<span class="built_in">request</span>.onreadystatechange = <span class="keyword">function</span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">request</span>.readyState===<span class="number">4</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">request</span>.status===<span class="number">200</span>) &#123; </span><br><span class="line">				document.getElementById(<span class="string">"searchResult"</span>).innerHTML = <span class="built_in">request</span>.responseText;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(<span class="string">"发生错误："</span> + <span class="built_in">request</span>.status);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>post方法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajaxPOST</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	request.open(<span class="string">"POST"</span>, <span class="string">"server.php"</span>);</span><br><span class="line">	<span class="keyword">var</span> data = <span class="string">"name="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffName"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;number="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffNumber"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;sex="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffSex"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;job="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffJob"</span>).value;</span><br><span class="line">	request.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">	request.send(data);</span><br><span class="line">	request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (request.readyState===<span class="number">4</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (request.status===<span class="number">200</span>) &#123; </span><br><span class="line">				<span class="built_in">document</span>.getElementById(<span class="string">"createResult"</span>).innerHTML = request.responseText;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(<span class="string">"发生错误："</span> + request.status);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="u4F7F_u7528_u5C01_u88C5_u597D_u7684_u5E93"><a href="#u4F7F_u7528_u5C01_u88C5_u597D_u7684_u5E93" class="headerlink" title="使用封装好的库"></a>使用封装好的库</h4><h5 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h5><p>$.ajax()</p>
+<p>zepto 类似</p>
+<h3 id="u8DE8_u57DF"><a href="#u8DE8_u57DF" class="headerlink" title="跨域"></a>跨域</h3><p>一个域名组成：http：//www.22.com:8080/js.js:  协议，子域名，主域名，端口号，请求资源地址</p>
+<p>同源是指，域名，协议，端口相同</p>
+<p>当协议，子域名，主域名端口号中任意一个不相同时，都算作不同域</p>
+<p>不同域名之间相互请求资源都算作“跨域”</p>
+<h3 id="u89E3_u51B3_u65B9_u6CD5"><a href="#u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>浏览器的同源策略把跨域请求都禁止了但是HTML的script标签是例外，可以突破同源策略从其他来源获取数据；我们可以通过script标签引入jsonp文件，然后通过一系列JS操作获取数据。</li>
+</ol>
+<p>原生js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonHandle</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    script.setAttribute(<span class="string">"src"</span>,url);</span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">"body"</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//JS插入之后就可以处理数据了</span></span><br></pre></td></tr></table></figure>
+<p>jquery 封装jsonp方法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123; </span><br><span class="line">   type: <span class="string">"GET"</span>, 	</span><br><span class="line">	url: <span class="string">"http://127.0.0.1/ajax/serverjsonp.php"</span>,</span><br><span class="line">	dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">	jsonp: <span class="string">"callback"</span>, <span class="comment">// 前后端协调命名的</span></span><br><span class="line">	success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (data.success) &#123;</span><br><span class="line">			$(<span class="string">"#searchResult"</span>).html(data.msg);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			$(<span class="string">"#searchResult"</span>).html(<span class="string">"出现错误："</span> + data.msg);</span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;,</span><br><span class="line">	error: <span class="function"><span class="keyword">function</span>(<span class="params">jqXHR</span>)</span>&#123;     </span><br><span class="line">	   alert(<span class="string">"发生错误："</span> + jqXHR.status);  </span><br><span class="line">	&#125;,     </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>但是jsonp 只能解决get方法的跨域请求</p>
+<ol>
+<li>HTML5提供的XML HttpRequest level2（IE10 一下不支持）</li>
+</ol>
+<p>修改服务端</p>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Origin</span><span class="keyword">:*</span>')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Methods</span><span class="keyword">:POST</span>,GET')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Credentials</span><span class="keyword">:true</span>')</span><span class="comment">; </span></span><br><span class="line">header<span class="list">(<span class="string">"Content-Type: application/json;charset=utf-8"</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>详情见 XMLHttpRequestXHR2.html</p>
+<p><a href="https://github.com/dukegod/phpBasic/tree/master/ajax" target="_blank" rel="external">项目地址</a></p>
+<h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/sanmaospace/archive/2013/06/15/3137180.html" target="_blank" rel="external">AJAX工作原理及其优缺点</a></p>
+<p><a href="https://segmentfault.com/a/1190000002799156" target="_blank" rel="external">jsonp</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22/" data-id="ciktfgbjx0000tfq4xesb9tnk" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/22/2016-01-22/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-01-21" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/21/2016-01-21/" class="article-date">
@@ -762,73 +875,6 @@ Email: YOUR_EMAIL@domain.com
 
 
   
-    <article id="post-2016-01-07" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/07/2016-01-07/" class="article-date">
-  <time datetime="2016-01-06T16:00:00.000Z" itemprop="datePublished">2016-01-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/07/2016-01-07/">移动开发点击事件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="u79FB_u52A8_u9875_u9762300ms_u5EF6_u8FDF"><a href="#u79FB_u52A8_u9875_u9762300ms_u5EF6_u8FDF" class="headerlink" title="移动页面300ms延迟"></a>移动页面300ms延迟</h4><h4 id="u4EA7_u751F_u7684_u539F_u56E0"><a href="#u4EA7_u751F_u7684_u539F_u56E0" class="headerlink" title="产生的原因"></a>产生的原因</h4><p>2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。<br>双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。<br>原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。</p>
-<h4 id="u89E3_u51B3_u65B9_u6848_uFF1A"><a href="#u89E3_u51B3_u65B9_u6848_uFF1A" class="headerlink" title="解决方案："></a>解决方案：</h4><ul>
-<li>fastclick可以解决在手机上点击事件的300ms延迟</li>
-<li>zepto的touch模块，tap事件也是为了解决在click的延迟问题</li>
-</ul>
-<h4 id="u89E6_u6478_u4E8B_u4EF6_u7684_u54CD_u5E94_u987A_u5E8F"><a href="#u89E6_u6478_u4E8B_u4EF6_u7684_u54CD_u5E94_u987A_u5E8F" class="headerlink" title="触摸事件的响应顺序"></a>触摸事件的响应顺序</h4><ol>
-<li>ontouchstart</li>
-<li>ontouchmove</li>
-<li>ontouchend</li>
-<li>onclick</li>
-</ol>
-<p>解决300ms延迟的问题，也可以通过绑定ontouchstart事件，加快对事件的响应。</p>
-<h4 id="u5C4F_u853Dios_u548Candroid_u4E0B_u70B9_u51FB_u5143_u7D20_u65F6_u51FA_u73B0_u7684__u9634_u5F71_u5757"><a href="#u5C4F_u853Dios_u548Candroid_u4E0B_u70B9_u51FB_u5143_u7D20_u65F6_u51FA_u73B0_u7684__u9634_u5F71_u5757" class="headerlink" title="屏蔽ios和android下点击元素时出现的 阴影块"></a>屏蔽ios和android下点击元素时出现的 <strong>阴影块</strong></h4><pre><code>a{
-    -webkit-tap-highlight-color:rgba(255,255,255,0);
-    font-size: 20px;
-}
-</code></pre><p>先去除阴影块的影响（不过有的产品需要这个效果），接下来继续说说给移动端添加点击效果。</p>
-<h4 id="hover__u5C5E_u6027__u9634_u5F71_u70B9"><a href="#hover__u5C5E_u6027__u9634_u5F71_u70B9" class="headerlink" title="hover 属性 阴影点"></a>hover 属性 <strong>阴影点</strong></h4><p>可以最开始想的都是这个，当时在实际项目中，我们发现，当我们点击的时候，确实可以出现效果，但是这个效果就一直存在，除非我们刷新页面。还有就是只要自己的手放上去就会有触发，体验不好。</p>
-<h4 id="active__u5C5E_u6027"><a href="#active__u5C5E_u6027" class="headerlink" title="active 属性"></a>active 属性</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">a</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"><span class="function">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">20px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">margin-top</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> black</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="tag">a</span><span class="pseudo">:active</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>实际上效果，在iPhone上没有active效果，但是在红米上有效果，UC浏览器也没有active效果。手机兼容性不是很好。</p>
-<h4 id="u539F_u751Fjs_u5B9E_u73B0"><a href="#u539F_u751Fjs_u5B9E_u73B0" class="headerlink" title="原生js实现"></a>原生js实现</h4><p>通过一系列的探索，又回到了js上。</p>
-<h5 id="u56FD_u5916_u6709_u4E2A_u6FC0_u6D3Bcss_u7684active_u6548_u679C"><a href="#u56FD_u5916_u6709_u4E2A_u6FC0_u6D3Bcss_u7684active_u6548_u679C" class="headerlink" title="国外有个激活css的active效果"></a>国外有个激活css的active效果</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"touchstart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
-<p>这次iPhone没有问题了，但是在Android手上有问题了，红米上反应迟钝，UC没有效果</p>
-<h4 id="u7ED1_u5B9Aontouchstart_u548Contouchend_u6765_u63A7_u5236_u6309_u94AE_u7684_u7C7B_u540D"><a href="#u7ED1_u5B9Aontouchstart_u548Contouchend_u6765_u63A7_u5236_u6309_u94AE_u7684_u7C7B_u540D" class="headerlink" title="绑定ontouchstart和ontouchend来控制按钮的类名"></a>绑定ontouchstart和ontouchend来控制按钮的类名</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btn-blue'</span>);</span><br><span class="line">btn.addEventListener(<span class="string">"touchstart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'stat'</span>);</span><br><span class="line">	<span class="keyword">this</span>.className = <span class="string">'btn-blue btn-blue-on'</span></span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br><span class="line">btn.addEventListener(<span class="string">"touchend"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'end'</span>);</span><br><span class="line">	<span class="keyword">this</span>.className = <span class="string">'btn-blue'</span></span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="u5C01_u88C5_u4E00_u4E2A_u7528jquery_u63D2_u4EF6"><a href="#u5C01_u88C5_u4E00_u4E2A_u7528jquery_u63D2_u4EF6" class="headerlink" title="封装一个用jquery插件"></a>封装一个用jquery插件</h4><p>可以修改相应事件，背景色</p>
-<p><strong><a href="https://github.com/dukegod/jqueryTapTrace" target="_blank" rel="external">项目地址</a></strong></p>
-<h3 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h3><p><a href="http://jsfiddle.net/prud/x9y6cfhg/" target="_blank" rel="external">http://jsfiddle.net/prud/x9y6cfhg/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/07/2016-01-07/" data-id="cijjuxsk30005dkq4yq60dtk5" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/07/2016-01-07/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/app/">app</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -845,7 +891,7 @@ Email: YOUR_EMAIL@domain.com
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
     </div>
   </div>
 
@@ -855,7 +901,7 @@ Email: YOUR_EMAIL@domain.com
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/app/" style="font-size: 20px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/生活点滴/" style="font-size: 15px;">生活点滴</a>
+      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/app/" style="font-size: 20px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 13.33px;">http</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a>
     </div>
   </div>
 
@@ -877,6 +923,10 @@ Email: YOUR_EMAIL@domain.com
       <ul>
         
           <li>
+            <a href="/2016/01/22/2016-01-22/">ajax note</a>
+          </li>
+        
+          <li>
             <a href="/2016/01/21/2016-01-21/">http 协议</a>
           </li>
         
@@ -890,10 +940,6 @@ Email: YOUR_EMAIL@domain.com
         
           <li>
             <a href="/2016/01/18/2016-01-18/">诗</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/12/2016-01-12/">移动端滚动与内置浏览器出界问题</a>
           </li>
         
       </ul>
