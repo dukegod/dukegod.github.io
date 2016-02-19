@@ -66,6 +66,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-01-06" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/06/2016-01-06/" class="article-date">
+  <time datetime="2016-01-05T16:00:00.000Z" itemprop="datePublished">2016-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/06/2016-01-06/">background-size</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>支持情况：IE9+、Firefox 4+、Opera、Chrome 以及 Safari 5+</p>
+<p>在移动开发的时候，需要尺寸减半的需要。</p>
+<p>特别是在引入雪碧图的时候，以前的写法总是直接宽，高直接减半，没有出过问题</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"> <span class="class">.BZ</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="function">url</span>() no-repeated</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-size</span>:<span class="value"> width/<span class="number">2</span>, height/<span class="number">2</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>今天有人问我，background-size直接设为50%不就行了，没有细想，直接说行。</p>
+<p>实际看效果的时候，出现了问题，原来不能这么用。</p>
+<p>自己慢慢研究，先总结下：</p>
+<p>先对照自己的例子说明下，增强自己的记忆：</p>
+<p><a href="http://codepen.io/dukegod/pen/YwGmXK" target="_blank" rel="external">background-size  via @CodePen</a></p>
+<h4 id="background-size_3A__u53C2_u8003_u662F_u5143_u7D20_u672C_u8EAB_u7684_u5BBD_u9AD8_uFF0C_u5E76_u4E0D_u662F_u53C2_u8003_u5F15_u5165_u56FE_u7247_u7684_u5BBD_u9AD8_2C_u4E5F_u5C31_u662F_u8BF4_u5B83_u53C2_u8003_u7684_u662Fsection_u7684_u5927_u5C0F_uFF0C_u4E0D_u662F_u56FE_u7247_u81EA_u8EAB"><a href="#background-size_3A__u53C2_u8003_u662F_u5143_u7D20_u672C_u8EAB_u7684_u5BBD_u9AD8_uFF0C_u5E76_u4E0D_u662F_u53C2_u8003_u5F15_u5165_u56FE_u7247_u7684_u5BBD_u9AD8_2C_u4E5F_u5C31_u662F_u8BF4_u5B83_u53C2_u8003_u7684_u662Fsection_u7684_u5927_u5C0F_uFF0C_u4E0D_u662F_u56FE_u7247_u81EA_u8EAB" class="headerlink" title="background-size: 参考是元素本身的宽高，并不是参考引入图片的宽高,也就是说它参考的是section的大小，不是图片自身"></a>background-size: 参考是元素本身的宽高，并不是参考引入图片的宽高,也就是说它参考的是section的大小，不是图片自身</h4><p>直接缩减图片的宽高</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="class">.bz</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>()</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-repeat</span>:<span class="value"> no-repeat</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-size</span>:<span class="value"> <span class="number">320px</span>,<span class="number">200px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="u8BBE_u7F6E_u5BBD_u9AD8_u4E00_u4E2A_u5C5E_u6027_u7684_u65F6_u5019_uFF0C_u53E6_u4E00_u4E2A_u5C06_u4F1A_u6309_u7167_u539F_u6765_u7684_u6BD4_u4F8B_u8FDB_u884C_u53D8_u5316_28_u5373_u8BBE_u7F6E_u4E00_u4E2A_u5C5E_u6027_uFF0C_u53E6_u4E00_u4E2A_u7B49_u6BD4_u4F8B_u53D8_u5316_29"><a href="#u8BBE_u7F6E_u5BBD_u9AD8_u4E00_u4E2A_u5C5E_u6027_u7684_u65F6_u5019_uFF0C_u53E6_u4E00_u4E2A_u5C06_u4F1A_u6309_u7167_u539F_u6765_u7684_u6BD4_u4F8B_u8FDB_u884C_u53D8_u5316_28_u5373_u8BBE_u7F6E_u4E00_u4E2A_u5C5E_u6027_uFF0C_u53E6_u4E00_u4E2A_u7B49_u6BD4_u4F8B_u53D8_u5316_29" class="headerlink" title="设置宽高一个属性的时候，另一个将会按照原来的比例进行变化(即设置一个属性，另一个等比例变化)"></a>设置宽高一个属性的时候，另一个将会按照原来的比例进行变化(即设置一个属性，另一个等比例变化)</h4><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="class">.bz</span>&#123;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">320px</span>,auto; <span class="comment">// 高也会变半</span></span><br><span class="line">  <span class="attribute">background-size</span>: auto, <span class="number">200px</span>; <span class="comment">// 宽也会变半</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u8BBE_u7F6E_u591A_u4E2A_u80CC_u666F_u56FE_u7247"><a href="#u8BBE_u7F6E_u591A_u4E2A_u80CC_u666F_u56FE_u7247" class="headerlink" title="设置多个背景图片"></a>设置多个背景图片</h3><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="class">.secmul</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">480px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line"><span class="attribute">background-image</span>: <span class="function">url</span>(<span class="string">../../static/imgs/m1.jpg</span>), <span class="function">url</span>(<span class="string">../../static/imgs/m2.jpg</span>), <span class="function">url</span>(<span class="string">10.large.jpg</span>);<span class="comment">// set imgs urls</span></span><br><span class="line"><span class="attribute">background-repeat</span>: no-repeat,no-repeat,no-repeat;<span class="comment">// set repeat pros</span></span><br><span class="line"><span class="attribute">background-position</span>: <span class="number">0px</span> <span class="number">0px</span>, right bottom, right top;<span class="comment">// 设置不同的位置，相对与最外层的画布大小</span></span><br><span class="line"><span class="attribute">background-color</span>: <span class="hexcolor">#EEE</span>;</span><br><span class="line"><span class="attribute">background-size</span>: <span class="number">200px</span> <span class="number">225px</span>, <span class="number">100px</span> <span class="number">100px</span>, cover;<span class="comment">// 分别设置 不同背景图片的大小</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="cover_u4E0Econtain__u5C5E_u6027_u8BE6_u89E3"><a href="#cover_u4E0Econtain__u5C5E_u6027_u8BE6_u89E3" class="headerlink" title="cover与contain 属性详解"></a>cover与contain 属性详解</h4><p><a href="http://codepen.io/dukegod/pen/WrpLBp" target="_blank" rel="external">background-size-prototype @CodePen</a></p>
+<p>cover:背景图像缩放,保留图像原有的比例/长宽比,不管背景图像大于还是小于背景区域，都会覆盖背景区域,图像的宽度或高度等于或超过背景区域,再次,根据背景图像的比例是否匹配的背景区域,背景图像的某些部分可能不在背景区域内。</p>
+<p>contain:背景图像缩放,同时保留图像原有的比例/长宽比,无论是图像的宽度或高度超过背景区域,以尽可能大的覆盖背景区域。因此,根据背景图像的比例是否匹配背景区域,可能会有一些背景图像覆盖不到背景地区。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/06/2016-01-06/" data-id="cijjuxsk50008dkq45fybx2xn" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/06/2016-01-06/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-01-05" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/05/2016-01-05/" class="article-date">
@@ -197,7 +253,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
     </div>
   </div>
 
@@ -207,7 +263,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/app/" style="font-size: 20px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/生活点滴/" style="font-size: 15px;">生活点滴</a>
+      <a href="/tags/app/" style="font-size: 20px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/生活点滴/" style="font-size: 15px;">生活点滴</a>
     </div>
   </div>
 
@@ -229,6 +285,10 @@
       <ul>
         
           <li>
+            <a href="/2016/01/21/2016-01-21/">http 协议</a>
+          </li>
+        
+          <li>
             <a href="/2016/01/20/2016-01-20/">jQuery插件开发</a>
           </li>
         
@@ -242,10 +302,6 @@
         
           <li>
             <a href="/2016/01/12/2016-01-12/">移动端滚动与内置浏览器出界问题</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/11/2016-01-11/">npm basic operation</a>
           </li>
         
       </ul>
