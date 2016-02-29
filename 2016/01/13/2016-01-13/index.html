@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: javascript | Hello World</title>
+  <title>事件委托 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活，沉淀人生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://dukegod.github.io/tags/javascript/index.html">
+  <meta name="description" content="事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。
+最常见的例子就是绑定li方法的委托事件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件委托">
+<meta property="og:url" content="http://dukegod.github.io/2016/01/13/2016-01-13/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="记录生活，沉淀人生">
+<meta property="og:description" content="事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。
+最常见的例子就是绑定li方法的委托事件。">
+<meta property="og:updated_time" content="2016-02-29T13:44:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="记录生活，沉淀人生">
+<meta name="twitter:title" content="事件委托">
+<meta name="twitter:description" content="事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。
+最常见的例子就是绑定li方法的委托事件。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -62,59 +66,77 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/22/2016-01-22/" class="archive-article-date">
-  <time datetime="2016-01-21T16:00:00.000Z" itemprop="datePublished">1月 22</time>
+        <section id="main"><article id="post-2016-01-13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/13/2016-01-13/" class="article-date">
+  <time datetime="2016-01-12T16:00:00.000Z" itemprop="datePublished">2016-01-13</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/22/2016-01-22/">ajax note</a>
+    <h1 class="article-title" itemprop="name">
+      事件委托
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/13/2016-01-13/" class="archive-article-date">
-  <time datetime="2016-01-12T16:00:00.000Z" itemprop="datePublished">1月 13</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/13/2016-01-13/">事件委托</a>
-    </h1>
-  
+        <p>事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。</p>
+<p>最常见的例子就是绑定li方法的委托事件。</p>
+<a id="more"></a>
+<figure class="highlight pf"><table><tr><td class="code"><pre><span class="line"><span class="variable">&lt;ul&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">1</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">2</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">3</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">4</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">1</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">2</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">3</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">4</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line"><span class="variable">&lt;/ul&gt;</span></span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  $('body').<span class="keyword">on</span>('click', 'li', function(event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    /* Act <span class="keyword">on</span> the event */</span><br><span class="line">    console.<span class="keyword">log</span>(this);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)(jQuery)</span><br></pre></td></tr></table></figure>
+<p>借用了jquery的on事件作为事件委托的方法。不介意使用bind方法。</p>
+<p>原生方法可以用addEventListener方法进行绑定。</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13/" data-id="cil81g163000l21s6nl3xrvge" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/13/2016-01-13/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/18/2016-01-18/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          诗
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2016/01/12/2016-01-12/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">移动端滚动与内置浏览器出界问题</div>
+    </a>
   
+</nav>
 
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -226,11 +248,13 @@
 <script>
   var disqus_shortname = 'dukehui1991';
   
+  var disqus_url = 'http://dukegod.github.io/2016/01/13/2016-01-13/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

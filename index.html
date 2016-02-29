@@ -15,8 +15,6 @@
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="记录生活，沉淀人生">
   
-    <link rel="alternate" href="/atom.xml" title="Hello World" type="application/atom+xml">
-  
   
     <link rel="icon" href="/favicon.png">
   
@@ -50,10 +48,10 @@
         
           <a class="main-nav-link" href="/resume.html">Resume</a>
         
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
       </nav>
       <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
@@ -90,82 +88,15 @@
       
         <p>ajax的全称是Asynchronous JavaScript and XML</p>
 <h3 id="u539F_u7406_u4E0E_u4E3B_u8981_u7684_u6280_u672F_u70B9"><a href="#u539F_u7406_u4E0E_u4E3B_u8981_u7684_u6280_u672F_u70B9" class="headerlink" title="原理与主要的技术点"></a>原理与主要的技术点</h3><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。</p>
-<h4 id="XMLHttpRequest_u5BF9_u8C61"><a href="#XMLHttpRequest_u5BF9_u8C61" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h4><h5 id="u4E3B_u8981_u65B9_u6CD5_uFF1A"><a href="#u4E3B_u8981_u65B9_u6CD5_uFF1A" class="headerlink" title="主要方法："></a>主要方法：</h5><ul>
-<li>open(“method”,”URL”,[asyncFlag],[“userName”],[“password”]):</li>
-</ul>
-<p>建立对服务器的调用。method参数可以是GET、POST或PUT。url参数可以是相对URL或绝对URL。这个方法还包括3个可选的参数，是否异步，用户名，密码;</p>
-<ul>
-<li>send(content)</li>
-</ul>
-<p>向服务器发送请求</p>
-<ul>
-<li>setRequestHeader</li>
-</ul>
-<p>把指定首部设置为所提供的值。在设置任何首部之前必须先调用open()。设置header并和请求一起发送 (‘post’方法一定要 )</p>
-<h5 id="u4E3B_u8981_u5C5E_u6027"><a href="#u4E3B_u8981_u5C5E_u6027" class="headerlink" title="主要属性"></a>主要属性</h5><ul>
-<li>onreadystatechange    </li>
-</ul>
-<p>状态改变的事件触发器，每个状态改变时都会触发这个事件处理器，通常会调用一个JavaScript函数</p>
-<ul>
-<li>readyState    </li>
-</ul>
-<p>请求的状态。有5个可取值：0 = 未初始化，1 = 正在加载，2 = 已加载，3 = 交互中，4 = 完成</p>
-<ul>
-<li>responseText    </li>
-</ul>
-<p>服务器的响应，返回数据的文本。</p>
-<ul>
-<li>responseXML    </li>
-</ul>
-<p>服务器的响应，返回数据的兼容DOM的XML文档对象 ，这个对象可以解析为一个DOM对象。</p>
-<ul>
-<li>responseBody     </li>
-</ul>
-<p>服务器返回的主题（非文本格式）</p>
-<ul>
-<li>responseStream    </li>
-</ul>
-<p>服务器返回的数据流</p>
-<ul>
-<li>status    </li>
-</ul>
-<p>服务器的HTTP状态码（如：404 = “文件末找到” 、200 =”成功” ，等等）</p>
-<ul>
-<li>statusText    </li>
-</ul>
-<p>服务器返回的状态文本信息 ，HTTP状态码的相应文本（OK或Not Found（未找到）等等）</p>
-<h4 id="u7B80_u5355_u7684_u5C01_u88C5_uFF08_u4E0D_u8003_u8651IE_uFF09"><a href="#u7B80_u5355_u7684_u5C01_u88C5_uFF08_u4E0D_u8003_u8651IE_uFF09" class="headerlink" title="简单的封装（不考虑IE）"></a>简单的封装（不考虑IE）</h4><p>get方法</p>
-<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> ajaxGet()&#123; </span><br><span class="line">	var <span class="built_in">request</span> = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	<span class="built_in">request</span>.open(<span class="string">"GET"</span>, <span class="string">"server.php?number="</span> + document.getElementById(<span class="string">"keyword"</span>).value);</span><br><span class="line">	<span class="built_in">request</span>.send();</span><br><span class="line">	<span class="built_in">request</span>.onreadystatechange = <span class="keyword">function</span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">request</span>.readyState===<span class="number">4</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">request</span>.status===<span class="number">200</span>) &#123; </span><br><span class="line">				document.getElementById(<span class="string">"searchResult"</span>).innerHTML = <span class="built_in">request</span>.responseText;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(<span class="string">"发生错误："</span> + <span class="built_in">request</span>.status);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>post方法</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajaxPOST</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	request.open(<span class="string">"POST"</span>, <span class="string">"server.php"</span>);</span><br><span class="line">	<span class="keyword">var</span> data = <span class="string">"name="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffName"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;number="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffNumber"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;sex="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffSex"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;job="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffJob"</span>).value;</span><br><span class="line">	request.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">	request.send(data);</span><br><span class="line">	request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (request.readyState===<span class="number">4</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (request.status===<span class="number">200</span>) &#123; </span><br><span class="line">				<span class="built_in">document</span>.getElementById(<span class="string">"createResult"</span>).innerHTML = request.responseText;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(<span class="string">"发生错误："</span> + request.status);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="u4F7F_u7528_u5C01_u88C5_u597D_u7684_u5E93"><a href="#u4F7F_u7528_u5C01_u88C5_u597D_u7684_u5E93" class="headerlink" title="使用封装好的库"></a>使用封装好的库</h4><h5 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h5><p>$.ajax()</p>
-<p>zepto 类似</p>
-<h3 id="u8DE8_u57DF"><a href="#u8DE8_u57DF" class="headerlink" title="跨域"></a>跨域</h3><p>一个域名组成：http：//www.22.com:8080/js.js:  协议，子域名，主域名，端口号，请求资源地址</p>
-<p>同源是指，域名，协议，端口相同</p>
-<p>当协议，子域名，主域名端口号中任意一个不相同时，都算作不同域</p>
-<p>不同域名之间相互请求资源都算作“跨域”</p>
-<h3 id="u89E3_u51B3_u65B9_u6CD5"><a href="#u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
-<li>浏览器的同源策略把跨域请求都禁止了但是HTML的script标签是例外，可以突破同源策略从其他来源获取数据；我们可以通过script标签引入jsonp文件，然后通过一系列JS操作获取数据。</li>
-</ol>
-<p>原生js</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonHandle</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    script.setAttribute(<span class="string">"src"</span>,url);</span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">"body"</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//JS插入之后就可以处理数据了</span></span><br></pre></td></tr></table></figure>
-<p>jquery 封装jsonp方法</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123; </span><br><span class="line">   type: <span class="string">"GET"</span>, 	</span><br><span class="line">	url: <span class="string">"http://127.0.0.1/ajax/serverjsonp.php"</span>,</span><br><span class="line">	dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">	jsonp: <span class="string">"callback"</span>, <span class="comment">// 前后端协调命名的</span></span><br><span class="line">	success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (data.success) &#123;</span><br><span class="line">			$(<span class="string">"#searchResult"</span>).html(data.msg);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			$(<span class="string">"#searchResult"</span>).html(<span class="string">"出现错误："</span> + data.msg);</span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;,</span><br><span class="line">	error: <span class="function"><span class="keyword">function</span>(<span class="params">jqXHR</span>)</span>&#123;     </span><br><span class="line">	   alert(<span class="string">"发生错误："</span> + jqXHR.status);  </span><br><span class="line">	&#125;,     </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>但是jsonp 只能解决get方法的跨域请求</p>
-<ol>
-<li>HTML5提供的XML HttpRequest level2（IE10 一下不支持）</li>
-</ol>
-<p>修改服务端</p>
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Origin</span><span class="keyword">:*</span>')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Methods</span><span class="keyword">:POST</span>,GET')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Credentials</span><span class="keyword">:true</span>')</span><span class="comment">; </span></span><br><span class="line">header<span class="list">(<span class="string">"Content-Type: application/json;charset=utf-8"</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<p>详情见 XMLHttpRequestXHR2.html</p>
-<p><a href="https://github.com/dukegod/phpBasic/tree/master/ajax" target="_blank" rel="external">项目地址</a></p>
-<h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/sanmaospace/archive/2013/06/15/3137180.html" target="_blank" rel="external">AJAX工作原理及其优缺点</a></p>
-<p><a href="https://segmentfault.com/a/1190000002799156" target="_blank" rel="external">jsonp</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/01/22/2016-01-22/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22/" data-id="ciktfgbjx0000tfq4xesb9tnk" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22/" data-id="cil81g15v000521s69fia7klm" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/22/2016-01-22/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -206,198 +137,15 @@
 <p>3.灵活:HTTP 允许传输任意类型的数据对象。正在传输的类型由 Content-Type 加以标记。</p>
 <p>4.无连接:无连接的含义是限制每次连接只处理一个请求 。服务器处理完客户的请求,并收到客户的 应答后,即断开连接。采用这种方式可以节省传输时间。</p>
 <p>5.无状态:HTTP 协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着 如果后续处理需要前面的信息,则它必须重传,这样可能导致每次连接传送的数据量增大。另一方面 ,在 服务器不需要先前信息时它的应答就较快。</p>
-<h3 id="HTTP_u534F_u8BAE_u8BE6_u89E3_u4E4B_u8BF7_u6C42_u7BC7"><a href="#HTTP_u534F_u8BAE_u8BE6_u89E3_u4E4B_u8BF7_u6C42_u7BC7" class="headerlink" title="HTTP协议详解之请求篇"></a>HTTP协议详解之请求篇</h3><p>http请求由三部分组成，分别是：请求行、消息报头、请求正文</p>
-<p>1、请求行以一个方法符号开头，以空格分开，后面跟着请求的URI和协议的版本</p>
-<p>格式如下：Method Request-URI HTTP-Version CRLF  </p>
-<p>其中 Method表示请求方法；Request-URI是一个统一资源标识符；HTTP-Version表示请求的HTTP协议版本；CRLF表示回车和换行（除了作为结尾的CRLF外，不允许出现单独的CR或LF字符）。</p>
-<p>请求方法（所有方法全为大写）有多种，各个方法的解释如下：</p>
-<ul>
-<li>GET     请求获取Request-URI所标识的资源</li>
-<li>POST    在Request-URI所标识的资源后附加新的数据</li>
-<li>HEAD    请求获取由Request-URI所标识的资源的响应消息报头</li>
-<li>PUT     请求服务器存储一个资源，并用Request-URI作为其标识</li>
-<li>DELETE  请求服务器删除Request-URI所标识的资源</li>
-<li>TRACE   请求服务器回送收到的请求信息，主要用于测试或诊断</li>
-<li>CONNECT 保留将来使用</li>
-<li>OPTIONS 请求查询服务器的性能，或者查询与资源相关的选项和需求</li>
-</ul>
-<p>应用举例：</p>
-<ol>
-<li><p>GET方法：在浏览器的地址栏中输入网址的方式访问网页时，浏览器采用GET方法向服务器获取资源，</p>
-<pre><code>GET /form.html HTTP/1.1 (CRLF)
-</code></pre></li>
-<li><p>POST方法要求被请求服务器接受附在请求后面的数据，常用于提交表单。</p>
-<pre><code>POST /reg.jsp HTTP/ (CRLF)
-
-Accept:image/gif,image/x-xbit,... (CRLF)
-...
-HOST:www.guet.edu.cn (CRLF)
-Content-Length:22 (CRLF)
-Connection:Keep-Alive (CRLF)
-Cache-Control:no-cache (CRLF)
-(CRLF)         //该CRLF表示消息报头已经结束，在此之前为消息报头
-user=jeffrey&amp;pwd=1234  //此行以下为提交的数据
-</code></pre></li>
-</ol>
-<p>HEAD方法与GET方法几乎是一样的，对于HEAD请求的回应部分来说，它的HTTP头部中包含的信息与通过GET请求所得到的信息是相同的。</p>
-<p>利用这个方法，不必传输整个资源内容，就可以得到Request-URI所标识的资源的信息。该方法常用于测试超链接的有效性，是否可以访问，以及最近是否更新。</p>
-<p>2、请求报头后述</p>
-<p>3、请求正文(略) </p>
-<h4 id="HTTP_u534F_u8BAE_u8BE6_u89E3_u4E4B_u54CD_u5E94_u7BC7"><a href="#HTTP_u534F_u8BAE_u8BE6_u89E3_u4E4B_u54CD_u5E94_u7BC7" class="headerlink" title="HTTP协议详解之响应篇"></a>HTTP协议详解之响应篇</h4><p>在接收和解释请求消息后，服务器返回一个HTTP响应消息。</p>
-<p>HTTP响应也是由三个部分组成，分别是：状态行、消息报头、响应正文</p>
-<h5 id="1_u3001_u72B6_u6001_u884C_u683C_u5F0F_u5982_u4E0B_uFF1A"><a href="#1_u3001_u72B6_u6001_u884C_u683C_u5F0F_u5982_u4E0B_uFF1A" class="headerlink" title="1、状态行格式如下："></a>1、状态行格式如下：</h5><pre><code>HTTP-Version Status-Code Reason-Phrase CRLF
-</code></pre><p>HTTP-Version表示服务器HTTP协议的版本；</p>
-<p>Status-Code表示服务器发回的响应状态代码；</p>
-<p>Reason-Phrase表示状态代码的文本描述。</p>
-<p>状态代码有三位数字组成，第一个数字定义了响应的类别，且有五种可能取值：</p>
-<ul>
-<li>1xx：指示信息–表示请求已接收，继续处理;</li>
-<li>2xx：成功–表示请求已被成功接收、理解、接受;</li>
-<li>3xx：重定向–要完成请求必须进行更进一步的操作;</li>
-<li>4xx：客户端错误–请求有语法错误或请求无法实现;</li>
-<li>5xx：服务器端错误–服务器未能实现合法的请求;</li>
-</ul>
-<p><strong>常见状态代码、状态描述、说明：</strong></p>
-<pre><code>200 OK      //客户端请求成功;
-400 Bad Request  //客户端请求有语法错误，不能被服务器所理解;
-401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用 ;
-403 Forbidden  //服务器收到请求，但是拒绝提供服务;
-404 Not Found  //请求资源不存在，eg：输入了错误的URL;
-500 Internal Server Error //服务器发生不可预期的错误;
-503 Server Unavailable  //服务器当前不能处理客户端的请求，一段时间后可能恢复正常;
-eg：HTTP/1.1 200 OK （CRLF）;
-</code></pre><h5 id="2_u3001_u54CD_u5E94_u62A5_u5934_u540E_u8FF0"><a href="#2_u3001_u54CD_u5E94_u62A5_u5934_u540E_u8FF0" class="headerlink" title="2、响应报头后述"></a>2、响应报头后述</h5><h5 id="3_u3001_u54CD_u5E94_u6B63_u6587_u5C31_u662F_u670D_u52A1_u5668_u8FD4_u56DE_u7684_u8D44_u6E90_u7684_u5185_u5BB9"><a href="#3_u3001_u54CD_u5E94_u6B63_u6587_u5C31_u662F_u670D_u52A1_u5668_u8FD4_u56DE_u7684_u8D44_u6E90_u7684_u5185_u5BB9" class="headerlink" title="3、响应正文就是服务器返回的资源的内容"></a>3、响应正文就是服务器返回的资源的内容</h5><h3 id="HTTP_u534F_u8BAE_u8BE6_u89E3_u4E4B_u6D88_u606F_u62A5_u5934_u7BC7"><a href="#HTTP_u534F_u8BAE_u8BE6_u89E3_u4E4B_u6D88_u606F_u62A5_u5934_u7BC7" class="headerlink" title="HTTP协议详解之消息报头篇"></a>HTTP协议详解之消息报头篇</h3><p>HTTP消息由客户端到服务器的请求和服务器到客户端的响应组成。请求消息和响应消息都是由开始行（对于请求消息，开始行就是请求行，对于响应消息，开始行就是状态行），消息报头（可选），空行（只有CRLF的行），消息正文（可选）组成。</p>
-<p>HTTP消息报头包括普通报头、请求报头、响应报头、实体报头。<br>每一个报头域都是由名字+“：”+空格+值 组成，消息报头域的名字是大小写无关的。</p>
-<h5 id="1_u3001_u666E_u901A_u62A5_u5934"><a href="#1_u3001_u666E_u901A_u62A5_u5934" class="headerlink" title="1、普通报头"></a>1、普通报头</h5><p>在普通报头中，有少数报头域用于所有的请求和响应消息，但并不用于被传输的实体，只用于传输的消息。</p>
-<p><strong>Cache-Control：</strong> 用于指定缓存指令，缓存指令是单向的（响应中出现的缓存指令在请求中未必会出现），且是独立的（一个消息的缓存指令不会影响另一个消息处理的缓存机制），HTTP1.0使用的类似的报头域为Pragma。</p>
-<p><strong>请求时的缓存指令包括：</strong> no-cache（用于指示请求或响应消息不能缓存）、no-store、max-age、max-stale、min-fresh、only-if-cached;</p>
-<p><strong>响应时的缓存指令包括：</strong>public、private、no-cache、no-store、no-transform、must-revalidate、proxy-revalidate、max-age、s-maxage.</p>
-<p><strong>Date普通报头域表示消息产生的日期和时间</strong></p>
-<p><strong>Connection普通报头域允许发送指定连接的选项。</strong></p>
-<p>例如指定连接是连续，或者指定“close”选项，通知服务器，在响应完成后，关闭连接</p>
-<h5 id="2_u3001_u8BF7_u6C42_u62A5_u5934"><a href="#2_u3001_u8BF7_u6C42_u62A5_u5934" class="headerlink" title="2、请求报头"></a>2、请求报头</h5><p>请求报头允许客户端向服务器端传递请求的附加信息以及客户端自身的信息。</p>
-<p><strong>常用的请求报头</strong></p>
-<h6 id="Accept"><a href="#Accept" class="headerlink" title="Accept"></a>Accept</h6><p>Accept请求报头域用于指定客户端接受哪些类型的信息。</p>
-<pre><code>Accept：image/gif，表明客户端希望接受GIF图象格式的资源；
-</code></pre><p>Accept：text/html，表明客户端希望接受html文本。</p>
-<p>Accept-Charset请求报头域用于指定客户端接受的字符集。</p>
-<pre><code>Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受。
-</code></pre><p>Accept-Encoding请求报头域类似于Accept，但是它是用于指定可接受的内容编码。</p>
-<pre><code>Accept-Encoding:gzip.deflate.如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受。
-</code></pre><p>Accept-Language请求报头域类似于Accept，但是它是用于指定一种自然语言。</p>
-<pre><code>Accept-Language:zh-cn.如果请求消息中没有设置这个报头域，服务器假定客户端对各种语言都可以接受。
-</code></pre><p>Authorization请求报头域主要用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为401（未授权），可以发送一个包含Authorization请求报头域的请求，要求服务器对其进行验证。</p>
-<h5 id="Host_uFF08_u53D1_u9001_u8BF7_u6C42_u65F6_uFF0C_u8BE5_u62A5_u5934_u57DF_u662F_u5FC5_u9700_u7684_uFF09"><a href="#Host_uFF08_u53D1_u9001_u8BF7_u6C42_u65F6_uFF0C_u8BE5_u62A5_u5934_u57DF_u662F_u5FC5_u9700_u7684_uFF09" class="headerlink" title="Host（发送请求时，该报头域是必需的）"></a>Host（发送请求时，该报头域是必需的）</h5><p>Host请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的，</p>
-<pre><code>我们在浏览器中输入：http://www.guet.edu.cn/index.html
-</code></pre><p>浏览器发送的请求消息中，就会包含Host请求报头域，如下：</p>
-<pre><code>Host：www.guet.edu.cn
-</code></pre><p>此处使用缺省端口号80，若指定了端口号，则变成：Host：www.guet.edu.cn:指定端口号</p>
-<h5 id="User-Agent"><a href="#User-Agent" class="headerlink" title="User-Agent"></a>User-Agent</h5><p>我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从User-Agent这个请求报头域中获取到这些信息。User-Agent请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用User-Agent请求报头域，那么服务器端就无法得知我们的信息了。</p>
-<p>请求报头举例：</p>
-<pre><code>GET /form.html HTTP/1.1 (CRLF)
-Accept:image/gif,image/x-xbitmap,image/jpeg,application/x-shockwave-flash,application/vnd.ms-excel,application/vnd.ms-powerpoint,application/msword,*/* (CRLF)
-Accept-Language:zh-cn (CRLF)
-Accept-Encoding:gzip,deflate (CRLF)
-If-Modified-Since:Wed,05 Jan 2007 11:21:25 GMT (CRLF)
-If-None-Match:W/&quot;80b1a4c018f3c41:8317&quot; (CRLF)
-User-Agent:Mozilla/4.0(compatible;MSIE6.0;Windows NT 5.0) (CRLF)
-Host:www.guet.edu.cn (CRLF)
-Connection:Keep-Alive (CRLF)
-(CRLF)
-</code></pre><h5 id="3_u3001_u54CD_u5E94_u62A5_u5934"><a href="#3_u3001_u54CD_u5E94_u62A5_u5934" class="headerlink" title="3、响应报头"></a>3、响应报头</h5><p>响应报头允许服务器传递不能放在状态行中的附加响应信息，以及关于服务器的信息和对Request-URI所标识的资源进行下一步访问的信息。</p>
-<p>常用的响应报头</p>
-<ul>
-<li>Location</li>
-</ul>
-<p>Location响应报头域用于重定向接受者到一个新的位置。Location响应报头域常用在更换域名的时候。</p>
-<ul>
-<li>Server</li>
-</ul>
-<p>Server响应报头域包含了服务器用来处理请求的软件信息。与User-Agent请求报头域是相对应的。下面是Server响应报头域的一个例子：</p>
-<pre><code>Server：Apache-Coyote/1.1
-WWW-Authenticate
-</code></pre><p>WWW-Authenticate响应报头域必须被包含在401（未授权的）响应消息中，客户端收到401响应消息时候，并发送Authorization报头域请求服务器对其进行验证时，服务端响应报头就包含该报头域。</p>
-<pre><code>WWW-Authenticate:Basic realm=&quot;Basic Auth Test!&quot;  //可以看出服务器对请求资源采用的是基本验证机制。
-</code></pre><h5 id="4_u3001_u5B9E_u4F53_u62A5_u5934"><a href="#4_u3001_u5B9E_u4F53_u62A5_u5934" class="headerlink" title="4、实体报头"></a>4、实体报头</h5><p>请求和响应消息都可以传送一个实体。一个实体由实体报头域和实体正文组成，但并不是说实体报头域和实体正文要在一起发送，可以只发送实体报头域。实体报头定义了关于实体正文（eg：有无实体正文）和请求所标识的资源的元信息。</p>
-<p><strong>常用的实体报头</strong></p>
-<ul>
-<li>Content-Encoding</li>
-</ul>
-<p>Content-Encoding实体报头域被用作媒体类型的修饰符，它的值指示了已经被应用到实体正文的附加内容的编码，因而要获得Content-Type报头域中所引用的媒体类型，必须采用相应的解码机制。Content-Encoding这样用于记录文档的压缩方法，eg：Content-Encoding：gzip</p>
-<ul>
-<li>Content-Language</li>
-</ul>
-<p>Content-Language实体报头域描述了资源所用的自然语言。没有设置该域则认为实体内容将提供给所有的语言阅读<br>者。</p>
-<pre><code>Content-Language:da
-</code></pre><ul>
-<li>Content-Length</li>
-</ul>
-<p>Content-Length实体报头域用于指明实体正文的长度，以字节方式存储的十进制数字来表示。</p>
-<ul>
-<li>Content-Type</li>
-</ul>
-<p>Content-Type实体报头域用语指明发送给接收者的实体正文的媒体类型。</p>
-<pre><code>Content-Type:text/html;charset=ISO-8859-1
-Content-Type:text/html;charset=GB2312
-</code></pre><ul>
-<li>Last-Modified</li>
-</ul>
-<p>Last-Modified实体报头域用于指示资源的最后修改日期和时间。</p>
-<ul>
-<li>Expires</li>
-</ul>
-<p>Expires实体报头域给出响应过期的日期和时间。为了让代理服务器或浏览器在一段时间以后更新缓存中(再次访问曾访问过的页面时，直接从缓存中加载，缩短响应时间和降低服务器负载)的页面，我们可以使用Expires实体报头域指定页面过期的时间。</p>
-<pre><code>Expires：Thu，15 Sep 2006 16:23:12 GMT
-</code></pre><p>HTTP1.1的客户端和缓存必须将其他非法的日期格式（包括0）看作已经过期。</p>
-<p>为了让浏览器不要缓存页面，我们也可以利用Expires实体报头域，设置为0</p>
-<h3 id="HTTP_u534F_u8BAE_u76F8_u5173_u6280_u672F_u8865_u5145"><a href="#HTTP_u534F_u8BAE_u76F8_u5173_u6280_u672F_u8865_u5145" class="headerlink" title="HTTP协议相关技术补充"></a>HTTP协议相关技术补充</h3><p>1、基础：</p>
-<p>高层协议</p>
-<ul>
-<li>文件传输协议FTP</li>
-<li>电子邮件传输协议SMTP</li>
-<li>域名系统服务DNS</li>
-<li>网络新闻传输协议NNTP</li>
-<li>HTTP协议</li>
-</ul>
-<p>中介由三种：代理(Proxy)、网关(Gateway)和通道(Tunnel)</p>
-<p>一个代理根据URI的绝对格式来接受请求，重写全部或部分消息，通过 URI的标识把已格式化过的请求发送到服务器。</p>
-<p>网关是一个接收代理，作为一些其它服务器的上层，并且如果必须的话，可以把请求翻译给下层的服务器协议。</p>
-<p>一个通道作为不改变消息的两个连接之间的中继点。当通讯需要通过一个中介(例如：防火墙等)或者是中介不能识别消息的内容时，通道经常被使用。</p>
-<ul>
-<li><p>代理(Proxy)：一个中间程序，它可以充当一个服务器，也可以充当一个客户机，为其它客户机建立请求。请求是通过可能的翻译在内部或经过传递到其它的 服务器中。一个代理在发送请求信息之前，必须解释并且如果可能重写它。代理经常作为通过防火墙的客户机端的门户，代理还可以作为一个帮助应用来通过协议处 理没有被用户代理完成的请求。</p>
-</li>
-<li><p>网关(Gateway)：一个作为其它服务器中间媒介的服务器。与代理不同的是，网关接受请求就好象对被请求的资源来说它就是源服务器；发出请求的客户机并没有意识到它在同网关打交道。<br>网关经常作为通过防火墙的服务器端的门户，网关还可以作为一个协议翻译器以便存取那些存储在非HTTP系统中的资源。</p>
-</li>
-<li><p>通道(Tunnel)：是作为两个连接中继的中介程序。一旦激活，通道便被认为不属于HTTP通讯，尽管通道可能是被一个HTTP请求初始化的。当被中继的连接两端关闭时，通道便消失。当一个门户(Portal)必须存在或中介(Intermediary)不能解释中继的通讯时通道被经常使用。</p>
-</li>
-</ul>
-<p>2、协议分析的优势—HTTP分析器检测网络攻击</p>
-<p>以模块化的方式对高层协议进行分析处理，将是未来入侵检测的方向。</p>
-<p>HTTP及其代理的常用端口80、3128和8080在network部分用port标签进行了规定</p>
-<p>3、HTTP协议Content Lenth限制漏洞导致拒绝服务攻击</p>
-<p>使用POST方法时，可以设置ContentLenth来定义需要传送的数据长度，例如ContentLenth:999999999，在传送完成前，内 存不会释放，攻击者可以利用这个缺陷，连续向WEB服务器发送垃圾数据直至WEB服务器内存耗尽。这种攻击方法基本不会留下痕迹。<a href="http://www.cnpaf.net/Class/HTTP/0532918532667330.html" target="_blank" rel="external">ref.</a></p>
-<p>4、利用HTTP协议的特性进行拒绝服务攻击的一些构思</p>
-<p>服务器端忙于处理攻击者伪造的TCP连接请求而无暇理睬客户的正常请求（毕竟客户端的正常请求比率非常之小），此时从正常客户的角度看来，服务器失去响应，这种情况我们称作：服务器端受到了SYNFlood攻击（SYN洪水攻击）。<br>而Smurf、TearDrop等是利用ICMP报文来Flood和IP碎片攻击的。本文用“正常连接”的方法来产生拒绝服务攻击。<br>19端口在早期已经有人用来做Chargen攻击了，即Chargen_Denial_of_Service，但是！他们用的方法是在两台Chargen 服务器之间产生UDP连接，让服务器处理过多信息而DOWN掉，那么，干掉一台WEB服务器的条件就必须有2个：1.有Chargen服务2.有HTTP 服务</p>
-<p>方法：攻击者伪造源IP给N台Chargen发送连接请求（Connect），Chargen接收到连接后就会返回每秒72字节的字符流（实际上根据网络实际情况，这个速度更快）给服务器。</p>
-<p>5、Http指纹识别技术</p>
-<p>Http指纹识别的原理大致上也是相同的：记录不同服务器对Http协议执行中的微小差别进行识别.Http指纹识别比TCP/IP堆栈指纹识别复杂许多,理由是定制Http服务器的配置文件、增加插件或组件使得更改Http的响应信息变的很容易,这样使得识别变的困难；然而定制TCP/IP堆栈的行为需要对核心层进行修改,所以就容易识别.</p>
-<p>要让服务器返回不同的Banner信息的设置是很简单的,象Apache这样的开放源代码的Http服务器,用户可以在源代码里修改Banner信息,然 后重起Http服务就生效了；对于没有公开源代码的Http服务器比如微软的IIS或者是Netscape,可以在存放Banner信息的Dll文件中修 改,相关的文章有讨论的,这里不再赘述,当然这样的修改的效果还是不错的.另外一种模糊Banner信息的方法是使用插件。</p>
-<p>常用测试请求：</p>
-<ol>
-<li>HEAD/Http/1.0发送基本的Http请求</li>
-<li>DELETE/Http/1.0发送那些不被允许的请求,比如Delete请求</li>
-<li>GET/Http/3.0发送一个非法版本的Http协议请求</li>
-<li>GET/JUNK/1.0发送一个不正确规格的Http协议请求</li>
-</ol>
-<p>Http指纹识别工具Httprint,它通过运用统计学原理,组合模糊的逻辑学技术,能很有效的确定Http服务器的类型.它可以被用来收集和分析不同Http服务器产生的签名。</p>
-<p>6、其他：为了提高用户使用浏览器时的性能，现代浏览器还支持并发的访问方式，浏览一个网页时同时建立多个连接，以迅速获得一个网页上的多个图标，这样能更快速完成整个网页的传输。</p>
-<p>HTTP1.1中提供了这种持续连接的方式，而下一代HTTP协议：HTTP-NG更增加了有关会话控制、丰富的内容协商等方式的支持，来提供<br>更高效率的连接。</p>
-<h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><p><a href="/转自：http://blog.csdn.net/gueter/archive/2007/03/08/1524447.aspx">http 总结</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/01/21/2016-01-21/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/21/2016-01-21/" data-id="ciktcmwll0000peq45n039hkd" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/21/2016-01-21/" data-id="cil81g15x000c21s6e4ez05yj" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/21/2016-01-21/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -434,21 +182,15 @@ Content-Type:text/html;charset=GB2312
     <div class="article-entry" itemprop="articleBody">
       
         <p>就我自己喜欢开发的模式，总结下jquery插件开发需要注意点。<br>主要是扩展jquery原型，防止变量污染；</p>
-<p>自己喜欢的开发模式：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">$.fn.taptrace = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> defauts = &#123;</span><br><span class="line">		bgcolor: <span class="string">'blue'</span>,</span><br><span class="line">		timeLasting: <span class="string">'20'</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (options) &#123;</span><br><span class="line">		$.extend(defauts, options);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> $el = <span class="keyword">this</span>;</span><br><span class="line">	<span class="keyword">var</span> events = <span class="string">'ontouchstart'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? [<span class="string">'touchstart'</span>, <span class="string">'touchmove touchend touchcancel'</span>] : [<span class="string">'mousedown'</span>, <span class="string">'mousemove mouseup'</span>];</span><br><span class="line">	<span class="keyword">var</span> timer;</span><br><span class="line">	<span class="keyword">var</span> start = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (timer) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		timer = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			$el.css(<span class="string">'background-color'</span>, defauts.bgcolor);</span><br><span class="line">		&#125;, <span class="number">5</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> stop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">window</span>.clearTimeout(timer);</span><br><span class="line">		timer = <span class="literal">null</span>;</span><br><span class="line">		setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			$el.css(<span class="string">'background-color'</span>, <span class="string">''</span>);</span><br><span class="line">		&#125;, defauts.timeLasting)</span><br><span class="line">	&#125;</span><br><span class="line">	$el.on(events[<span class="number">0</span>], start);</span><br><span class="line">	$el.on(events[<span class="number">1</span>], stop);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)(jQuery)</span><br></pre></td></tr></table></figure>
-<p>1： ;最外面的分号是为了预防别人代码因为没有结束，带来的影响</p>
-<p>2： 封装在闭包里面，防止代码的污染</p>
-<p>3：default放在自己是放在属性里面进行引入的，也可以提出放在最外层</p>
-<p>4： $.extend(defauts, options); 扩展默认值</p>
-<p>调用</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'.pure-css'</span>).taptrace(&#123;</span><br><span class="line"><span class="string">bgcolor:</span><span class="string">'red'</span>,</span><br><span class="line"><span class="string">timeLasting:</span><span class="string">'10'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/dukegod/jqueryTapTrace" target="_blank" rel="external">项目地址</a></p>
-<h2 id="u63A8_u8350_u9605_u8BFB"><a href="#u63A8_u8350_u9605_u8BFB" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><p><a href="http://www.cnblogs.com/cyStyle/archive/2013/05/18/jQuery%E6%8F%92%E4%BB%B6%E8%AF%A6%E7%BB%86%E5%BC%80%E5%8F%91.html" target="_blank" rel="external">jQuery插件开发的模式和结构</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/01/20/2016-01-20/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20/" data-id="cijwiyye90000v8q44kqlrfbt" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20/" data-id="cil81g15z000e21s65z3harw7" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/20/2016-01-20/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -490,7 +232,7 @@ Content-Type:text/html;charset=GB2312
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/19/2016-01-19/" data-id="cijl3x5t7000d43q4596m0izw" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/19/2016-01-19/" data-id="cil81g160000h21s6bwnfau4q" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/19/2016-01-19/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -533,12 +275,58 @@ Content-Type:text/html;charset=GB2312
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/18/2016-01-18/" data-id="cijl4zb5700036rq4wyn6obbd" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/18/2016-01-18/" data-id="cil81g162000j21s66mg97ni2" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/18/2016-01-18/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-01-13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/13/2016-01-13/" class="article-date">
+  <time datetime="2016-01-12T16:00:00.000Z" itemprop="datePublished">2016-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/13/2016-01-13/">事件委托</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。</p>
+<p>最常见的例子就是绑定li方法的委托事件。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/13/2016-01-13/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13/" data-id="cil81g163000l21s6nl3xrvge" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/13/2016-01-13/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 
     </footer>
   </div>
@@ -594,7 +382,7 @@ Content-Type:text/html;charset=GB2312
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12/" data-id="cijpxob920000dvs63y22bljy" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12/" data-id="cil81g165000n21s6cn1snthn" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/12/2016-01-12/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -647,7 +435,7 @@ Email: YOUR_EMAIL@domain.com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11/" data-id="cijnm6fsc0000tzq4f7aa057o" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11/" data-id="cil81g167000q21s68b3dyymd" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/11/2016-01-11/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -696,51 +484,15 @@ Email: YOUR_EMAIL@domain.com
 </ul>
 <h4 id="u4E3B_u8981_u7684_u5B57_u4F53_u5206_u7C7B"><a href="#u4E3B_u8981_u7684_u5B57_u4F53_u5206_u7C7B" class="headerlink" title="主要的字体分类"></a>主要的字体分类</h4><p>无衬线字体有：Arial、Helvetica、Lucida Grande、Verdana、Tahoma、Trebuchet MS Normal；</p>
 <p>衬线字体有：Georgia、Times New Roman；</p>
-<h3 id="u5404_u5927_u624B_u673A_u4F9B_u5E94_u5546_u5B57_u4F53"><a href="#u5404_u5927_u624B_u673A_u4F9B_u5E94_u5546_u5B57_u4F53" class="headerlink" title="各大手机供应商字体"></a>各大手机供应商字体</h3><h4 id="iOS__u7CFB_u7EDF"><a href="#iOS__u7CFB_u7EDF" class="headerlink" title="iOS 系统"></a>iOS 系统</h4><ul>
-<li>默认中文字体是Heiti SC</li>
-<li>默认英文字体是Helvetica</li>
-<li>默认数字字体是HelveticaNeue</li>
-<li>无微软雅黑字体</li>
-</ul>
-<h4 id="Android__u7CFB_u7EDF"><a href="#Android__u7CFB_u7EDF" class="headerlink" title="Android 系统"></a>Android 系统</h4><ul>
-<li>默认中文字体是Droidsansfallback</li>
-<li>默认英文和数字字体是Droid San</li>
-<li>无微软雅黑字体</li>
-</ul>
-<h4 id="Winphone__u7CFB_u7EDF"><a href="#Winphone__u7CFB_u7EDF" class="headerlink" title="Winphone 系统"></a>Winphone 系统</h4><ul>
-<li>默认中文字体是Dengxian(方正等线体)</li>
-<li>默认英文和数字字体是Segoe</li>
-<li>无微软雅黑字体</li>
-</ul>
-<p>各个手机系统有自己的默认字体，且都不支持微软雅黑，<strong>如无特殊需求，手机端无需定义中文字体，</strong>使用系统默认英文字体和数字字体可使用 Helvetica ，三种系统都支持。</p>
-<pre><code>body {
-  font-family: &quot;Helvetica Neue&quot;, Helvetica, STHeiTi, sans-serif;
-}
-</code></pre><h3 id="u79FB_u52A8_u7AEF_u5B57_u4F53_u5355_u4F4D"><a href="#u79FB_u52A8_u7AEF_u5B57_u4F53_u5355_u4F4D" class="headerlink" title="移动端字体单位"></a>移动端字体单位</h3><ul>
-<li>em</li>
-</ul>
-<p>em 的计算是基于父级元素的，在实际使用中给我们的计算带来了很大的不便  </p>
-<ul>
-<li>rem</li>
-</ul>
-<p>基于根元素（html）</p>
-<h4 id="u5982_u4F55_u4F7F_u7528"><a href="#u5982_u4F55_u4F7F_u7528" class="headerlink" title="如何使用"></a>如何使用</h4><p>对于只需要适配手机设备，使用px即可</p>
-<p>对于需要适配各种移动设备，使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备</p>
-<p>设置转换(在rem前面，加上px，为了兼容性考虑的)</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="tag">html</span>&#123;</span><br><span class="line">	<span class="attribute">font-size</span>:<span class="number">62.5%</span>; <span class="comment">/* 10/16=.625 */</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="tag">body</span>&#123;</span><br><span class="line">	<span class="attribute">font-size</span>:<span class="number">12px</span>;</span><br><span class="line">	<span class="attribute">font-size</span>:<span class="number">1.2rem</span> ; <span class="comment">/* 12/10=1.2 */</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// body 中的字体也可以这么设置</span></span><br><span class="line"></span><br><span class="line"><span class="tag">body</span>&#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">1.6rem</span>; <span class="comment">// 设置全局的字体为16号</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//需要设置html基础的字体大小，文档在加载的时候，按照html的样式进行渲染你也可以设置html</span></span><br><span class="line"><span class="comment">//字体的样式为其他的</span></span><br><span class="line"></span><br><span class="line"><span class="tag">html</span>&#123;</span><br><span class="line">   <span class="attribute">font-size</span>:<span class="number">32px</span>;<span class="comment">/*设置默认的字体大小*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>: .<span class="number">5rem</span>; <span class="comment">/* 32*0.5= 16px */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>rem加行media 进行响应式设计</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">html</span> <span class="rules">&#123;<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">10px</span></span></span></span>&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-width:<span class="number">480px</span>) and (max-width:<span class="number">639px</span>) </span>&#123;</span><br><span class="line">    <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">15px</span></span><br><span class="line">    </span></span></span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-width:<span class="number">640px</span>) and (max-width:<span class="number">719px</span>) </span>&#123;</span><br><span class="line">    <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">20px</span></span><br><span class="line">    </span></span></span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-width:<span class="number">720px</span>) and (max-width:<span class="number">749px</span>) </span>&#123;</span><br><span class="line">    <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">22.5px</span></span><br><span class="line">    </span></span></span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-width:<span class="number">750px</span>) and (max-width:<span class="number">799px</span>) </span>&#123;</span><br><span class="line">    <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">23.5px</span></span><br><span class="line">    </span></span></span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-width:<span class="number">800px</span>) and (max-width:<span class="number">959px</span>) </span>&#123;</span><br><span class="line">    <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">25px</span></span><br><span class="line">    </span></span></span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-width:<span class="number">960px</span>) and (max-width:<span class="number">1079px</span>) </span>&#123;</span><br><span class="line">    <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">30px</span></span><br><span class="line">    </span></span></span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> screen and (min-width:<span class="number">1080px</span>) </span>&#123;</span><br><span class="line">    <span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32px</span></span><br><span class="line">    </span></span></span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="u63A8_u8350_u8D44_u6E90"><a href="#u63A8_u8350_u8D44_u6E90" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://ilovetypography.com/" target="_blank" rel="external">国外人对于字体的研究<strong>主要是英文啦</strong></a></p>
-<p><a href="http://zhuanlan.zhihu.com/FrontendMagazine/19891152" target="_blank" rel="external">中文排版的最佳实践</a></p>
-<p><a href="/"></a></p>
-<p><a href="http://www.smashingmagazine.com/2011/03/02/the-font-face-rule-revisited-and-useful-tricks/" target="_blank" rel="external">The @Font-Face Rule And Useful Web Font Tricks</a></p>
-<p><a href="http://www.asheep.cn/skill/web-mobile-o.html" target="_blank" rel="external">参考,更多的说明</a></p>
-<p><a href="http://www.codeceo.com/article/font-size-web-design.html" target="_blank" rel="external">计算字体的大小去适应(网易淘宝)</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/01/10/2016-01-10/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/10/2016-01-10/" data-id="cijl3xlhq000e43q45gc3csjh" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/10/2016-01-10/" data-id="cil81g169000v21s6m2294tgr" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/10/2016-01-10/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -783,90 +535,20 @@ Email: YOUR_EMAIL@domain.com
 <p>2 优先使用最新版本 IE 和 Chrome</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=edge,chrome=1"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><h4 id="1-_Meta__u4E4B_format-detection"><a href="#1-_Meta__u4E4B_format-detection" class="headerlink" title="1.   Meta 之 format-detection"></a>1.   Meta 之 format-detection</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”format-detection”</span> <span class="attribute">content</span>=<span class="value">”telephone=no”</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>你明明写的一串数字没加链接样式，而iPhone会自动把你这个文字加链接样式、并且点击这个数字还会自动拨号！想去掉这个拨号链接该如何操作呢？这时我们的meta又该大显神通了，代码如下</p>
-<p>telephone=no就禁止了把数字转化为拨号链接！</p>
-<p>telephone=yes就开启了把数字转化为拨号链接，要开启转化功能，这个meta就不用写了,在默认是情况下就是开启！</p>
-<h4 id="2-_Meta__u4E4B_apple-mobile-web-app-capable"><a href="#2-_Meta__u4E4B_apple-mobile-web-app-capable" class="headerlink" title="2.  Meta 之 apple-mobile-web-app-capable"></a>2.  Meta 之 apple-mobile-web-app-capable</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”apple-mobile-web-app-capable”</span> <span class="attribute">content</span>=<span class="value">”yes”</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这meta的作用就是删除默认的苹果工具栏和菜单栏。content有两个值”yes”和”no”,当我们需要显示工具栏和菜单栏时，这个行meta就不用加了，默认就是显示。加了该meta的情况</p>
-<h4 id="3-_Meta__u4E4B_apple-mobile-web-app-status-bar-style"><a href="#3-_Meta__u4E4B_apple-mobile-web-app-status-bar-style" class="headerlink" title="3.  Meta 之 apple-mobile-web-app-status-bar-style"></a>3.  Meta 之 apple-mobile-web-app-status-bar-style</h4><pre><code>&lt;meta name=”apple-mobile-web-app-status-bar-style” content=”default” /&gt;
-&lt;meta name=”apple-mobile-web-app-status-bar-style” content=”black” /&gt;
-&lt;meta name=”apple-mobile-web-app-status-bar-style” content=”black-translucent” /&gt;
-</code></pre><p>作用是控制状态栏显示样式</p>
-<h4 id="4-_Meta__u4E4B_apple-mobile"><a href="#4-_Meta__u4E4B_apple-mobile" class="headerlink" title="4. Meta 之 apple-mobile"></a>4. Meta 之 apple-mobile</h4><p>apple-touch-icon:在IOS6及以下的版本会自动为图标添加一层高光效果（IOS7开始已使用扁平化的设计风格）</p>
-<p>使用apple-touch-icon-precomposed属性为“设计原图图标”；</p>
-<h4 id="5-_meta__u4E4B_u91CD_u5B9A_u5411_u548C_u5B9A_u65F6_u5237_u65B0_u529F_u80FD"><a href="#5-_meta__u4E4B_u91CD_u5B9A_u5411_u548C_u5B9A_u65F6_u5237_u65B0_u529F_u80FD" class="headerlink" title="5. meta 之重定向和定时刷新功能"></a>5. meta 之重定向和定时刷新功能</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 每隔5秒定时刷新 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="title">meta http-equiv="refresh" content="5;</span> <span class="attribute">url</span>=<span class="value">" /&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="6_OS_Web_app_u542F_u52A8_u52A8_u753B"><a href="#6_OS_Web_app_u542F_u52A8_u52A8_u753B" class="headerlink" title="6 OS Web app启动动画"></a>6 OS Web app启动动画</h4><p>由于iPad 的启动画面是不包括状态栏区域的。所以启动图片需要减去状态栏区域所对应的方向上的20px大小，相应地在retina设备上要减去40px的大小。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-320x460.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 320px)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-640x960.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 320px) and (-webkit-device-pixel-ratio: 2)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-768x1004.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 768px) and (orientation: portrait)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-748x1024.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 768px) and (orientation: landscape)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-1536x2008.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-2048x1496.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h4 id="1__u79FB_u52A8_u7AEF_u90AE_u7BB1_u8BC6_u522B_uFF08Android_uFF09"><a href="#1__u79FB_u52A8_u7AEF_u90AE_u7BB1_u8BC6_u522B_uFF08Android_uFF09" class="headerlink" title="1 移动端邮箱识别（Android）"></a>1 移动端邮箱识别（Android）</h4><p>与电话号码的识别一样，在安卓上会对符合邮箱格式的字符串进行识别，我们可以通过如下的meta来管别邮箱的自动识别：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;meta content=<span class="string">"email=no"</span> <span class="property">name</span>=<span class="string">"format-detection"</span> /&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="u63A8_u8350_u8D44_u6E90"><a href="#u63A8_u8350_u8D44_u6E90" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://www.imooc.com/article/1115" target="_blank" rel="external">移动开发技巧</a></p>
-<p><a href="http://www.cnblogs.com/pifoo/archive/2011/05/28/webkit-webapp.html" target="_blank" rel="external">移动开发技巧2</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/01/09/2016-01-09/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/09/2016-01-09/" data-id="cijl2ww2l000243q4iwmapg5w" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/09/2016-01-09/" data-id="cil81g16b000z21s6rm33p7hm" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/09/2016-01-09/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/app/">app</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/meta/">meta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-08" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/08/2016-01-08/" class="article-date">
-  <time datetime="2016-01-07T16:00:00.000Z" itemprop="datePublished">2016-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/08/2016-01-08/">移动开发webkit</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="webkit-tap-highlight-color_3Argba_28255_2C255_2C255_2C0_29"><a href="#webkit-tap-highlight-color_3Argba_28255_2C255_2C255_2C0_29" class="headerlink" title="-webkit-tap-highlight-color:rgba(255,255,255,0)"></a>-webkit-tap-highlight-color:rgba(255,255,255,0)</h3><p>可以同时屏蔽ios和android下点击元素时出现的<strong>阴影</strong>。 </p>
-<p>备注：transparent的属性值在android下无效。</p>
-<h3 id="webkit-appearance_3Anone"><a href="#webkit-appearance_3Anone" class="headerlink" title="-webkit-appearance:none"></a>-webkit-appearance:none</h3><p>可以同时屏蔽输入框怪异的内阴影。</p>
-<h3 id="webkit-transform_3Atranslate3d_280_2C_0_2C_0_29"><a href="#webkit-transform_3Atranslate3d_280_2C_0_2C_0_29" class="headerlink" title="-webkit-transform:translate3d(0, 0, 0)"></a>-webkit-transform:translate3d(0, 0, 0)</h3><p>在ios下可以让动画更加流畅（这个属性会调用硬件加速模式），但是在android下不可乱用，很多见所未见的bug就是因为这个。</p>
-<h3 id="webkit-background-size"><a href="#webkit-background-size" class="headerlink" title="-webkit-background-size"></a>-webkit-background-size</h3><p>可以做高清图标，不过一些低版本的android只能识别background-size，所以有必要两个都要写上；用这个属性的时候推荐树勇cover这个值，可以自动去匹配宽和高。</p>
-<h3 id="webkit-touch-callout_3A_none_3B"><a href="#webkit-touch-callout_3A_none_3B" class="headerlink" title="-webkit-touch-callout: none;"></a>-webkit-touch-callout: none;</h3><p>长按时不触发系统的菜单, 可用在图片上加这个属性禁止下载图片;</p>
-<p>亲测iOS可以，Android不支持</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">img</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-touch-callout</span>:<span class="value"> none</span></span>; </span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="webkit-user-select"><a href="#webkit-user-select" class="headerlink" title="-webkit-user-select"></a>-webkit-user-select</h3><p>不是标准属性</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">-webkit-user-select</span>: none; <span class="comment">//文档中不让文本选择</span></span><br><span class="line"><span class="attribute">-webkit-user-select</span>: text; <span class="comment">//文档中只可以操作文本</span></span><br><span class="line"><span class="attribute">-webkit-user-select</span>: all;</span><br></pre></td></tr></table></figure>
-<h3 id="webkit-text-size-adjust"><a href="#webkit-text-size-adjust" class="headerlink" title="-webkit-text-size-adjust"></a>-webkit-text-size-adjust</h3><p>主要是兼容Google对于字体的兼容性问题</p>
-<p>当移动设备横竖屏切换时，文本的大小会重新计算，进行相应的缩放，当我们不需要这种情况时，可以选择禁止</p>
-<p>需要注意的是，PC端的该属性已经被移除，该属性在移动端要生效，必须设置 meta viewport。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-text-size-adjust</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="u63A8_u8350_u8D44_u6E90"><a href="#u63A8_u8350_u8D44_u6E90" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://ued.ctrip.com/webkitcss/" target="_blank" rel="external">webkit前缀(携程)</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Webkit_Extensions" target="_blank" rel="external">mozilla_ webkit</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/08/2016-01-08/" data-id="cijl2pjhh000043q409d7dc78" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/08/2016-01-08/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/app/">app</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webkit/">webkit</a></li></ul>
 
     </footer>
   </div>
@@ -901,7 +583,7 @@ Email: YOUR_EMAIL@domain.com
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/app/" style="font-size: 20px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 13.33px;">http</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a>
+      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/app/" style="font-size: 20px;">app</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 13.33px;">http</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/meta/" style="font-size: 10px;">meta</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a>
     </div>
   </div>
 
@@ -983,6 +665,8 @@ Email: YOUR_EMAIL@domain.com
     <a href="/about.html" class="mobile-nav-link">About</a>
   
     <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
   
 </nav>
     
