@@ -3,30 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>npm basic operation | Hello World</title>
+  <title>移动端滚动与内置浏览器出界问题 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="npm ABCnpm updateit‘s good for you to update npm before installing some pkgs.
-npm update -g npm
-npm generates package.jsonnpm init
-npm pulichs pkgregister a accountnpm addusers
-Username: YOUR_USER_NAM">
+  <meta name="description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm basic operation">
-<meta property="og:url" content="http://dukegod.github.io/2016/01/11/2016-01-11/index.html">
+<meta property="og:title" content="移动端滚动与内置浏览器出界问题">
+<meta property="og:url" content="http://dukegod.github.io/2016/01/12/2016-01-12-scroll/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="npm ABCnpm updateit‘s good for you to update npm before installing some pkgs.
-npm update -g npm
-npm generates package.jsonnpm init
-npm pulichs pkgregister a accountnpm addusers
-Username: YOUR_USER_NAM">
-<meta property="og:updated_time" content="2016-01-21T02:05:34.000Z">
+<meta property="og:description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
+<meta property="og:updated_time" content="2016-01-22T16:59:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm basic operation">
-<meta name="twitter:description" content="npm ABCnpm updateit‘s good for you to update npm before installing some pkgs.
-npm update -g npm
-npm generates package.jsonnpm init
-npm pulichs pkgregister a accountnpm addusers
-Username: YOUR_USER_NAM">
+<meta name="twitter:title" content="移动端滚动与内置浏览器出界问题">
+<meta name="twitter:description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
   
   
     <link rel="icon" href="/favicon.png">
@@ -75,10 +63,10 @@ Username: YOUR_USER_NAM">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-01-11" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-01-12-scroll" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/11/2016-01-11/" class="article-date">
-  <time datetime="2016-01-10T16:00:00.000Z" itemprop="datePublished">2016-01-11</time>
+    <a href="/2016/01/12/2016-01-12-scroll/" class="article-date">
+  <time datetime="2016-01-11T16:00:00.000Z" itemprop="datePublished">2016-01-12</time>
 </a>
     
   </div>
@@ -89,7 +77,7 @@ Username: YOUR_USER_NAM">
         
   
     <h1 class="article-title" itemprop="name">
-      npm basic operation
+      移动端滚动与内置浏览器出界问题
     </h1>
   
 
@@ -97,29 +85,37 @@ Username: YOUR_USER_NAM">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="npm_ABC"><a href="#npm_ABC" class="headerlink" title="npm ABC"></a>npm ABC</h2><h4 id="npm_update"><a href="#npm_update" class="headerlink" title="npm update"></a>npm update</h4><p>it‘s good for you to update npm before installing some pkgs.</p>
-<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">npm</span> update -g <span class="built_in">npm</span></span><br></pre></td></tr></table></figure>
-<h4 id="npm_generates_package-json"><a href="#npm_generates_package-json" class="headerlink" title="npm generates package.json"></a>npm generates package.json</h4><figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">npm</span> init</span><br></pre></td></tr></table></figure>
-<h2 id="npm_pulichs_pkg"><a href="#npm_pulichs_pkg" class="headerlink" title="npm pulichs pkg"></a>npm pulichs pkg</h2><h3 id="register_a_account"><a href="#register_a_account" class="headerlink" title="register a account"></a>register a account</h3><pre><code>npm addusers
-Username: YOUR_USER_NAME
-Password: YOUR_PASSWORD
-Email: YOUR_EMAIL@domain.com
-</code></pre><p>note: no space after username,or cause error “npm WARN Username may not contain non-url-safe chars”</p>
-<h3 id="npm_publish"><a href="#npm_publish" class="headerlink" title="npm publish"></a>npm publish</h3><p>first  npm login</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">npm login</span><br><span class="line"><span class="string">Username:</span> YOUR_USER_NAME</span><br><span class="line"><span class="string">Password:</span> YOUR_PASSWORD</span><br><span class="line"><span class="string">Email:</span> YOUR_EMAIL<span class="annotation">@domain</span>.com</span><br><span class="line">npm publish</span><br></pre></td></tr></table></figure>
-<p>and then, you can check on the ’<a href="https://www.npmjs.com‘.or" target="_blank" rel="external">https://www.npmjs.com‘.or</a> npm install your own pkg.</p>
-<h2 id="ref-_recommend_source"><a href="#ref-_recommend_source" class="headerlink" title="ref.  recommend source"></a>ref.  recommend source</h2><p><a href="https://docs.npmjs.com/" target="_blank" rel="external">npm doc</a></p>
-<p><a href="http://javascript.ruanyifeng.com/nodejs/npm.html#toc0" target="_blank" rel="external">npm by runayifeng</a></p>
+        <h3 id="u5FEB_u901F_u56DE_u5F39_u6EDA_u52A8_u4EE5_u53CA_u5FAE_u4FE1_u67B6_u6784_u9875_u9762_u7684_u601D_u8003"><a href="#u5FEB_u901F_u56DE_u5F39_u6EDA_u52A8_u4EE5_u53CA_u5FAE_u4FE1_u67B6_u6784_u9875_u9762_u7684_u601D_u8003" class="headerlink" title="快速回弹滚动以及微信架构页面的思考"></a>快速回弹滚动以及微信架构页面的思考</h3><p>我们先来看看回弹滚动在手机浏览器发展的历史：<br>早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;<br>Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；<br>Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；<br>iOS从5.0开始解决了滚动条不可见及增加了快速回弹滚动效果</p>
+<h4 id="u6EDA_u52A8_u8BF4_u660E"><a href="#u6EDA_u52A8_u8BF4_u660E" class="headerlink" title="滚动说明"></a>滚动说明</h4><p>全局滚动， 滚动条在body节点或更顶层<br>局部滚动， 滚动条在body下某一个dom节点上</p>
+<h3 id="ios"><a href="#ios" class="headerlink" title="ios"></a>ios</h3><pre><code>body{
+-webkit-overflow-scrolling: touch;
+}
+</code></pre><p>这个属性可以实现类似原生的效果，快速回弹。<br>但是会出项出界问题，就是当你在微信或者QQ中打开页面的时候，滚动的时候，你会看看‘网页通过‘’提供支持’一个黑色的背景样式。</p>
+<h5 id="u8003_u8651_u6362_u4E00_u4E2A_u601D_u60F3_uFF0C_u5C40_u90E8_u6EDA_u52A8"><a href="#u8003_u8651_u6362_u4E00_u4E2A_u601D_u60F3_uFF0C_u5C40_u90E8_u6EDA_u52A8" class="headerlink" title="考虑换一个思想，局部滚动"></a>考虑换一个思想，局部滚动</h5><ul>
+<li>body加上-webkit-overflow-scrolling: touch;</li>
+<li>通过 <a href="https://github.com/joelambert/ScrollFix" target="_blank" rel="external">ScrollFix</a> 解决出界问题</li>
+</ul>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>-webkit-overflow-scrolling: touch 在Android在没有效果，而且用类似ios那个方法比较的坑爹，滚动条不能实时滚动</p>
+<h4 id="u7528_u5168_u5C40_u6EDA_u52A8_u6548_u679C"><a href="#u7528_u5168_u5C40_u6EDA_u52A8_u6548_u679C" class="headerlink" title="用全局滚动效果"></a>用全局滚动效果</h4><ul>
+<li>header, footer 用fixed属性固定</li>
+<li>内容区域用padding 填充上下的高度问题</li>
+</ul>
+<h2 id="u6700_u7EC8_u5B9E_u73B0_u65B9_u6848"><a href="#u6700_u7EC8_u5B9E_u73B0_u65B9_u6848" class="headerlink" title="最终实现方案"></a>最终实现方案</h2><ul>
+<li>第一步先通过 UA判断 客户端类型 <a href="https://github.com/dukegod/isClient" target="_blank" rel="external">检测客户端</a></li>
+<li>分不同的客户端加载不同的样式 </li>
+<li>对于需要固定部分，取消默认的touchmove 属性</li>
+</ul>
+<p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/fastScroll" target="_blank" rel="external">项目地址</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11/" data-id="cil81g167000q21s68b3dyymd" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12-scroll/" data-id="ciluphb0l0008x4q4atjghwby" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/01/11/2016-01-11/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/01/12/2016-01-12-scroll/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/app/">app</a></li></ul>
 
     </footer>
   </div>
@@ -127,19 +123,19 @@ Email: YOUR_EMAIL@domain.com
     
 <nav id="article-nav">
   
-    <a href="/2016/01/12/2016-01-12/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/13/2016-01-13/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          移动端滚动与内置浏览器出界问题
+          事件委托
         
       </div>
     </a>
   
   
-    <a href="/2016/01/10/2016-01-10/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/11/2016-01-11-npm/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">前端开发字体研究</div>
+      <div class="article-nav-title">npm basic operation</div>
     </a>
   
 </nav>
@@ -196,11 +192,11 @@ Email: YOUR_EMAIL@domain.com
       <ul>
         
           <li>
-            <a href="/2016/01/22/2016-01-22/">ajax note</a>
+            <a href="/2016/01/22/2016-01-22-ajax/">ajax note</a>
           </li>
         
           <li>
-            <a href="/2016/01/21/2016-01-21/">http 协议</a>
+            <a href="/2016/01/21/2016-01-21-http/">http 协议</a>
           </li>
         
           <li>
@@ -264,7 +260,7 @@ Email: YOUR_EMAIL@domain.com
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/01/11/2016-01-11/';
+  var disqus_url = 'http://dukegod.github.io/2016/01/12/2016-01-12-scroll/';
   
   (function(){
     var dsq = document.createElement('script');
