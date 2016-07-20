@@ -17,7 +17,7 @@ brew github
 brew ref
 brew github
 在线查找安装包">
-<meta property="og:updated_time" content="2016-07-12T03:24:53.000Z">
+<meta property="og:updated_time" content="2016-07-14T10:36:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAC配置总结">
 <meta name="twitter:description" content="软件安装homebrewwiki 参考
@@ -101,7 +101,7 @@ brew github
 <a id="more"></a>
 <h4 id="u5305_u5B89_u88C5_u8DEF_u5F84"><a href="#u5305_u5B89_u88C5_u8DEF_u5F84" class="headerlink" title="包安装路径"></a>包安装路径</h4><p><strong>它将它所有的文件都保存在一个独立的目录中：</strong></p>
 <figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span></span><br></pre></td></tr></table></figure>
-<h4 id="homebrew__u76F8_u5173_u7684_u64CD_u4F5C"><a href="#homebrew__u76F8_u5173_u7684_u64CD_u4F5C" class="headerlink" title="homebrew 相关的操作"></a>homebrew 相关的操作</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">brew update                        <span class="preprocessor">#更新brew可安装包，建议每次执行一下</span></span><br><span class="line">brew search php55                  <span class="preprocessor">#搜索php5<span class="number">.5</span></span></span><br><span class="line">brew tap josegonzalez/php          <span class="preprocessor">#安装扩展 gihhub_user/repo   </span></span><br><span class="line">brew tap                           <span class="preprocessor">#查看安装的扩展列表</span></span><br><span class="line">brew install php55                 <span class="preprocessor">#安装php5<span class="number">.5</span></span></span><br><span class="line">brew remove  php55                 <span class="preprocessor">#卸载php5<span class="number">.5</span></span></span><br><span class="line">brew upgrade php55                 <span class="preprocessor">#升级php5<span class="number">.5</span></span></span><br><span class="line">brew options php55                 <span class="preprocessor">#查看php5<span class="number">.5</span>安装选项</span></span><br><span class="line">brew info    php55                 <span class="preprocessor">#查看php5<span class="number">.5</span>相关信息</span></span><br><span class="line">brew home    php55                 <span class="preprocessor">#访问php5<span class="number">.5</span>官方网站</span></span><br><span class="line">brew services <span class="built_in">list</span>                 <span class="preprocessor">#查看系统通过 brew 安装的服务</span></span><br><span class="line">brew services cleanup              <span class="preprocessor">#清除已卸载无用的启动配置文件</span></span><br><span class="line">brew services restart php55        <span class="preprocessor">#重启php-fpm</span></span><br><span class="line">brew <span class="built_in">list</span>         列出已安装的软件包</span><br><span class="line">brew deps wget   列出软件包的依赖关系</span><br><span class="line">brew upgrade 或 brew upgrade wget   更新过时的软件包（全部或指定）</span><br></pre></td></tr></table></figure>
+<h4 id="homebrew__u76F8_u5173_u7684_u64CD_u4F5C"><a href="#homebrew__u76F8_u5173_u7684_u64CD_u4F5C" class="headerlink" title="homebrew 相关的操作"></a>homebrew 相关的操作</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">brew update                        	<span class="preprocessor">#更新brew可安装包，建议每次执行一下</span></span><br><span class="line">brew search php55                  	<span class="preprocessor">#搜索php5<span class="number">.5</span></span></span><br><span class="line">brew tap josegonzalez/php          	<span class="preprocessor">#安装扩展 gihhub_user/repo   </span></span><br><span class="line">brew tap                           	<span class="preprocessor">#查看安装的扩展列表</span></span><br><span class="line">brew install php55                 	<span class="preprocessor">#安装php5<span class="number">.5</span></span></span><br><span class="line">brew remove  php55                 	<span class="preprocessor">#卸载php5<span class="number">.5</span></span></span><br><span class="line">brew upgrade php55                 	<span class="preprocessor">#升级php5<span class="number">.5</span></span></span><br><span class="line">brew options php55                 	<span class="preprocessor">#查看php5<span class="number">.5</span>安装选项</span></span><br><span class="line">brew info    php55                 	<span class="preprocessor">#查看php5<span class="number">.5</span>相关信息</span></span><br><span class="line">brew home    php55                 	<span class="preprocessor">#访问php5<span class="number">.5</span>官方网站</span></span><br><span class="line">brew services <span class="built_in">list</span>                 	<span class="preprocessor">#查看系统通过 brew 安装的服务</span></span><br><span class="line">brew services cleanup              	<span class="preprocessor">#清除已卸载无用的启动配置文件</span></span><br><span class="line">brew services restart php55        	<span class="preprocessor">#重启php-fpm/mysql也可以</span></span><br><span class="line">brew <span class="built_in">list</span>         								 	<span class="preprocessor">#列出已安装的软件包</span></span><br><span class="line">brew deps wget   									 	<span class="preprocessor">#列出软件包的依赖关系</span></span><br><span class="line">brew upgrade 或 brew upgrade wget  	<span class="preprocessor">#更新过时的软件包（全部或指定）</span></span><br><span class="line">brew outdated											 	<span class="preprocessor">#找出已过期的软件包（即已经有更新版本的软件包）	</span></span><br><span class="line">brew cleanup 或 brew cleanup wget	 	<span class="preprocessor">#清楚过时的软件包（全部或指定）</span></span><br></pre></td></tr></table></figure>
 <h4 id="homebrew__u5B89_u88C5_u8F6F_u4EF6_u64CD_u4F5C"><a href="#homebrew__u5B89_u88C5_u8F6F_u4EF6_u64CD_u4F5C" class="headerlink" title="homebrew 安装软件操作"></a>homebrew 安装软件操作</h4><h5 id="u5B89_u88C5archey_uFF0C__u5728_u7EC8_u7AEF_u663E_u793A_u4F60_u7684_u7535_u8111_u4FE1_u606F"><a href="#u5B89_u88C5archey_uFF0C__u5728_u7EC8_u7AEF_u663E_u793A_u4F60_u7684_u7535_u8111_u4FE1_u606F" class="headerlink" title="安装archey， 在终端显示你的电脑信息"></a>安装archey， 在终端显示你的电脑信息</h5><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span>install archey</span><br></pre></td></tr></table></figure>
 <p>如果安装好了没有效果，可以在命令行中输入：archey，就会得到你想要的结果;如果想在每次启动的时候都可以启动这个命令可以添加到~/.bashr,~/.bash_profile中</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="id">#archey</span> <span class="attribute">auto</span></span><br><span class="line">archey</span><br></pre></td></tr></table></figure>
@@ -114,7 +114,7 @@ brew github
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/01/2016-06-01-MAC配置/" data-id="ciqki503z000g24vm2de52wv3" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/01/2016-06-01-MAC配置/" data-id="ciqv0wtj4000jsivmpio7iqbu" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/06/01/2016-06-01-MAC配置/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -137,9 +137,9 @@ brew github
     </a>
   
   
-    <a href="/2016/05/01/2016-05-01-苹果下弹框问题/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/20/2016-05-20-Promise/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">苹果下弹框问题</div>
+      <div class="article-nav-title">Promise</div>
     </a>
   
 </nav>
@@ -164,7 +164,7 @@ brew github
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sockit/">sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zepto/">zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sockit/">sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zepto/">zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
     </div>
   </div>
 
@@ -174,7 +174,7 @@ brew github
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/MAC/" style="font-size: 14px;">MAC</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/app/" style="font-size: 20px;">app</a> <a href="/tags/css/" style="font-size: 16px;">css</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12px;">http</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/meta/" style="font-size: 12px;">meta</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sockit/" style="font-size: 10px;">sockit</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/zepto/" style="font-size: 12px;">zepto</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/生活点滴/" style="font-size: 14px;">生活点滴</a>
+      <a href="/tags/MAC/" style="font-size: 14px;">MAC</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/app/" style="font-size: 18px;">app</a> <a href="/tags/css/" style="font-size: 16px;">css</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12px;">http</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/meta/" style="font-size: 12px;">meta</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sockit/" style="font-size: 10px;">sockit</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/zepto/" style="font-size: 12px;">zepto</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/生活点滴/" style="font-size: 14px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10px;">转载翻译</a>
     </div>
   </div>
 
@@ -183,7 +183,7 @@ brew github
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -196,7 +196,7 @@ brew github
       <ul>
         
           <li>
-            <a href="/2016/06/03/2016-06-04-MAC配置-shell/">基本shell命令</a>
+            <a href="/2016/07/01/2016-07-01-react介绍/">react介绍</a>
           </li>
         
           <li>
@@ -208,11 +208,11 @@ brew github
           </li>
         
           <li>
-            <a href="/2016/06/02/2016-06-02-MAC配置第二篇/">MAC配置第二篇</a>
+            <a href="/2016/06/03/2016-06-04-MAC配置-shell/">基本shell命令</a>
           </li>
         
           <li>
-            <a href="/2016/06/01/2016-06-01-MAC配置/">MAC配置总结</a>
+            <a href="/2016/06/02/2016-06-02-MAC配置第二篇/">MAC配置第二篇</a>
           </li>
         
       </ul>

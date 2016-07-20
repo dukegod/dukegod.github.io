@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Promise | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A JavaScript Promise represents the result of an operation that hasn’t been completed yet, but will at some undetermined point in the future. An example of such an operation is a network request. When">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise">
+<meta property="og:url" content="http://dukegod.github.io/2016/05/20/2016-05-20-Promise/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="A JavaScript Promise represents the result of an operation that hasn’t been completed yet, but will at some undetermined point in the future. An example of such an operation is a network request. When">
+<meta property="og:image" content="https://bitsofco.de/content/images/2016/06/Creating-Promises.png">
+<meta property="og:image" content="https://bitsofco.de/content/images/2016/06/Using-Promises.png">
+<meta property="og:image" content="https://bitsofco.de/content/images/2016/06/Error-Handling.png">
+<meta property="og:image" content="https://bitsofco.de/content/images/2016/07/Chaining-Copy-1.png">
+<meta property="og:image" content="https://bitsofco.de/content/images/2016/06/Parallel-.png">
+<meta property="og:image" content="https://bitsofco.de/content/images/2016/07/Network-Requests-in-Parallel.png">
+<meta property="og:updated_time" content="2016-07-20T15:15:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Promise">
+<meta name="twitter:description" content="A JavaScript Promise represents the result of an operation that hasn’t been completed yet, but will at some undetermined point in the future. An example of such an operation is a network request. When">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      <!---  <a href="/" id="logo">Hello World</a> -->
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about.html">About</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukegod.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2016-05-20-Promise" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/20/2016-05-20-Promise/" class="article-date">
+  <time datetime="2016-05-19T16:00:00.000Z" itemprop="datePublished">2016-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Promise
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A JavaScript Promise represents the result of an operation that hasn’t been completed yet, but will at some undetermined point in the future. An example of such an operation is a network request. When we fetch data from some source, for example an API, there is no way for us to absolutely determine when the response will be received.</p>
+<p>This can be problematic if we have other operations dependent on the completion of this network request. Without Promises, we would have to use callbacks to deal with actions that need to happen in sequence. This isn’t necessarily a problem if we only have one asynchronous action. But if we need to complete multiple asynchronous steps in sequence, callbacks become unmanageable and result in the infamous callback hell.</p>
+<a id="more"></a>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">doSomething<span class="list">(<span class="keyword">function</span><span class="list">(<span class="keyword">responseOne</span>)</span> &#123;</span><br><span class="line">    doSomethingElse<span class="list">(<span class="keyword">responseOne</span>, function<span class="list">(<span class="keyword">responseTwo</span>, err)</span> &#123;</span><br><span class="line">        if <span class="list">(<span class="keyword">err</span>)</span> &#123; handleError<span class="list">(<span class="keyword">err</span>)</span><span class="comment">; &#125;</span></span><br><span class="line">        doMoreStuff<span class="list">(<span class="keyword">responseTwo</span>, function<span class="list">(<span class="keyword">responseThree</span>, err)</span> &#123;</span><br><span class="line">            if <span class="list">(<span class="keyword">err</span>)</span> &#123; handleAnotherError<span class="list">(<span class="keyword">err</span>)</span><span class="comment">; &#125;</span></span><br><span class="line">            doFinalThing<span class="list">(<span class="keyword">responseThree</span>, function<span class="list">(<span class="keyword">err</span>)</span> &#123;</span><br><span class="line">                if <span class="list">(<span class="keyword">err</span>)</span> &#123; handleAnotherError<span class="list">(<span class="keyword">err</span>)</span><span class="comment">; &#125;</span></span><br><span class="line">                // Complete</span><br><span class="line">            &#125;)</span><span class="comment">; // end doFinalThing</span></span><br><span class="line">        &#125;)</span><span class="comment">; // end doMoreStuff</span></span><br><span class="line">    &#125;)</span><span class="comment">; // end doSomethingElse</span></span><br><span class="line">&#125;)</span><span class="comment">; // end doSomething</span></span><br></pre></td></tr></table></figure>
+<p>Promises provide a standardised and cleaner method of dealing with tasks that need to happen in sequence.</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">doSomething</span><span class="params">()</span></span></span><br><span class="line">.<span class="function"><span class="title">then</span><span class="params">(doSomethingElse)</span></span></span><br><span class="line">.<span class="function"><span class="title">catch</span><span class="params">(handleError)</span></span></span><br><span class="line">.<span class="function"><span class="title">then</span><span class="params">(doMoreStuff)</span></span></span><br><span class="line">.<span class="function"><span class="title">then</span><span class="params">(doFinalThing)</span></span></span><br><span class="line">.<span class="function"><span class="title">catch</span><span class="params">(handleAnotherError)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="Creating_Promises"><a href="#Creating_Promises" class="headerlink" title="Creating Promises"></a>Creating Promises</h3><p>A Promise is created using the Promise Constructor. This accepts a function with two arguments (resolve &amp; reject) as its only parameter.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123; <span class="comment">/* Promise content */</span> &#125; )</span><br></pre></td></tr></table></figure>
+<p><img src="https://bitsofco.de/content/images/2016/06/Creating-Promises.png" alt=""></p>
+<p>Within the function, we can execute whatever asynchronous task we want. To mark the promise as fulfilled, we call resolve(), optionally passing a value we want to return. To mark the promise as rejected or failed, we call reject(), optionally passing an error message. Before a promise is fulfilled or rejected, it is in a pending state.</p>
+<p>Here is a common promise-ified version of an XMLHttpRequest -</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* CREDIT - Jake Archibald, http://www.html5rocks.com/en/tutorials/es6/promises/ */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> req = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    req.open(<span class="string">'GET'</span>, url);</span><br><span class="line"></span><br><span class="line">    req.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (req.status == <span class="number">200</span>) &#123;</span><br><span class="line">          resolve(req.response); <span class="comment">/* PROMISE RESOLVED */</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          reject(<span class="built_in">Error</span>(req.statusText)); <span class="comment">/* PROMISE REJECTED */</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    req.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; reject(<span class="built_in">Error</span>(<span class="string">"Network Error"</span>)); &#125;;</span><br><span class="line">    req.send();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Using Promises</p>
+<p>Once we have created the Promise, we need to actually use it. To execute the promise-ified function, we can call it like any regular function. But, because it is a promise, we now have access to the .then() method, which we can append to the function and which will be executed when the Promise no longer pending.</p>
+<p>The .then()method accepts two optional parameters. First, a function called if the promise if fulfilled. Second, a function called if the promise is rejected.</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get</span>(url)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span><span class="params">(response)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* successFunction */</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span><span class="params">(err)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* errorFunction */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://bitsofco.de/content/images/2016/06/Using-Promises.png" alt=""></p>
+<p>Handling Errors</p>
+<p>Since both the success and error functions are optional, we can split them into two .then()s for better readability.</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get</span>(url)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span><span class="params">(response)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* successFunction */</span></span><br><span class="line">&#125;, <span class="literal">undefined</span>)</span><br><span class="line">.then(<span class="literal">undefined</span>, <span class="function"><span class="keyword">function</span><span class="params">(err)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* errorFunction */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>To make things even more readable, we make use of the .catch() method, which is a shorthand for a .then(undefined, errorFunction).</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get</span>(url)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span><span class="params">(response)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* successFunction */</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span><span class="params">(err)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* errorFunction */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://bitsofco.de/content/images/2016/06/Error-Handling.png" alt=""></p>
+<p>Chaining</p>
+<p>The real value in promises is when we have multiple asynchronous functions we need to execute in order. We can chain .then() and .catch() together to create a sequence of asynchronous functions.</p>
+<p>We do this by returning another promise within a success or error function. For example -</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">get</span>(url)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span><span class="params">(response)</span> </span>&#123;</span><br><span class="line">    response = JSON.parse(response);</span><br><span class="line">    <span class="keyword">var</span> secondURL = response.data.url</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">get</span>( secondURL ); <span class="comment">/* Return another Promise */</span></span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span><span class="params">(response)</span> </span>&#123;</span><br><span class="line">    response = JSON.parse(response);</span><br><span class="line">    <span class="keyword">var</span> thirdURL = response.data.url</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">get</span>( thirdURL ); <span class="comment">/* Return another Promise */</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span><span class="params">(err)</span> </span>&#123;</span><br><span class="line">    handleError(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>If a promise within the chain resolved, it will move on to the next success function (.then()) in the sequence. If, on the other hand, a promise rejected, it will jump to the next error function (.catch()) in the sequence.</p>
+<p><img src="https://bitsofco.de/content/images/2016/07/Chaining-Copy-1.png" alt=""></p>
+<p>Executing Promises in Parallel</p>
+<p>There may be cases where we want to execute a bunch of promise-ified functions in parallel, and then perform an action only when all the promises have been fulfilled. For example, if we want to fetch a bunch of images and display them on the page.</p>
+<p>To do this, we need to make use of two methods. First, the Array.map() method allows us to perform an action on each item in an array, and creates a new array of the results of these actions.</p>
+<p>Second, the Promise.all() method returns a promise that is only resolved when every promise within an array is resolved. If any single promise within the array is rejected, the Promise.all() promise is also rejected.</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arrayOfURLs = [<span class="string">'one.json'</span>, <span class="string">'two.json'</span>, <span class="string">'three.json'</span>, <span class="string">'four.json'</span>];</span><br><span class="line"><span class="keyword">var</span> arrayOfPromises = arrayOfURLs.map(<span class="keyword">get</span>);</span><br><span class="line"></span><br><span class="line">Promise.all(arrayOfPromises)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span><span class="params">(arrayOfResults)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* Do something when all Promises are resolved */</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span><span class="params">(err)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* Handle error is any of Promises fails */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://bitsofco.de/content/images/2016/06/Parallel-.png" alt=""></p>
+<p>If we look at the Network panel in our Development tools, we can see that all the fetch requests are happening in parallel.</p>
+<p><img src="https://bitsofco.de/content/images/2016/07/Network-Requests-in-Parallel.png" alt=""></p>
+<p><a href="https://bitsofco.de/javascript-promises-101/?_branch_match_id=284321035149499930" target="_blank" rel="external">原文来自</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/05/20/2016-05-20-Promise/" data-id="ciqv0wtj8000lsivm5cwuzizw" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/05/20/2016-05-20-Promise/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/01/2016-06-01-MAC配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MAC配置总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/01/2016-05-01-苹果下弹框问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">苹果下弹框问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sockit/">sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zepto/">zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/MAC/" style="font-size: 14px;">MAC</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/app/" style="font-size: 18px;">app</a> <a href="/tags/css/" style="font-size: 16px;">css</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12px;">http</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/meta/" style="font-size: 12px;">meta</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sockit/" style="font-size: 10px;">sockit</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/zepto/" style="font-size: 12px;">zepto</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/生活点滴/" style="font-size: 14px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10px;">转载翻译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/01/2016-07-01-react介绍/">react介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/03/2016-06-05-MAC配置-vim/">vim 总结</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/03/2016-06-03-MAC配置第三篇/">MAC配置第三篇</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/03/2016-06-04-MAC配置-shell/">基本shell命令</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/02/2016-06-02-MAC配置第二篇/">MAC配置第二篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 liu hui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <div id="link">
+  	<a href="https://github.com/dukegod">Github</a>
+  	<a href="https://www.zhihu.com/people/dukegod">知</a>
+  	<a href="https://www.quora.com/profile/Hui-Liu-37">Quora</a>
+  	<a href="https://twitter.com/dukegod1991">Twitter</a>
+  	<a href="https://www.facebook.com/profile.php?id=100009852840417">Facebook</a>
+    <p style="margin-top:10px">
+      <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </p>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about.html" class="mobile-nav-link">About</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'dukehui1991';
+  
+  var disqus_url = 'http://dukegod.github.io/2016/05/20/2016-05-20-Promise/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
