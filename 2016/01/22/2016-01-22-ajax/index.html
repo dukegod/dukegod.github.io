@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="ajax的全称是Asynchronous JavaScript and XML
 原理与主要的技术点Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。">
-<meta property="og:updated_time" content="2016-02-29T13:45:00.000Z">
+<meta property="og:updated_time" content="2016-08-04T01:39:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax note">
 <meta name="twitter:description" content="ajax的全称是Asynchronous JavaScript and XML
@@ -104,41 +104,41 @@
 </ul>
 <p>把指定首部设置为所提供的值。在设置任何首部之前必须先调用open()。设置header并和请求一起发送 (‘post’方法一定要 )</p>
 <h5 id="u4E3B_u8981_u5C5E_u6027"><a href="#u4E3B_u8981_u5C5E_u6027" class="headerlink" title="主要属性"></a>主要属性</h5><ul>
-<li>onreadystatechange    </li>
+<li>onreadystatechange</li>
 </ul>
 <p>状态改变的事件触发器，每个状态改变时都会触发这个事件处理器，通常会调用一个JavaScript函数</p>
 <ul>
-<li>readyState    </li>
+<li>readyState</li>
 </ul>
 <p>请求的状态。有5个可取值：0 = 未初始化，1 = 正在加载，2 = 已加载，3 = 交互中，4 = 完成</p>
 <ul>
-<li>responseText    </li>
+<li>responseText</li>
 </ul>
 <p>服务器的响应，返回数据的文本。</p>
 <ul>
-<li>responseXML    </li>
+<li>responseXML</li>
 </ul>
 <p>服务器的响应，返回数据的兼容DOM的XML文档对象 ，这个对象可以解析为一个DOM对象。</p>
 <ul>
-<li>responseBody     </li>
+<li>responseBody</li>
 </ul>
 <p>服务器返回的主题（非文本格式）</p>
 <ul>
-<li>responseStream    </li>
+<li>responseStream</li>
 </ul>
 <p>服务器返回的数据流</p>
 <ul>
-<li>status    </li>
+<li>status</li>
 </ul>
 <p>服务器的HTTP状态码（如：404 = “文件末找到” 、200 =”成功” ，等等）</p>
 <ul>
-<li>statusText    </li>
+<li>statusText</li>
 </ul>
 <p>服务器返回的状态文本信息 ，HTTP状态码的相应文本（OK或Not Found（未找到）等等）</p>
 <h4 id="u7B80_u5355_u7684_u5C01_u88C5_uFF08_u4E0D_u8003_u8651IE_uFF09"><a href="#u7B80_u5355_u7684_u5C01_u88C5_uFF08_u4E0D_u8003_u8651IE_uFF09" class="headerlink" title="简单的封装（不考虑IE）"></a>简单的封装（不考虑IE）</h4><p>get方法</p>
-<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> ajaxGet()&#123; </span><br><span class="line">	var <span class="built_in">request</span> = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	<span class="built_in">request</span>.open(<span class="string">"GET"</span>, <span class="string">"server.php?number="</span> + document.getElementById(<span class="string">"keyword"</span>).value);</span><br><span class="line">	<span class="built_in">request</span>.send();</span><br><span class="line">	<span class="built_in">request</span>.onreadystatechange = <span class="keyword">function</span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">request</span>.readyState===<span class="number">4</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">request</span>.status===<span class="number">200</span>) &#123; </span><br><span class="line">				document.getElementById(<span class="string">"searchResult"</span>).innerHTML = <span class="built_in">request</span>.responseText;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(<span class="string">"发生错误："</span> + <span class="built_in">request</span>.status);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> ajaxGet()&#123;</span><br><span class="line">	var <span class="built_in">request</span> = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	<span class="built_in">request</span>.open(<span class="string">"GET"</span>, <span class="string">"server.php?number="</span> + document.getElementById(<span class="string">"keyword"</span>).value);</span><br><span class="line">	<span class="built_in">request</span>.send();</span><br><span class="line">	<span class="built_in">request</span>.onreadystatechange = <span class="keyword">function</span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">request</span>.readyState===<span class="number">4</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">request</span>.status===<span class="number">200</span>) &#123;</span><br><span class="line">				document.getElementById(<span class="string">"searchResult"</span>).innerHTML = <span class="built_in">request</span>.responseText;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(<span class="string">"发生错误："</span> + <span class="built_in">request</span>.status);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>post方法</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajaxPOST</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	request.open(<span class="string">"POST"</span>, <span class="string">"server.php"</span>);</span><br><span class="line">	<span class="keyword">var</span> data = <span class="string">"name="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffName"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;number="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffNumber"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;sex="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffSex"</span>).value </span><br><span class="line">	                  + <span class="string">"&amp;job="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffJob"</span>).value;</span><br><span class="line">	request.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">	request.send(data);</span><br><span class="line">	request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (request.readyState===<span class="number">4</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (request.status===<span class="number">200</span>) &#123; </span><br><span class="line">				<span class="built_in">document</span>.getElementById(<span class="string">"createResult"</span>).innerHTML = request.responseText;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(<span class="string">"发生错误："</span> + request.status);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajaxPOST</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	request.open(<span class="string">"POST"</span>, <span class="string">"server.php"</span>);</span><br><span class="line">	<span class="keyword">var</span> data = <span class="string">"name="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffName"</span>).value</span><br><span class="line">	                  + <span class="string">"&amp;number="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffNumber"</span>).value</span><br><span class="line">	                  + <span class="string">"&amp;sex="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffSex"</span>).value</span><br><span class="line">	                  + <span class="string">"&amp;job="</span> + <span class="built_in">document</span>.getElementById(<span class="string">"staffJob"</span>).value;</span><br><span class="line">	request.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">	request.send(data);</span><br><span class="line">	request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (request.readyState===<span class="number">4</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (request.status===<span class="number">200</span>) &#123;</span><br><span class="line">				<span class="built_in">document</span>.getElementById(<span class="string">"createResult"</span>).innerHTML = request.responseText;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(<span class="string">"发生错误："</span> + request.status);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="u4F7F_u7528_u5C01_u88C5_u597D_u7684_u5E93"><a href="#u4F7F_u7528_u5C01_u88C5_u597D_u7684_u5E93" class="headerlink" title="使用封装好的库"></a>使用封装好的库</h4><h5 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h5><p>$.ajax()</p>
 <p>zepto 类似</p>
 <h3 id="u8DE8_u57DF"><a href="#u8DE8_u57DF" class="headerlink" title="跨域"></a>跨域</h3><p>一个域名组成：http：//www.22.com:8080/js.js:  协议，子域名，主域名，端口号，请求资源地址</p>
@@ -151,13 +151,13 @@
 <p>原生js</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonHandle</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    script.setAttribute(<span class="string">"src"</span>,url);</span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">"body"</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//JS插入之后就可以处理数据了</span></span><br></pre></td></tr></table></figure>
 <p>jquery 封装jsonp方法</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123; </span><br><span class="line">   type: <span class="string">"GET"</span>, 	</span><br><span class="line">	url: <span class="string">"http://127.0.0.1/ajax/serverjsonp.php"</span>,</span><br><span class="line">	dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">	jsonp: <span class="string">"callback"</span>, <span class="comment">// 前后端协调命名的</span></span><br><span class="line">	success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (data.success) &#123;</span><br><span class="line">			$(<span class="string">"#searchResult"</span>).html(data.msg);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			$(<span class="string">"#searchResult"</span>).html(<span class="string">"出现错误："</span> + data.msg);</span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;,</span><br><span class="line">	error: <span class="function"><span class="keyword">function</span>(<span class="params">jqXHR</span>)</span>&#123;     </span><br><span class="line">	   alert(<span class="string">"发生错误："</span> + jqXHR.status);  </span><br><span class="line">	&#125;,     </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">"GET"</span>,</span><br><span class="line">	url: <span class="string">"http://127.0.0.1/ajax/serverjsonp.php"</span>,</span><br><span class="line">	dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">	jsonp: <span class="string">"callback"</span>, <span class="comment">// 前后端协调命名的</span></span><br><span class="line">	success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (data.success) &#123;</span><br><span class="line">			$(<span class="string">"#searchResult"</span>).html(data.msg);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			$(<span class="string">"#searchResult"</span>).html(<span class="string">"出现错误："</span> + data.msg);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	error: <span class="function"><span class="keyword">function</span>(<span class="params">jqXHR</span>)</span>&#123;</span><br><span class="line">	   alert(<span class="string">"发生错误："</span> + jqXHR.status);</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>但是jsonp 只能解决get方法的跨域请求</p>
 <ol>
 <li>HTML5提供的XML HttpRequest level2（IE10 一下不支持）</li>
 </ol>
 <p>修改服务端</p>
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Origin</span><span class="keyword">:*</span>')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Methods</span><span class="keyword">:POST</span>,GET')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Credentials</span><span class="keyword">:true</span>')</span><span class="comment">; </span></span><br><span class="line">header<span class="list">(<span class="string">"Content-Type: application/json;charset=utf-8"</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Origin</span><span class="keyword">:*</span>')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Methods</span><span class="keyword">:POST</span>,GET')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="quoted">'Access-Control-Allow-Credentials</span><span class="keyword">:true</span>')</span><span class="comment">;</span></span><br><span class="line">header<span class="list">(<span class="string">"Content-Type: application/json;charset=utf-8"</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p>详情见 XMLHttpRequestXHR2.html</p>
 <p><a href="https://github.com/dukegod/phpBasic/tree/master/ajax" target="_blank" rel="external">项目地址</a></p>
 <h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/sanmaospace/archive/2013/06/15/3137180.html" target="_blank" rel="external">AJAX工作原理及其优缺点</a></p>
@@ -166,12 +166,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22-ajax/" data-id="ciqv0wtk7001vsivm6hxllhot" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22-ajax/" data-id="cirfnto4y002uknvmuk025lch" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/22/2016-01-22-ajax/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -179,11 +179,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/30/2016-01-30-jquery-text-html/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/25/2016-01-25-node版本管理/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          jquery,zepto中的text,html,val深入理解
+          node 版本管理工具
         
       </div>
     </a>
@@ -216,7 +216,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sockit/">sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zepto/">zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sockit/">Sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yeoman/">Yeoman</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
     </div>
   </div>
 
@@ -226,7 +226,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/MAC/" style="font-size: 14px;">MAC</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/app/" style="font-size: 18px;">app</a> <a href="/tags/css/" style="font-size: 16px;">css</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12px;">http</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/meta/" style="font-size: 12px;">meta</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sockit/" style="font-size: 10px;">sockit</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/zepto/" style="font-size: 12px;">zepto</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/生活点滴/" style="font-size: 14px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.71px;">App</a> <a href="/tags/CSS/" style="font-size: 17.14px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.43px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Mac/" style="font-size: 14.29px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.43px;">Meta</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Yeoman/" style="font-size: 10px;">Yeoman</a> <a href="/tags/Zepto/" style="font-size: 11.43px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a> <a href="/tags/开发工具/" style="font-size: 18.57px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 10px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 12.86px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10px;">转载翻译</a>
     </div>
   </div>
 
@@ -252,19 +252,19 @@
           </li>
         
           <li>
-            <a href="/2016/06/03/2016-06-05-MAC配置-vim/">vim 总结</a>
+            <a href="/2016/06/20/2016-06-20-开发规范/">命令规范总结</a>
           </li>
         
           <li>
-            <a href="/2016/06/03/2016-06-03-MAC配置第三篇/">MAC配置第三篇</a>
+            <a href="/2016/06/10/2016-06-10-Shell进阶/">shell</a>
           </li>
         
           <li>
-            <a href="/2016/06/03/2016-06-04-MAC配置-shell/">基本shell命令</a>
+            <a href="/2016/06/09/2016-06-09-Shell基础/">基本shell命令</a>
           </li>
         
           <li>
-            <a href="/2016/06/02/2016-06-02-MAC配置第二篇/">MAC配置第二篇</a>
+            <a href="/2016/06/04/2016-06-04-MAC配置-zsh/">zsh</a>
           </li>
         
       </ul>

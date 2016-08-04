@@ -9,11 +9,11 @@
 主要是针对Mac 中断的一些命令操作。用一个学习一个。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基本shell命令">
-<meta property="og:url" content="http://dukegod.github.io/2016/06/03/2016-06-04-MAC配置-shell/index.html">
+<meta property="og:url" content="http://dukegod.github.io/2016/06/09/2016-06-09-Shell基础/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="shell基本用法总结笔记
 主要是针对Mac 中断的一些命令操作。用一个学习一个。">
-<meta property="og:updated_time" content="2016-07-14T00:51:36.000Z">
+<meta property="og:updated_time" content="2016-08-04T01:43:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基本shell命令">
 <meta name="twitter:description" content="shell基本用法总结笔记
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-06-04-MAC配置-shell" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-06-09-Shell基础" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/03/2016-06-04-MAC配置-shell/" class="article-date">
-  <time datetime="2016-06-02T16:00:00.000Z" itemprop="datePublished">2016-06-03</time>
+    <a href="/2016/06/09/2016-06-09-Shell基础/" class="article-date">
+  <time datetime="2016-06-08T16:00:00.000Z" itemprop="datePublished">2016-06-09</time>
 </a>
     
   </div>
@@ -91,8 +91,14 @@
         <p>shell基本用法总结笔记</p>
 <p>主要是针对Mac 中断的一些命令操作。用一个学习一个。</p>
 <a id="more"></a>
-<h3 id="u6267_u884Cshell__u6587_u4EF6"><a href="#u6267_u884Cshell__u6587_u4EF6" class="headerlink" title="执行shell 文件"></a>执行shell 文件</h3><ul>
-<li>找到文件 </li>
+<h2 id="u663E_u793A_u4E0E_u66F4_u6539shell_28_u767B_u9646_u72B6_u6001_u4E0B_29"><a href="#u663E_u793A_u4E0E_u66F4_u6539shell_28_u767B_u9646_u72B6_u6001_u4E0B_29" class="headerlink" title="显示与更改shell(登陆状态下)"></a>显示与更改shell(登陆状态下)</h2><p>查看系统安装了哪些shell</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">cat <span class="regexp">/etc/</span>shells</span><br></pre></td></tr></table></figure>
+<p>查看当前正在使用的shell：</p>
+<figure class="highlight xquery"><table><tr><td class="code"><pre><span class="line">[rocrocket@localhost ~]$ echo <span class="variable">$SHELL</span></span><br></pre></td></tr></table></figure>
+<p>修改系统中shell</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 改为zsh</span></span><br><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改为bash</span></span><br><span class="line">chsh -s <span class="regexp">/bin/</span>bash</span><br></pre></td></tr></table></figure>
+<h2 id="u6267_u884Cshell__u6587_u4EF6"><a href="#u6267_u884Cshell__u6587_u4EF6" class="headerlink" title="执行shell 文件"></a>执行shell 文件</h2><ul>
+<li>找到文件</li>
 <li>./hw.sh (文件的路径)</li>
 <li>chmod -R 777 hw.sh （授予权限）</li>
 </ul>
@@ -104,9 +110,9 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">$(<span class="number">199</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="u8BED_u6CD5_u547D_u4EE4"><a href="#u8BED_u6CD5_u547D_u4EE4" class="headerlink" title="语法命令"></a>语法命令</h3><h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4><ul>
 <li>-d：直接把欲删除的目录的硬连接数据删除成0，删除该目录；</li>
-<li>-f：强制删除文件或目录； </li>
-<li>-i：删除已有文件或目录之前先询问用户； </li>
-<li>-r或-R：递归处理，将指定目录下的所有文件与子目录一并处理（非空文件或是目录的时候需要加上） </li>
+<li>-f：强制删除文件或目录；</li>
+<li>-i：删除已有文件或目录之前先询问用户；</li>
+<li>-r或-R：递归处理，将指定目录下的所有文件与子目录一并处理（非空文件或是目录的时候需要加上）</li>
 <li>–preserve-root：不对根目录进行递归操作；</li>
 <li>-v：显示指令的详细执行过程。</li>
 </ul>
@@ -120,28 +126,29 @@
 <h3 id="depth"><a href="#depth" class="headerlink" title="depth"></a>depth</h3><p>控制查找输出的的树节点</p>
 <figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">npm <span class="keyword">ls</span> -<span class="keyword">g</span> --depth=1</span><br></pre></td></tr></table></figure>
 <h3 id="sort__u6392_u5E8F"><a href="#sort__u6392_u5E8F" class="headerlink" title="sort 排序"></a>sort 排序</h3><ul>
-<li>-b：忽略每行前面开始出的空格字符； </li>
-<li>-c：检查文件是否已经按照顺序排序； </li>
-<li>-d：排序时，处理英文字母、数字及空格字符外，忽略其他的字符； </li>
-<li>-f：排序时，将小写字母视为大写字母； </li>
-<li>-i：排序时，除了040至176之间的ASCII字符外，忽略其他的字符； </li>
-<li>-m：将几个排序号的文件进行合并； </li>
-<li>-M：将前面3个字母依照月份的缩写进行排序； </li>
-<li>-n：依照数值的大小排序； </li>
+<li>-b：忽略每行前面开始出的空格字符；</li>
+<li>-c：检查文件是否已经按照顺序排序；</li>
+<li>-d：排序时，处理英文字母、数字及空格字符外，忽略其他的字符；</li>
+<li>-f：排序时，将小写字母视为大写字母；</li>
+<li>-i：排序时，除了040至176之间的ASCII字符外，忽略其他的字符；</li>
+<li>-m：将几个排序号的文件进行合并；</li>
+<li>-M：将前面3个字母依照月份的缩写进行排序；</li>
+<li>-n：依照数值的大小排序；</li>
 <li>-o&lt;输出文件&gt;：将排序后的结果存入制定的文件；</li>
-<li>-t&lt;分隔字符&gt;：指定排序时所用的栏位分隔字符； </li>
+<li>-t&lt;分隔字符&gt;：指定排序时所用的栏位分隔字符；</li>
 <li>+&lt;起始栏位&gt;-&lt;结束栏位&gt;：以指定的栏位来排序，范围由起始栏位到结束栏位的前一栏位。</li>
 </ul>
+<h3 id="mdfind__u67E5_u627E_u6587_u4EF6"><a href="#mdfind__u67E5_u627E_u6587_u4EF6" class="headerlink" title="mdfind 查找文件"></a>mdfind 查找文件</h3><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">mdfind -<span class="property">name</span> ...</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/03/2016-06-04-MAC配置-shell/" data-id="ciqv0wtiy000bsivmlpd3cz9p" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/09/2016-06-09-Shell基础/" data-id="cirfnto34000iknvmmpcx5x8f" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/06/03/2016-06-04-MAC配置-shell/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/06/09/2016-06-09-Shell基础/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
 
     </footer>
   </div>
@@ -149,19 +156,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/03/2016-06-03-MAC配置第三篇/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/10/2016-06-10-Shell进阶/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          MAC配置第三篇
+          shell
         
       </div>
     </a>
   
   
-    <a href="/2016/06/02/2016-06-02-MAC配置第二篇/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/06/04/2016-06-04-MAC配置-zsh/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MAC配置第二篇</div>
+      <div class="article-nav-title">zsh</div>
     </a>
   
 </nav>
@@ -186,7 +193,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAC/">MAC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/font/">font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta/">meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sockit/">sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webkit/">webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zepto/">zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sockit/">Sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yeoman/">Yeoman</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
     </div>
   </div>
 
@@ -196,7 +203,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/MAC/" style="font-size: 14px;">MAC</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/app/" style="font-size: 18px;">app</a> <a href="/tags/css/" style="font-size: 16px;">css</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/http/" style="font-size: 12px;">http</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/meta/" style="font-size: 12px;">meta</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sockit/" style="font-size: 10px;">sockit</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/zepto/" style="font-size: 12px;">zepto</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/生活点滴/" style="font-size: 14px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.71px;">App</a> <a href="/tags/CSS/" style="font-size: 17.14px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.43px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Mac/" style="font-size: 14.29px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.43px;">Meta</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Yeoman/" style="font-size: 10px;">Yeoman</a> <a href="/tags/Zepto/" style="font-size: 11.43px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a> <a href="/tags/开发工具/" style="font-size: 18.57px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 10px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 12.86px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10px;">转载翻译</a>
     </div>
   </div>
 
@@ -222,19 +229,19 @@
           </li>
         
           <li>
-            <a href="/2016/06/03/2016-06-05-MAC配置-vim/">vim 总结</a>
+            <a href="/2016/06/20/2016-06-20-开发规范/">命令规范总结</a>
           </li>
         
           <li>
-            <a href="/2016/06/03/2016-06-03-MAC配置第三篇/">MAC配置第三篇</a>
+            <a href="/2016/06/10/2016-06-10-Shell进阶/">shell</a>
           </li>
         
           <li>
-            <a href="/2016/06/03/2016-06-04-MAC配置-shell/">基本shell命令</a>
+            <a href="/2016/06/09/2016-06-09-Shell基础/">基本shell命令</a>
           </li>
         
           <li>
-            <a href="/2016/06/02/2016-06-02-MAC配置第二篇/">MAC配置第二篇</a>
+            <a href="/2016/06/04/2016-06-04-MAC配置-zsh/">zsh</a>
           </li>
         
       </ul>
@@ -286,7 +293,7 @@
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/06/03/2016-06-04-MAC配置-shell/';
+  var disqus_url = 'http://dukegod.github.io/2016/06/09/2016-06-09-Shell基础/';
   
   (function(){
     var dsq = document.createElement('script');
