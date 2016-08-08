@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git git git | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="git 命令与相关的操作操作流程每一个提交的时候，先git pull下，以免覆盖其他人的提交信息
+git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲突提交）=》git push">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git git git">
+<meta property="og:url" content="http://dukegod.github.io/2016/01/02/2016-01-02-git/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="git 命令与相关的操作操作流程每一个提交的时候，先git pull下，以免覆盖其他人的提交信息
+git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲突提交）=》git push">
+<meta property="og:updated_time" content="2016-07-30T04:38:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git git git">
+<meta name="twitter:description" content="git 命令与相关的操作操作流程每一个提交的时候，先git pull下，以免覆盖其他人的提交信息
+git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲突提交）=》git push">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      <!---  <a href="/" id="logo">Hello World</a> -->
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about.html">About</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukegod.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2016-01-02-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/02/2016-01-02-git/" class="article-date">
+  <time datetime="2016-01-01T16:00:00.000Z" itemprop="datePublished">2016-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git git git
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git__u547D_u4EE4_u4E0E_u76F8_u5173_u7684_u64CD_u4F5C"><a href="#git__u547D_u4EE4_u4E0E_u76F8_u5173_u7684_u64CD_u4F5C" class="headerlink" title="git 命令与相关的操作"></a>git 命令与相关的操作</h2><h3 id="u64CD_u4F5C_u6D41_u7A0B"><a href="#u64CD_u4F5C_u6D41_u7A0B" class="headerlink" title="操作流程"></a>操作流程</h3><p>每一个提交的时候，先git pull下，以免覆盖其他人的提交信息</p>
+<p>git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲突提交）=》git push</p>
+<a id="more"></a>
+<h3 id="git_status"><a href="#git_status" class="headerlink" title="git status"></a>git status</h3><p>git status显示你上次提交更新至后所更改或者写入缓存的改动，</p>
+<p>git diff 一行一行地显示这些改动具体是啥。</p>
+<p>通常执行完 git status 之后接着跑一下 git diff 是个好习惯。</p>
+<h3 id="u5206_u652F_u7BA1_u7406"><a href="#u5206_u652F_u7BA1_u7406" class="headerlink" title="分支管理"></a>分支管理</h3><h4 id="u5220_u9664_u672C_u5730_u5206_u652F"><a href="#u5220_u9664_u672C_u5730_u5206_u652F" class="headerlink" title="删除本地分支"></a>删除本地分支</h4><figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">git branch -d <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span></span><br></pre></td></tr></table></figure>
+<h4 id="u5220_u9664_u8FDC_u7A0B_u5206_u652F"><a href="#u5220_u9664_u8FDC_u7A0B_u5206_u652F" class="headerlink" title="删除远程分支"></a>删除远程分支</h4><figure class="highlight gherkin"><table><tr><td class="code"><pre><span class="line">git push origin --delete <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span></span><br></pre></td></tr></table></figure>
+<h4 id="u63D0_u4EA4_u672C_u5730_u5206_u652F_u5230_u8FDC_u7A0B"><a href="#u63D0_u4EA4_u672C_u5730_u5206_u652F_u5230_u8FDC_u7A0B" class="headerlink" title="提交本地分支到远程"></a>提交本地分支到远程</h4><p>git push origin dev</p>
+<h4 id="u6D4B_u8BD5_u4ECE_u8FDC_u7A0B_u83B7_u53D6dev"><a href="#u6D4B_u8BD5_u4ECE_u8FDC_u7A0B_u83B7_u53D6dev" class="headerlink" title="测试从远程获取dev"></a>测试从远程获取dev</h4><p>git pull origin dev</p>
+<h4 id="u5408_u5E76_u5206_u652F"><a href="#u5408_u5E76_u5206_u652F" class="headerlink" title="合并分支"></a>合并分支</h4><figure class="highlight fortran"><table><tr><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git <span class="built_in">merge</span></span><br></pre></td></tr></table></figure>
+<h2 id="u6253_u6807_u7B7E"><a href="#u6253_u6807_u7B7E" class="headerlink" title="打标签"></a>打标签</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">git tag v1<span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="comment">// 推到服务器中</span></span><br><span class="line">git push origin v1<span class="number">.5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 推到服务器中，一次推送所有的标签</span></span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
+<h2 id="git__u4FEE_u6539_u7528_u6237_u540D"><a href="#git__u4FEE_u6539_u7528_u6237_u540D" class="headerlink" title="git 修改用户名"></a>git 修改用户名</h2><p><a href="http://blog.chinaunix.net/uid-26997997-id-3231891.html" target="_blank" rel="external">参考</a></p>
+<h4 id="u5C40_u90E8_u4FEE_u6539"><a href="#u5C40_u90E8_u4FEE_u6539" class="headerlink" title="局部修改"></a>局部修改</h4><pre><code>[user]
+    name = liuhui162
+</code></pre><h2 id="git__u76F8_u5173_u7684_u64CD_u4F5C"><a href="#git__u76F8_u5173_u7684_u64CD_u4F5C" class="headerlink" title="git 相关的操作"></a>git 相关的操作</h2><h3 id="u5907_u4EFD_u9879_u76EE"><a href="#u5907_u4EFD_u9879_u76EE" class="headerlink" title="备份项目"></a>备份项目</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">$ cp -R project project<span class="number">.2010</span>-<span class="number">06</span>-<span class="number">01.</span>bak</span><br></pre></td></tr></table></figure>
+<h3 id="u6253_u5305_u4E3Azip"><a href="#u6253_u5305_u4E3Azip" class="headerlink" title="打包为zip"></a>打包为zip</h3><figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Zip</span> name.<span class="keyword">zip</span> *</span><br></pre></td></tr></table></figure>
+<h2 id="git__u56FE_u5F62_u5DE5_u5177"><a href="#git__u56FE_u5F62_u5DE5_u5177" class="headerlink" title="git 图形工具"></a>git 图形工具</h2><h3 id="u9488_u5BF9window_u7528_u6237_u4FEE_u6539_u672C_u5730gitconfig_uFF08_u5C0F_u4E4C_u9F9F_uFF09"><a href="#u9488_u5BF9window_u7528_u6237_u4FEE_u6539_u672C_u5730gitconfig_uFF08_u5C0F_u4E4C_u9F9F_uFF09" class="headerlink" title="针对window用户修改本地gitconfig（小乌龟）"></a>针对window用户修改本地gitconfig（小乌龟）</h3><p>储存本地信息，不需要每一次提交都要再一次输入的问题</p>
+<pre><code>[user]
+    name = ***
+[user]
+    email = ***@777.com
+[credential]
+    helper = store
+</code></pre><h3 id="Mac__u63A8_u8350smartGit"><a href="#Mac__u63A8_u8350smartGit" class="headerlink" title="Mac 推荐smartGit"></a>Mac 推荐smartGit</h3><p>可以不用注册，有个针对个人开发的，免费用</p>
+<h2 id="github__u83B7_u53D6_u4E3B_u5206_u652F_u7684_u66F4_u65B0_u5185_u5BB9"><a href="#github__u83B7_u53D6_u4E3B_u5206_u652F_u7684_u66F4_u65B0_u5185_u5BB9" class="headerlink" title="github 获取主分支的更新内容"></a>github 获取主分支的更新内容</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取主分支的</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line">JacksonTian	<span class="string">https:</span><span class="comment">//github.com/JacksonTian/fks.git (fetch)</span></span><br><span class="line">JacksonTian	<span class="string">https:</span><span class="comment">//github.com/JacksonTian/fks.git (push)</span></span><br><span class="line">origin	<span class="string">https:</span><span class="comment">//github.com/dukegod/fks.git (fetch)</span></span><br><span class="line">origin	<span class="string">https:</span><span class="comment">//github.com/dukegod/fks.git (push)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// next</span></span><br><span class="line">git fetch <span class="string">https:</span><span class="comment">//github.com/JacksonTian/fks.git</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//next</span></span><br><span class="line">git merge JacksonTian/master</span><br><span class="line"></span><br><span class="line"><span class="comment">//next</span></span><br><span class="line"></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<h2 id="Mac__u4E0B_u914D_u7F6E_u5168_u5C40_u7684_-gitignore_global"><a href="#Mac__u4E0B_u914D_u7F6E_u5168_u5C40_u7684_-gitignore_global" class="headerlink" title="Mac 下配置全局的 .gitignore_global"></a>Mac 下配置全局的 .gitignore_global</h2><p>用来去除mac下一些自己不想提交的东西，省的每一次在.gitignore中写一顿东西;</p>
+<p>配置一个.gitignore_global放在用户目录下：cd ~;</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># .gitignore_global</span></span><br><span class="line"><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span></span><br><span class="line"><span class="comment">######</span><span class="comment">## OS generated files ########</span></span><br><span class="line"><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span></span><br><span class="line">.DS_Store</span><br><span class="line">.DS_Store?</span><br><span class="line">*.swp</span><br><span class="line">._*</span><br><span class="line">.Spotlight-V100</span><br><span class="line">.Trashes</span><br><span class="line">ehthumbs.db</span><br><span class="line">Thumbs.db</span><br><span class="line"><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span></span><br><span class="line"><span class="comment">######</span><span class="comment">######</span><span class="comment"># packages #############</span></span><br><span class="line"><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span><span class="comment">######</span></span><br><span class="line">*<span class="number">.7</span>z</span><br><span class="line">*.dmg</span><br><span class="line">*.gz</span><br><span class="line">*.iso</span><br><span class="line">*.jar</span><br><span class="line">*.rar</span><br><span class="line">*.tar</span><br><span class="line">*.zip</span><br><span class="line"><span class="comment">## node pkgs</span></span><br><span class="line">node_modules</span><br><span class="line"><span class="comment">### wenstorm</span><br><span class="line">*.idea</span><br><span class="line">*.idea/</span><br><span class="line">## svn</span><br><span class="line">.svn</span><br><span class="line">## Hbuilder</span><br><span class="line">.project</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/02/2016-01-02-git/" data-id="cirluz1d00048eevmeajda4li" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/02/2016-01-02-git/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/03/2016-01-03-Sublime/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sublime sublime sublime
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/01/2016-01-01-firstkiss/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2016年hexo上开启新起航</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gulp/">Gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sockit/">Sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yeoman/">Yeoman</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.67px;">App</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Yeoman/" style="font-size: 10px;">Yeoman</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/开发工具/" style="font-size: 20px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 13.33px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10px;">转载翻译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/02/2016-08-02-编写可维护的JavaScript/">编写可维护的JavaScript笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/01/2016-08-01-Box-sizing/">Box-sizing</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/01/2016-07-01-react介绍/">react介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/20/2016-06-21-开发规范-JavaScript/">项目开发规范之JavaScript</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/20/2016-06-20-开发规范/">项目开发规范</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 liu hui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <div id="link">
+  	<a href="https://github.com/dukegod">Github</a>
+  	<a href="https://www.zhihu.com/people/dukegod">知</a>
+  	<a href="https://www.quora.com/profile/Hui-Liu-37">Quora</a>
+  	<a href="https://twitter.com/dukegod1991">Twitter</a>
+  	<a href="https://www.facebook.com/profile.php?id=100009852840417">Facebook</a>
+    <p style="margin-top:10px">
+      <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </p>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about.html" class="mobile-nav-link">About</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'dukehui1991';
+  
+  var disqus_url = 'http://dukegod.github.io/2016/01/02/2016-01-02-git/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
