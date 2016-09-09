@@ -64,6 +64,192 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-09-09-Return" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/09/2016-09-09-Return/" class="article-date">
+  <time datetime="2016-09-08T16:00:00.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/09/2016-09-09-Return/">Return</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>return 太经常使用了，太经常使用了，而我就犯错误了。</p>
+<p>对于renturn返回多个数值，不能太随意</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<p>这样只能返回最后一个3，而不能返回所有的数值。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//以数组的方式返回</span></span><br><span class="line"><span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">//以对象的方式输出</span></span><br><span class="line"><span class="keyword">return</span> &#123;fv:<span class="number">1</span>,fs:<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/09/09/2016-09-09-Return/" data-id="cisvafq6j0003ebvmt1sn1fr9" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/09/09/2016-09-09-Return/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-09-08-Javascript-reduce" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/08/2016-09-08-Javascript-reduce/" class="article-date">
+  <time datetime="2016-09-07T16:00:00.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/2016-09-08-Javascript-reduce/">reduce</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>指定的函数将数组元素进行组合,生成单个值.</p>
+<figure class="highlight delphi"><table><tr><td class="code"><pre><span class="line">[].reduce(<span class="function"><span class="keyword">function</span><span class="params">(previousValue, currentValue, <span class="keyword">index</span>, <span class="keyword">array</span>)</span><span class="comment">&#123;</span><br><span class="line">  return previousValue + currentValue;</span><br><span class="line">&#125;</span>,<span class="title">initValue</span>);</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/08/2016-09-08-Javascript-reduce/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/09/08/2016-09-08-Javascript-reduce/" data-id="cisvafq6q0006ebvmpe7ai0b2" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/09/08/2016-09-08-Javascript-reduce/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-09-06-设计模型-单例模型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/2016-09-06-设计模型-单例模型/" class="article-date">
+  <time datetime="2016-09-05T16:00:00.000Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/2016-09-06-设计模型-单例模型/">单例模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>只允许实例化一次的对象类，通过一个命名空间管理规划对象上的属性和方法。</p>
+<h3 id="u4F18_u70B9"><a href="#u4F18_u70B9" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>环境中只存在一个命名空间，防止方法的冲突与覆盖，符合js只存在唯一的全局变量规范</li>
+<li>节约内存资源</li>
+<li>方便模块化调用</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/06/2016-09-06-设计模型-单例模型/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/09/06/2016-09-06-设计模型-单例模型/" data-id="cisvafq6r0008ebvm1r0bkfw5" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/09/06/2016-09-06-设计模型-单例模型/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-09-05-Css-伪类属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/05/2016-09-05-Css-伪类属性/" class="article-date">
+  <time datetime="2016-09-04T16:00:00.000Z" itemprop="datePublished">2016-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/05/2016-09-05-Css-伪类属性/">css伪类属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>伪劣属性，在前端开发如今用到的越来越多，平时获取修改伪类属性，会遇到一些坑。</p>
+<p>jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素，伪类不属于DOM属性，jquery只能和我们说拜拜啦。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/05/2016-09-05-Css-伪类属性/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/" data-id="cisvafq6u000aebvm7kefgg1m" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-09-04-测试环境" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/04/2016-09-04-测试环境/" class="article-date">
@@ -95,9 +281,54 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/04/2016-09-04-测试环境/" data-id="cisoloa680003f5vmpk3si95m" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/04/2016-09-04-测试环境/" data-id="cisvafq6w000debvm4wp1bimt" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/04/2016-09-04-测试环境/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-09-01-Atom" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/01/2016-09-01-Atom/" class="article-date">
+  <time datetime="2016-08-31T16:00:00.000Z" itemprop="datePublished">2016-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/01/2016-09-01-Atom/">Atom</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>atom 编辑器上手配置，自己习惯的配置笔记</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/01/2016-09-01-Atom/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/09/01/2016-09-01-Atom/" data-id="cisvafq6z000gebvmn0mx040d" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/09/01/2016-09-01-Atom/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
@@ -148,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/" data-id="cisoloa6e0006f5vmvj0jfam8" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/" data-id="cisvafq71000iebvmc70lolm7" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -195,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/12/2016-08-12-Electron/" data-id="cisoloa6g000df5vm9lcjeyct" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/12/2016-08-12-Electron/" data-id="cisvafq73000oebvm4sj897xs" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/12/2016-08-12-Electron/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -236,7 +467,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/11/2016-08-11-Node-Stream流/" data-id="cisoloa6i000gf5vm2ayob3u5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/11/2016-08-11-Node-Stream流/" data-id="cisvafq7d000rebvm8or8zxso" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/11/2016-08-11-Node-Stream流/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -277,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/10/2016-08-10-前端优化之路/" data-id="cisoloa6j000if5vme7yum7l1" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/10/2016-08-10-前端优化之路/" data-id="cisvafq7e000tebvmk2pwme7v" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/10/2016-08-10-前端优化之路/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -291,235 +522,10 @@
 
 
   
-    <article id="post-2016-08-08-Github-page" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/08/2016-08-08-Github-page/" class="article-date">
-  <time datetime="2016-08-07T16:00:00.000Z" itemprop="datePublished">2016-08-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/08/2016-08-08-Github-page/">发布一个项目到git page</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u65B0_u624B_u63A8_u8350github_u5BA2_u6237_u7AEF"><a href="#u65B0_u624B_u63A8_u8350github_u5BA2_u6237_u7AEF" class="headerlink" title="新手推荐github客户端"></a>新手推荐github客户端</h2><p><a href="https://desktop.github.com/" target="_blank" rel="external">Github Desktop</a></p>
-<h2 id="u521B_u5EFA_u9759_u6001_u7F51_u7AD9"><a href="#u521B_u5EFA_u9759_u6001_u7F51_u7AD9" class="headerlink" title="创建静态网站"></a>创建静态网站</h2><p><a href="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/">Hexo</a></p>
-<h2 id="u9879_u76EE_u6F14_u793A_u53D1_u5E03_u53D1_u5E03_u5230_gh-pages"><a href="#u9879_u76EE_u6F14_u793A_u53D1_u5E03_u53D1_u5E03_u5230_gh-pages" class="headerlink" title="项目演示发布发布到 gh-pages"></a>项目演示发布发布到 gh-pages</h2><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">subtree </span><span class="keyword">push </span>--prefix<span class="label">=dist</span> origin gh-pages</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.damian.oquanta.info/posts/one-line-deployment-of-your-site-to-gh-pages.html" target="_blank" rel="external">http://www.damian.oquanta.info/posts/one-line-deployment-of-your-site-to-gh-pages.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/08/2016-08-08-Github-page/" data-id="cisoloa6m000kf5vmbav9cgrp" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/08/08/2016-08-08-Github-page/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-08-02-Source-map" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/02/2016-08-02-Source-map/" class="article-date">
-  <time datetime="2016-08-01T16:00:00.000Z" itemprop="datePublished">2016-08-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/02/2016-08-02-Source-map/">sourceMap</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用来调试压缩后的代码。</p>
-<p>通过source map 还原出错的代码在源码中的位置</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/02/2016-08-02-Source-map/" data-id="cisoloa6n000pf5vmmehnx3w2" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/08/02/2016-08-02-Source-map/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-08-01-Box-sizing" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/01/2016-08-01-Box-sizing/" class="article-date">
-  <time datetime="2016-07-31T16:00:00.000Z" itemprop="datePublished">2016-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/01/2016-08-01-Box-sizing/">Box-sizing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>盒模型:</p>
-<ul>
-<li>border</li>
-<li>padding</li>
-<li>margin</li>
-</ul>
-<p>box-sizing: border-box, content-box</p>
-<p>content-box(默认): 元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度/高度（content width/height）;</p>
-<p>border-box : 内容宽度/高度=width/height-border-padding</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/01/2016-08-01-Box-sizing/" data-id="cisoloa6p000rf5vmphnqhplm" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/08/01/2016-08-01-Box-sizing/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-07-08-ReactNative" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/08/2016-07-08-ReactNative/" class="article-date">
-  <time datetime="2016-07-07T16:00:00.000Z" itemprop="datePublished">2016-07-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/08/2016-07-08-ReactNative/">react介绍</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>react开始</p>
-<p><a href="https://segmentfault.com/a/1190000002676131" target="_blank" rel="external">获取dom操作</a></p>
-<h2 id="react_u4E4B_u524Dmvc_u7684"><a href="#react_u4E4B_u524Dmvc_u7684" class="headerlink" title="react之前mvc的"></a>react之前mvc的</h2><p>不断的操作dom,浪费渲染时间，性能需要优化</p>
-<h2 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h2><p>react不之间操作dom，操作虚拟dom树操作</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/08/2016-07-08-ReactNative/" data-id="cisoloa6r000tf5vme8uz4edp" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/07/08/2016-07-08-ReactNative/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-07-07-ReactNative" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/07/2016-07-07-ReactNative/" class="article-date">
-  <time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016-07-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/07/2016-07-07-ReactNative/">react native</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>启动</p>
-<ul>
-<li>入口文件保持与项目名称一致，否则认证出错</li>
-<li>react-native run-ios 启动苹果模拟器</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/07/2016-07-07-ReactNative/" data-id="cisoloa6t000yf5vmkca1a287" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/07/07/2016-07-07-ReactNative/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -542,7 +548,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.25px;">App</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.25px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.5px;">Meta</a> <a href="/tags/Node/" style="font-size: 12.5px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.5px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.25px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a> <a href="/tags/开发工具/" style="font-size: 18.75px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 15px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 12.5px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.25px;">App</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.25px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.5px;">Meta</a> <a href="/tags/Node/" style="font-size: 12.5px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.5px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.25px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a> <a href="/tags/开发工具/" style="font-size: 18.75px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 15px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 12.5px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.25px;">转载翻译</a>
     </div>
   </div>
 
@@ -564,23 +570,23 @@
       <ul>
         
           <li>
+            <a href="/2016/09/09/2016-09-09-Return/">Return</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/08/2016-09-08-Javascript-reduce/">reduce</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/06/2016-09-06-设计模型-单例模型/">单例模型</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/05/2016-09-05-Css-伪类属性/">css伪类属性</a>
+          </li>
+        
+          <li>
             <a href="/2016/09/04/2016-09-04-测试环境/">测试环境搭建</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/29/2016-08-29-页面字体缩放优化/">页面字体缩放优化体验</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/12/2016-08-12-Electron/">Electron</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/11/2016-08-11-Node-Stream流/">事件流</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/10/2016-08-10-前端优化之路/">优化之路</a>
           </li>
         
       </ul>

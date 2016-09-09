@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>传递 | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="按值传递
+对基本类型，这个值是原始值
+
+基本数据类型：Null/Undefined/String/Number/Boolean
+//  值传递// 即拷贝一个副本var n = 1;function dd(n)&amp;#123;	var n = n + 1;	return n ;&amp;#125;console.log(&apos;dd():&apos;+dd(n));console.log(&apos;outer:&apos; + n);
+引用传">
+<meta property="og:type" content="article">
+<meta property="og:title" content="传递">
+<meta property="og:url" content="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="按值传递
+对基本类型，这个值是原始值
+
+基本数据类型：Null/Undefined/String/Number/Boolean
+//  值传递// 即拷贝一个副本var n = 1;function dd(n)&amp;#123;	var n = n + 1;	return n ;&amp;#125;console.log(&apos;dd():&apos;+dd(n));console.log(&apos;outer:&apos; + n);
+引用传">
+<meta property="og:updated_time" content="2016-09-09T04:43:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="传递">
+<meta name="twitter:description" content="按值传递
+对基本类型，这个值是原始值
+
+基本数据类型：Null/Undefined/String/Number/Boolean
+//  值传递// 即拷贝一个副本var n = 1;function dd(n)&amp;#123;	var n = n + 1;	return n ;&amp;#125;console.log(&apos;dd():&apos;+dd(n));console.log(&apos;outer:&apos; + n);
+引用传">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      <!---  <a href="/" id="logo">Hello World</a> -->
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about.html">About</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukegod.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2016-02-13-Javascript-传递" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/13/2016-02-13-Javascript-传递/" class="article-date">
+  <time datetime="2016-02-12T16:00:00.000Z" itemprop="datePublished">2016-02-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      传递
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="u6309_u503C_u4F20_u9012"><a href="#u6309_u503C_u4F20_u9012" class="headerlink" title="按值传递"></a>按值传递</h3><blockquote>
+<p>对基本类型，这个值是原始值</p>
+</blockquote>
+<p>基本数据类型：Null/Undefined/String/Number/Boolean</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  值传递</span></span><br><span class="line"><span class="comment">// 即拷贝一个副本</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> <span class="keyword">n</span> = 1;</span><br><span class="line"></span><br><span class="line">function dd(<span class="keyword">n</span>)&#123;</span><br><span class="line">	<span class="keyword">var</span> <span class="keyword">n</span> = <span class="keyword">n</span> + 1;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">n</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.<span class="literal">log</span>('dd():'+dd(<span class="keyword">n</span>));</span><br><span class="line">console.<span class="literal">log</span>('outer:' + <span class="keyword">n</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="u5F15_u7528_u4F20_u9012"><a href="#u5F15_u7528_u4F20_u9012" class="headerlink" title="引用传递"></a>引用传递</h3><blockquote>
+<p>javascript中的参数传递都采用 按值传递的方式</p>
+<p>对于对象来说，这个值是指<strong>对象的内存地址</strong></p>
+</blockquote>
+<p>object<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> p = &#123;</span><br><span class="line">	name: <span class="string">'dk'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">p</span>)</span>&#123;</span><br><span class="line">	p.age = <span class="string">'18'</span>;</span><br><span class="line">	<span class="built_in">console</span>.log( p);<span class="comment">//&#123;name:dk,age:18&#125;</span></span><br><span class="line">&#125;</span><br><span class="line">test(p);</span><br><span class="line"><span class="built_in">console</span>.log(p);<span class="comment">//&#123;name:dk,age:18&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>array<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'arr1: '</span> + arr1);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">arr,n</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'innerarray: '</span> + arr);</span><br><span class="line">	<span class="keyword">var</span> arrinner = arr;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i= <span class="number">0</span>; i&lt; arrinner.length; i++)&#123;</span><br><span class="line">		arrinner[i]+= n;</span><br><span class="line">		<span class="keyword">return</span> arrinner;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr2 = test(arr1,<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'arr2:'</span> + arr2);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'arr11: '</span> + arr1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// arr1: 1,2,3,4 开始执行，输出</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// innerarray: 1,2,3,4</span></span><br><span class="line"><span class="comment">//  都指向一个内存，此时指向的内存数据变了，这就是js的按引用传递</span></span><br><span class="line"><span class="comment">// arr2:6,2,3,4</span></span><br><span class="line"><span class="comment">// arr11: 6,2,3,4</span></span><br></pre></td></tr></table></figure></p>
+<p>我的理解就是：</p>
+<p>都是按照值传递，对于引用传递，地址改变了，所有的指向此内存的都改变了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/" data-id="cisvafq9l003xebvmgaes9bz6" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/14/2016-02-14-Javascript-函数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/12/2016-02-12-Javascript-内存泄露/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">内存泄露</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sockit/">Sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.25px;">App</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.25px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.5px;">Meta</a> <a href="/tags/Node/" style="font-size: 12.5px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.5px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.25px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a> <a href="/tags/开发工具/" style="font-size: 18.75px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 15px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 12.5px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.25px;">转载翻译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/09/2016-09-09-Return/">Return</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/08/2016-09-08-Javascript-reduce/">reduce</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/06/2016-09-06-设计模型-单例模型/">单例模型</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/05/2016-09-05-Css-伪类属性/">css伪类属性</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/04/2016-09-04-测试环境/">测试环境搭建</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 liu hui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <div id="link">
+  	<a href="https://github.com/dukegod">Github</a>
+  	<a href="https://www.zhihu.com/people/dukegod">知</a>
+  	<a href="https://www.quora.com/profile/Hui-Liu-37">Quora</a>
+  	<a href="https://twitter.com/dukegod1991">Twitter</a>
+  	<a href="https://www.facebook.com/profile.php?id=100009852840417">Facebook</a>
+    <p style="margin-top:10px">
+      <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </p>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about.html" class="mobile-nav-link">About</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'dukehui1991';
+  
+  var disqus_url = 'http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
