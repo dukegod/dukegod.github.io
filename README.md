@@ -16,5 +16,4 @@ note time by time
 
 主要是首字符大写
 
-特别: CSS; JavaScript; jQuery; 转载翻译; 开发工具; 开发规范; 生活点滴
-
+特别: CSS; JavaScript; jQuery; 转载翻译; 开发工具; 开发规范; 生活点滴; Lua; Zepto

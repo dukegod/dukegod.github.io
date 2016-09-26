@@ -64,6 +64,391 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-06-22-开发规范-目录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/22/2016-06-22-开发规范-目录/" class="article-date">
+  <time datetime="2016-06-21T16:00:00.000Z" itemprop="datePublished">2016-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/22/2016-06-22-开发规范-目录/">项目开发规范之文件目录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文依据《编写可维护的JavaScript》，然后平时开发中遇到的问题，综合总结如下：</p>
+<ul>
+<li><p>src: 文件源文件</p>
+</li>
+<li><p>dist： 编译文件</p>
+</li>
+<li><p>test： 测试目录</p>
+</li>
+<li><p>.jshintrc</p>
+</li>
+<li><p>.editorconfig</p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/22/2016-06-22-开发规范-目录/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-22-开发规范-目录/" data-id="citjmsig5002o20vm6ylwg9f3" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/06/22/2016-06-22-开发规范-目录/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-06-24-开发规范-Eshint" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/22/2016-06-24-开发规范-Eshint/" class="article-date">
+  <time datetime="2016-06-21T16:00:00.000Z" itemprop="datePublished">2016-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/22/2016-06-24-开发规范-Eshint/">项目开发规范之Eshint</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * "off" or 0 - turn the rule off</span><br><span class="line"> * "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)</span><br><span class="line"> * "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)</span><br><span class="line"> */</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"env"</span>:&#123;</span><br><span class="line">    <span class="string">"browser"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"jquery"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"node"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"es6"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"mocha"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"rules"</span>: &#123;</span><br><span class="line">    <span class="comment">// 单引号还是双引号</span></span><br><span class="line">    <span class="string">"quotes"</span>: [<span class="number">0</span>, <span class="string">"single"</span>],</span><br><span class="line">    <span class="string">"no-extra-semi"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="comment">// 强制使用 === ,!==</span></span><br><span class="line">    <span class="string">"eqeqeq"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="comment">// 句末分号</span></span><br><span class="line">    <span class="string">"semi"</span>: [<span class="number">2</span>, <span class="string">"always"</span>],</span><br><span class="line">    <span class="string">"no-console"</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="comment">// 是否要求变量都使用驼峰命名</span></span><br><span class="line">    <span class="string">"camelcase"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="comment">// 不显示缺少分号警告</span></span><br><span class="line">    <span class="string">"asi"</span> : <span class="number">1</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 设置过滤白名单</span></span><br><span class="line">  <span class="string">"globals"</span>:&#123;</span><br><span class="line">    <span class="string">"req"</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="string">"echo"</span> : <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"extends"</span>: <span class="string">"eslint:recommended"</span>,</span><br><span class="line">  <span class="string">"parserOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"sourceType"</span>: <span class="string">"module"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-24-开发规范-Eshint/" data-id="citjmsig0002j20vmmqtaewsc" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/06/22/2016-06-24-开发规范-Eshint/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-06-21-开发规范-编写可维护的JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/20/2016-06-21-开发规范-编写可维护的JavaScript/" class="article-date">
+  <time datetime="2016-06-19T16:00:00.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/2016-06-21-开发规范-编写可维护的JavaScript/">项目开发规范之编写可维护的JavaScript笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文依据《编写可维护的JavaScript》，然后平时开发中遇到的问题，综合总结如下：</p>
+<h2 id="u7F29_u8FDB_u5C42_u7EA7"><a href="#u7F29_u8FDB_u5C42_u7EA7" class="headerlink" title="缩进层级"></a>缩进层级</h2><p>space, 2个字符</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/20/2016-06-21-开发规范-编写可维护的JavaScript/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/20/2016-06-21-开发规范-编写可维护的JavaScript/" data-id="citjmsig6002q20vmvrp94wpc" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/06/20/2016-06-21-开发规范-编写可维护的JavaScript/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-06-20-开发规范" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/20/2016-06-20-开发规范/" class="article-date">
+  <time datetime="2016-06-19T16:00:00.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/2016-06-20-开发规范/">项目开发规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结自己在平时开发中的规范问题</p>
+<ul>
+<li>项目命名规范</li>
+<li>目录命名规范</li>
+<li>文件命名规范</li>
+<li>HTML</li>
+<li>CSS/SCSS/LESS</li>
+<li>JavaScript</li>
+<li>开发工具</li>
+<li>检测工具</li>
+<li>测试工具</li>
+<li>编译打包工具</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/20/2016-06-20-开发规范/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/20/2016-06-20-开发规范/" data-id="citjmsig7002s20vmhxj2nsah" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/06/20/2016-06-20-开发规范/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-06-10-Shell进阶" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/10/2016-06-10-Shell进阶/" class="article-date">
+  <time datetime="2016-06-09T16:00:00.000Z" itemprop="datePublished">2016-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/10/2016-06-10-Shell进阶/">shell</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>shell基本用法总结笔记</p>
+<h3 id="cal"><a href="#cal" class="headerlink" title="cal"></a>cal</h3><p>通过这个命令可以查看本机的日历</p>
+<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><p>显示日期的所有信息</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/10/2016-06-10-Shell进阶/" data-id="citjmsig8002u20vmplclw9vm" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/06/10/2016-06-10-Shell进阶/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-06-09-Shell基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/09/2016-06-09-Shell基础/" class="article-date">
+  <time datetime="2016-06-08T16:00:00.000Z" itemprop="datePublished">2016-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/09/2016-06-09-Shell基础/">基本shell命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>shell基本用法总结笔记</p>
+<p>主要是针对Mac 中断的一些命令操作。用一个学习一个。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/09/2016-06-09-Shell基础/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/09/2016-06-09-Shell基础/" data-id="citjmsiga002x20vmx7j7bu6r" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/06/09/2016-06-09-Shell基础/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-06-06-MAC配置-c超屌的软件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/06/2016-06-06-MAC配置-c超屌的软件/" class="article-date">
+  <time datetime="2016-06-05T16:00:00.000Z" itemprop="datePublished">2016-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/06/2016-06-06-MAC配置-c超屌的软件/">超屌的软件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为Mac的用户，你肯定是个偏执者，那怎么会没有些超屌的软件。</p>
+<h2 id="u97F3_u4E50_u6807_u7B7E"><a href="#u97F3_u4E50_u6807_u7B7E" class="headerlink" title="音乐标签"></a>音乐标签</h2><p><a href="http://www.globaldelight.com/boom/lang/chn/index.html" target="_blank" rel="external">Boom</a></p>
+<ul>
+<li>系统级音频增强</li>
+<li>预设和高级均衡器</li>
+<li>通过音效增强声音表现</li>
+<li>智能以及优化文件音频增强</li>
+</ul>
+<h2 id="u8BB0_u5F55_u4F60_u7684_u65F6_u95F4"><a href="#u8BB0_u5F55_u4F60_u7684_u65F6_u95F4" class="headerlink" title="记录你的时间"></a>记录你的时间</h2><p><a href="https://www.rescuetime.com/dashboard" target="_blank" rel="external">RescueTime</a></p>
+<p>记录你每天每个软件的使用时间，更好的计划</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/06/2016-06-06-MAC配置-c超屌的软件/" data-id="citjmsigb002z20vmeyeockvn" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/06/06/2016-06-06-MAC配置-c超屌的软件/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-06-05-MAC配置-vim" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/05/2016-06-05-MAC配置-vim/" class="article-date">
+  <time datetime="2016-06-04T16:00:00.000Z" itemprop="datePublished">2016-06-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/05/2016-06-05-MAC配置-vim/">vim 总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在终端，我们经常使用的文本编辑器就是Vim。对于新手简直头痛，慢慢解决它。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/05/2016-06-05-MAC配置-vim/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/05/2016-06-05-MAC配置-vim/" data-id="citjmsigc003220vm6ft45vym" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/06/05/2016-06-05-MAC配置-vim/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-06-04-MAC配置-zsh" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/04/2016-06-04-MAC配置-zsh/" class="article-date">
@@ -95,7 +480,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/04/2016-06-04-MAC配置-zsh/" data-id="cisvewcav002gvzvmy0kyhp9r" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/04/2016-06-04-MAC配置-zsh/" data-id="citjmsige003620vmgyefuq38" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/06/04/2016-06-04-MAC配置-zsh/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -140,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/03/2016-06-03-MAC配置-bash/" data-id="cisvewcax002jvzvm6cf8o8a5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/03/2016-06-03-MAC配置-bash/" data-id="citjmsigf003920vmi6x26e86" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/06/03/2016-06-03-MAC配置-bash/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -154,486 +539,10 @@
 
 
   
-    <article id="post-2016-06-02-MAC配置-mac" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/02/2016-06-02-MAC配置-mac/" class="article-date">
-  <time datetime="2016-06-01T16:00:00.000Z" itemprop="datePublished">2016-06-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/02/2016-06-02-MAC配置-mac/">MAC配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>mac 下一些快捷的操作习惯</p>
-<h2 id="u5FEB_u6377_u952E"><a href="#u5FEB_u6377_u952E" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
-<li>CONTRLO + SPACE : SPOTLIGHT</li>
-<li>C + R : 浏览器刷新</li>
-<li>C+O+J(I): 打开审查元素</li>
-<li>option + esc : 开始朗读信息</li>
-<li>fn + fn : 开始听写</li>
-<li>CMD + i ： 修改权限</li>
-<li>cmd + up/down 返回上一级和进入文件</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/02/2016-06-02-MAC配置-mac/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/02/2016-06-02-MAC配置-mac/" data-id="cisvewcay002lvzvm5qckls8a" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/06/02/2016-06-02-MAC配置-mac/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-06-01-MAC配置-brew" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/01/2016-06-01-MAC配置-brew/" class="article-date">
-  <time datetime="2016-05-31T16:00:00.000Z" itemprop="datePublished">2016-06-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/2016-06-01-MAC配置-brew/">MAC配置总结brew</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u8F6F_u4EF6_u5B89_u88C5"><a href="#u8F6F_u4EF6_u5B89_u88C5" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h3><p><a href="http://wiki.jikexueyuan.com/project/mac-dev-setup/homebrew.html">wiki 参考</a></p>
-<p><a href="http://linfan.info/blog/2012/02/25/homebrew-installation-and-usage/">brew ref</a></p>
-<p><a href="https://github.com/Homebrew/brew/">brew github</a></p>
-<p><a href="http://braumeister.org/">在线查找安装包</a></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/01/2016-06-01-MAC配置-brew/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/01/2016-06-01-MAC配置-brew/" data-id="cisvewcaz002nvzvml3a5a4cn" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/06/01/2016-06-01-MAC配置-brew/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-05-31-Browserify" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/31/2016-05-31-Browserify/" class="article-date">
-  <time datetime="2016-05-30T16:00:00.000Z" itemprop="datePublished">2016-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/31/2016-05-31-Browserify/">Browserify</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Browserify 可以让你使用类似于 node 的 require() 的方式来组织浏览器端的 Javascript 代码，通过预编译让前端 Javascript 可以直接使用 Node NPM 安装的一些库</p>
-<p>Browserify解决了js在浏览器端的依赖问题</p>
-<p>browserify是一个编译工具,通过它可以在浏览器环境下像nodejs一样使用遵循commonjs规范的模块化编程.</p>
-<p>你可以使用browserify来组织代码,也可以使用第三方模块,不需要会nodejs,只需要用到node来编译,用到npm来安装包.</p>
-<p>browserify模块化的用法和node是一样的,所以npm上那些原本仅仅用于node环境的包,在浏览器环境里也一样能用.</p>
-<p>现在npm上有越来越多的包,在设计的时候就是想好既能在node环境下用,也能在浏览器环境下用的.甚至还有很多包就是给浏览器环境使用的. npm是为所有的javascript服务的,无论前端后端.</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/31/2016-05-31-Browserify/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/05/31/2016-05-31-Browserify/" data-id="cisvewcb1002pvzvmaea1zm4c" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/05/31/2016-05-31-Browserify/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-05-30-Gulp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/30/2016-05-30-Gulp/" class="article-date">
-  <time datetime="2016-05-29T16:00:00.000Z" itemprop="datePublished">2016-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/2016-05-30-Gulp/">gulp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用一种流形式加载，Gulp可用的[vinyl][]（一种虚拟文件格式）流</p>
-<h3 id="u7EC4_u4EF6"><a href="#u7EC4_u4EF6" class="headerlink" title="组件"></a>组件</h3><ul>
-<li><p>watchify</p>
-</li>
-<li><p>vinyl-buffer</p>
-</li>
-</ul>
-<p>用于将vinyl流转化为buffered vinyl文件（gulp-sourcemaps及大部分Gulp插件都需要这种格式）</p>
-<ul>
-<li>gulp-sourcemaps</li>
-</ul>
-<p>方便处理一些压缩处理过的文件</p>
-<p><a href="http://www.ydcss.com/archives/424" target="_blank" rel="external">1</a><br><a href="https://github.com/Platform-CUF/use-gulp" target="_blank" rel="external">gulp 全解析</a></p>
-<h2 id="u63D2_u4EF6_u5B89_u88C5_u8BF4_u660E"><a href="#u63D2_u4EF6_u5B89_u88C5_u8BF4_u660E" class="headerlink" title="插件安装说明"></a>插件安装说明</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/05/30/2016-05-30-Gulp/" data-id="cisvewcb3002rvzvm6qshnsy4" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/05/30/2016-05-30-Gulp/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-05-29-Grunt" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/29/2016-05-29-Grunt/" class="article-date">
-  <time datetime="2016-05-28T16:00:00.000Z" itemprop="datePublished">2016-05-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/29/2016-05-29-Grunt/">Grunt</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Grunt 太复杂了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/05/29/2016-05-29-Grunt/" data-id="cisvewcb4002tvzvmdwqy7m9q" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/05/29/2016-05-29-Grunt/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-05-28-Yeoman" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/28/2016-05-28-Yeoman/" class="article-date">
-  <time datetime="2016-05-27T16:00:00.000Z" itemprop="datePublished">2016-05-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/28/2016-05-28-Yeoman/">Yeoman</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="u7B80_u5355_u4ECB_u7ECD"><a href="#u7B80_u5355_u4ECB_u7ECD" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>Yeoman 前端脚手架</p>
-<h2 id="u5B89_u88C5"><a href="#u5B89_u88C5" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> yo</span></span><br></pre></td></tr></table></figure>
-<h2 id="u521B_u5EFA_u4E0E_u53D1_u5E03yeoman_u5DE5_u7A0B"><a href="#u521B_u5EFA_u4E0E_u53D1_u5E03yeoman_u5DE5_u7A0B" class="headerlink" title="创建与发布yeoman工程"></a>创建与发布yeoman工程</h2><p>下载安装yo和generator-generator</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> yo</span><br><span class="line">npm <span class="keyword">install</span> -<span class="keyword">g</span> generator-generator</span></span><br></pre></td></tr></table></figure>
-<p>之后运行generator-generator来创建我们自己需要的generator的基础框架</p>
-<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">yo <span class="keyword">ge</span><span class="label">nerator</span></span><br></pre></td></tr></table></figure>
-<p>然后你就可以按照相关的提示去操作了。</p>
-<p>命令要以generator-为开头</p>
-<p>描述： 最好加上 yeoman-generator</p>
-<p>然后你可以根据自己的要求去做不同的编写</p>
-<h3 id="u53D1_u5E03"><a href="#u53D1_u5E03" class="headerlink" title="发布"></a>发布</h3><p>你可以直接发布到npm，不需要上传github。</p>
-<p>npmjs 账号，用于publish到npm。</p>
-<p>Github 账号，npm中显示你的源码，同时方便Yeoman官网中能搜到你的generator。</p>
-<h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><p><a href="http://solee.me/2015/12/09/chuang-jian-yeoman-generator-jian-dan-jiao-cheng/" target="_blank" rel="external">1</a><br><a href="https://leozdgao.me/write-yeoman-generator/" target="_blank" rel="external">2</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/05/28/2016-05-28-Yeoman/" data-id="cisvewcb5002vvzvm8arwi8y5" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/05/28/2016-05-28-Yeoman/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-05-25-前端模块管理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/25/2016-05-25-前端模块管理/" class="article-date">
-  <time datetime="2016-05-24T16:00:00.000Z" itemprop="datePublished">2016-05-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/25/2016-05-25-前端模块管理/">前端开发模块管理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>伴随着移动互联的大潮，当今越来越多的网站已经从网页模式进化到了 Webapp 模式。它们运行在现代的高级浏览器里，使用 HTML5、 CSS3、 ES6 等更新的技术来开发丰富的功能，网页已经不仅仅是完成浏览的基本需求，并且webapp通常是一个单页面应用，每一个视图通过异步的方式加载，这导致页面初始化和使用过程中会加载越来越多的 JavaScript 代码，这给前端开发的流程和资源组织带来了巨大的挑战。</p>
-<p>前端开发和其他开发工作的主要区别，首先是前端是基于多语言、多层次的编码和组织工作，其次前端产品的交付是基于浏览器，这些资源是通过增量加载的方式运行到浏览器端，如何在开发环境组织好这些碎片化的代码和资源，并且保证他们在浏览器端快速、优雅的加载和更新，就需要一个模块化系统，这个理想中的模块化系统是前端工程师多年来一直探索的难题。</p>
-<h2 id="u6A21_u5757_u7CFB_u7EDF_u6F14_u5316"><a href="#u6A21_u5757_u7CFB_u7EDF_u6F14_u5316" class="headerlink" title="模块系统演化"></a>模块系统演化</h2><p>模块系统主要解决模块的定义、依赖和导出，先来看看已经存在的模块系统。</p>
-<h3 id="26lt_3Bscript_26gt_3B_u6807_u7B7E"><a href="#26lt_3Bscript_26gt_3B_u6807_u7B7E" class="headerlink" title="&lt;script&gt;标签"></a>&lt;script&gt;标签</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"module1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"module2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"libraryA.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"module3.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>这是最原始的 JavaScript 文件加载方式，如果把每一个文件看做是一个模块，那么他们的接口通常是暴露在全局作用域下，也就是定义在 <code>window</code> 对象中，不同模块的接口调用都是一个作用域中，一些复杂的框架，会使用命名空间的概念来组织这些模块的接口，典型的例子如 <a href="http://yuilibrary.com" target="_blank" rel="external">YUI</a> 库。</p>
-<p>这种原始的加载方式暴露了一些显而易见的弊端：</p>
-<ul>
-<li>全局作用域下容易造成变量冲突</li>
-<li>文件只能按照 <code>&lt;script&gt;</code> 的书写顺序进行加载</li>
-<li>开发人员必须主观解决模块和代码库的依赖关系</li>
-<li>在大型项目中各种资源难以管理，长期积累的问题导致代码库混乱不堪</li>
-</ul>
-<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>服务器端的 Node.js 遵循 <a href="http://wiki.commonjs.org/wiki/CommonJS" target="_blank" rel="external">CommonJS规范</a>，该规范的核心思想是允许模块通过 <code>require</code> 方法来同步加载所要依赖的其他模块，然后通过 <code>exports</code> 或 <code>module.exports</code> 来导出需要暴露的接口。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"module"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"../file.js"</span>);</span><br><span class="line">exports.doStuff = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="built_in">module</span>.exports = someValue;</span><br></pre></td></tr></table></figure>
-<p>优点：</p>
-<ul>
-<li>服务器端模块便于重用</li>
-<li><a href="https://www.npmjs.com" target="_blank" rel="external">NPM</a> 中已经有将近20万个可以使用模块包</li>
-<li>简单并容易使用</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>同步的模块加载方式不适合在浏览器环境中，同步意味着阻塞加载，浏览器资源是异步加载的</li>
-<li>不能非阻塞的并行加载多个模块</li>
-</ul>
-<p>实现：</p>
-<ul>
-<li>服务器端的 <a href="http://www.nodejs.org" target="_blank" rel="external">Node.js</a></li>
-<li><a href="http://browserify.org" target="_blank" rel="external">Browserify</a>，浏览器端的 CommonJS 实现，可以使用 NPM 的模块，但是编译打包后的文件体积可能很大</li>
-<li><a href="https://github.com/medikoo/modules-webmake" target="_blank" rel="external">modules-webmake</a>，类似Browserify，还不如 Browserify 灵活</li>
-<li><a href="https://github.com/substack/wreq" target="_blank" rel="external">wreq</a>，Browserify 的前身</li>
-</ul>
-<h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><p><a href="https://github.com/amdjs/amdjs-api" target="_blank" rel="external">Asynchronous Module Definition</a> 规范其实只有一个主要接口 <code>define(id?, dependencies?, factory)</code>，它要在声明模块的时候指定所有的依赖 <code>dependencies</code>，并且还要当做形参传到 <code>factory</code> 中，对于依赖的模块提前执行，依赖前置。</p>
-<p>AMD（异步模块定义）是为浏览器环境设计的，因为 CommonJS 模块系统是同步加载的，当前浏览器环境还没有准备好同步加载模块的条件。</p>
-<p>优点：</p>
-<ul>
-<li>适合在浏览器环境中异步加载模块</li>
-<li>可以并行加载多个模块</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>提高了开发成本，代码的阅读和书写比较困难，模块定义方式的语义不顺畅</li>
-<li>不符合通用的模块化思维方式，是一种妥协的实现</li>
-</ul>
-<p>实现：</p>
-<ul>
-<li><a href="http://requirejs.org" target="_blank" rel="external">RequireJS</a></li>
-<li><a href="https://github.com/cujojs/curl" target="_blank" rel="external">curl</a></li>
-</ul>
-<h4 id="requirejs__u7B80_u5355_u4ECB_u7ECD"><a href="#requirejs__u7B80_u5355_u4ECB_u7ECD" class="headerlink" title="requirejs 简单介绍"></a>requirejs 简单介绍</h4><p>在 Require.js 中模块名是全局作用域，可以在全局引用</p>
-<figure class="highlight delphi"><table><tr><td class="code"><pre><span class="line">define(id?: <span class="keyword">String</span>, dependencies?: <span class="keyword">String</span>[], factory: <span class="function"><span class="keyword">Function</span>|<span class="title">Object</span>);</span></span><br><span class="line"></span><br><span class="line">define(<span class="function"><span class="keyword">function</span><span class="params">(require, <span class="keyword">exports</span>, module)</span> <span class="comment">&#123;&#125;</span>）</span></span><br></pre></td></tr></table></figure>
-<p>id 是模块的名字，它是可选的参数。</p>
-<p>dependencies 指定了所要依赖的模块列表，它是一个数组，也是可选的参数，每个依赖的模块的输出将作为参数一次传入 factory 中。如果没有指定 dependencies，那么它的默认值是 [“require”, “exports”, “module”]</p>
-<p>factory 是最后一个参数，它包裹了模块的具体实现，它是一个函数或者对象。如果是函数，那么它的返回值就是模块的输出接口或值。</p>
-<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p><a href="https://github.com/cmdjs/specification/blob/master/draft/module.md" target="_blank" rel="external">Common Module Definition</a> 规范和 AMD 很相似，尽量保持简单，并与 CommonJS 和 Node.js 的 Modules 规范保持了很大的兼容性。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">  <span class="keyword">var</span> Spinning = <span class="built_in">require</span>(<span class="string">'./spinning'</span>);</span><br><span class="line">  exports.doSomething = ...</span><br><span class="line">  <span class="built_in">module</span>.exports = ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>优点：</p>
-<ul>
-<li>依赖就近，延迟执行</li>
-<li>可以很容易在 Node.js 中运行</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>依赖 SPM 打包，模块的加载逻辑偏重</li>
-</ul>
-<p>实现：</p>
-<ul>
-<li><a href="http://seajs.org/" target="_blank" rel="external">Sea.js</a></li>
-<li><a href="https://github.com/cloudcome/coolie" target="_blank" rel="external">coolie</a></li>
-</ul>
-<h3 id="UMD"><a href="#UMD" class="headerlink" title="UMD"></a>UMD</h3><p><a href="https://github.com/umdjs/umd" target="_blank" rel="external">Universal Module Definition</a> 规范类似于兼容 CommonJS 和 AMD 的语法糖，是模块定义的跨平台解决方案。</p>
-<h3 id="ES6__u6A21_u5757"><a href="#ES6__u6A21_u5757" class="headerlink" title="ES6 模块"></a>ES6 模块</h3><p>EcmaScript6 标准增加了 JavaScript 语言层面的模块体系定义。<a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="external">ES6 模块</a>的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"jquery"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">doStuff</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="built_in">module</span> <span class="string">"localModule"</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>优点：</p>
-<ul>
-<li>容易进行静态分析</li>
-<li>面向未来的 EcmaScript 标准</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>原生浏览器端还没有实现该标准</li>
-<li>全新的命令字，新版的 Node.js才支持</li>
-</ul>
-<p>实现：</p>
-<ul>
-<li><a href="https://babeljs.io/" target="_blank" rel="external">Babel</a></li>
-</ul>
-<h3 id="u671F_u671B_u7684_u6A21_u5757_u7CFB_u7EDF"><a href="#u671F_u671B_u7684_u6A21_u5757_u7CFB_u7EDF" class="headerlink" title="期望的模块系统"></a>期望的模块系统</h3><p>可以兼容多种模块风格，尽量可以利用已有的代码，不仅仅只是 JavaScript 模块化，还有 CSS、图片、字体等资源也需要模块化。</p>
-<p>见 webpack 总结</p>
-<h3 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h3><p><a href="http://webpackdoc.com/index.html" target="_blank" rel="external">webapack</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/05/25/2016-05-25-前端模块管理/" data-id="cisvewcb6002xvzvm3in1qddw" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/05/25/2016-05-25-前端模块管理/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-05-20-Promise" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/20/2016-05-20-Promise/" class="article-date">
-  <time datetime="2016-05-19T16:00:00.000Z" itemprop="datePublished">2016-05-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/20/2016-05-20-Promise/">Promise</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>A JavaScript Promise represents the result of an operation that hasn’t been completed yet, but will at some undetermined point in the future. An example of such an operation is a network request. When we fetch data from some source, for example an API, there is no way for us to absolutely determine when the response will be received.</p>
-<p>This can be problematic if we have other operations dependent on the completion of this network request. Without Promises, we would have to use callbacks to deal with actions that need to happen in sequence. This isn’t necessarily a problem if we only have one asynchronous action. But if we need to complete multiple asynchronous steps in sequence, callbacks become unmanageable and result in the infamous callback hell.</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/20/2016-05-20-Promise/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/05/20/2016-05-20-Promise/" data-id="cisvewcb70030vzvm903cp4ji" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/05/20/2016-05-20-Promise/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -646,7 +555,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sockit/">Sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sockit/">Sockit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
     </div>
   </div>
 
@@ -656,7 +565,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.25px;">App</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.25px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.5px;">Meta</a> <a href="/tags/Node/" style="font-size: 12.5px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.5px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.25px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a> <a href="/tags/开发工具/" style="font-size: 18.75px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 15px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 12.5px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.25px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.25px;">App</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.25px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.5px;">Meta</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Node/" style="font-size: 12.5px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.5px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 12.5px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 18.75px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 15px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 13.75px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.25px;">转载翻译</a>
     </div>
   </div>
 
@@ -678,23 +587,23 @@
       <ul>
         
           <li>
-            <a href="/2016/09/09/2016-09-09-Return/">Return</a>
+            <a href="/2016/09/25/2016-09-25-云南游玩/">彩云之南，蜜月旅行</a>
           </li>
         
           <li>
-            <a href="/2016/09/08/2016-09-08-Javascript-reduce/">reduce</a>
+            <a href="/2016/09/22/2016-09-22-Linux/">linux</a>
           </li>
         
           <li>
-            <a href="/2016/09/06/2016-09-06-设计模型-单例模型/">单例模型</a>
+            <a href="/2016/09/21/2016-09-21-OpenResty/">openResty</a>
           </li>
         
           <li>
-            <a href="/2016/09/05/2016-09-05-Css-伪类属性/">css伪类属性</a>
+            <a href="/2016/09/20/2016-09-20-Css-控制多行文本/">控制多行文本显示省略号</a>
           </li>
         
           <li>
-            <a href="/2016/09/04/2016-09-04-测试环境/">测试环境搭建</a>
+            <a href="/2016/09/19/2016-09-19-Lua/">Lua 学习</a>
           </li>
         
       </ul>
