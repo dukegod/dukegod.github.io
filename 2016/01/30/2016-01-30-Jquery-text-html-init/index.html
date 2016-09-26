@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>zepto中操作option | Hello World</title>
+  <title>jquery,zepto中的text,html,val深入理解 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zepto中操作option不能直接使用$(‘option:selected’)。
-需要使用$(‘option:checked’)代替
-或者使用如下代码
-$(&amp;apos;option&amp;apos;).not(function(){ return !this.selected })">
+  <meta name="description" content="text，html，val共同点val用来读取或修改表单元素的value值。
+text用来读取或修改元素的纯文本内容
+html用为读取和修改元素的HTML标签">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zepto中操作option">
-<meta property="og:url" content="http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option/index.html">
+<meta property="og:title" content="jquery,zepto中的text,html,val深入理解">
+<meta property="og:url" content="http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html-init/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="zepto中操作option不能直接使用$(‘option:selected’)。
-需要使用$(‘option:checked’)代替
-或者使用如下代码
-$(&amp;apos;option&amp;apos;).not(function(){ return !this.selected })">
-<meta property="og:updated_time" content="2016-08-04T01:40:13.000Z">
+<meta property="og:description" content="text，html，val共同点val用来读取或修改表单元素的value值。
+text用来读取或修改元素的纯文本内容
+html用为读取和修改元素的HTML标签">
+<meta property="og:updated_time" content="2016-08-04T01:40:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zepto中操作option">
-<meta name="twitter:description" content="zepto中操作option不能直接使用$(‘option:selected’)。
-需要使用$(‘option:checked’)代替
-或者使用如下代码
-$(&amp;apos;option&amp;apos;).not(function(){ return !this.selected })">
+<meta name="twitter:title" content="jquery,zepto中的text,html,val深入理解">
+<meta name="twitter:description" content="text，html，val共同点val用来读取或修改表单元素的value值。
+text用来读取或修改元素的纯文本内容
+html用为读取和修改元素的HTML标签">
   
   
     <link rel="icon" href="/favicon.png">
@@ -72,10 +69,10 @@ $(&amp;apos;option&amp;apos;).not(function(){ return !this.selected })">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-02-01-Zepto-option" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-01-30-Jquery-text-html-init" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/01/2016-02-01-Zepto-option/" class="article-date">
-  <time datetime="2016-01-31T16:00:00.000Z" itemprop="datePublished">2016-02-01</time>
+    <a href="/2016/01/30/2016-01-30-Jquery-text-html-init/" class="article-date">
+  <time datetime="2016-01-29T16:00:00.000Z" itemprop="datePublished">2016-01-30</time>
 </a>
     
   </div>
@@ -86,7 +83,7 @@ $(&amp;apos;option&amp;apos;).not(function(){ return !this.selected })">
         
   
     <h1 class="article-title" itemprop="name">
-      zepto中操作option
+      jquery,zepto中的text,html,val深入理解
     </h1>
   
 
@@ -94,20 +91,25 @@ $(&amp;apos;option&amp;apos;).not(function(){ return !this.selected })">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>zepto中操作option不能直接使用$(‘option:selected’)。</p>
-<p>需要使用$(‘option:checked’)代替</p>
-<p>或者使用如下代码</p>
-<pre><code>$(&apos;option&apos;).not(function(){ return !this.selected })
-</code></pre>
+        <h3 id="text_uFF0Chtml_uFF0Cval_u5171_u540C_u70B9"><a href="#text_uFF0Chtml_uFF0Cval_u5171_u540C_u70B9" class="headerlink" title="text，html，val共同点"></a>text，html，val共同点</h3><p>val用来读取或修改表单元素的value值。</p>
+<p>text用来读取或修改元素的纯文本内容</p>
+<p>html用为读取和修改元素的HTML标签</p>
+<a id="more"></a>
+<h3 id="u4E0D_u540C_u70B9"><a href="#u4E0D_u540C_u70B9" class="headerlink" title="不同点"></a>不同点</h3><p>jquery中.htm()获取属性的HTML属性，<strong>但是当使用在多个元素上时，只读取第一个元素</strong></p>
+<p>jquery中.text()获取选取的内容的文本的时候，<strong>当有多个元素的时候，读取所有的元素的text值</strong></p>
+<p>zepto中的html()与text()方法在使用在多个元素的时候，<strong>只读取第一个元素</strong></p>
+<h3 id="trim_28_29"><a href="#trim_28_29" class="headerlink" title="trim()"></a>trim()</h3><p>原生方法，去除两边的空格。去检测获取的值是否为空的判断！</p>
+<p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/jquery_text_html_val_trim" target="_blank" rel="external">演示代码</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option/" data-id="citjn94zb005fekvmnr8tzlm9" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html-init/" data-id="citjnmf2x005hnavma06nxw9s" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html-init/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
     </footer>
   </div>
@@ -115,19 +117,19 @@ $(&amp;apos;option&amp;apos;).not(function(){ return !this.selected })">
     
 <nav id="article-nav">
   
-    <a href="/2016/02/02/2016-02-02-alterMessage/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/02/01/2016-02-01-Zepto-option-init/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          弹框总结
+          zepto中操作option
         
       </div>
     </a>
   
   
-    <a href="/2016/01/30/2016-01-30-Jquery-text-html/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/26/2016-01-26-Koala/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">jquery,zepto中的text,html,val深入理解</div>
+      <div class="article-nav-title">Koala</div>
     </a>
   
 </nav>
@@ -252,7 +254,7 @@ $(&amp;apos;option&amp;apos;).not(function(){ return !this.selected })">
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option/';
+  var disqus_url = 'http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html-init/';
   
   (function(){
     var dsq = document.createElement('script');

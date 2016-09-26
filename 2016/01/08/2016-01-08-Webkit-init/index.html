@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>事件委托 | Hello World</title>
+  <title>移动开发webkit | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。
-最常见的例子就是绑定li方法的委托事件。">
+  <meta name="description" content="-webkit-tap-highlight-color:rgba(255,255,255,0)可以同时屏蔽ios和android下点击元素时出现的阴影。
+备注：transparent的属性值在android下无效。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="事件委托">
-<meta property="og:url" content="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind/index.html">
+<meta property="og:title" content="移动开发webkit">
+<meta property="og:url" content="http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。
-最常见的例子就是绑定li方法的委托事件。">
-<meta property="og:updated_time" content="2016-08-08T09:26:25.000Z">
+<meta property="og:description" content="-webkit-tap-highlight-color:rgba(255,255,255,0)可以同时屏蔽ios和android下点击元素时出现的阴影。
+备注：transparent的属性值在android下无效。">
+<meta property="og:updated_time" content="2016-09-26T05:56:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="事件委托">
-<meta name="twitter:description" content="事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。
-最常见的例子就是绑定li方法的委托事件。">
+<meta name="twitter:title" content="移动开发webkit">
+<meta name="twitter:description" content="-webkit-tap-highlight-color:rgba(255,255,255,0)可以同时屏蔽ios和android下点击元素时出现的阴影。
+备注：transparent的属性值在android下无效。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-01-13-EventBind" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-01-08-Webkit-init" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/13/2016-01-13-EventBind/" class="article-date">
-  <time datetime="2016-01-12T16:00:00.000Z" itemprop="datePublished">2016-01-13</time>
+    <a href="/2016/01/08/2016-01-08-Webkit-init/" class="article-date">
+  <time datetime="2016-01-07T16:00:00.000Z" itemprop="datePublished">2016-01-08</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      事件委托
+      移动开发webkit
     </h1>
   
 
@@ -88,22 +88,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。</p>
-<p>最常见的例子就是绑定li方法的委托事件。</p>
+        <h3 id="webkit-tap-highlight-color_3Argba_28255_2C255_2C255_2C0_29"><a href="#webkit-tap-highlight-color_3Argba_28255_2C255_2C255_2C0_29" class="headerlink" title="-webkit-tap-highlight-color:rgba(255,255,255,0)"></a>-webkit-tap-highlight-color:rgba(255,255,255,0)</h3><p>可以同时屏蔽ios和android下点击元素时出现的<strong>阴影</strong>。</p>
+<p>备注：transparent的属性值在android下无效。</p>
 <a id="more"></a>
-<figure class="highlight pf"><table><tr><td class="code"><pre><span class="line"><span class="variable">&lt;ul&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">1</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">2</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">3</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">4</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">1</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">2</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">3</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">4</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line"><span class="variable">&lt;/ul&gt;</span></span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  $('body').<span class="keyword">on</span>('click', 'li', function(event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    /* Act <span class="keyword">on</span> the event */</span><br><span class="line">    console.<span class="keyword">log</span>(this);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)(jQuery)</span><br></pre></td></tr></table></figure>
-<p>借用了jquery的on事件作为事件委托的方法。不介意使用bind方法。</p>
-<p>原生方法可以用addEventListener方法进行绑定。</p>
+<h3 id="webkit-appearance_3Anone"><a href="#webkit-appearance_3Anone" class="headerlink" title="-webkit-appearance:none"></a>-webkit-appearance:none</h3><p>可以同时屏蔽输入框怪异的内阴影。</p>
+<h3 id="webkit-transform_3Atranslate3d_280_2C_0_2C_0_29"><a href="#webkit-transform_3Atranslate3d_280_2C_0_2C_0_29" class="headerlink" title="-webkit-transform:translate3d(0, 0, 0)"></a>-webkit-transform:translate3d(0, 0, 0)</h3><p>在ios下可以让动画更加流畅（这个属性会调用硬件加速模式），但是在android下不可乱用，很多见所未见的bug就是因为这个。</p>
+<h3 id="webkit-background-size"><a href="#webkit-background-size" class="headerlink" title="-webkit-background-size"></a>-webkit-background-size</h3><p>可以做高清图标，不过一些低版本的android只能识别background-size，所以有必要两个都要写上；用这个属性的时候推荐树勇cover这个值，可以自动去匹配宽和高。</p>
+<h3 id="webkit-touch-callout_3A_none_3B"><a href="#webkit-touch-callout_3A_none_3B" class="headerlink" title="-webkit-touch-callout: none;"></a>-webkit-touch-callout: none;</h3><p>长按时不触发系统的菜单, 可用在图片上加这个属性禁止下载图片;</p>
+<p>亲测iOS可以，Android不支持</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">img</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-touch-callout</span>:<span class="value"> none</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="webkit-user-select"><a href="#webkit-user-select" class="headerlink" title="-webkit-user-select"></a>-webkit-user-select</h3><p>不是标准属性</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">-webkit-user-select</span>: none; <span class="comment">//文档中不让文本选择</span></span><br><span class="line"><span class="attribute">-webkit-user-select</span>: text; <span class="comment">//文档中只可以操作文本</span></span><br><span class="line"><span class="attribute">-webkit-user-select</span>: all;</span><br></pre></td></tr></table></figure>
+<h3 id="webkit-text-size-adjust"><a href="#webkit-text-size-adjust" class="headerlink" title="-webkit-text-size-adjust"></a>-webkit-text-size-adjust</h3><p>主要是兼容Google对于字体的兼容性问题</p>
+<p>当移动设备横竖屏切换时，文本的大小会重新计算，进行相应的缩放，当我们不需要这种情况时，可以选择禁止</p>
+<p>需要注意的是，PC端的该属性已经被移除，该属性在移动端要生效，必须设置 meta viewport。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-text-size-adjust</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="u63A8_u8350_u8D44_u6E90"><a href="#u63A8_u8350_u8D44_u6E90" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://ued.ctrip.com/webkitcss/" target="_blank" rel="external">webkit前缀(携程)</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Webkit_Extensions" target="_blank" rel="external">mozilla_ webkit</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind/" data-id="citjn94zn0063ekvmly4pf3wt" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/" data-id="citjnmf3f006hnavmion4zm3c" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Webkit/">Webkit</a></li></ul>
 
     </footer>
   </div>
@@ -111,19 +122,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/18/2016-01-18/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/09/2016-01-09-Meta-init/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          诗
+          移动开发常用的META设置
         
       </div>
     </a>
   
   
-    <a href="/2016/01/12/2016-01-12-Scroll/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/07/2016-01-07-Click-tap-init/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">移动端滚动与内置浏览器出界问题</div>
+      <div class="article-nav-title">移动开发点击事件</div>
     </a>
   
 </nav>
@@ -248,7 +259,7 @@
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/01/13/2016-01-13-EventBind/';
+  var disqus_url = 'http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/';
   
   (function(){
     var dsq = document.createElement('script');

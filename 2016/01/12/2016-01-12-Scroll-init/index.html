@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jquery,zepto中的text,html,val深入理解 | Hello World</title>
+  <title>移动端滚动与内置浏览器出界问题 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="text，html，val共同点val用来读取或修改表单元素的value值。
-text用来读取或修改元素的纯文本内容
-html用为读取和修改元素的HTML标签">
+  <meta name="description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery,zepto中的text,html,val深入理解">
-<meta property="og:url" content="http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html/index.html">
+<meta property="og:title" content="移动端滚动与内置浏览器出界问题">
+<meta property="og:url" content="http://dukegod.github.io/2016/01/12/2016-01-12-Scroll-init/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="text，html，val共同点val用来读取或修改表单元素的value值。
-text用来读取或修改元素的纯文本内容
-html用为读取和修改元素的HTML标签">
-<meta property="og:updated_time" content="2016-08-04T01:40:03.000Z">
+<meta property="og:description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
+<meta property="og:updated_time" content="2016-08-04T01:38:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery,zepto中的text,html,val深入理解">
-<meta name="twitter:description" content="text，html，val共同点val用来读取或修改表单元素的value值。
-text用来读取或修改元素的纯文本内容
-html用为读取和修改元素的HTML标签">
+<meta name="twitter:title" content="移动端滚动与内置浏览器出界问题">
+<meta name="twitter:description" content="快速回弹滚动以及微信架构页面的思考我们先来看看回弹滚动在手机浏览器发展的历史：早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；iOS从5.0开始解决了">
   
   
     <link rel="icon" href="/favicon.png">
@@ -69,10 +63,10 @@ html用为读取和修改元素的HTML标签">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-01-30-Jquery-text-html" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-01-12-Scroll-init" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/30/2016-01-30-Jquery-text-html/" class="article-date">
-  <time datetime="2016-01-29T16:00:00.000Z" itemprop="datePublished">2016-01-30</time>
+    <a href="/2016/01/12/2016-01-12-Scroll-init/" class="article-date">
+  <time datetime="2016-01-11T16:00:00.000Z" itemprop="datePublished">2016-01-12</time>
 </a>
     
   </div>
@@ -83,7 +77,7 @@ html用为读取和修改元素的HTML标签">
         
   
     <h1 class="article-title" itemprop="name">
-      jquery,zepto中的text,html,val深入理解
+      移动端滚动与内置浏览器出界问题
     </h1>
   
 
@@ -91,25 +85,38 @@ html用为读取和修改元素的HTML标签">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="text_uFF0Chtml_uFF0Cval_u5171_u540C_u70B9"><a href="#text_uFF0Chtml_uFF0Cval_u5171_u540C_u70B9" class="headerlink" title="text，html，val共同点"></a>text，html，val共同点</h3><p>val用来读取或修改表单元素的value值。</p>
-<p>text用来读取或修改元素的纯文本内容</p>
-<p>html用为读取和修改元素的HTML标签</p>
+        <h3 id="u5FEB_u901F_u56DE_u5F39_u6EDA_u52A8_u4EE5_u53CA_u5FAE_u4FE1_u67B6_u6784_u9875_u9762_u7684_u601D_u8003"><a href="#u5FEB_u901F_u56DE_u5F39_u6EDA_u52A8_u4EE5_u53CA_u5FAE_u4FE1_u67B6_u6784_u9875_u9762_u7684_u601D_u8003" class="headerlink" title="快速回弹滚动以及微信架构页面的思考"></a>快速回弹滚动以及微信架构页面的思考</h3><p>我们先来看看回弹滚动在手机浏览器发展的历史：<br>早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;<br>Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；<br>Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；<br>iOS从5.0开始解决了滚动条不可见及增加了快速回弹滚动效果</p>
 <a id="more"></a>
-<h3 id="u4E0D_u540C_u70B9"><a href="#u4E0D_u540C_u70B9" class="headerlink" title="不同点"></a>不同点</h3><p>jquery中.htm()获取属性的HTML属性，<strong>但是当使用在多个元素上时，只读取第一个元素</strong></p>
-<p>jquery中.text()获取选取的内容的文本的时候，<strong>当有多个元素的时候，读取所有的元素的text值</strong></p>
-<p>zepto中的html()与text()方法在使用在多个元素的时候，<strong>只读取第一个元素</strong></p>
-<h3 id="trim_28_29"><a href="#trim_28_29" class="headerlink" title="trim()"></a>trim()</h3><p>原生方法，去除两边的空格。去检测获取的值是否为空的判断！</p>
-<p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/jquery_text_html_val_trim" target="_blank" rel="external">演示代码</a></p>
+<h4 id="u6EDA_u52A8_u8BF4_u660E"><a href="#u6EDA_u52A8_u8BF4_u660E" class="headerlink" title="滚动说明"></a>滚动说明</h4><p>全局滚动， 滚动条在body节点或更顶层<br>局部滚动， 滚动条在body下某一个dom节点上</p>
+<h3 id="ios"><a href="#ios" class="headerlink" title="ios"></a>ios</h3><pre><code>body{
+-webkit-overflow-scrolling: touch;
+}
+</code></pre><p>这个属性可以实现类似原生的效果，快速回弹。<br>但是会出项出界问题，就是当你在微信或者QQ中打开页面的时候，滚动的时候，你会看看‘网页通过‘’提供支持’一个黑色的背景样式。</p>
+<h5 id="u8003_u8651_u6362_u4E00_u4E2A_u601D_u60F3_uFF0C_u5C40_u90E8_u6EDA_u52A8"><a href="#u8003_u8651_u6362_u4E00_u4E2A_u601D_u60F3_uFF0C_u5C40_u90E8_u6EDA_u52A8" class="headerlink" title="考虑换一个思想，局部滚动"></a>考虑换一个思想，局部滚动</h5><ul>
+<li>body加上-webkit-overflow-scrolling: touch;</li>
+<li>通过 <a href="https://github.com/joelambert/ScrollFix" target="_blank" rel="external">ScrollFix</a> 解决出界问题</li>
+</ul>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>-webkit-overflow-scrolling: touch 在Android在没有效果，而且用类似ios那个方法比较的坑爹，滚动条不能实时滚动</p>
+<h4 id="u7528_u5168_u5C40_u6EDA_u52A8_u6548_u679C"><a href="#u7528_u5168_u5C40_u6EDA_u52A8_u6548_u679C" class="headerlink" title="用全局滚动效果"></a>用全局滚动效果</h4><ul>
+<li>header, footer 用fixed属性固定</li>
+<li>内容区域用padding 填充上下的高度问题</li>
+</ul>
+<h2 id="u6700_u7EC8_u5B9E_u73B0_u65B9_u6848"><a href="#u6700_u7EC8_u5B9E_u73B0_u65B9_u6848" class="headerlink" title="最终实现方案"></a>最终实现方案</h2><ul>
+<li>第一步先通过 UA判断 客户端类型 <a href="https://github.com/dukegod/isClient" target="_blank" rel="external">检测客户端</a></li>
+<li>分不同的客户端加载不同的样式</li>
+<li>对于需要固定部分，取消默认的touchmove 属性</li>
+</ul>
+<p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/fastScroll" target="_blank" rel="external">项目地址</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html/" data-id="citjn94zd005hekvmq5hs1hrb" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12-Scroll-init/" data-id="citjnmf3a0065navmr51aizns" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/01/12/2016-01-12-Scroll-init/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li></ul>
 
     </footer>
   </div>
@@ -117,19 +124,19 @@ html用为读取和修改元素的HTML标签">
     
 <nav id="article-nav">
   
-    <a href="/2016/02/01/2016-02-01-Zepto-option/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/13/2016-01-13-EventBind-init/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          zepto中操作option
+          事件委托
         
       </div>
     </a>
   
   
-    <a href="/2016/01/26/2016-01-26-Koala/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/01/11/2016-01-11-Npm/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Koala</div>
+      <div class="article-nav-title">npm基本操作</div>
     </a>
   
 </nav>
@@ -254,7 +261,7 @@ html用为读取和修改元素的HTML标签">
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html/';
+  var disqus_url = 'http://dukegod.github.io/2016/01/12/2016-01-12-Scroll-init/';
   
   (function(){
     var dsq = document.createElement('script');
