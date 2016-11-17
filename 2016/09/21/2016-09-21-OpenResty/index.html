@@ -5,19 +5,16 @@
   
   <title>openResty | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="全能的web服务器，相关的安装以及配置。
-# 第一步brew install pcre openssl# 第二步// 1）下载openResty源码，直接到 http://openresty.org/ 下载打包好的。// 2）直接去github下来，运行make，自动下载依赖包，# 第三布// ngx_openresty-1.9.7.1 进入你的项目中安装需要指定安装目录 prefixcd ngx">
+  <meta name="description" content="全能的web服务器，相关的安装以及配置。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openResty">
 <meta property="og:url" content="http://dukegod.github.io/2016/09/21/2016-09-21-OpenResty/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="全能的web服务器，相关的安装以及配置。
-# 第一步brew install pcre openssl# 第二步// 1）下载openResty源码，直接到 http://openresty.org/ 下载打包好的。// 2）直接去github下来，运行make，自动下载依赖包，# 第三布// ngx_openresty-1.9.7.1 进入你的项目中安装需要指定安装目录 prefixcd ngx">
-<meta property="og:updated_time" content="2016-11-04T04:54:11.000Z">
+<meta property="og:description" content="全能的web服务器，相关的安装以及配置。">
+<meta property="og:updated_time" content="2016-11-17T03:34:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="openResty">
-<meta name="twitter:description" content="全能的web服务器，相关的安装以及配置。
-# 第一步brew install pcre openssl# 第二步// 1）下载openResty源码，直接到 http://openresty.org/ 下载打包好的。// 2）直接去github下来，运行make，自动下载依赖包，# 第三布// ngx_openresty-1.9.7.1 进入你的项目中安装需要指定安装目录 prefixcd ngx">
+<meta name="twitter:description" content="全能的web服务器，相关的安装以及配置。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -89,6 +86,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>全能的web服务器，相关的安装以及配置。</p>
+<a id="more"></a>
 <figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 第一步</span></span><br><span class="line"></span><br><span class="line">brew install pcre openssl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步</span></span><br><span class="line"></span><br><span class="line"><span class="pi">// 1）下载openResty源码，直接到 http://</span>openresty.org/ 下载打包好的。</span><br><span class="line"><span class="pi">// 2）直接去github下来，运行make，自动下载依赖包，</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三布</span></span><br><span class="line">//</span> ngx_openresty-<span class="number">1.9</span>.<span class="number">7.1</span> 进入你的项目中</span><br><span class="line"></span><br><span class="line">安装需要指定安装目录 prefix</span><br><span class="line"></span><br><span class="line">cd ngx_openresty-<span class="number">1.9</span>.<span class="number">7.1</span></span><br><span class="line"></span><br><span class="line">./configure</span><br><span class="line"></span><br><span class="line">配置的时候可以指定相关的路径。--<span class="keyword">with</span>-prefix</span><br><span class="line"></span><br><span class="line">./configure <span class="string">\</span> <span class="string">\</span></span><br><span class="line">--<span class="keyword">with</span>-cc-opt=<span class="string">"-I/usr/local/Cellar/openssl/1.0.2h_1/include/ -I/usr/local/Cellar/pcre/8.39/include/"</span> <span class="string">\</span> <span class="string">\</span></span><br><span class="line">--<span class="keyword">with</span>-ld-opt=<span class="string">"-L/usr/local/Cellar/openssl/1.0.2h_1/lib/ -L/usr/local/Cellar/pcre/8.39/lib/"</span> <span class="string">\</span> <span class="string">\</span></span><br><span class="line">-j8</span><br><span class="line"></span><br><span class="line"><span class="comment"># error 处理</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">ERROR</span>: failed <span class="keyword">to</span> run <span class="attribute">command</span>: sh ./configure --prefix=/usr/local/openresty/nginx <span class="string">\...</span></span><br><span class="line"></span><br><span class="line"><span class="pi">// 运行</span><br><span class="line"></span><br><span class="line">./configure --with-openssl=/usr/local/Cellar/openssl/1.0.2h_1</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p> 最新Mac OSX 10.11.1 下安装 openresty 有一点小小的麻烦，记录一下：<br>    第一步根据官网安装需要的依赖：<br>    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install pcre openssl</span><br></pre></td></tr></table></figure></p>
@@ -112,7 +110,7 @@ configure 过程中会遇到 openssl找不到的错误，需要手动指定opens
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/21/2016-09-21-OpenResty/" data-id="civlsx46s000mq9vmxjqe34gx" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/21/2016-09-21-OpenResty/" data-id="civlt6ggn000mvevmobwnjplj" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/21/2016-09-21-OpenResty/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -210,7 +208,7 @@ configure 过程中会遇到 openssl找不到的错误，需要手动指定opens
           </li>
         
           <li>
-            <a href="/2016/09/25/2016-09-25-云南游玩/">彩云之南，蜜月旅行</a>
+            <a href="/2016/09/25/2016-09-25-云南游玩/">彩云之南</a>
           </li>
         
       </ul>
