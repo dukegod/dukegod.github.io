@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://dukegod.github.io/2016/01/11/2016-01-11-Npm/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="npm 基础安装npm install -g pkg   // 全局安装npm install pkc --save-dev  // 本地安装，并且保存在package.json中//安装package时自动加入依赖列表npm install &amp;lt;package_name&amp;gt; --save  //加入到dependenciesnpm install &amp;lt;package_name&amp;gt;">
-<meta property="og:updated_time" content="2016-08-08T09:23:37.000Z">
+<meta property="og:updated_time" content="2016-12-15T07:37:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm基本操作">
 <meta name="twitter:description" content="npm 基础安装npm install -g pkg   // 全局安装npm install pkc --save-dev  // 本地安装，并且保存在package.json中//安装package时自动加入依赖列表npm install &amp;lt;package_name&amp;gt; --save  //加入到dependenciesnpm install &amp;lt;package_name&amp;gt;">
@@ -104,7 +104,12 @@
 <figure class="highlight xquery"><table><tr><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"webpack-dev-server --hot --inline"</span>,</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"webpack"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>你可以通过下面的命令去启动服务</p>
 <figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">npm <span class="command">run</span> dev</span><br><span class="line"></span><br><span class="line">npm <span class="command">run</span> start</span><br></pre></td></tr></table></figure>
-<h2 id="cnpm__u955C_u50CF_u52A0_u901F"><a href="#cnpm__u955C_u50CF_u52A0_u901F" class="headerlink" title="cnpm 镜像加速"></a>cnpm 镜像加速</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装 cnpm</span></span><br><span class="line"></span><br><span class="line">npm install -g cnpm --registry=<span class="string">https:</span><span class="comment">//registry.npm.taobao.org</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//安装后就可以用cnpm代替npm了</span></span><br></pre></td></tr></table></figure>
+<h2 id="u56FD_u5185_u4F18_u79C0npm_u955C_u50CF_u63A8_u8350_u53CA_u4F7F_u7528"><a href="#u56FD_u5185_u4F18_u79C0npm_u955C_u50CF_u63A8_u8350_u53CA_u4F7F_u7528" class="headerlink" title="国内优秀npm镜像推荐及使用"></a>国内优秀npm镜像推荐及使用</h2><h4 id="cnpm__u955C_u50CF_u52A0_u901F"><a href="#cnpm__u955C_u50CF_u52A0_u901F" class="headerlink" title="cnpm 镜像加速"></a>cnpm 镜像加速</h4><p>1.临时使用</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">npm</span> --registry <span class="attribute">https</span>:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org install express</span><br></pre></td></tr></table></figure>
+<p>2.持久使用</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">npm config <span class="keyword">set</span> registry https:<span class="comment">//registry.npm.taobao.org</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置后可通过下面方式来验证是否成功</span></span><br><span class="line">npm config <span class="keyword">get</span> registry</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line">npm info express</span><br></pre></td></tr></table></figure>
+<p>3.通过cnpm使用</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> cnpm <span class="comment">--registry=https://registry.npm.taobao.org</span></span><br><span class="line"></span><br><span class="line">// 使用</span><br><span class="line">cnpm <span class="keyword">install</span> express</span></span><br></pre></td></tr></table></figure>
 <h2 id="npm__u53D1_u5E03_u5305"><a href="#npm__u53D1_u5E03_u5305" class="headerlink" title="npm 发布包"></a>npm 发布包</h2><h3 id="u6CE8_u518C_u4E00_u4E2A_u8D26_u6237"><a href="#u6CE8_u518C_u4E00_u4E2A_u8D26_u6237" class="headerlink" title="注册一个账户"></a>注册一个账户</h3><pre><code>npm addusers
 Username: YOUR_USER_NAME
 Password: YOUR_PASSWORD
@@ -123,7 +128,7 @@ Email: YOUR_EMAIL@domain.com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11-Npm/" data-id="civvqhgmz0078kpvmfae760le" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11-Npm/" data-id="ciwr8vaco007s2wvmzwh6st28" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/11/2016-01-11-Npm/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -183,7 +188,7 @@ Email: YOUR_EMAIL@domain.com
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.25px;">App</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.25px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.75px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.5px;">Meta</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.5px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 12.5px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 18.75px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.75px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 15px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.25px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.56px;">App</a> <a href="/tags/CSS/" style="font-size: 17.78px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.22px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.11px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.22px;">Meta</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Node/" style="font-size: 14.44px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 15.56px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.22px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16.67px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 12.22px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 18.89px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 14.44px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.11px;">转载翻译</a>
     </div>
   </div>
 
@@ -205,23 +210,23 @@ Email: YOUR_EMAIL@domain.com
       <ul>
         
           <li>
-            <a href="/2016/11/10/2016-11-10-Vue/">Vue1.0总结</a>
+            <a href="/2016/11/24/2016-11-24-Vuex-源码/">Vuex</a>
           </li>
         
           <li>
-            <a href="/2016/11/05/2016-11-05-Node-Buffer/">node中buffer</a>
+            <a href="/2016/11/16/2016-11-16-Vue-V2-进阶/">Vue2.0</a>
           </li>
         
           <li>
-            <a href="/2016/11/04/2016-11-04-Node-Stream/">node之stream</a>
+            <a href="/2016/11/15/2016-11-15-Vue-cli/">Vue-cli</a>
           </li>
         
           <li>
-            <a href="/2016/11/03/2016-11-03-Node-buffer-stream/">node中buffer与stream的区别</a>
+            <a href="/2016/11/14/2016-11-14-Vue-V1-V2/">Vue1.0 进阶 模板</a>
           </li>
         
           <li>
-            <a href="/2016/11/02/2016-11-02-iPhone手机找回/">苹果手机找回</a>
+            <a href="/2016/11/13/2016-11-13-Vue-进阶-总结/">Vue1.0 进阶 模板</a>
           </li>
         
       </ul>

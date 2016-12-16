@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2016-02-01-Zepto-option-init" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-02-11-Javascript-类型检测" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/01/2016-02-01-Zepto-option-init/" class="article-date">
-  <time datetime="2016-01-31T16:00:00.000Z" itemprop="datePublished">2016-02-01</time>
+    <a href="/2016/02/11/2016-02-11-Javascript-类型检测/" class="article-date">
+  <time datetime="2016-02-10T16:00:00.000Z" itemprop="datePublished">2016-02-11</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/01/2016-02-01-Zepto-option-init/">zepto中操作option</a>
+      <a class="article-title" href="/2016/02/11/2016-02-11-Javascript-类型检测/">类型检测</a>
     </h1>
   
 
@@ -86,432 +86,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>zepto中操作option不能直接使用$(‘option:selected’)。</p>
-<p>需要使用$(‘option:checked’)代替</p>
-<p>或者使用如下代码</p>
-<pre><code>$(&apos;option&apos;).not(function(){ return !this.selected })
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option-init/" data-id="civvqhgme006gkpvmeobo0sr3" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option-init/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-30-Jquery-text-html-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/30/2016-01-30-Jquery-text-html-init/" class="article-date">
-  <time datetime="2016-01-29T16:00:00.000Z" itemprop="datePublished">2016-01-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/30/2016-01-30-Jquery-text-html-init/">jquery,zepto中的text,html,val深入理解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="text_uFF0Chtml_uFF0Cval_u5171_u540C_u70B9"><a href="#text_uFF0Chtml_uFF0Cval_u5171_u540C_u70B9" class="headerlink" title="text，html，val共同点"></a>text，html，val共同点</h3><p>val用来读取或修改表单元素的value值。</p>
-<p>text用来读取或修改元素的纯文本内容</p>
-<p>html用为读取和修改元素的HTML标签</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/30/2016-01-30-Jquery-text-html-init/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html-init/" data-id="civvqhgmg006ikpvm9osdbzd5" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/30/2016-01-30-Jquery-text-html-init/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-26-Koala" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/26/2016-01-26-Koala/" class="article-date">
-  <time datetime="2016-01-25T16:00:00.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/2016-01-26-Koala/">Koala</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用NWjs开发的一个工具</p>
-<p>解决不支持中文的问题：</p>
-<p>window:</p>
-<p>进入到Koala 安装目录(C:\Koala\rubygems\gems\sass-3.4.9\lib\sass )下找到engine.rb 文件</p>
-<p>在require 最下面 加入以下代码 即可解决</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">Encoding<span class="class">.default_external</span> = Encoding.<span class="function"><span class="title">find</span><span class="params">(<span class="string">'utf-8'</span>)</span></span></span><br></pre></td></tr></table></figure>
-<p>Mac:</p>
-<p>在应用程序=》显示包内容=&gt;自行查找，修改如上</p>
+        <h3 id="u907F_u514D_u7A7A_u6BD4_u8F83"><a href="#u907F_u514D_u7A7A_u6BD4_u8F83" class="headerlink" title="避免空比较"></a>避免空比较</h3><p>null不作为检测对象，如果需要检测使用===，与！==检测</p>
+<h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><p>基本类型的检测：string，number，boolean，undefined, Symbol</p>
+<p>函数检测: 最好的方法就是使用typeof，可以跨帧（frame）使用</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="number">11</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="literal">false</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="string">'aiiai'</span>));</span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(i));</span><br><span class="line"><span class="keyword">var</span> sy = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(sy));</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">typeType</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(typeType));</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// number</span></span><br><span class="line"><span class="comment">// boolean</span></span><br><span class="line"><span class="comment">// string</span></span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// symbol</span></span><br><span class="line"><span class="comment">// function</span></span><br></pre></td></tr></table></figure>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>typeof用来检测基本类型可以，检测引用值有点力不从心。好多类型都会报出为object。</p>
+<h4 id="u68C0_u6D4B_u5F15_u7528_u7C7B_u578B"><a href="#u68C0_u6D4B_u5F15_u7528_u7C7B_u578B" class="headerlink" title="检测引用类型"></a>检测引用类型</h4><p>检测常见的引用类型</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(&#123;&#125; <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</span><br><span class="line"><span class="built_in">console</span>.log([] <span class="keyword">instanceof</span> <span class="built_in">Array</span>);</span><br><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(date <span class="keyword">instanceof</span> <span class="built_in">Date</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="u68C0_u6D4B_u539F_u578B"><a href="#u68C0_u6D4B_u539F_u578B" class="headerlink" title="检测原型"></a>检测原型</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Person.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> Person);</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype);</span><br><span class="line"><span class="built_in">console</span>.log(Person.constructor === <span class="built_in">Function</span>); <span class="comment">// 构造函数的constructor指向Function</span></span><br><span class="line"><span class="built_in">console</span>.log(p.constructor === Person); <span class="comment">// 实例函数的constructor指向构造函数</span></span><br><span class="line"><span class="built_in">console</span>.log(p.prototype);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Child'</span>);</span><br><span class="line"><span class="keyword">var</span> Child = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Child.prototype = Person.prototype; <span class="comment">// 继承Person</span></span><br><span class="line">Child.prototype.constructor = Child; <span class="comment">// 实例对象constructor重新指向Child</span></span><br><span class="line"><span class="keyword">var</span> ch = <span class="keyword">new</span> Child();</span><br><span class="line"><span class="built_in">console</span>.log(ch <span class="keyword">instanceof</span> Child);</span><br><span class="line"><span class="built_in">console</span>.log(Child.prototype);</span><br><span class="line"><span class="built_in">console</span>.log(Child.constructor === <span class="built_in">Function</span>);</span><br><span class="line"><span class="built_in">console</span>.log(ch.constructor === Person);</span><br><span class="line"><span class="built_in">console</span>.log(ch.constructor === Child);</span><br><span class="line"><span class="built_in">console</span>.log(ch.prototype);</span><br></pre></td></tr></table></figure>
+<h3 id="in_/_hasOwnProperty_28_29"><a href="#in_/_hasOwnProperty_28_29" class="headerlink" title="in / hasOwnProperty()"></a>in / hasOwnProperty()</h3><p>检测对象属性的判断</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  title: <span class="string">'lh'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="string">'title'</span> <span class="keyword">in</span> obj)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(obj.title);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(obj.hasOwnProperty(<span class="string">'title'</span>)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h3><p>终极方法，toString是object原型对象上一个方法，放回其调用者具体的类型。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">function <span class="title">isType</span><span class="params">(e)</span></span>&#123;</span><br><span class="line">  console.<span class="built_in">log</span>(Object.prototype.toString.call(e).split(<span class="string">' '</span>)[<span class="number">1</span>].slice(<span class="number">0</span>,-<span class="number">1</span>).toLocaleLowerCase());</span><br><span class="line">  <span class="keyword">return</span> Object.prototype.toString.call(e).split(<span class="string">' '</span>)[<span class="number">1</span>].slice(<span class="number">0</span>,-<span class="number">1</span>).toLocaleLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/26/2016-01-26-Koala/" data-id="civvqhgmi006lkpvm684tzs9b" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/" data-id="ciwr8vabr006c2wvmcni85r66" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/01/26/2016-01-26-Koala/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-25-Node-版本管理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/25/2016-01-25-Node-版本管理/" class="article-date">
-  <time datetime="2016-01-24T16:00:00.000Z" itemprop="datePublished">2016-01-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/25/2016-01-25-Node-版本管理/">node 版本管理工具</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>nvm主要用来管理node各个版本的工具。</p>
-<h2 id="node_u7248_u672C_u7BA1_u7406_u5DE5_u5177"><a href="#node_u7248_u672C_u7BA1_u7406_u5DE5_u5177" class="headerlink" title="node版本管理工具"></a>node版本管理工具</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>可以用tj大牛的n去管理node各个版本。</p>
-<p>具体查看<a href="https://github.com/tj/n" target="_blank" rel="external">github n</a></p>
-<h3 id="brew_install_node__u7248_u672C"><a href="#brew_install_node__u7248_u672C" class="headerlink" title="brew install node 版本"></a>brew install node 版本</h3><p>也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">brew <span class="operator"><span class="keyword">install</span> **</span><br><span class="line"></span><br><span class="line"># node 环境变量修改</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">PATH</span>=/usr/<span class="keyword">local</span>/Cellar/node/<span class="number">6.1</span><span class="number">.0</span>/<span class="keyword">bin</span>:$<span class="keyword">PATH</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="u7528nvm__u7BA1_u7406node_u7248_u672C"><a href="#u7528nvm__u7BA1_u7406node_u7248_u672C" class="headerlink" title="用nvm 管理node版本"></a>用nvm 管理node版本</h3><p>这个是我主要介绍的，用n管理不好控制npm版本，直接安装总是需要手动修改环境变量。</p>
-<p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm github地址</a>，你可以通过这个地址，更多的了解nvm</p>
-<p>推荐通过brew安装nvm</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">brew install nvm</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个目录</span></span><br><span class="line">mkdir  ~/.nvm</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当前用的node版本</span></span><br><span class="line">nvm use v6<span class="number">.0</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置全局的node版本</span></span><br><span class="line"></span><br><span class="line">nvm alias defaule system/v6<span class="number">.3</span><span class="number">.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在bash_prifile中添加路径</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#nvm</span></span><br><span class="line"><span class="keyword">export</span> NVM_DIR=<span class="string">"$HOME/.nvm"</span></span><br><span class="line">  . <span class="string">"$(brew --prefix nvm)/nvm.sh"</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/" data-id="civvqhgmj006nkpvmno0c5akz" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-22-Ajax-action" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/22/2016-01-22-Ajax-action/" class="article-date">
-  <time datetime="2016-01-21T16:00:00.000Z" itemprop="datePublished">2016-01-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/22/2016-01-22-Ajax-action/">ajax note</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ajax的全称是Asynchronous JavaScript and XML</p>
-<h3 id="u539F_u7406_u4E0E_u4E3B_u8981_u7684_u6280_u672F_u70B9"><a href="#u539F_u7406_u4E0E_u4E3B_u8981_u7684_u6280_u672F_u70B9" class="headerlink" title="原理与主要的技术点"></a>原理与主要的技术点</h3><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/22/2016-01-22-Ajax-action/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22-Ajax-action/" data-id="civvqhgmk006qkpvmsu59jbpt" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/22/2016-01-22-Ajax-action/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-21-Http-action" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/21/2016-01-21-Http-action/" class="article-date">
-  <time datetime="2016-01-20T16:00:00.000Z" itemprop="datePublished">2016-01-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/21/2016-01-21-Http-action/">http 协议</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HTTP__u534F_u8BAE_u7279_u70B9_3A"><a href="#HTTP__u534F_u8BAE_u7279_u70B9_3A" class="headerlink" title="HTTP 协议特点:"></a>HTTP 协议特点:</h2><p>1.支持客户/服务器模式。</p>
-<p>2.简单快速:客户向服务器请求服务时 ,只需传送请求方法和路径 。请求方法常用的有 GET、HEAD、<br>POST。每种方法规定了客户与服务器联系的类型不同 。由于 HTTP 协议简单,使得 HTTP 服务器的程序规 模小,因而通信速度很快。</p>
-<p>3.灵活:HTTP 允许传输任意类型的数据对象。正在传输的类型由 Content-Type 加以标记。</p>
-<p>4.无连接:无连接的含义是限制每次连接只处理一个请求 。服务器处理完客户的请求,并收到客户的 应答后,即断开连接。采用这种方式可以节省传输时间。</p>
-<p>5.无状态:HTTP 协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着 如果后续处理需要前面的信息,则它必须重传,这样可能导致每次连接传送的数据量增大。另一方面 ,在 服务器不需要先前信息时它的应答就较快。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/21/2016-01-21-Http-action/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/21/2016-01-21-Http-action/" data-id="civvqhgmm006wkpvmez1pdkmy" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/21/2016-01-21-Http-action/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-20-Jquery-plugin-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/20/2016-01-20-Jquery-plugin-init/" class="article-date">
-  <time datetime="2016-01-19T16:00:00.000Z" itemprop="datePublished">2016-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/20/2016-01-20-Jquery-plugin-init/">jQuery插件开发</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>就我自己喜欢开发的模式，总结下jquery插件开发需要注意点。<br>主要是扩展jquery原型，防止变量污染；</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/20/2016-01-20-Jquery-plugin-init/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/" data-id="civvqhgmo006ykpvmk36y00wo" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-19" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/19/2016-01-19/" class="article-date">
-  <time datetime="2016-01-18T16:00:00.000Z" itemprop="datePublished">2016-01-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/19/2016-01-19/">天冷了</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>天冷了！<br>北京的冬天以急速的步伐向我们袭来。<br>在这冷冷的地方，让本来就是挺清净的我难免会增添更多的静，静的悲凉，静的辗转翻侧，不能说服自己好好的去睡觉。<br>但是在这静静的生活中，让我又在想到了过去，但愿回到过去，如今只能久久回味。</p>
-<p>花深人未眠<br>难以说服自己休息，起身做点别的吧。随手打开一本书，以落叶的清香为吻始，以死亡的无情为吻终，我们是应该好好梳理一下了，但是藏在内心的艰难的选择犹如藏在心中的虫一样撕咬着我，每一次想到都是一次比一次的疼痛！<br>选择沉默，但是我们彼此都在清晰的认知着，也许这已经是搁浅在我们心中的共识了吧！但是我们都没有能力去驾驭这艘早早想去漂泊的船！<br>幸福，当我们在谈幸福的时候，总是在想着别人的不幸，想着我们的甜蜜。我们真的是幸福，没有别人的压力，没有别人那样的暧昧的痛苦，更多的是理解！<br>其实我们不能去因为冷怨恨冬天的清净，洁白！只能怨我太害怕冷了，总是去逃避寒冷的冬天。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/19/2016-01-19/" data-id="civvqhgmt0070kpvm4xer5537" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/19/2016-01-19/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-18" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/18/2016-01-18/" class="article-date">
-  <time datetime="2016-01-17T16:00:00.000Z" itemprop="datePublished">2016-01-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/18/2016-01-18/">诗</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>曾经觉得这首诗很美，那是确实很美</p>
-<p>乐之穹<br>舞之雯<br>轻歌曼舞若娉婷<br>回眸态生两靥许<br>恁时相见若留心<br>何必到如今。</p>
-<p>近者疏<br>亲着远<br>酒到酣处勾真情<br>难免化作相思语<br>心有未来需躬行<br>弯弓射天狼。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/18/2016-01-18/" data-id="civvqhgmv0072kpvmis9q8dh4" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/18/2016-01-18/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-01-13-EventBind-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/13/2016-01-13-EventBind-init/" class="article-date">
-  <time datetime="2016-01-12T16:00:00.000Z" itemprop="datePublished">2016-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/13/2016-01-13-EventBind-init/">事件委托</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。</p>
-<p>最常见的例子就是绑定li方法的委托事件。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/13/2016-01-13-EventBind-init/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/" data-id="civvqhgmw0074kpvmgdyegrux" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -523,10 +116,442 @@
 
 
   
+    <article id="post-2016-02-10-Javascript-堆栈队列操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" class="article-date">
+  <time datetime="2016-02-09T16:00:00.000Z" itemprop="datePublished">2016-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/10/2016-02-10-Javascript-堆栈队列操作/">堆栈队列</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/pkuyjxu/article/details/6325236" target="_blank" rel="external">js<em>02</em>堆栈队列.md</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" data-id="ciwr8vabs006e2wvm9fy4dzec" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-02-09-Javascript-内存分配" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/09/2016-02-09-Javascript-内存分配/" class="article-date">
+  <time datetime="2016-02-08T16:00:00.000Z" itemprop="datePublished">2016-02-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/09/2016-02-09-Javascript-内存分配/">内存分配</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.cnblogs.com/fool/archive/2010/10/07/1845226.html" target="_blank" rel="external">js<em>01</em>内存分配.md</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/" data-id="ciwr8vabz006g2wvmfgzwzm17" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-02-08-Javascript-优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/08/2016-02-08-Javascript-优化/" class="article-date">
+  <time datetime="2016-02-07T16:00:00.000Z" itemprop="datePublished">2016-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/08/2016-02-08-Javascript-优化/">优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>优化只要是针对网页的优化</p>
+<p><a href="https://csspod.com/frontend-performance-best-practices/" target="_blank" rel="external">optimization1</a><br><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="external">网页性能管理详解</a></p>
+<p><a href="http://blog.csdn.net/li2274221/article/details/25193381" target="_blank" rel="external">optimization</a></p>
+<p><a href="http://www.cnblogs.com/sprying/p/4251682.html" target="_blank" rel="external">网页性能管理详解2</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="ciwr8vac0006i2wvmvwu0tq17" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-02-07-Javascript-作用域与上下文" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/07/2016-02-07-Javascript-作用域与上下文/" class="article-date">
+  <time datetime="2016-02-06T16:00:00.000Z" itemprop="datePublished">2016-02-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/07/2016-02-07-Javascript-作用域与上下文/">作用域与上下文</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://yanhaijing.com/javascript/2016/07/24/prototype-and-inheritance-of-js/" target="_blank" rel="external">转载</a></p>
+<p>javascript中的作用域(scope)和上下文(context)是这门语言的独到之处，这部分归功于他们带来的灵活性。每个函数有不同的变量上下文和作用域。这些概念是javascript中一些强大的设计模式的后盾。然而这也给开发人员带来很大困惑。下面全面揭示了javascript中的上下文和作用域的不同，以及各种设计模式如何使用他们。</p>
+<h2 id="u4E0A_u4E0B_u6587_vs__u4F5C_u7528_u57DF"><a href="#u4E0A_u4E0B_u6587_vs__u4F5C_u7528_u57DF" class="headerlink" title="上下文 vs 作用域"></a>上下文 vs 作用域</h2><p>首先需要澄清的问题是上下文和作用域是不同的概念。多年来我注意到许多开发者经常将这两个术语混淆，错误的将一个描述为另一个。平心而论，这些术语变得非常混乱不堪。</p>
+<p>每个函数调用都有与之相关的作用域和上下文。从根本上说，范围是基于函数(function-based)而上下文是基于对象(object-based)。换句话说，作用域是和每次函数调用时变量的访问有关，并且每次调用都是独立的。上下文总是关键字 this 的值，是调用当前可执行代码的对象的引用。</p>
+<h2 id="u53D8_u91CF_u4F5C_u7528_u57DF"><a href="#u53D8_u91CF_u4F5C_u7528_u57DF" class="headerlink" title="变量作用域"></a>变量作用域</h2><p>变量能够被定义在局部或者全局作用域，这导致运行时变量的访问来自不同的作用域。全局变量需被声明在函数体外，在整个运行过程中都存在，能在任何作用域中访问和修改。局部变量仅在函数体内定义，并且每次函数调用都有不同的作用域。这主题是仅在调用中的赋值，求值和对值的操作，不能访问作用域之外的值。</p>
+<p>目前javascript不支持块级作用域，块级作用域指在if语句，switch语句，循环语句等语句块中定义变量，这意味着变量不能在语句块之外被访问。当前任何在语句块中定义的变量都能在语句块之外访问。然而，这种情况很快会得到改变，let 关键字已经正式添加到ES6规范。用它来代替var关键字可以将局部变量声明为块级作用域。</p>
+<h2 id="u201Cthis_u201D__u4E0A_u4E0B_u6587"><a href="#u201Cthis_u201D__u4E0A_u4E0B_u6587" class="headerlink" title="“this” 上下文"></a>“this” 上下文</h2><p>上下文通常是取决于一个函数如何被调用。当函数作为对象的方法被调用时，this 被设置为调用方法的对象：</p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="class"><span class="keyword">object</span> =</span> &#123;</span><br><span class="line">  foo: function()&#123;</span><br><span class="line">    alert(<span class="keyword">this</span> === <span class="class"><span class="keyword">object</span>);</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">object</span>.<span class="title">foo</span>(</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>同样的原理适用于当调用一个函数时通过new的操作符创建一个对象的实例。当以这种方式调用时，this 的值将被设置为新创建的实例：</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() <span class="comment">// window</span></span><br><span class="line"><span class="keyword">new</span> foo() <span class="comment">// foo</span></span><br></pre></td></tr></table></figure>
+<p>当调用一个未绑定函数，this 将被默认设置为 全局上下文(global context) 或window对象(如果在浏览器中)。然而如果函数在严格模式下被执行(“use strict”)，this的值将被默认设置为undefined。</p>
+<h2 id="u6267_u884C_u4E0A_u4E0B_u6587_u548C_u4F5C_u7528_u57DF_u94FE"><a href="#u6267_u884C_u4E0A_u4E0B_u6587_u548C_u4F5C_u7528_u57DF_u94FE" class="headerlink" title="执行上下文和作用域链"></a>执行上下文和作用域链</h2><p>javascript是一个单线程语言，这意味着在浏览器中同时只能做一件事情。当javascript解释器初始执行代码，它首先默认竟如全局上下文。每次调用一个函数将会创建一个新的执行上下文。</p>
+<p>这里经常发生混淆，这术语”执行上下文(execution context)“在这里的所要表达的意思是作用域，不是前面讨论的上下文。这是槽糕的命名，然而这术语ECMAScript规范所定义的,无奈的遵守吧。</p>
+<p>每次新创建一个执行上下文，会被添加到作用域链的顶部，又是也成为执行或调用栈。浏览器总是运行在位于作用域链顶部当前执行上下文。一旦完成，它(当前执行上下文)将从栈顶被移除并且将控制权归还给之前的执行上下文。例如：</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">first</span><span class="params">()</span></span>&#123;</span><br><span class="line">    second();</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">second</span><span class="params">()</span></span>&#123;</span><br><span class="line">        third();</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">third</span><span class="params">()</span></span>&#123;</span><br><span class="line">            fourth();</span><br><span class="line">            <span class="function"><span class="keyword">function</span> <span class="title">fourth</span><span class="params">()</span></span>&#123;</span><br><span class="line">                <span class="comment">// do something</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">first();</span><br></pre></td></tr></table></figure>
+<p>运行前面的代码将会导致嵌套的函数被从上倒下执行直到 fourth 函数，此时作用域链从上到下为： fourth, third, second, first, global。fourth 函数能够访问全局变量和任何在first,second和third函数中定义的变量，就如同访问自己的变量一样。一旦fourth函数执行完成，fourth晕高兴上下文将被从作用域链顶端移除并且执行将返回到thrid函数。这一过程持续进行直到所有代码已完成执行。</p>
+<p>不同执行上下文之间的变量命名冲突通过攀爬作用域链解决，从局部直到全局。这意味着具有相同名称的局部变量在作用域链中有更高的优先级。</p>
+<p>简单的说，每次你试图访问函数执行上下文中的变量时，查找进程总是从自己的变量对象开始。如果在自己的变量对象中没发现要查找的变量，继续搜索作用域链。它将攀爬作用域链检查每一个执行上下文的变量对象去寻找和变量名称匹配的值。</p>
+<h2 id="u95ED_u5305"><a href="#u95ED_u5305" class="headerlink" title="闭包"></a>闭包</h2><p>当一个嵌套的函数在定义(作用域)的外面被访问，以至它可以在外部函数返回后被执行，此时一个闭包形成。它(闭包)维护(在内部函数中)对外部函数中局部变量，arguments和函数声明的访问。封装允许我们从外部作用域中隐藏和保护执行上下文，而暴露公共接口，通过接口进一步操作。一个简单的例子看起来如下：</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> local = <span class="string">'private variable'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> local;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getLocalVariable = foo();</span><br><span class="line">getLocalVariable() <span class="comment">// private variable</span></span><br></pre></td></tr></table></figure>
+<p>其中最流行的闭包类型是广为人知的模块模式。它允许你模拟公共的，私有的和特权成员：</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> Module = (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> privateProperty = <span class="string">'foo'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">privateMethod</span><span class="params">(args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">        publicProperty: <span class="string">""</span>,</span><br><span class="line"></span><br><span class="line">        publicMethod: <span class="function"><span class="keyword">function</span><span class="params">(args)</span></span>&#123;</span><br><span class="line">            <span class="comment">//do something</span></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        privilegedMethod: <span class="function"><span class="keyword">function</span><span class="params">(args)</span></span>&#123;</span><br><span class="line">            privateMethod(args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p> 模块实际上有些类似于单例，在末尾添加一对括号，当解释器解释完后立即执行(立即执行函数)。闭包执行上下位的外部唯一可用的成员是返回对象中公用的方法和属性(例如<em>Module.publicMethod</em>)。然而，所有的私有属性和方法在整个程序的生命周期中都将存在，由于(闭包)使执行上下文收到保护，和变量的交互要通过公用的方法。</p>
+<p>另一种类型的闭包叫做立即调用函数表达式(immediately-invoked function expression IIFE)，无非是一个在window上下文中的自调用匿名函数(self-invoked anonymous function)。</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span><span class="params">(window)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'foo'</span>, b = <span class="string">'bar'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">private</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    window.Module = &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="comment">// do something</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&#125;)(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<p>对保护全局命名空间，这种表达式非常有用，所有在函数体内声明的变量都是局部变量，并通过闭包在整个运行环境保持存在。这种封装源代码的方式对程序和框架都是非常流行的，通常暴露单一全局接口与外界交互。</p>
+<h2 id="Call__u548C_Apply"><a href="#Call__u548C_Apply" class="headerlink" title="Call 和 Apply"></a>Call 和 Apply</h2><p>这两个简单的方法，内建在所有的函数中，允许在自定义上下文中执行函数。call 函数需要参数列表而 apply 函数允许你传递参数为数组：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">user</span>(<span class="params">first, last, age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br><span class="line">user.call(<span class="built_in">window</span>, <span class="string">'John'</span>, <span class="string">'Doe'</span>, <span class="number">30</span>);</span><br><span class="line">user.apply(<span class="built_in">window</span>, [<span class="string">'John'</span>, <span class="string">'Doe'</span>, <span class="number">30</span>]);</span><br></pre></td></tr></table></figure>
+<p>执行的结果是相同的，user 函数在window上下文上被调用，并提供了相同的三个参数。</p>
+<p>ECMAScript 5 (ES5)引入了<em>Function.prototype.bind</em>方法来控制上下文，它返回一个新函数，这函数(的上下文)被永久绑定到bind方法的第一个参数，无论函数被如何调用。它通过闭包修正函数的上下文，下面是为不支持的浏览器提供的方案：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(<span class="string">'bind'</span> <span class="keyword">in</span> <span class="built_in">Function</span>.prototype))&#123;</span><br><span class="line">    <span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fn = <span class="keyword">this</span>, context = <span class="built_in">arguments</span>[<span class="number">0</span>], args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> fn.apply(context, args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>它常用在上下文丢失：面向对象和事件处理。这点有必要的因为 节点的addEventListener 方法总保持函数执行的上下文为事件处理被绑定的节点，这点很重要。然而如果你使用高级面向对象技术并且需要维护回调函数的上下文是方法的实例，你必须手动调整上下文。这就是bind 带来的方便：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.element = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">    <span class="keyword">this</span>.element.addEventListener(<span class="string">'click'</span>, <span class="keyword">this</span>.onClick.bind(<span class="keyword">this</span>), <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyClass.prototype.onClick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>当回顾bind函数的源代码，你可能注意到下面这一行相对简单的代码，调用Array的一个方法：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">Array</span><span class="class">.prototype</span><span class="class">.slice</span><span class="class">.call</span>(<span class="tag">arguments</span>, 1);</span><br></pre></td></tr></table></figure>
+<p>有趣的是,这里需要注意的是<em>arguments</em>对象实际上并不是一个数组，然而它经常被描述为类数组(array-like)对象，很向 nodelist(<em>document.getElementsByTagName()</em>方法返回的结果)。他们包含lenght属性，值能够被索引，但他们仍然不是数组，由于他们不支持原生的数组方法，比如slice和push。然而，由于他们有和数组类似的行为，数组的方法能被调用和劫持。如果你想这样，在类数组的上下文中执行数组方法，可参照上面的例子。</p>
+<p>这种调用其他对象方法的技术也被应用到面向对象中，当在javascript中模仿经典继承(类继承)：<br><figure class="highlight nimrod"><table><tr><td class="code"><pre><span class="line">  <span class="type">MyClass</span>.prototype.init = function()&#123;</span><br><span class="line">      // call the superclass init <span class="keyword">method</span> <span class="keyword">in</span> the context <span class="keyword">of</span> the <span class="string">"MyClass"</span> instance</span><br><span class="line">      <span class="type">MySuperClass</span>.prototype.init.apply(this, arguments);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">通过在子类(<span class="type">MyClass</span>)的实例中调用超类(<span class="type">MySuperClass</span>)的方法，我们能重现这种强大的设计模式。</span><br></pre></td></tr></table></figure></p>
+<h2 id="u7ED3_u8BBA"><a href="#u7ED3_u8BBA" class="headerlink" title="结论"></a>结论</h2><p>在你开始学习高级设计模式之前理解这些概念是非常重要的，由于作用域和上下文在现代javascript中扮演重要的和根本的角色。无论我们谈论闭包，面向对象，和继承或各种原生实现，上下文和作用域都扮演重要角色。如果你的目标是掌握javascript语言并深入了解它的组成，作用域和上下文应该是你的起点。</p>
+<h2 id="u8BD1_u8005_u8865_u5145"><a href="#u8BD1_u8005_u8865_u5145" class="headerlink" title="译者补充"></a>译者补充</h2><p>作者实现的bind函数是不完全的，调用bind返回的函数时不能传递参数，下面的代码修复了这个问题：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(‘bind’ <span class="keyword">in</span> <span class="built_in">Function</span>.prototype))&#123;</span><br><span class="line">    <span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fn = <span class="keyword">this</span>, context = <span class="built_in">arguments</span>[<span class="number">0</span>], args =<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> fn.apply(context, args.concat(<span class="built_in">arguments</span>));<span class="comment">//fixed</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注：本文为翻译文章，原文为 <a href="http://flippinawesome.org/2013/08/26/understanding-scope-and-context-in-javascript/" target="_blank" rel="external">Understanding Scope and Context in JavaScript</a>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/" data-id="ciwr8vac1006k2wvm2her1hfi" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-02-06-Jquery-on" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/06/2016-02-06-Jquery-on/" class="article-date">
+  <time datetime="2016-02-05T16:00:00.000Z" itemprop="datePublished">2016-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/06/2016-02-06-Jquery-on/">jQuery的on()在ios上失灵</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>已经渲染好的页面没有问题</p>
+<p>ios系统中动态创建元素用on()方法做事件委托失效，但是在Android与browser中没有问题。</p>
+<h3 id="u89E3_u51B3_u65B9_u6CD5"><a href="#u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="解决方法"></a>解决方法</h3><p>在页面渲染完成以后再去绑定相关的方法。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/" data-id="ciwr8vac2006n2wvmjaq5wrhs" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-02-05-MAC外接机械键盘" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/05/2016-02-05-MAC外接机械键盘/" class="article-date">
+  <time datetime="2016-02-04T16:00:00.000Z" itemprop="datePublished">2016-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/05/2016-02-05-MAC外接机械键盘/">mac外接机器键盘配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u57FA_u672C_u914D_u7F6E"><a href="#u57FA_u672C_u914D_u7F6E" class="headerlink" title="基本配置"></a>基本配置</h2><ul>
+<li>win ==&gt; common</li>
+<li>alt ==&gt; option</li>
+</ul>
+<h3 id="u5FEB_u6377_u952E"><a href="#u5FEB_u6377_u952E" class="headerlink" title="快捷键"></a>快捷键</h3><ul>
+<li>ctrl + (-&gt;,&lt;-)  切屏</li>
+<li>F11                         显示桌面</li>
+</ul>
+<h3 id="webstrom__u5FEB_u6377_u952E"><a href="#webstrom__u5FEB_u6377_u952E" class="headerlink" title="webstrom 快捷键"></a>webstrom 快捷键</h3><ul>
+<li>ctrl + shift + r ： 执行当前文件</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/05/2016-02-05-MAC外接机械键盘/" data-id="ciwr8vac4006p2wvmb12cwyer" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/05/2016-02-05-MAC外接机械键盘/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-02-04-li不换行" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/04/2016-02-04-li不换行/" class="article-date">
+  <time datetime="2016-02-03T16:00:00.000Z" itemprop="datePublished">2016-02-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/04/2016-02-04-li不换行/">使用css控制li不换行的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u4F7F_u7528float_u5C5E_u6027"><a href="#u4F7F_u7528float_u5C5E_u6027" class="headerlink" title="使用float属性"></a>使用float属性</h2><h2 id="u4F7F_u7528display_uFF0Cwhite-space"><a href="#u4F7F_u7528display_uFF0Cwhite-space" class="headerlink" title="使用display，white-space"></a>使用display，white-space</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/04/2016-02-04-li不换行/" data-id="ciwr8vac5006r2wvmxnhob16p" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/04/2016-02-04-li不换行/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-02-03-微信晃动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/03/2016-02-03-微信晃动/" class="article-date">
+  <time datetime="2016-02-02T16:00:00.000Z" itemprop="datePublished">2016-02-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/03/2016-02-03-微信晃动/">解决在微信浏览器中页面晃动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u53BB_u6389META"><a href="#u53BB_u6389META" class="headerlink" title="去掉META"></a>去掉META</h2><p>一般移动端开发，我们都会手动设计META，伸展比例为1：1，页面不进行缩放，展示如下：</p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;
+</code></pre><p>但是在微信浏览器中（iPhone）中出现晃动。</p>
+<p>解决方案：</p>
+<ul>
+<li>去掉先定义META</li>
+<li>通过js动态计算，添加META标签（推荐<a href="https://github.com/dukegod/h5-demos/blob/master/demos/dynamic_modifing_meta/resolution.js" target="_blank" rel="external">resolution.js</a>）</li>
+<li>最好配合less或者sass使用</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/03/2016-02-03-微信晃动/" data-id="ciwr8vac6006t2wvm02wrhebg" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/03/2016-02-03-微信晃动/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meta/">Meta</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-02-02-alterMessage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/02/2016-02-02-alterMessage/" class="article-date">
+  <time datetime="2016-02-01T16:00:00.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/2016-02-02-alterMessage/">弹框总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u82F9_u679C_u4E0B_u5F39_u6846_u95EE_u9898"><a href="#u82F9_u679C_u4E0B_u5F39_u6846_u95EE_u9898" class="headerlink" title="苹果下弹框问题"></a>苹果下弹框问题</h2><p>黑色背景框在一个层级，</p>
+<p>内容在另一个层级</p>
+<p>建议使用 absolute属性，解决iPhone手机遮挡不全的问题</p>
+<p>否则活影响内部数据的显示与隐藏</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/02/2016-02-02-alterMessage/" data-id="ciwr8vac7006x2wvmp1fest2u" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/02/2016-02-02-alterMessage/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -549,7 +574,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.25px;">App</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.25px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.75px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.5px;">Meta</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Node/" style="font-size: 15px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.5px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 12.5px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 18.75px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.75px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 15px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.25px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.56px;">App</a> <a href="/tags/CSS/" style="font-size: 17.78px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.22px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.11px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.22px;">Meta</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Node/" style="font-size: 14.44px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 15.56px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.22px;">Shell</a> <a href="/tags/Sockit/" style="font-size: 10px;">Sockit</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16.67px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 12.22px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 18.89px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 14.44px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.11px;">转载翻译</a>
     </div>
   </div>
 
@@ -571,23 +596,23 @@
       <ul>
         
           <li>
-            <a href="/2016/11/10/2016-11-10-Vue/">Vue1.0总结</a>
+            <a href="/2016/11/24/2016-11-24-Vuex-源码/">Vuex</a>
           </li>
         
           <li>
-            <a href="/2016/11/05/2016-11-05-Node-Buffer/">node中buffer</a>
+            <a href="/2016/11/16/2016-11-16-Vue-V2-进阶/">Vue2.0</a>
           </li>
         
           <li>
-            <a href="/2016/11/04/2016-11-04-Node-Stream/">node之stream</a>
+            <a href="/2016/11/15/2016-11-15-Vue-cli/">Vue-cli</a>
           </li>
         
           <li>
-            <a href="/2016/11/03/2016-11-03-Node-buffer-stream/">node中buffer与stream的区别</a>
+            <a href="/2016/11/14/2016-11-14-Vue-V1-V2/">Vue1.0 进阶 模板</a>
           </li>
         
           <li>
-            <a href="/2016/11/02/2016-11-02-iPhone手机找回/">苹果手机找回</a>
+            <a href="/2016/11/13/2016-11-13-Vue-进阶-总结/">Vue1.0 进阶 模板</a>
           </li>
         
       </ul>
