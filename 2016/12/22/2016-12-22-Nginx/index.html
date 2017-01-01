@@ -5,22 +5,19 @@
   
   <title>Nginx | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Nginx 通过brew安装,
-修改默认的80端口为8080，可以不通过sudo启动服务
-brew install nginx//启动nginx服务sudo brew services start nginx// 查看nginx版本nginx -v//关闭nginx服务brew services stop nginx//重新加载nginxnginx -s reload//停止nginxnginx">
+  <meta name="description" content="Nginx 是一款面向性能设计的 HTTP 服务器，能反向代理 HTTP，HTTPS 和邮件相关(SMTP，POP3，IMAP)的协议链接。并且提供了负载均衡以及 HTTP 缓存。它的设计充分使用异步事件模型，削减上下文调度的开销，提高服务器并发能力。采用了模块化设计，提供了丰富模块的第三方模块。
+所以关于 Nginx，有这些标签：「异步」「事件」「模块化」「高性能」「高并发」「反向代理」「负载均">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx">
 <meta property="og:url" content="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="Nginx 通过brew安装,
-修改默认的80端口为8080，可以不通过sudo启动服务
-brew install nginx//启动nginx服务sudo brew services start nginx// 查看nginx版本nginx -v//关闭nginx服务brew services stop nginx//重新加载nginxnginx -s reload//停止nginxnginx">
-<meta property="og:updated_time" content="2016-12-22T07:54:42.000Z">
+<meta property="og:description" content="Nginx 是一款面向性能设计的 HTTP 服务器，能反向代理 HTTP，HTTPS 和邮件相关(SMTP，POP3，IMAP)的协议链接。并且提供了负载均衡以及 HTTP 缓存。它的设计充分使用异步事件模型，削减上下文调度的开销，提高服务器并发能力。采用了模块化设计，提供了丰富模块的第三方模块。
+所以关于 Nginx，有这些标签：「异步」「事件」「模块化」「高性能」「高并发」「反向代理」「负载均">
+<meta property="og:updated_time" content="2017-01-01T14:28:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx">
-<meta name="twitter:description" content="Nginx 通过brew安装,
-修改默认的80端口为8080，可以不通过sudo启动服务
-brew install nginx//启动nginx服务sudo brew services start nginx// 查看nginx版本nginx -v//关闭nginx服务brew services stop nginx//重新加载nginxnginx -s reload//停止nginxnginx">
+<meta name="twitter:description" content="Nginx 是一款面向性能设计的 HTTP 服务器，能反向代理 HTTP，HTTPS 和邮件相关(SMTP，POP3，IMAP)的协议链接。并且提供了负载均衡以及 HTTP 缓存。它的设计充分使用异步事件模型，削减上下文调度的开销，提高服务器并发能力。采用了模块化设计，提供了丰富模块的第三方模块。
+所以关于 Nginx，有这些标签：「异步」「事件」「模块化」「高性能」「高并发」「反向代理」「负载均">
   
   
     <link rel="icon" href="/favicon.png">
@@ -91,19 +88,69 @@ brew install nginx//启动nginx服务sudo brew services start nginx// 查看ngin
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Nginx 通过brew安装,</p>
-<p>修改默认的80端口为8080，可以不通过sudo启动服务</p>
+        <p>Nginx 是一款面向性能设计的 HTTP 服务器，能反向代理 HTTP，HTTPS 和邮件相关(SMTP，POP3，IMAP)的协议链接。并且提供了负载均衡以及 HTTP 缓存。<br>它的设计充分使用异步事件模型，削减上下文调度的开销，提高服务器并发能力。采用了模块化设计，提供了丰富模块的第三方模块。</p>
+<p>所以关于 Nginx，有这些标签：「异步」「事件」「模块化」「高性能」「高并发」「反向代理」「负载均衡」</p>
+<a id="more"></a>
+<h2 id="u5B89_u88C5"><a href="#u5B89_u88C5" class="headerlink" title="安装"></a>安装</h2><p>Nginx 通过brew安装可以修改默认的80端口为8080，可以不通过sudo启动服务</p>
 <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">brew install nginx</span><br><span class="line"><span class="comment"></span><br><span class="line">//启动nginx服务</span></span><br><span class="line">sudo brew services <span class="built_in">start</span> nginx</span><br><span class="line"><span class="comment"></span><br><span class="line">// 查看nginx版本</span></span><br><span class="line">nginx -v</span><br><span class="line"><span class="comment"></span><br><span class="line">//关闭nginx服务</span></span><br><span class="line">brew services <span class="built_in">stop</span> nginx</span><br><span class="line"><span class="comment"></span><br><span class="line">//重新加载nginx</span></span><br><span class="line">nginx -s reload</span><br><span class="line"><span class="comment"></span><br><span class="line">//停止nginx</span></span><br><span class="line">nginx -s <span class="built_in">stop</span></span><br></pre></td></tr></table></figure>
+<p>也可以在安装目录中启动,但是需要以管理者方式启动，还是启动默认的80端口</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">安装的目录： <span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>nginx</span><br><span class="line"></span><br><span class="line"><span class="comment">// start</span></span><br><span class="line"></span><br><span class="line">sudo .<span class="regexp">/sbin/</span>nginx</span><br><span class="line"></span><br><span class="line"><span class="comment">// stop</span></span><br><span class="line"></span><br><span class="line">sudo .<span class="regexp">/sbin/</span>nginx -s stop</span><br></pre></td></tr></table></figure>
 <p>修改默认配置:/usr/local/etc/nginx/nginx.conf</p>
 <p>安装目录：/usr/local/Cellar/nginx/</p>
-<p>安装 openReasty后,不启动默认的nginx服务，启动openReasty自带的服务</p>
-<p>安装的目录： /usr/local/openresty/nginx</p>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="comment">// start</span></span><br><span class="line"></span><br><span class="line">sudo .<span class="regexp">/sbin/</span>nginx</span><br><span class="line"></span><br><span class="line"><span class="comment">// stop</span></span><br><span class="line"></span><br><span class="line">sudo .<span class="regexp">/sbin/</span>nginx -s stop</span><br></pre></td></tr></table></figure>
+<p>检测：</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/sbin/</span>nginx -t</span><br></pre></td></tr></table></figure>
+<h2 id="Nginx_u914D_u7F6E_u6587_u4EF6"><a href="#Nginx_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="Nginx配置文件"></a>Nginx配置文件</h2><p>nginx 的配置系统由一个主配置文件和其他一些辅助的配置文件构成。这些配置文件均是纯文本文件，全部位于 nginx 安装目录下的 conf 目录下。</p>
+<p>指令由 nginx 的各个模块提供，不同的模块会提供不同的指令来实现配置。<br>指令除了 Key-Value 的形式，还有作用域指令。</p>
+<p>nginx.conf 中的配置信息，根据其逻辑上的意义，对它们进行了分类，也就是分成了多个作用域，或者称之为配置指令上下文。不同的作用域含有一个或者多个配置项。</p>
+<p>下面的这些上下文指令是用的比较多：</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Description</th>
+<th>Contains Directive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>main</td>
+<td>nginx 在运行时与具体业务功能（比如 http 服务或者 email 服务代理）无关的一些参数，比如工作进程数，运行的身份等。</td>
+<td>user, worker_processes, error_log, events, http, mail</td>
+</tr>
+<tr>
+<td>http</td>
+<td>与提供 http 服务相关的一些配置参数。例如：是否使用 keepalive 啊，是否使用 gzip 进行压缩等。</td>
+<td>server</td>
+</tr>
+<tr>
+<td>server</td>
+<td>http 服务上支持若干虚拟主机。每个虚拟主机一个对应的 server 配置项，配置项里面包含该虚拟主机相关的配置。在提供 mail 服务的代理时，也可以建立若干 server. 每个 server 通过监听的地址来区分。</td>
+<td>listen, server_name, access_log, location, protocol, proxy, smtp_auth, xclient</td>
+</tr>
+<tr>
+<td>location</td>
+<td>http 服务中，某些特定的 URL 对应的一系列配置项。</td>
+<td>index, root</td>
+</tr>
+<tr>
+<td>mail</td>
+<td>实现 email 相关的 SMTP/IMAP/POP3 代理时，共享的一些配置项（因为可能实现多个代理，工作在多个监听地址上）。</td>
+<td>server, http, imap_capabilities</td>
+</tr>
+</tbody>
+</table>
+<p>在Centos 默认配置文件在 <strong>/usr/local/nginx-1.5.1/conf/nginx.conf</strong> 我们要在这里配置一些文件。例如我们再 <strong>nginx.conf</strong> 里面引用两个配置 vhost/example.com.conf 和 vhost/gitlab.com.conf 它们都被放在一个我自己新建的目录 vhost 下面。nginx.conf 配置如下：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">worker_processes</span>  <span class="number">1</span>;</span><br><span class="line"><span class="title">events</span> &#123;</span><br><span class="line">    <span class="title">worker_connections</span>  <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title">http</span> &#123;</span><br><span class="line">    <span class="title">include</span>       mime.types;</span><br><span class="line">    <span class="title">default_type</span>  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span></span><br><span class="line">    <span class="comment">#                  '$status $body_bytes_sent "$http_referer" '</span></span><br><span class="line">    <span class="comment">#                  '"$http_user_agent" "$http_x_forwarded_for"';</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#access_log  logs/access.log  main;</span></span><br><span class="line"></span><br><span class="line">    <span class="title">sendfile</span>        <span class="built_in">on</span>;</span><br><span class="line">    <span class="comment">#tcp_nopush     on;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#keepalive_timeout  0;</span></span><br><span class="line">    <span class="title">keepalive_timeout</span>  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#gzip  on;</span></span><br><span class="line">    <span class="title">server</span> &#123;</span><br><span class="line">        <span class="title">listen</span>       <span class="number">80</span>;</span><br><span class="line">        <span class="title">server_name</span>  localhost;</span><br><span class="line">        <span class="title">location</span> / &#123;</span><br><span class="line">            <span class="title">root</span>   html;</span><br><span class="line">            <span class="title">index</span>  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">        <span class="title">location</span> = /50x.html &#123;</span><br><span class="line">            <span class="title">root</span>   html;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title">include</span>  vhost/example.com.conf;</span><br><span class="line">    <span class="title">include</span>  vhost/gitlab.com.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简单的配置: example.com.conf</p>
+<figure class="highlight roboconf"><table><tr><td class="code"><pre><span class="line"><span class="component">server &#123;</span><br><span class="line">    <span class="comment">#侦听的80端口</span></span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  baidu<span class="string">.com</span> app<span class="string">.baidu.com</span>; <span class="comment"># 这里指定域名</span></span><br><span class="line">    index        index<span class="string">.html</span> index<span class="string">.htm</span>;    <span class="comment"># 这里指定默认入口页面</span></span><br><span class="line">    root /home/www/app<span class="string">.baidu.com</span>;         <span class="comment"># 这里指定目录</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>复杂的配置: gitlab.com.conf</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="title">upstream</span>  gitlab &#123;</span><br><span class="line">     <span class="title">server</span> xxx.xxx.xxx.xxx:<span class="number">8081</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">server</span> &#123;</span><br><span class="line">    <span class="comment">#侦听的80端口</span></span><br><span class="line">    <span class="title">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="title">server_name</span>  git.example.cn;</span><br><span class="line">    <span class="title">location</span> / &#123;</span><br><span class="line">        <span class="title">proxy_pass</span>   <span class="url">http://gitlab</span>;    <span class="comment">#在这里设置一个代理，和upstream的名字一样</span></span><br><span class="line">        <span class="comment">#以下是一些反向代理的配置可删除</span></span><br><span class="line">        <span class="title">proxy_redirect</span>             <span class="built_in">off</span>;</span><br><span class="line">        <span class="comment">#后端的Web服务器可以通过X-Forwarded-For获取用户真实IP</span></span><br><span class="line">        <span class="title">proxy_set_header</span>           Host <span class="variable">$host</span>;</span><br><span class="line">        <span class="title">proxy_set_header</span>           X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        <span class="title">proxy_set_header</span>           X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        <span class="title">client_max_body_size</span>       <span class="number">10m</span>; <span class="comment">#允许客户端请求的最大单文件字节数</span></span><br><span class="line">        <span class="title">client_body_buffer_size</span>    <span class="number">128k</span>; <span class="comment">#缓冲区代理缓冲用户端请求的最大字节数</span></span><br><span class="line">        <span class="title">proxy_connect_timeout</span>      <span class="number">300</span>; <span class="comment">#nginx跟后端服务器连接超时时间(代理连接超时)</span></span><br><span class="line">        <span class="title">proxy_send_timeout</span>         <span class="number">300</span>; <span class="comment">#后端服务器数据回传时间(代理发送超时)</span></span><br><span class="line">        <span class="title">proxy_read_timeout</span>         <span class="number">300</span>; <span class="comment">#连接成功后，后端服务器响应时间(代理接收超时)</span></span><br><span class="line">        <span class="title">proxy_buffer_size</span>          <span class="number">4k</span>; <span class="comment">#设置代理服务器（nginx）保存用户头信息的缓冲区大小</span></span><br><span class="line">        <span class="title">proxy_buffers</span>              <span class="number">4</span> <span class="number">32k</span>; <span class="comment">#proxy_buffers缓冲区，网页平均在32k以下的话，这样设置</span></span><br><span class="line">        <span class="title">proxy_busy_buffers_size</span>    <span class="number">64k</span>; <span class="comment">#高负荷下缓冲大小（proxy_buffers*2）</span></span><br><span class="line">        <span class="title">proxy_temp_file_write_size</span> <span class="number">64k</span>; <span class="comment">#设定缓存文件夹大小，大于这个值，将从upstream服务器传</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h3><p><a href="https://github.com/jaywcjlove/handbook/blob/master/Centos/nginx%E9%85%8D%E7%BD%AE.md" target="_blank" rel="external">nginx配置</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cix9win8500076yvms5pxqjcq" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cixes1tvy0007x4vmhs8mwtwn" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -216,7 +263,7 @@ brew install nginx//启动nginx服务sudo brew services start nginx// 查看ngin
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 liu hui<br>
+      &copy; 2017 liu hui<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

@@ -5,22 +5,19 @@
   
   <title>项目开发规范之jshint | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=".jshintrc
-主要是一些jshint本地配置的说明
-&amp;#123;  //  开发环境  &quot;env&quot;: &amp;#123;    &quot;browser&quot;: true,    &quot;jquery&quot;: true,    &quot;node&quot;: true,    &quot;es6&quot;: true,    &quot;esnext&quot;: true,    &quot;mocha&quot;: true  &amp;#125;,  &quot;rules&quot;: &amp;#123;    //">
+  <meta name="description" content="项目中配置.jshintrc可以在全局环境中配置.jshint.json
+主要是一些jshint本地配置的说明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目开发规范之jshint">
 <meta property="og:url" content="http://dukegod.github.io/2016/06/22/2016-06-23-开发规范-jshint/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content=".jshintrc
-主要是一些jshint本地配置的说明
-&amp;#123;  //  开发环境  &quot;env&quot;: &amp;#123;    &quot;browser&quot;: true,    &quot;jquery&quot;: true,    &quot;node&quot;: true,    &quot;es6&quot;: true,    &quot;esnext&quot;: true,    &quot;mocha&quot;: true  &amp;#125;,  &quot;rules&quot;: &amp;#123;    //">
-<meta property="og:updated_time" content="2016-09-13T06:55:18.000Z">
+<meta property="og:description" content="项目中配置.jshintrc可以在全局环境中配置.jshint.json
+主要是一些jshint本地配置的说明">
+<meta property="og:updated_time" content="2017-01-01T12:14:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目开发规范之jshint">
-<meta name="twitter:description" content=".jshintrc
-主要是一些jshint本地配置的说明
-&amp;#123;  //  开发环境  &quot;env&quot;: &amp;#123;    &quot;browser&quot;: true,    &quot;jquery&quot;: true,    &quot;node&quot;: true,    &quot;es6&quot;: true,    &quot;esnext&quot;: true,    &quot;mocha&quot;: true  &amp;#125;,  &quot;rules&quot;: &amp;#123;    //">
+<meta name="twitter:description" content="项目中配置.jshintrc可以在全局环境中配置.jshint.json
+主要是一些jshint本地配置的说明">
   
   
     <link rel="icon" href="/favicon.png">
@@ -91,15 +88,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>.jshintrc</p>
+        <p>项目中配置.jshintrc<br>可以在全局环境中配置.jshint.json</p>
 <p>主要是一些jshint本地配置的说明</p>
+<a id="more"></a>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">//  开发环境</span></span><br><span class="line">  <span class="string">"env"</span>: &#123;</span><br><span class="line">    <span class="string">"browser"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"jquery"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"node"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"es6"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"esnext"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"mocha"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"rules"</span>: &#123;</span><br><span class="line">    <span class="comment">// 使用单引号</span></span><br><span class="line">    <span class="string">"quotes"</span>: [<span class="number">2</span>, <span class="string">"single"</span>],</span><br><span class="line">    <span class="comment">// 是否要求变量都使用驼峰命名</span></span><br><span class="line">    <span class="string">"camelcase"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 不显示缺少分号警告</span></span><br><span class="line">    <span class="string">"asi"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"no-extra-semi"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="string">"semi"</span>: [<span class="number">2</span>, <span class="string">"always"</span>],</span><br><span class="line">    <span class="comment">// 是否存在console，alter</span></span><br><span class="line">    <span class="string">"no-console"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"no-alert"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// 未定义检测</span></span><br><span class="line">    <span class="string">"undef"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 未使用检测</span></span><br><span class="line">    <span class="string">"unused"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 强制使用===，!==</span></span><br><span class="line">    <span class="string">"eqeqeq"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 不显示缺少分号的警告</span></span><br><span class="line">    <span class="string">"lastsemic"</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 这个选项可以用来指定一个没有正式定义的全局变量的白名单</span></span><br><span class="line">  <span class="string">"globals"</span>: &#123;</span><br><span class="line">     <span class="string">"define"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="string">"module"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"export"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/4cb23f9e19d3" target="_blank" rel="external">1</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-23-开发规范-jshint/" data-id="cix9winar004b6yvm2z196qpz" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-23-开发规范-jshint/" data-id="cixes1tyl004bx4vmsvnrrkap" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/06/22/2016-06-23-开发规范-jshint/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -212,7 +210,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 liu hui<br>
+      &copy; 2017 liu hui<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
