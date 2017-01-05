@@ -13,7 +13,7 @@
 
 
 每一个对象创建的时候都会有一个prototype属性。
-var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // functi">
+var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型">
 <meta property="og:url" content="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/index.html">
@@ -26,7 +26,7 @@ var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct
 
 
 每一个对象创建的时候都会有一个prototype属性。
-var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // functi">
+var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct">
 <meta property="og:updated_time" content="2016-09-21T08:07:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型">
@@ -38,13 +38,13 @@ var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct
 
 
 每一个对象创建的时候都会有一个prototype属性。
-var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // functi">
+var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct">
   
   
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -118,12 +118,12 @@ var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct
 </li>
 </ol>
 <p>每一个对象创建的时候都会有一个prototype属性。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> Person); <span class="comment">// function</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype); <span class="comment">// &#123;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor); <span class="comment">//[Function]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> Person); <span class="comment">// function</span></div><div class="line"><span class="built_in">console</span>.log(Person.prototype); <span class="comment">// &#123;&#125;</span></div><div class="line"><span class="built_in">console</span>.log(Person.prototype.constructor); <span class="comment">//[Function]</span></div></pre></td></tr></table></figure>
 <p>空函数，prototype指向本身，constructor指向最高一级［Function］。原型链查找就是层级向上查找的。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;;</span><br><span class="line">Person.prototype.common = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'person common prototype'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'duke'</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">'duke2'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype); <span class="comment">//  common: [Function] &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor == Person); <span class="comment">// ture</span></span><br><span class="line"><span class="built_in">console</span>.log(person.constructor);[<span class="built_in">Function</span>]</span><br><span class="line"><span class="built_in">console</span>.log(person.constructor == Person);<span class="comment">// ture</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> person); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(person.prototype); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(person.prototype.constructor); <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;;</div><div class="line">Person.prototype.common = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'person common prototype'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'duke'</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">'duke2'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(Person.prototype); <span class="comment">//  common: [Function] &#125;</span></div><div class="line"><span class="built_in">console</span>.log(Person.prototype.constructor == Person); <span class="comment">// ture</span></div><div class="line"><span class="built_in">console</span>.log(person.constructor);[<span class="built_in">Function</span>]</div><div class="line"><span class="built_in">console</span>.log(person.constructor == Person);<span class="comment">// ture</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> person); <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(person.prototype); <span class="comment">// undefined</span></div><div class="line"><span class="built_in">console</span>.log(person.prototype.constructor); <span class="comment">// error</span></div></pre></td></tr></table></figure>
 <p>实例方法的constructor指向构造方法，构造函数的属性的constructor指向构造函数本身。</p>
 <p>最好的实现，应用 寄生组合式模式开发。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Person.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> Person);</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype);</span><br><span class="line"><span class="built_in">console</span>.log(Person.constructor === <span class="built_in">Function</span>); <span class="comment">// 构造函数的constructor指向Function</span></span><br><span class="line"><span class="built_in">console</span>.log(p.constructor === Person); <span class="comment">// 实例函数的constructor指向构造函数</span></span><br><span class="line"><span class="built_in">console</span>.log(p.prototype);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Child'</span>);</span><br><span class="line"><span class="keyword">var</span> Child = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Child.prototype = Person.prototype;</span><br><span class="line">Child.prototype.constructor = Child; <span class="comment">// 没有这条，ch.constructor ！== Child 而是指向ch.constructor === Person</span></span><br><span class="line"><span class="keyword">var</span> ch = <span class="keyword">new</span> Child();</span><br><span class="line"><span class="built_in">console</span>.log(ch <span class="keyword">instanceof</span> Child);</span><br><span class="line"><span class="built_in">console</span>.log(Child.prototype);</span><br><span class="line"><span class="built_in">console</span>.log(Child.constructor === <span class="built_in">Function</span>);</span><br><span class="line"><span class="built_in">console</span>.log(ch.constructor === Person);</span><br><span class="line"><span class="built_in">console</span>.log(ch.constructor === Child);</span><br><span class="line"><span class="built_in">console</span>.log(ch.prototype);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> Person);</div><div class="line"><span class="built_in">console</span>.log(Person.prototype);</div><div class="line"><span class="built_in">console</span>.log(Person.constructor === <span class="built_in">Function</span>); <span class="comment">// 构造函数的constructor指向Function</span></div><div class="line"><span class="built_in">console</span>.log(p.constructor === Person); <span class="comment">// 实例函数的constructor指向构造函数</span></div><div class="line"><span class="built_in">console</span>.log(p.prototype);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Child'</span>);</div><div class="line"><span class="keyword">var</span> Child = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Child.prototype = Person.prototype;</div><div class="line">Child.prototype.constructor = Child; <span class="comment">// 没有这条，ch.constructor ！== Child 而是指向ch.constructor === Person</span></div><div class="line"><span class="keyword">var</span> ch = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(ch <span class="keyword">instanceof</span> Child);</div><div class="line"><span class="built_in">console</span>.log(Child.prototype);</div><div class="line"><span class="built_in">console</span>.log(Child.constructor === <span class="built_in">Function</span>);</div><div class="line"><span class="built_in">console</span>.log(ch.constructor === Person);</div><div class="line"><span class="built_in">console</span>.log(ch.constructor === Child);</div><div class="line"><span class="built_in">console</span>.log(ch.prototype);</div></pre></td></tr></table></figure>
 <p>使用原型链实现继承的时候，我们需要注意的点。</p>
 <p>因为Child.prototype = Person.prototype，所以我们需要手动的把Child.prototype.constructor重新修改为指向自己，否则实例对象的constructor都是指向Person。</p>
 <p><a href="https://keelii.github.io/2016/07/02/javascript-definitive-guide-note-8/" target="_blank" rel="external">原型，类，构造方法</a></p>
@@ -131,7 +131,7 @@ var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/" data-id="cixext4bn006wxgvmf4sq7g1v" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/" data-id="cixkjnh9i0011dfvmgeorjdo9" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -213,6 +213,10 @@ var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -226,10 +230,6 @@ var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -296,11 +296,11 @@ var Person = function()&amp;#123;&amp;#125;;console.log(typeof Person); // funct
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

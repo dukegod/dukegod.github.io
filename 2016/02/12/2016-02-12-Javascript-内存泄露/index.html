@@ -29,7 +29,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -94,17 +94,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u5185_u5B58_u6CC4_u6F0F"><a href="#u5185_u5B58_u6CC4_u6F0F" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><p><a href="http://www.cnblogs.com/sprying/archive/2013/05/31/3109517.html" target="_blank" rel="external">ref.</a></p>
+        <h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><p><a href="http://www.cnblogs.com/sprying/archive/2013/05/31/3109517.html" target="_blank" rel="external">ref.</a></p>
 <p>内存泄漏是指一块被分配的内存既没有使用，又没有被回收的，直到浏览器进程结束。</p>
-<h2 id="u5185_u5B58_u6CC4_u6F0F_u7684_u60C5_u51B5"><a href="#u5185_u5B58_u6CC4_u6F0F_u7684_u60C5_u51B5" class="headerlink" title="内存泄漏的情况"></a>内存泄漏的情况</h2><p>1, 当页面中元素被移除或替换时，若元素绑定的事件仍没被移除，在IE中不会作出恰当处理，此时要先手工移除事件，不然会存在内存泄露。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div id=<span class="string">"myDiv"</span>&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"Click me"</span> <span class="attribute">id</span>=<span class="value">"myBtn"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line">  btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">"Processing..."</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="内存泄漏的情况"><a href="#内存泄漏的情况" class="headerlink" title="内存泄漏的情况"></a>内存泄漏的情况</h2><p>1, 当页面中元素被移除或替换时，若元素绑定的事件仍没被移除，在IE中不会作出恰当处理，此时要先手工移除事件，不然会存在内存泄露。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;div id=<span class="string">"myDiv"</span>&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Click me"</span> <span class="attr">id</span>=<span class="string">"myBtn"</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</div><div class="line">  btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">"Processing..."</span>;</div><div class="line">  &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 <p>改成</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div id=<span class="string">"myDiv"</span>&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"Click me"</span> <span class="attribute">id</span>=<span class="value">"myBtn"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        btn.onclick = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">"Processing..."</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;div id=<span class="string">"myDiv"</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Click me"</span> <span class="attr">id</span>=<span class="string">"myBtn"</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</div><div class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        btn.onclick = <span class="literal">null</span>;</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">"Processing..."</span>;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 <p>或改成事件委托</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"myDiv"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"Click me"</span> <span class="attribute">id</span>=<span class="value">"myBtn"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        event = event || <span class="built_in">window</span>.event;</span><br><span class="line">        <span class="keyword">if</span>(event.target.id == <span class="string">"myBtn"</span>)&#123;</span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">"Processing..."</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Click me"</span> <span class="attr">id</span>=<span class="string">"myBtn"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">        event = event || <span class="built_in">window</span>.event;</div><div class="line">        <span class="keyword">if</span>(event.target.id == <span class="string">"myBtn"</span>)&#123;</div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML = <span class="string">"Processing..."</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>2, 闭包问题引起的内容泄漏</p>
 <p>参考 js<em>o4</em>作用域</p>
-<h3 id="u95ED_u5305"><a href="#u95ED_u5305" class="headerlink" title="闭包"></a>闭包</h3><ul>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><ul>
 <li>为什么消耗内存</li>
 </ul>
 <p>每一次你去调用，需要把上一级的节点引入，对于内存中栈操作，就是放入一个内存中，并不会自动清除，这样的话，这条引用就一直存在内存中，所以就会一直延伸下去，就会造成内存的消耗</p>
@@ -116,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/" data-id="cixext4br0072xgvm2fh00yl7" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/" data-id="cixkjnh9g000xdfvm9lsbnvhp" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -198,6 +198,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -211,10 +215,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -281,11 +281,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

@@ -5,31 +5,31 @@
   
   <title>git 进阶 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git-config 相关的说明修改提交用户名或者邮箱全局的通过vim ~/.gitconfig来查看
+  <meta name="description" content="git-config 相关的说明通过修改此作为我们登陆的凭证，分为全局与本地
+修改提交用户名或者邮箱全局的通过vim ~/.gitconfig来查看，修改全局可以为每一次的提交省去登陆，提交人的相关信息
 git config --global user.name &quot;Your Name&quot;git config --global user.email you@example.com
-局部的通过当前路径下的 .git/config文件来查看
-git config user.name &quot;Your Name">
+局部的通过当前路径下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git 进阶">
 <meta property="og:url" content="http://dukegod.github.io/2016/03/01/2016-03-01-Git-进阶用法/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="git-config 相关的说明修改提交用户名或者邮箱全局的通过vim ~/.gitconfig来查看
+<meta property="og:description" content="git-config 相关的说明通过修改此作为我们登陆的凭证，分为全局与本地
+修改提交用户名或者邮箱全局的通过vim ~/.gitconfig来查看，修改全局可以为每一次的提交省去登陆，提交人的相关信息
 git config --global user.name &quot;Your Name&quot;git config --global user.email you@example.com
-局部的通过当前路径下的 .git/config文件来查看
-git config user.name &quot;Your Name">
-<meta property="og:updated_time" content="2016-12-20T02:58:31.000Z">
+局部的通过当前路径下">
+<meta property="og:updated_time" content="2017-01-05T13:16:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git 进阶">
-<meta name="twitter:description" content="git-config 相关的说明修改提交用户名或者邮箱全局的通过vim ~/.gitconfig来查看
+<meta name="twitter:description" content="git-config 相关的说明通过修改此作为我们登陆的凭证，分为全局与本地
+修改提交用户名或者邮箱全局的通过vim ~/.gitconfig来查看，修改全局可以为每一次的提交省去登陆，提交人的相关信息
 git config --global user.name &quot;Your Name&quot;git config --global user.email you@example.com
-局部的通过当前路径下的 .git/config文件来查看
-git config user.name &quot;Your Name">
+局部的通过当前路径下">
   
   
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -94,19 +94,20 @@ git config user.name &quot;Your Name">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git-config__u76F8_u5173_u7684_u8BF4_u660E"><a href="#git-config__u76F8_u5173_u7684_u8BF4_u660E" class="headerlink" title="git-config 相关的说明"></a>git-config 相关的说明</h2><h3 id="u4FEE_u6539_u63D0_u4EA4_u7528_u6237_u540D_u6216_u8005_u90AE_u7BB1"><a href="#u4FEE_u6539_u63D0_u4EA4_u7528_u6237_u540D_u6216_u8005_u90AE_u7BB1" class="headerlink" title="修改提交用户名或者邮箱"></a>修改提交用户名或者邮箱</h3><p>全局的通过vim ~/.gitconfig来查看</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config --global user<span class="class">.name</span> <span class="string">"Your Name"</span></span><br><span class="line">git config --global user<span class="class">.email</span> you@example.com</span><br></pre></td></tr></table></figure>
-<p>局部的通过当前路径下的 .git/config文件来查看</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config user<span class="class">.name</span> <span class="string">"Your Name"</span></span><br><span class="line">git config user<span class="class">.email</span> you@example.com</span><br></pre></td></tr></table></figure>
+        <h2 id="git-config-相关的说明"><a href="#git-config-相关的说明" class="headerlink" title="git-config 相关的说明"></a>git-config 相关的说明</h2><p>通过修改此作为我们登陆的凭证，分为全局与本地</p>
+<h3 id="修改提交用户名或者邮箱"><a href="#修改提交用户名或者邮箱" class="headerlink" title="修改提交用户名或者邮箱"></a>修改提交用户名或者邮箱</h3><p>全局的通过vim ~/.gitconfig来查看，修改全局可以为每一次的提交省去登陆，提交人的相关信息</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">git config --global user<span class="selector-class">.name</span> <span class="string">"Your Name"</span></div><div class="line">git config --global user<span class="selector-class">.email</span> you@example.com</div></pre></td></tr></table></figure>
+<p>局部的通过当前路径下的 .git/config文件来查看<br>对于不用的项目，又不想修改全局的属性，可以修改本地的属性，实现设置登陆与提交信息的相关的操作。</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">git config user<span class="selector-class">.name</span> <span class="string">"Your Name"</span></div><div class="line">git config user<span class="selector-class">.email</span> you@example<span class="selector-class">.com</span></div><div class="line"></div><div class="line">通过修改如下信息防止频繁的写入登陆信息</div><div class="line">[user]</div><div class="line">	name = liuhui162[user]</div><div class="line">	email = liuhui15@jd<span class="selector-class">.com</span>[credential]</div><div class="line">	help = store</div></pre></td></tr></table></figure>
 <p>也可以修改提交的用户名和Email</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">commit</span> <span class="comment">--amend --author='Your Name '</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="u4FEE_u6539_u7F16_u8F91_u5668"><a href="#u4FEE_u6539_u7F16_u8F91_u5668" class="headerlink" title="修改编辑器"></a>修改编辑器</h3><figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line"><span class="string">[core]</span></span><br><span class="line">    editor = emacs</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">git <span class="keyword">commit</span> <span class="comment">--amend --author='Your Name '</span></div></pre></td></tr></table></figure>
+<h3 id="修改编辑器"><a href="#修改编辑器" class="headerlink" title="修改编辑器"></a>修改编辑器</h3><figure class="highlight accesslog"><table><tr><td class="code"><pre><div class="line"><span class="string">[core]</span></div><div class="line">    editor = emacs</div></pre></td></tr></table></figure>
 <p><a href="https://github.com/git-tips/tips" target="_blank" rel="external">git-tips</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/03/01/2016-03-01-Git-进阶用法/" data-id="cixext4be006sxgvm23hkcz7u" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/03/01/2016-03-01-Git-进阶用法/" data-id="cixkjnh9k0013dfvm0w5ujeqr" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/03/01/2016-03-01-Git-进阶用法/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -188,6 +189,10 @@ git config user.name &quot;Your Name">
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -201,10 +206,6 @@ git config user.name &quot;Your Name">
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -271,11 +272,11 @@ git config user.name &quot;Your Name">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

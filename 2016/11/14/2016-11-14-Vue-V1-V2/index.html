@@ -3,24 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Vue1.0 进阶 模板 | Hello World</title>
+  <title>vue2 与 vue1的变化 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活，沉淀人生">
+  <meta name="description" content="总结v2比较v1的变化
+
+Vue2.0已经废弃1.0的ready钩子函数，进而使用mounted替换，同时还新增了beforeMount、beforeUpdate、updated等
+
+Vue2.0同时已经废弃$events、$dispatch、$broadcast,官方推荐使用vuex作为全局的事件驱动，然而废弃的这些方法在vux UI框架中很多地方都有使用，无疑在项目中用到它的地方在2.0版本都">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue1.0 进阶 模板">
+<meta property="og:title" content="vue2 与 vue1的变化">
 <meta property="og:url" content="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="记录生活，沉淀人生">
-<meta property="og:updated_time" content="2016-11-29T04:46:47.000Z">
+<meta property="og:description" content="总结v2比较v1的变化
+
+Vue2.0已经废弃1.0的ready钩子函数，进而使用mounted替换，同时还新增了beforeMount、beforeUpdate、updated等
+
+Vue2.0同时已经废弃$events、$dispatch、$broadcast,官方推荐使用vuex作为全局的事件驱动，然而废弃的这些方法在vux UI框架中很多地方都有使用，无疑在项目中用到它的地方在2.0版本都">
+<meta property="og:updated_time" content="2017-01-05T15:37:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue1.0 进阶 模板">
-<meta name="twitter:description" content="记录生活，沉淀人生">
+<meta name="twitter:title" content="vue2 与 vue1的变化">
+<meta name="twitter:description" content="总结v2比较v1的变化
+
+Vue2.0已经废弃1.0的ready钩子函数，进而使用mounted替换，同时还新增了beforeMount、beforeUpdate、updated等
+
+Vue2.0同时已经废弃$events、$dispatch、$broadcast,官方推荐使用vuex作为全局的事件驱动，然而废弃的这些方法在vux UI框架中很多地方都有使用，无疑在项目中用到它的地方在2.0版本都">
   
   
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -77,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Vue1.0 进阶 模板
+      vue2 与 vue1的变化
     </h1>
   
 
@@ -85,11 +97,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>总结v2比较v1的变化</p>
+<ul>
+<li><p>Vue2.0已经废弃1.0的ready钩子函数，进而使用mounted替换，同时还新增了beforeMount、beforeUpdate、updated等</p>
+</li>
+<li><p>Vue2.0同时已经废弃$events、$dispatch、$broadcast,官方推荐使用vuex作为全局的事件驱动，然而废弃的这些方法在vux UI框架中很多地方都有使用，无疑在项目中用到它的地方在2.0版本都会不起作用，甚至会报错。</p>
+</li>
+<li><p>v-for循环中常用的$index、$key也已不支持使用，trackby被key属性替换。</p>
+</li>
+<li><p>v-ref、v-el 弃用 统一使用ref属性为元素或组件添加标记，然后通过this.$refs获取</p>
+</li>
+<li><p>Vue2.0将不提供任何内置的过滤器，推荐使用单独的库，例如moment.js来格式化日期，accounting.js来格式化货币。对过滤器的决定性改变是对其语法的改变，使其与函数调用{/{ date | formatDate(‘YY-MM-DD’) }/}内联。</p>
+</li>
+<li><p>v-else不再适用于v-show，请使用其他的否定表达式。</p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cixext47t000wxgvmlb6r6fu3" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cixkjnhbd003hdfvmnjza1o6y" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -171,6 +198,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -184,10 +215,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -254,11 +281,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

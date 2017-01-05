@@ -19,7 +19,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -64,6 +64,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-09-06-设计模型-单例模型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/2016-09-06-设计模型-单例模型/" class="article-date">
+  <time datetime="2016-09-05T16:00:00.000Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/2016-09-06-设计模型-单例模型/">单例模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>只允许实例化一次的对象类，通过一个命名空间管理规划对象上的属性和方法。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>环境中只存在一个命名空间，防止方法的冲突与覆盖，符合js只存在唯一的全局变量规范</li>
+<li>节约内存资源</li>
+<li>方便模块化调用</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/06/2016-09-06-设计模型-单例模型/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/09/06/2016-09-06-设计模型-单例模型/" data-id="cixkjnhaw002odfvmd3m04zly" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/09/06/2016-09-06-设计模型-单例模型/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-09-05-Css-伪类属性" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/05/2016-09-05-Css-伪类属性/" class="article-date">
@@ -96,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/" data-id="cixext496002uxgvm4tcll1oi" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/" data-id="cixkjnhau002ldfvmhad0e464" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -142,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/04/2016-09-04-测试环境/" data-id="cixext498002wxgvmtt36w2qr" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/04/2016-09-04-测试环境/" data-id="cixkjnhav002ndfvm191pmn0h" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/04/2016-09-04-测试环境/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -187,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/01/2016-09-01-Atom/" data-id="cixext499002yxgvmet1t055a" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/01/2016-09-01-Atom/" data-id="cixkjnhav002mdfvmsc3eou3t" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/01/2016-09-01-Atom/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -229,8 +279,8 @@
 <p>可以参考以前的文章。</p>
 <p>我们的设计图是以750为标准的（也就是iPhone6为标准）</p>
 <p>我们一rem位单位，设计图给二倍图。通过修改html的基础字体，实现不同比率的适应。</p>
-<h3 id="u7B80_u5355_u70B9_u4E3A"><a href="#u7B80_u5355_u70B9_u4E3A" class="headerlink" title="简单点为"></a>简单点为</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span><br><span class="line">  <span class="keyword">var</span> rootFontSize = deviceWidth / <span class="number">7.5</span>;</span><br><span class="line">  <span class="keyword">if</span>(deviceWidth &gt; <span class="number">750</span>) &#123;</span><br><span class="line">      deviceWidth = <span class="number">750</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.documentElement.style.fontSize = rootFontSize  + <span class="string">'px'</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="u590D_u6742_u70B9"><a href="#u590D_u6742_u70B9" class="headerlink" title="复杂点"></a>复杂点</h3><p>解决方案：</p>
+<h3 id="简单点为"><a href="#简单点为" class="headerlink" title="简单点为"></a>简单点为</h3><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</div><div class="line">  <span class="keyword">var</span> rootFontSize = deviceWidth / <span class="number">7.5</span>;</div><div class="line">  <span class="keyword">if</span>(deviceWidth &gt; <span class="number">750</span>) &#123;</div><div class="line">      deviceWidth = <span class="number">750</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">document</span>.documentElement.style.fontSize = rootFontSize  + <span class="string">'px'</span>;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="复杂点"><a href="#复杂点" class="headerlink" title="复杂点"></a>复杂点</h3><p>解决方案：</p>
 <ul>
 <li>去掉先定义META</li>
 <li>通过js动态计算，添加META标签（推荐<a href="https://github.com/dukegod/h5-demos/blob/master/demos/dynamic_modifing_meta/resolution.js" target="_blank" rel="external">resolution.js</a>）</li>
@@ -240,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/" data-id="cixext49b0030xgvm9n3z2w68" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/" data-id="cixkjnhau002kdfvm9btesgoy" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -287,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/12/2016-08-12-Electron/" data-id="cixext49d0036xgvmja9aq2fr" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/12/2016-08-12-Electron/" data-id="cixkjnhat002jdfvm3i0h62og" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/12/2016-08-12-Electron/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -324,16 +374,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>函数将给定的字符串以指定基数解析成为整数。默认是以十进制为底数。<br>会将传人的数据按照基数进行解析。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">"546ddddd4444"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><div class="line">parseInt(<span class="string">"546ddddd4444"</span>)<span class="comment">;</span></div></pre></td></tr></table></figure>
 <p>第一个为数字不是整数，返回为NAN</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">'i90'</span>)</span></span>  <span class="comment">// NAN</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">'i90'</span>)</span></span>  <span class="comment">// NAN</span></div></pre></td></tr></table></figure>
 <p>传人的参数不能被解析也报错</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">parseInt(<span class="string">"546"</span>, <span class="number">2</span>);  <span class="comment">// NAN</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="string">"546"</span>, <span class="number">2</span>);  <span class="comment">// NAN</span></div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/11/2016-08-11-JavaScript-ParseInt/" data-id="cixext49f0038xgvm03z8f817" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/11/2016-08-11-JavaScript-ParseInt/" data-id="cixkjnhat002idfvm830dgzfd" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/11/2016-08-11-JavaScript-ParseInt/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -369,12 +419,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/fouber/blog/issues/3" target="_blank" rel="external">1</a></p>
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/fouber/blog/issues/3" target="_blank" rel="external">1</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/10/2016-08-10-前端优化之路/" data-id="cixext49g003axgvmnzic58jb" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/10/2016-08-10-前端优化之路/" data-id="cixkjnhat002hdfvmpxtlid15" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/10/2016-08-10-前端优化之路/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -410,15 +460,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u65B0_u624B_u63A8_u8350github_u5BA2_u6237_u7AEF"><a href="#u65B0_u624B_u63A8_u8350github_u5BA2_u6237_u7AEF" class="headerlink" title="新手推荐github客户端"></a>新手推荐github客户端</h2><p><a href="https://desktop.github.com/" target="_blank" rel="external">Github Desktop</a></p>
-<h2 id="u521B_u5EFA_u9759_u6001_u7F51_u7AD9"><a href="#u521B_u5EFA_u9759_u6001_u7F51_u7AD9" class="headerlink" title="创建静态网站"></a>创建静态网站</h2><p><a href="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/">Hexo</a></p>
-<h2 id="u9879_u76EE_u6F14_u793A_u53D1_u5E03_u53D1_u5E03_u5230_gh-pages"><a href="#u9879_u76EE_u6F14_u793A_u53D1_u5E03_u53D1_u5E03_u5230_gh-pages" class="headerlink" title="项目演示发布发布到 gh-pages"></a>项目演示发布发布到 gh-pages</h2><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">subtree </span><span class="keyword">push </span>--prefix= <span class="string">'你想发布的文件常用(dist)'</span> origin gh-pages</span><br></pre></td></tr></table></figure>
+        <h2 id="新手推荐github客户端"><a href="#新手推荐github客户端" class="headerlink" title="新手推荐github客户端"></a>新手推荐github客户端</h2><p><a href="https://desktop.github.com/" target="_blank" rel="external">Github Desktop</a></p>
+<h2 id="创建静态网站"><a href="#创建静态网站" class="headerlink" title="创建静态网站"></a>创建静态网站</h2><p><a href="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/">Hexo</a></p>
+<h2 id="项目演示发布发布到-gh-pages"><a href="#项目演示发布发布到-gh-pages" class="headerlink" title="项目演示发布发布到 gh-pages"></a>项目演示发布发布到 gh-pages</h2><figure class="highlight maxima"><table><tr><td class="code"><pre><div class="line">git subtree <span class="built_in">push</span> --<span class="built_in">prefix</span>= '你想发布的文件常用(dist)' <span class="built_in">origin</span> gh-pages</div></pre></td></tr></table></figure>
 <p><a href="http://www.damian.oquanta.info/posts/one-line-deployment-of-your-site-to-gh-pages.html" target="_blank" rel="external">http://www.damian.oquanta.info/posts/one-line-deployment-of-your-site-to-gh-pages.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/08/2016-08-08-Github-page/" data-id="cixext49h003cxgvm84ho4zgu" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/08/2016-08-08-Github-page/" data-id="cixkjnhas002gdfvmyultxvzq" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/08/2016-08-08-Github-page/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -461,62 +511,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/02/2016-08-02-Source-map/" data-id="cixext49j003hxgvmdc8t4mn1" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/02/2016-08-02-Source-map/" data-id="cixkjnhar002fdfvmjfjy4h2p" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/02/2016-08-02-Source-map/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-08-01-Css-Box-sizing" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/01/2016-08-01-Css-Box-sizing/" class="article-date">
-  <time datetime="2016-07-31T16:00:00.000Z" itemprop="datePublished">2016-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/01/2016-08-01-Css-Box-sizing/">Box-sizing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>盒模型:</p>
-<ul>
-<li>border</li>
-<li>padding</li>
-<li>margin</li>
-</ul>
-<p>box-sizing: border-box, content-box</p>
-<p>content-box(默认): 元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度/高度（content width/height）;</p>
-<p>border-box : 内容宽度/高度=width/height-border-padding</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/01/2016-08-01-Css-Box-sizing/" data-id="cixext49m003jxgvmfltk533u" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/08/01/2016-08-01-Css-Box-sizing/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
 
     </footer>
   </div>
@@ -573,6 +573,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -586,10 +590,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -654,11 +654,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

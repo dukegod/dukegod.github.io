@@ -23,7 +23,7 @@ jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素�
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -91,18 +91,18 @@ jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素�
         <p>伪劣属性，在前端开发如今用到的越来越多，平时获取修改伪类属性，会遇到一些坑。</p>
 <p>jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素，伪类不属于DOM属性，jquery只能和我们说拜拜啦。</p>
 <a id="more"></a>
-<h2 id="u83B7_u53D6_u4F2A_u7C7B_u5C5E_u6027"><a href="#u83B7_u53D6_u4F2A_u7C7B_u5C5E_u6027" class="headerlink" title="获取伪类属性"></a>获取伪类属性</h2><p>window.getComputedStyle(ele,pseudo).getPropertyValue(attr);</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 原生获取样式,只读的方式找到样式</span></span><br><span class="line"><span class="keyword">var</span> hth = <span class="built_in">document</span>.getElementsById(<span class="string">'styleId'</span>);</span><br><span class="line"><span class="keyword">var</span> rawStyle = getStyle(hth,<span class="string">'width'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'rawStyle----'</span>,rawStyle);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取伪类的样式</span></span><br><span class="line"><span class="keyword">var</span> fakeStyle = <span class="built_in">window</span>.getComputedStyle(hth, <span class="string">':after'</span>).getPropertyValue(<span class="string">'width'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取伪类元素的内容---'</span>,fakeStyle);</span><br><span class="line"><span class="keyword">var</span> fakestyle2 = getStyle(hth,<span class="string">':after'</span>,<span class="string">'width'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'fakestyle2---'</span>,fakestyle2);</span><br></pre></td></tr></table></figure>
-<h2 id="u4FEE_u6539_u4F2A_u7C7B_u5C5E_u6027"><a href="#u4FEE_u6539_u4F2A_u7C7B_u5C5E_u6027" class="headerlink" title="修改伪类属性"></a>修改伪类属性</h2><p>如果想要用JavaScript动态更改伪元素属性值的话，思路如下：</p>
+<h2 id="获取伪类属性"><a href="#获取伪类属性" class="headerlink" title="获取伪类属性"></a>获取伪类属性</h2><p>window.getComputedStyle(ele,pseudo).getPropertyValue(attr);</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 原生获取样式,只读的方式找到样式</span></div><div class="line"><span class="keyword">var</span> hth = <span class="built_in">document</span>.getElementsById(<span class="string">'styleId'</span>);</div><div class="line"><span class="keyword">var</span> rawStyle = getStyle(hth,<span class="string">'width'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'rawStyle----'</span>,rawStyle);</div><div class="line"></div><div class="line"><span class="comment">// 获取伪类的样式</span></div><div class="line"><span class="keyword">var</span> fakeStyle = <span class="built_in">window</span>.getComputedStyle(hth, <span class="string">':after'</span>).getPropertyValue(<span class="string">'width'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取伪类元素的内容---'</span>,fakeStyle);</div><div class="line"><span class="keyword">var</span> fakestyle2 = getStyle(hth,<span class="string">':after'</span>,<span class="string">'width'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'fakestyle2---'</span>,fakestyle2);</div></pre></td></tr></table></figure>
+<h2 id="修改伪类属性"><a href="#修改伪类属性" class="headerlink" title="修改伪类属性"></a>修改伪类属性</h2><p>如果想要用JavaScript动态更改伪元素属性值的话，思路如下：</p>
 <ul>
 <li>JavaScript更改data-属性值来更改伪元素的content值</li>
 <li>创建多个class，通过切换class来达到改变样式的目的</li>
 <li>利用CSSStyleSheet的insertRule方法来添加样式</li>
 <li>利用内部css样式的高优先级来覆盖外部css</li>
 </ul>
-<h4 id="JavaScript_u66F4_u6539data-_u5C5E_u6027_u503C_u6765_u66F4_u6539_u4F2A_u5143_u7D20_u7684content_u503C"><a href="#JavaScript_u66F4_u6539data-_u5C5E_u6027_u503C_u6765_u66F4_u6539_u4F2A_u5143_u7D20_u7684content_u503C" class="headerlink" title="JavaScript更改data-属性值来更改伪元素的content值"></a>JavaScript更改data-属性值来更改伪元素的content值</h4><p>利用DOM的data-属性来更改content的值，这样JavaScript可以获取到此DOM的值了，就可以动态的修改样式了。</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line">&lt;p id=<span class="string">"pp"</span> style=<span class="string">"width:200px;"</span>&gt;&lt;/p&gt;</span><br><span class="line"><span class="variable">#pp</span><span class="tag">::after</span>&#123;</span><br><span class="line">  width: <span class="number">100</span>px;</span><br><span class="line">  font<span class="attribute">-size</span>: <span class="number">28</span>px;</span><br><span class="line">  col<span class="subst">or</span>: <span class="variable">#7</span>f9fd4;</span><br><span class="line">  content: attr(<span class="built_in">data</span><span class="attribute">-cont</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">var</span> pp = document<span class="built_in">.</span>getElementById(<span class="string">'pp'</span>);</span><br><span class="line">console<span class="built_in">.</span><span class="keyword">log</span>(getStyle(pp, <span class="string">':after'</span>, <span class="string">'content'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 动态修改content值</span></span><br><span class="line">$(<span class="string">'#pp'</span>)<span class="built_in">.</span>attr(<span class="string">'data-cont'</span>,<span class="string">'aaa'</span>);</span><br><span class="line">console<span class="built_in">.</span><span class="keyword">log</span>(getStyle(pp, <span class="string">':after'</span>, <span class="string">'content'</span>));</span><br></pre></td></tr></table></figure>
-<h4 id="u521B_u5EFA_u591A_u4E2Aclass_uFF0C_u901A_u8FC7_u5207_u6362class_u6765_u8FBE_u5230_u6539_u53D8_u6837_u5F0F_u7684_u76EE_u7684"><a href="#u521B_u5EFA_u591A_u4E2Aclass_uFF0C_u901A_u8FC7_u5207_u6362class_u6765_u8FBE_u5230_u6539_u53D8_u6837_u5F0F_u7684_u76EE_u7684" class="headerlink" title="创建多个class，通过切换class来达到改变样式的目的"></a>创建多个class，通过切换class来达到改变样式的目的</h4><h4 id="u5229_u7528CSSStyleSheet_u7684insertRule_u65B9_u6CD5_u6765_u6DFB_u52A0_u6837_u5F0F"><a href="#u5229_u7528CSSStyleSheet_u7684insertRule_u65B9_u6CD5_u6765_u6DFB_u52A0_u6837_u5F0F" class="headerlink" title="利用CSSStyleSheet的insertRule方法来添加样式"></a>利用CSSStyleSheet的insertRule方法来添加样式</h4><h4 id="u5229_u7528_u5185_u90E8css_u6837_u5F0F_u7684_u9AD8_u4F18_u5148_u7EA7_u6765_u8986_u76D6_u5916_u90E8css"><a href="#u5229_u7528_u5185_u90E8css_u6837_u5F0F_u7684_u9AD8_u4F18_u5148_u7EA7_u6765_u8986_u76D6_u5916_u90E8css" class="headerlink" title="利用内部css样式的高优先级来覆盖外部css"></a>利用内部css样式的高优先级来覆盖外部css</h4><p>项目地址</p>
+<h4 id="JavaScript更改data-属性值来更改伪元素的content值"><a href="#JavaScript更改data-属性值来更改伪元素的content值" class="headerlink" title="JavaScript更改data-属性值来更改伪元素的content值"></a>JavaScript更改data-属性值来更改伪元素的content值</h4><p>利用DOM的data-属性来更改content的值，这样JavaScript可以获取到此DOM的值了，就可以动态的修改样式了。</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><div class="line">&lt;p id=<span class="string">"pp"</span> style=<span class="string">"width:200px;"</span>&gt;&lt;/p&gt;</div><div class="line">#pp<span class="type">::after</span>&#123;</div><div class="line">  width: <span class="number">100</span>px;</div><div class="line">  font<span class="params">-size</span>: <span class="number">28</span>px;</div><div class="line">  color: #7f9fd4;</div><div class="line">  content: attr(<span class="built_in">data</span><span class="params">-cont</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">var</span> pp = document.getElementById(<span class="string">'pp'</span>);</div><div class="line">console.<span class="keyword">log</span>(getStyle(pp, <span class="string">':after'</span>, <span class="string">'content'</span>));</div><div class="line"></div><div class="line"><span class="comment">// 动态修改content值</span></div><div class="line">$(<span class="string">'#pp'</span>).attr(<span class="string">'data-cont'</span>,<span class="string">'aaa'</span>);</div><div class="line">console.<span class="keyword">log</span>(getStyle(pp, <span class="string">':after'</span>, <span class="string">'content'</span>));</div></pre></td></tr></table></figure>
+<h4 id="创建多个class，通过切换class来达到改变样式的目的"><a href="#创建多个class，通过切换class来达到改变样式的目的" class="headerlink" title="创建多个class，通过切换class来达到改变样式的目的"></a>创建多个class，通过切换class来达到改变样式的目的</h4><h4 id="利用CSSStyleSheet的insertRule方法来添加样式"><a href="#利用CSSStyleSheet的insertRule方法来添加样式" class="headerlink" title="利用CSSStyleSheet的insertRule方法来添加样式"></a>利用CSSStyleSheet的insertRule方法来添加样式</h4><h4 id="利用内部css样式的高优先级来覆盖外部css"><a href="#利用内部css样式的高优先级来覆盖外部css" class="headerlink" title="利用内部css样式的高优先级来覆盖外部css"></a>利用内部css样式的高优先级来覆盖外部css</h4><p>项目地址</p>
 <p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/getStyle" target="_blank" rel="external">getStyle</a></p>
 <p>参考</p>
 <p><a href="http://chitanda.me/2015/07/15/get-and-modify-pseudo-elements-value-by-javascript/" target="_blank" rel="external">利用javascript获取并修改伪元素的值</a></p>
@@ -110,7 +110,7 @@ jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/" data-id="cixext496002uxgvm4tcll1oi" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/" data-id="cixkjnhau002ldfvmhad0e464" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -192,6 +192,10 @@ jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素�
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -205,10 +209,6 @@ jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素�
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -275,11 +275,11 @@ jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素�
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

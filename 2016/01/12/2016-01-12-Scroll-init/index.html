@@ -20,7 +20,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -85,23 +85,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="u5FEB_u901F_u56DE_u5F39_u6EDA_u52A8_u4EE5_u53CA_u5FAE_u4FE1_u67B6_u6784_u9875_u9762_u7684_u601D_u8003"><a href="#u5FEB_u901F_u56DE_u5F39_u6EDA_u52A8_u4EE5_u53CA_u5FAE_u4FE1_u67B6_u6784_u9875_u9762_u7684_u601D_u8003" class="headerlink" title="快速回弹滚动以及微信架构页面的思考"></a>快速回弹滚动以及微信架构页面的思考</h3><p>我们先来看看回弹滚动在手机浏览器发展的历史：<br>早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;<br>Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；<br>Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；<br>iOS从5.0开始解决了滚动条不可见及增加了快速回弹滚动效果</p>
+        <h3 id="快速回弹滚动以及微信架构页面的思考"><a href="#快速回弹滚动以及微信架构页面的思考" class="headerlink" title="快速回弹滚动以及微信架构页面的思考"></a>快速回弹滚动以及微信架构页面的思考</h3><p>我们先来看看回弹滚动在手机浏览器发展的历史：<br>早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;<br>Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；<br>Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；<br>iOS从5.0开始解决了滚动条不可见及增加了快速回弹滚动效果</p>
 <a id="more"></a>
-<h4 id="u6EDA_u52A8_u8BF4_u660E"><a href="#u6EDA_u52A8_u8BF4_u660E" class="headerlink" title="滚动说明"></a>滚动说明</h4><p>全局滚动， 滚动条在body节点或更顶层<br>局部滚动， 滚动条在body下某一个dom节点上</p>
+<h4 id="滚动说明"><a href="#滚动说明" class="headerlink" title="滚动说明"></a>滚动说明</h4><p>全局滚动， 滚动条在body节点或更顶层<br>局部滚动， 滚动条在body下某一个dom节点上</p>
 <h3 id="ios"><a href="#ios" class="headerlink" title="ios"></a>ios</h3><pre><code>body{
 -webkit-overflow-scrolling: touch;
 }
 </code></pre><p>这个属性可以实现类似原生的效果，快速回弹。<br>但是会出项出界问题，就是当你在微信或者QQ中打开页面的时候，滚动的时候，你会看看‘网页通过‘’提供支持’一个黑色的背景样式。</p>
-<h5 id="u8003_u8651_u6362_u4E00_u4E2A_u601D_u60F3_uFF0C_u5C40_u90E8_u6EDA_u52A8"><a href="#u8003_u8651_u6362_u4E00_u4E2A_u601D_u60F3_uFF0C_u5C40_u90E8_u6EDA_u52A8" class="headerlink" title="考虑换一个思想，局部滚动"></a>考虑换一个思想，局部滚动</h5><ul>
+<h5 id="考虑换一个思想，局部滚动"><a href="#考虑换一个思想，局部滚动" class="headerlink" title="考虑换一个思想，局部滚动"></a>考虑换一个思想，局部滚动</h5><ul>
 <li>body加上-webkit-overflow-scrolling: touch;</li>
 <li>通过 <a href="https://github.com/joelambert/ScrollFix" target="_blank" rel="external">ScrollFix</a> 解决出界问题</li>
 </ul>
 <h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>-webkit-overflow-scrolling: touch 在Android在没有效果，而且用类似ios那个方法比较的坑爹，滚动条不能实时滚动</p>
-<h4 id="u7528_u5168_u5C40_u6EDA_u52A8_u6548_u679C"><a href="#u7528_u5168_u5C40_u6EDA_u52A8_u6548_u679C" class="headerlink" title="用全局滚动效果"></a>用全局滚动效果</h4><ul>
+<h4 id="用全局滚动效果"><a href="#用全局滚动效果" class="headerlink" title="用全局滚动效果"></a>用全局滚动效果</h4><ul>
 <li>header, footer 用fixed属性固定</li>
 <li>内容区域用padding 填充上下的高度问题</li>
 </ul>
-<h2 id="u6700_u7EC8_u5B9E_u73B0_u65B9_u6848"><a href="#u6700_u7EC8_u5B9E_u73B0_u65B9_u6848" class="headerlink" title="最终实现方案"></a>最终实现方案</h2><ul>
+<h2 id="最终实现方案"><a href="#最终实现方案" class="headerlink" title="最终实现方案"></a>最终实现方案</h2><ul>
 <li>第一步先通过 UA判断 客户端类型 <a href="https://github.com/dukegod/isClient" target="_blank" rel="external">检测客户端</a></li>
 <li>分不同的客户端加载不同的样式</li>
 <li>对于需要固定部分，取消默认的touchmove 属性</li>
@@ -111,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12-Scroll-init/" data-id="cixext4cg008hxgvmwgkgcm5x" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12-Scroll-init/" data-id="cixkjnh8u000ddfvm8mqw5xt4" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/12/2016-01-12-Scroll-init/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -193,6 +193,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -206,10 +210,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -276,11 +276,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

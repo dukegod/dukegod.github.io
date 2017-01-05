@@ -15,8 +15,7 @@ v-on:click=&quot;add()&quot;
 add方法放在methods这个对象中
 
 v-model: 对应data中的数据，只用在input，selected，textarea
-v-text : {/{}/}
-v">
+v-text : {/{}/}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue1.0 进阶 模板">
 <meta property="og:url" content="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/index.html">
@@ -31,9 +30,8 @@ v-on:click=&quot;add()&quot;
 add方法放在methods这个对象中
 
 v-model: 对应data中的数据，只用在input，selected，textarea
-v-text : {/{}/}
-v">
-<meta property="og:updated_time" content="2016-12-16T03:47:02.000Z">
+v-text : {/{}/}">
+<meta property="og:updated_time" content="2017-01-02T17:07:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue1.0 进阶 模板">
 <meta name="twitter:description" content="v-bind: 属性，class，style的绑定，添加与隐藏效果
@@ -46,14 +44,13 @@ v-on:click=&quot;add()&quot;
 add方法放在methods这个对象中
 
 v-model: 对应data中的数据，只用在input，selected，textarea
-v-text : {/{}/}
-v">
+v-text : {/{}/}">
   
   
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -121,23 +118,24 @@ v">
         <ul>
 <li>v-bind: 属性，class，style的绑定，添加与隐藏效果</li>
 </ul>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">v-<span class="string">bind:</span><span class="class"><span class="keyword">class</span> = "&#123;</span><span class="string">finished:</span><span class="number">0</span>&#125;<span class="string">"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line">v-<span class="string">bind:</span><span class="class"><span class="keyword">class</span> = "&#123;</span><span class="string">finished:</span><span class="number">0</span>&#125;<span class="string">"</span></div></pre></td></tr></table></figure>
 <ul>
 <li>v-on: 事件绑定，添加具体的事件</li>
 </ul>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">v-<span class="function_start"><span class="keyword">on</span></span>:click=<span class="string">"add()"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">v-<span class="keyword">on</span>:click=<span class="string">"add()"</span></div></pre></td></tr></table></figure>
 <p>add方法放在methods这个对象中</p>
 <ul>
 <li>v-model: 对应data中的数据，只用在input，selected，textarea</li>
 <li>v-text : {/{}/}</li>
 <li>v-html: 可以执行data里面的html</li>
-<li>v-for:</li>
+<li>v-for: 循环数组数据, 循环数据value，循环索引index</li>
 </ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"id"</span>: <span class="string">"581b0c4ebb9452c9052e7acb"</span>,</div><div class="line">  <span class="string">"author_id"</span>: <span class="string">"5110f2bedf9e9fcc584e4677"</span>,</div><div class="line">  <span class="string">"tab"</span>: <span class="string">"share"</span>,</div><div class="line">  <span class="string">"title"</span>: <span class="string">"title title"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;<span class="selector-tag">li</span> v-<span class="keyword">for</span>=<span class="string">"(value, index) in msg"</span>&gt;</div><div class="line">  &lt;h3&gt;&#123;&#123; value<span class="selector-class">.title</span> &#125;&#125;&lt;/h3&gt;</div><div class="line">  &lt;div&gt;&#123;&#123; value<span class="selector-class">.id</span> &#125;&#125;&lt;/div&gt;</div><div class="line">  &lt;div&gt;&#123;&#123; value<span class="selector-class">.tab</span> &#125;&#125;&lt;/div&gt;</div><div class="line">&lt;/li&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/" data-id="cixext47w0010xgvmsh3f50rl" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/" data-id="cixkjnhbc003fdfvm60td6go5" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -219,6 +217,10 @@ v">
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -232,10 +234,6 @@ v">
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -302,11 +300,11 @@ v">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

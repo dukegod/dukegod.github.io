@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>webpack | Hello World</title>
+  <title>webpack 配置与用法 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前端模块要在客户端中执行，所以他们需要增量加载到浏览器中。
 模块的加载和传输，我们首先能想到两种极端的方式，一种是每个模块文件都单独请求，另一种是把所有模块打包成一个文件然后只请求一次。显而易见，每个模块都发起单独的请求造成了请求次数过多，导致应用启动速度慢；一次请求加载所有模块导致流量浪费、初始化过程慢。这两种方式都不是好的解决方案，它们过于简单粗暴。
 分块传输，按需进行懒加载，在实际用到某些模">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack">
+<meta property="og:title" content="webpack 配置与用法">
 <meta property="og:url" content="http://dukegod.github.io/2016/07/02/2016-07-02-Webpack/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="前端模块要在客户端中执行，所以他们需要增量加载到浏览器中。
 模块的加载和传输，我们首先能想到两种极端的方式，一种是每个模块文件都单独请求，另一种是把所有模块打包成一个文件然后只请求一次。显而易见，每个模块都发起单独的请求造成了请求次数过多，导致应用启动速度慢；一次请求加载所有模块导致流量浪费、初始化过程慢。这两种方式都不是好的解决方案，它们过于简单粗暴。
 分块传输，按需进行懒加载，在实际用到某些模">
-<meta property="og:updated_time" content="2016-09-04T11:48:31.000Z">
+<meta property="og:updated_time" content="2017-01-04T06:03:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack">
+<meta name="twitter:title" content="webpack 配置与用法">
 <meta name="twitter:description" content="前端模块要在客户端中执行，所以他们需要增量加载到浏览器中。
 模块的加载和传输，我们首先能想到两种极端的方式，一种是每个模块文件都单独请求，另一种是把所有模块打包成一个文件然后只请求一次。显而易见，每个模块都发起单独的请求造成了请求次数过多，导致应用启动速度慢；一次请求加载所有模块导致流量浪费、初始化过程慢。这两种方式都不是好的解决方案，它们过于简单粗暴。
 分块传输，按需进行懒加载，在实际用到某些模">
@@ -26,7 +26,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      webpack
+      webpack 配置与用法
     </h1>
   
 
@@ -95,18 +95,19 @@
 <p>模块的加载和传输，我们首先能想到两种极端的方式，一种是每个模块文件都单独请求，另一种是把所有模块打包成一个文件然后只请求一次。显而易见，每个模块都发起单独的请求造成了请求次数过多，导致应用启动速度慢；一次请求加载所有模块导致流量浪费、初始化过程慢。这两种方式都不是好的解决方案，它们过于简单粗暴。</p>
 <p><strong>分块传输</strong>，按需进行懒加载，在实际用到某些模块的时候再增量更新，才是较为合理的模块加载方案。</p>
 <p>要实现模块的按需加载，就需要一个对整个代码库中的模块进行静态分析、编译打包的过程。</p>
-<h3 id="u6240_u6709_u8D44_u6E90_u90FD_u662F_u6A21_u5757"><a href="#u6240_u6709_u8D44_u6E90_u90FD_u662F_u6A21_u5757" class="headerlink" title="所有资源都是模块"></a>所有资源都是模块</h3><p>在上面的分析过程中，我们提到的模块仅仅是指JavaScript模块文件。然而，在前端开发过程中还涉及到样式、图片、字体、HTML 模板等等众多的资源。这些资源还会以各种方言的形式存在，比如 coffeescript、 less、 sass、众多的模板库、多语言系统（i18n）等等。</p>
+<a id="more"></a>
+<h3 id="所有资源都是模块"><a href="#所有资源都是模块" class="headerlink" title="所有资源都是模块"></a>所有资源都是模块</h3><p>在上面的分析过程中，我们提到的模块仅仅是指JavaScript模块文件。然而，在前端开发过程中还涉及到样式、图片、字体、HTML 模板等等众多的资源。这些资源还会以各种方言的形式存在，比如 coffeescript、 less、 sass、众多的模板库、多语言系统（i18n）等等。</p>
 <p>如果他们都可以视作模块，并且都可以通过<code>require</code>的方式来加载，将带来优雅的开发体验，比如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"./style.css"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"./style.less"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"./template.jade"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"./image.png"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">"./style.css"</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">"./style.less"</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">"./template.jade"</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">"./image.png"</span>);</div></pre></td></tr></table></figure>
 <p>那么如何做到让 <code>require</code> 能加载各种资源呢？</p>
-<h3 id="u9759_u6001_u5206_u6790"><a href="#u9759_u6001_u5206_u6790" class="headerlink" title="静态分析"></a>静态分析</h3><p>在编译的时候，要对整个代码进行静态分析，分析出各个模块的类型和它们依赖关系，然后将不同类型的模块提交给适配的加载器来处理。比如一个用 LESS 写的样式模块，可以先用 LESS 加载器将它转成一个CSS 模块，在通过 CSS 模块把他插入到页面的 <code>&lt;style&gt;</code> 标签中执行。Webpack 就是在这样的需求中应运而生。</p>
+<h3 id="静态分析"><a href="#静态分析" class="headerlink" title="静态分析"></a>静态分析</h3><p>在编译的时候，要对整个代码进行静态分析，分析出各个模块的类型和它们依赖关系，然后将不同类型的模块提交给适配的加载器来处理。比如一个用 LESS 写的样式模块，可以先用 LESS 加载器将它转成一个CSS 模块，在通过 CSS 模块把他插入到页面的 <code>&lt;style&gt;</code> 标签中执行。Webpack 就是在这样的需求中应运而生。</p>
 <p>同时，为了能利用已经存在的各种框架、库和已经写好的文件，我们还需要一个模块加载的兼容策略，来避免重写所有的模块。</p>
-<h3 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h3><p><a href="http://webpackdoc.com/index.html" target="_blank" rel="external">webapack</a></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://webpackdoc.com/index.html" target="_blank" rel="external">webapack</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/02/2016-07-02-Webpack/" data-id="cixext4a00044xgvmgpnv89ht" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/02/2016-07-02-Webpack/" data-id="cixkjnham0027dfvmvxquc9wf" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/07/02/2016-07-02-Webpack/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -188,6 +189,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -201,10 +206,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -271,11 +272,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

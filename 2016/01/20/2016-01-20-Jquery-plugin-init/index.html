@@ -20,7 +20,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -88,20 +88,20 @@
         <p>就我自己喜欢开发的模式，总结下jquery插件开发需要注意点。<br>主要是扩展jquery原型，防止变量污染；</p>
 <a id="more"></a>
 <p>自己喜欢的开发模式：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">$.fn.taptrace = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> defauts = &#123;</span><br><span class="line">		bgcolor: <span class="string">'blue'</span>,</span><br><span class="line">		timeLasting: <span class="string">'20'</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (options) &#123;</span><br><span class="line">		$.extend(defauts, options);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> $el = <span class="keyword">this</span>;</span><br><span class="line">	<span class="keyword">var</span> events = <span class="string">'ontouchstart'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? [<span class="string">'touchstart'</span>, <span class="string">'touchmove touchend touchcancel'</span>] : [<span class="string">'mousedown'</span>, <span class="string">'mousemove mouseup'</span>];</span><br><span class="line">	<span class="keyword">var</span> timer;</span><br><span class="line">	<span class="keyword">var</span> start = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (timer) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		timer = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			$el.css(<span class="string">'background-color'</span>, defauts.bgcolor);</span><br><span class="line">		&#125;, <span class="number">5</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> stop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">window</span>.clearTimeout(timer);</span><br><span class="line">		timer = <span class="literal">null</span>;</span><br><span class="line">		setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			$el.css(<span class="string">'background-color'</span>, <span class="string">''</span>);</span><br><span class="line">		&#125;, defauts.timeLasting)</span><br><span class="line">	&#125;</span><br><span class="line">	$el.on(events[<span class="number">0</span>], start);</span><br><span class="line">	$el.on(events[<span class="number">1</span>], stop);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)(jQuery)</span><br></pre></td></tr></table></figure>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><div class="line"><span class="comment">;</span></div><div class="line">(<span class="name">function</span>(<span class="name">$</span>) &#123;</div><div class="line">$.fn.taptrace = function(<span class="name">options</span>) &#123;</div><div class="line">	var defauts = &#123;</div><div class="line">		bgcolor: <span class="symbol">'blue</span>',</div><div class="line">		timeLasting: <span class="symbol">'20</span>'</div><div class="line">	&#125;</div><div class="line">	if (<span class="name">options</span>) &#123;</div><div class="line">		$.extend(<span class="name">defauts</span>, options)<span class="comment">;</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var $el = this<span class="comment">;</span></div><div class="line">	var events = <span class="symbol">'ontouchstart</span>' in window ? [<span class="symbol">'touchstart</span>', <span class="symbol">'touchmove</span> touchend touchcancel'] : [<span class="symbol">'mousedown</span>', <span class="symbol">'mousemove</span> mouseup']<span class="comment">;</span></div><div class="line">	var timer<span class="comment">;</span></div><div class="line">	var start = function() &#123;</div><div class="line">		if (<span class="name">timer</span>) &#123;</div><div class="line">			return false<span class="comment">;</span></div><div class="line">		&#125;</div><div class="line">		timer = window.setTimeout(<span class="name">function</span>() &#123;</div><div class="line">			$el.css(<span class="symbol">'background-color</span>', defauts.bgcolor)<span class="comment">;</span></div><div class="line">		&#125;, <span class="number">5</span>)</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var stop = function() &#123;</div><div class="line">		window.clearTimeout(<span class="name">timer</span>)<span class="comment">;</span></div><div class="line">		timer = null<span class="comment">;</span></div><div class="line">		setTimeout(<span class="name">function</span>() &#123;</div><div class="line">			$el.css(<span class="symbol">'background-color</span>', '')<span class="comment">;</span></div><div class="line">		&#125;, defauts.timeLasting)</div><div class="line">	&#125;</div><div class="line">	$el.on(<span class="name">events</span>[<span class="name">0</span>], start)<span class="comment">;</span></div><div class="line">	$el.on(<span class="name">events</span>[<span class="name">1</span>], stop)<span class="comment">;</span></div><div class="line">&#125;</div><div class="line">&#125;)(<span class="name">jQuery</span>)</div></pre></td></tr></table></figure>
 <p>1： ;最外面的分号是为了预防别人代码因为没有结束，带来的影响</p>
 <p>2： 封装在闭包里面，防止代码的污染</p>
 <p>3：default放在自己是放在属性里面进行引入的，也可以提出放在最外层</p>
 <p>4： $.extend(defauts, options); 扩展默认值</p>
 <p>调用</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'.pure-css'</span>).taptrace(&#123;</span><br><span class="line"><span class="string">bgcolor:</span><span class="string">'red'</span>,</span><br><span class="line"><span class="string">timeLasting:</span><span class="string">'10'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line">$(<span class="string">'.pure-css'</span>).taptrace(&#123;</div><div class="line"><span class="string">bgcolor:</span><span class="string">'red'</span>,</div><div class="line"><span class="string">timeLasting:</span><span class="string">'10'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><a href="https://github.com/dukegod/jqueryTapTrace" target="_blank" rel="external">项目地址</a></p>
-<h2 id="u63A8_u8350_u9605_u8BFB"><a href="#u63A8_u8350_u9605_u8BFB" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><p><a href="http://www.cnblogs.com/cyStyle/archive/2013/05/18/jQuery%E6%8F%92%E4%BB%B6%E8%AF%A6%E7%BB%86%E5%BC%80%E5%8F%91.html" target="_blank" rel="external">jQuery插件开发的模式和结构</a></p>
+<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><p><a href="http://www.cnblogs.com/cyStyle/archive/2013/05/18/jQuery%E6%8F%92%E4%BB%B6%E8%AF%A6%E7%BB%86%E5%BC%80%E5%8F%91.html" target="_blank" rel="external">jQuery插件开发的模式和结构</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/" data-id="cixext4cb0089xgvme2obt799" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/" data-id="cixkjnh8y000hdfvmekxpsefx" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -183,6 +183,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -196,10 +200,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -266,11 +266,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

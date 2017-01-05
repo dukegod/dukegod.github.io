@@ -20,7 +20,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -85,7 +85,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(<span class="comment">&#123;</span><br><span class="line">	el:'#app',</span><br><span class="line">	template:'',</span><br><span class="line">	created:function()&#123;</span><br><span class="line">	&#125;</span>,</span><br><span class="line">	ready:<span class="function"><span class="keyword">function</span><span class="params">()</span><span class="comment">&#123;</span><br><span class="line">	&#125;</span>,</span><br><span class="line">	<span class="title">computed</span>:</span><span class="comment">&#123;</span><br><span class="line">	&#125;</span>,</span><br><span class="line">	conponents:<span class="comment">&#123;</span><br><span class="line">		hello</span><br><span class="line">	&#125;</span>,</span><br><span class="line">	data:<span class="comment">&#123;</span><br><span class="line">		msg : 'hello '</span><br><span class="line">	&#125;</span>,</span><br><span class="line">	<span class="function"><span class="keyword">method</span>:</span><span class="comment">&#123;&#125;</span>,</span><br><span class="line">	watch:<span class="comment">&#123;</span><br><span class="line">		msg:function(value,oldValue)&#123;</span><br><span class="line">		&#125;</span></span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+        <figure class="highlight less"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">new</span> <span class="selector-tag">Vue</span>(&#123;</div><div class="line">	<span class="attribute">el</span>:<span class="string">'#app'</span>,</div><div class="line">	<span class="attribute">template</span>:<span class="string">''</span>,</div><div class="line">	<span class="attribute">created</span>:function()&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">ready</span>:function()&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">computed</span>:&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">conponents</span>:&#123;</div><div class="line">		hello</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">data</span>:&#123;</div><div class="line">		<span class="attribute">msg </span>: <span class="string">'hello '</span></div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">method</span>:&#123;&#125;,</div><div class="line">	<span class="attribute">watch</span>:&#123;</div><div class="line">		<span class="attribute">msg</span>:function(value,oldValue)&#123;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"> &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
 <ul>
 <li>method: 对象类型，常用方法储存地点</li>
 <li>watch: 对象类型，监听数据变化</li>
@@ -93,10 +93,10 @@
 <li><p>components</p>
 <ul>
 <li><p>必须先在components中引用，然后在template中引用，或者在html中引用。</p>
- <figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">	<span class="comment">// 1</span></span><br><span class="line">	<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    template: <span class="string">'&lt;div&gt;&lt;components-header&gt;&lt;/components-header&gt;&lt;/div&gt;'</span>,</span><br><span class="line">    components:&#123;</span><br><span class="line">      components-header</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    components:&#123;</span><br><span class="line">      components-header</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment">// html 中引用</span></span><br><span class="line">&lt;<span class="keyword">div</span> id=<span class="string">"app"</span>&gt;</span><br><span class="line">   &lt;componentsheader&gt;&lt;/componentsheader&gt;</span><br><span class="line"> 	&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight gauss"><table><tr><td class="code"><pre><div class="line">	<span class="comment">// 1</span></div><div class="line">	<span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: '<span class="meta">#app',</span></div><div class="line">    template: '&lt;div&gt;&lt;components-<span class="built_in">header</span>&gt;&lt;/components-<span class="built_in">header</span>&gt;&lt;/div&gt;',</div><div class="line">    components:&#123;</div><div class="line">      components-<span class="built_in">header</span></div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">);</div><div class="line"><span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: '<span class="meta">#app',</span></div><div class="line">    components:&#123;</div><div class="line">      components-<span class="built_in">header</span></div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">);</div><div class="line"><span class="comment">// html 中引用</span></div><div class="line">&lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">   &lt;componentsheader&gt;&lt;/componentsheader&gt;</div><div class="line"> 	&lt;/div&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>组件文件(myCom.vue)命名用可以<strong>驼峰命名法</strong>,引用的组件名字<strong>必须用全小写的形式,并且需要把大写转为下划线加上对应大写的小写</strong></p>
- <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">// 组件</span><br><span class="line">comA<span class="comment"></span><br><span class="line">// 转为</span></span><br><span class="line">&lt;com-<span class="operator">a</span>&gt;&lt;com-<span class="operator">a</span>/&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight dts"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 组件</span></div><div class="line">comA</div><div class="line"><span class="comment">// 转为</span></div><div class="line"><span class="params">&lt;com-a&gt;</span><span class="params">&lt;com-a/&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>name 必须是全小写</p>
 </li>
@@ -104,7 +104,7 @@
 <li>组件应用可以用<hello></hello>或者<hello></hello></li>
 <li>每一个组件外面都要嵌套一个div(<div><hello></hello></div>)</li>
 <li><p>组件通讯，父类向子类传递数据，需要通过props获取,或者this.$broadcast()</p>
- <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">	// 父类模板,绑定 father</span><br><span class="line">	<span class="tag">&lt;<span class="title">temp-footer</span> <span class="attribute">:father</span>=<span class="value">"fatherfooter"</span>&gt;</span><span class="tag">&lt;/<span class="title">temp-footer</span>&gt;</span></span><br><span class="line">	data()&#123;</span><br><span class="line">     return &#123;</span><br><span class="line">       msg: '',</span><br><span class="line">       fatherfooter:'father msg',</span><br><span class="line">   &#125;,</span><br><span class="line">	// 子类获取绑定的props:father</span><br><span class="line">	<span class="tag">&lt;<span class="title">template</span> <span class="attribute">lang</span>=<span class="value">"html"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">footer</span>&gt;</span></span><br><span class="line">    &#123;/&#123;fTitle&#125;/&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>&#123;/&#123;father&#125;/&#125;<span class="tag">&lt;<span class="title">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        fTitle:<span class="string">'this is my footer!!!!'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    props:[<span class="string">'father'</span>]</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight dust"><table><tr><td class="code"><pre><div class="line"><span class="xml">	// 父类模板,绑定 father</span></div><div class="line">	<span class="tag">&lt;<span class="name">temp-footer</span> <span class="attr">:father</span>=<span class="string">"fatherfooter"</span>&gt;</span><span class="tag">&lt;/<span class="name">temp-footer</span>&gt;</span></div><div class="line">	data()<span class="template-variable">&#123;</span></div><div class="line">     return &#123;</div><div class="line">       msg: '',</div><div class="line">       fatherfooter:'father msg',</div><div class="line">   &#125;<span class="xml">,</span></div><div class="line">	// 子类获取绑定的props:father</div><div class="line">	<span class="tag">&lt;<span class="name">template</span> <span class="attr">lang</span>=<span class="string">"html"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></div><div class="line">    <span class="template-tag">&#123;/&#123;<span class="name">fTitle</span>&#125;</span><span class="xml">/&#125;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="template-tag">&#123;/&#123;<span class="name">father</span>&#125;</span><span class="xml">/&#125;<span class="tag">&lt;<span class="name">span</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="template-variable">&#123;</span></div><div class="line">    data()&#123;</div><div class="line">      return &#123;</div><div class="line">        fTitle:'this is my footer!!!!'</div><div class="line">      &#125;<span class="xml"><span class="actionscript"></span></span></div><div class="line">    &#125;,</div><div class="line">    props:[<span class="string">'father'</span>]</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>子类像父类通讯，需要事件绑定，父类添加一个方法，一个数据类型，子类可以用$emit()或者用this.$dispatch().    一定要<strong>注意写在组件中方法名字，是不是全小写，或者驼峰</strong></p>
 </li>
@@ -115,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/" data-id="cixext47y0012xgvmb98ij1cf" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/" data-id="cixkjnhbb003edfvm2jyqavu6" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -197,6 +197,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -210,10 +214,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -280,11 +280,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

@@ -29,7 +29,7 @@ brew github
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -94,27 +94,27 @@ brew github
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u8F6F_u4EF6_u5B89_u88C5"><a href="#u8F6F_u4EF6_u5B89_u88C5" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h3><p><a href="http://wiki.jikexueyuan.com/project/mac-dev-setup/homebrew.html" target="_blank" rel="external">wiki 参考</a></p>
+        <h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h3><p><a href="http://wiki.jikexueyuan.com/project/mac-dev-setup/homebrew.html" target="_blank" rel="external">wiki 参考</a></p>
 <p><a href="http://linfan.info/blog/2012/02/25/homebrew-installation-and-usage/" target="_blank" rel="external">brew ref</a></p>
 <p><a href="https://github.com/Homebrew/brew/" target="_blank" rel="external">brew github</a></p>
 <p><a href="http://braumeister.org/" target="_blank" rel="external">在线查找安装包</a></p>
 <a id="more"></a>
-<h4 id="u5305_u5B89_u88C5_u8DEF_u5F84"><a href="#u5305_u5B89_u88C5_u8DEF_u5F84" class="headerlink" title="包安装路径"></a>包安装路径</h4><p><strong>它将它所有的文件都保存在一个独立的目录中：</strong></p>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span></span><br></pre></td></tr></table></figure>
-<h4 id="homebrew__u76F8_u5173_u7684_u64CD_u4F5C"><a href="#homebrew__u76F8_u5173_u7684_u64CD_u4F5C" class="headerlink" title="homebrew 相关的操作"></a>homebrew 相关的操作</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">brew update                        	<span class="preprocessor">#更新brew可安装包，建议每次执行一下</span></span><br><span class="line">brew search php55                  	<span class="preprocessor">#搜索php5<span class="number">.5</span></span></span><br><span class="line">brew tap josegonzalez/php          	<span class="preprocessor">#安装扩展 gihhub_user/repo</span></span><br><span class="line">brew tap                           	<span class="preprocessor">#查看安装的扩展列表</span></span><br><span class="line">brew install php55                 	<span class="preprocessor">#安装php5<span class="number">.5</span></span></span><br><span class="line">brew remove  php55                 	<span class="preprocessor">#卸载php5<span class="number">.5</span></span></span><br><span class="line">brew upgrade php55                 	<span class="preprocessor">#升级php5<span class="number">.5</span></span></span><br><span class="line">brew options php55                 	<span class="preprocessor">#查看php5<span class="number">.5</span>安装选项</span></span><br><span class="line">brew info    php55                 	<span class="preprocessor">#查看php5<span class="number">.5</span>相关信息</span></span><br><span class="line">brew home    php55                 	<span class="preprocessor">#访问php5<span class="number">.5</span>官方网站</span></span><br><span class="line">brew services <span class="built_in">list</span>                 	<span class="preprocessor">#查看系统通过 brew 安装的服务</span></span><br><span class="line">brew services cleanup              	<span class="preprocessor">#清除已卸载无用的启动配置文件</span></span><br><span class="line">brew services restart php55        	<span class="preprocessor">#重启php-fpm/mysql也可以</span></span><br><span class="line">brew <span class="built_in">list</span>         								 	<span class="preprocessor">#列出已安装的软件包</span></span><br><span class="line">brew deps wget   									 	<span class="preprocessor">#列出软件包的依赖关系</span></span><br><span class="line">brew upgrade 或 brew upgrade wget  	<span class="preprocessor">#更新过时的软件包（全部或指定）</span></span><br><span class="line">brew outdated											 	<span class="preprocessor">#找出已过期的软件包（即已经有更新版本的软件包）</span></span><br><span class="line">brew cleanup 或 brew cleanup wget	 	<span class="preprocessor">#清楚过时的软件包（全部或指定）</span></span><br></pre></td></tr></table></figure>
-<h4 id="homebrew__u5B89_u88C5_u8F6F_u4EF6_u64CD_u4F5C"><a href="#homebrew__u5B89_u88C5_u8F6F_u4EF6_u64CD_u4F5C" class="headerlink" title="homebrew 安装软件操作"></a>homebrew 安装软件操作</h4><h5 id="u5B89_u88C5archey_uFF0C__u5728_u7EC8_u7AEF_u663E_u793A_u4F60_u7684_u7535_u8111_u4FE1_u606F"><a href="#u5B89_u88C5archey_uFF0C__u5728_u7EC8_u7AEF_u663E_u793A_u4F60_u7684_u7535_u8111_u4FE1_u606F" class="headerlink" title="安装archey， 在终端显示你的电脑信息"></a>安装archey， 在终端显示你的电脑信息</h5><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span>install archey</span><br></pre></td></tr></table></figure>
+<h4 id="包安装路径"><a href="#包安装路径" class="headerlink" title="包安装路径"></a>包安装路径</h4><p><strong>它将它所有的文件都保存在一个独立的目录中：</strong></p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span></div></pre></td></tr></table></figure>
+<h4 id="homebrew-相关的操作"><a href="#homebrew-相关的操作" class="headerlink" title="homebrew 相关的操作"></a>homebrew 相关的操作</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><div class="line"><span class="keyword">brew </span>update                        	<span class="comment">#更新brew可安装包，建议每次执行一下</span></div><div class="line"><span class="keyword">brew </span>search php55                  	<span class="comment">#搜索php5.5</span></div><div class="line"><span class="keyword">brew </span>tap <span class="keyword">josegonzalez/php </span>         	<span class="comment">#安装扩展 gihhub_user/repo</span></div><div class="line"><span class="keyword">brew </span>tap                           	<span class="comment">#查看安装的扩展列表</span></div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>php55                 	<span class="comment">#安装php5.5</span></div><div class="line"><span class="keyword">brew </span>remove  php55                 	<span class="comment">#卸载php5.5</span></div><div class="line"><span class="keyword">brew </span>upgrade php55                 	<span class="comment">#升级php5.5</span></div><div class="line"><span class="keyword">brew </span>options php55                 	<span class="comment">#查看php5.5安装选项</span></div><div class="line"><span class="keyword">brew </span>info    php55                 	<span class="comment">#查看php5.5相关信息</span></div><div class="line"><span class="keyword">brew </span>home    php55                 	<span class="comment">#访问php5.5官方网站</span></div><div class="line"><span class="keyword">brew </span>services list                 	<span class="comment">#查看系统通过 brew 安装的服务</span></div><div class="line"><span class="keyword">brew </span>services cleanup              	<span class="comment">#清除已卸载无用的启动配置文件</span></div><div class="line"><span class="keyword">brew </span>services restart php55        	<span class="comment">#重启php-fpm/mysql也可以</span></div><div class="line"><span class="keyword">brew </span>list         								 	<span class="comment">#列出已安装的软件包</span></div><div class="line"><span class="keyword">brew </span>deps wget   									 	<span class="comment">#列出软件包的依赖关系</span></div><div class="line"><span class="keyword">brew </span>upgrade 或 <span class="keyword">brew </span>upgrade wget  	<span class="comment">#更新过时的软件包（全部或指定）</span></div><div class="line"><span class="keyword">brew </span>outdated											 	<span class="comment">#找出已过期的软件包（即已经有更新版本的软件包）</span></div><div class="line"><span class="keyword">brew </span>cleanup 或 <span class="keyword">brew </span>cleanup wget	 	<span class="comment">#清楚过时的软件包（全部或指定）</span></div></pre></td></tr></table></figure>
+<h4 id="homebrew-安装软件操作"><a href="#homebrew-安装软件操作" class="headerlink" title="homebrew 安装软件操作"></a>homebrew 安装软件操作</h4><h5 id="安装archey，-在终端显示你的电脑信息"><a href="#安装archey，-在终端显示你的电脑信息" class="headerlink" title="安装archey， 在终端显示你的电脑信息"></a>安装archey， 在终端显示你的电脑信息</h5><figure class="highlight mipsasm"><table><tr><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>archey</div></pre></td></tr></table></figure>
 <p>如果安装好了没有效果，可以在命令行中输入：archey，就会得到你想要的结果;如果想在每次启动的时候都可以启动这个命令可以添加到~/.bashr,~/.bash_profile中</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="id">#archey</span> <span class="attribute">auto</span></span><br><span class="line">archey</span><br></pre></td></tr></table></figure>
-<h4 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">brew <span class="operator"><span class="keyword">install</span> mongodb</span><br><span class="line"></span><br><span class="line">sudo mkdir -<span class="keyword">p</span> /<span class="keyword">data</span>/db</span><br><span class="line"><span class="keyword">Password</span>:</span><br><span class="line">sudo chown hui /<span class="keyword">data</span>/db</span><br><span class="line"></span><br><span class="line">mongod</span><br><span class="line"></span><br><span class="line">// 重新打开一个terminal</span><br><span class="line">mongo</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-id">#archey</span> <span class="attribute">auto</span></div><div class="line">archey</div></pre></td></tr></table></figure>
+<h4 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h4><figure class="highlight dts"><table><tr><td class="code"><pre><div class="line">brew install mongodb</div><div class="line"></div><div class="line">sudo mkdir -p <span class="meta-keyword">/data/</span>db</div><div class="line"><span class="symbol">Password:</span></div><div class="line">sudo chown hui <span class="meta-keyword">/data/</span>db</div><div class="line"></div><div class="line">mongod</div><div class="line"></div><div class="line"><span class="comment">// 重新打开一个terminal</span></div><div class="line">mongo</div></pre></td></tr></table></figure>
 <p>通过修改bash_profile 覆盖本地的node5版本</p>
-<h4 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h4><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">brew install nvm</span><br><span class="line"></span><br><span class="line">// 创建一个目录</span><br><span class="line">mkdir  ~/.nvm</span><br><span class="line"></span><br><span class="line">// 当前用的<span class="keyword">node</span><span class="identifier"></span><span class="title">版本</span><br><span class="line">nvm</span> use v6.<span class="number">0.0</span></span><br><span class="line"></span><br><span class="line">// 设置全局的<span class="keyword">node</span><span class="identifier"></span><span class="title">版本</span><br><span class="line"></span><br><span class="line">nvm</span> alias defaule system/v6.<span class="number">3.1</span></span><br></pre></td></tr></table></figure>
-<h3 id="homebrew_cask"><a href="#homebrew_cask" class="headerlink" title="homebrew cask"></a>homebrew cask</h3><h4 id="u5B89_u88C5_u8DEF_u5F84"><a href="#u5B89_u88C5_u8DEF_u5F84" class="headerlink" title="安装路径"></a>安装路径</h4><p>现在默认的路径为 “/usr/local/Caskroom” 不在是 “/opt/homebrew-cask/Caskroom”</p>
+<h4 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h4><figure class="highlight crmsh"><table><tr><td class="code"><pre><div class="line">brew install nvm</div><div class="line"></div><div class="line">// 创建一个目录</div><div class="line">mkdir  ~/.nvm</div><div class="line"></div><div class="line">// 当前用的<span class="keyword">node</span><span class="title">版本</span></div><div class="line">nvm use v6.<span class="number">0.0</span></div><div class="line"></div><div class="line">// 设置全局的<span class="keyword">node</span><span class="title">版本</span></div><div class="line"></div><div class="line">nvm alias defaule system/v6.<span class="number">3.1</span></div></pre></td></tr></table></figure>
+<h3 id="homebrew-cask"><a href="#homebrew-cask" class="headerlink" title="homebrew cask"></a>homebrew cask</h3><h4 id="安装路径"><a href="#安装路径" class="headerlink" title="安装路径"></a>安装路径</h4><p>现在默认的路径为 “/usr/local/Caskroom” 不在是 “/opt/homebrew-cask/Caskroom”</p>
 <p>对于一些已经安装的软件运行 “brew cask install –force” 进行强制重新安装</p>
 <p><a href="https://caskroom.github.io/" target="_blank" rel="external">caskroom</a></p>
 <p>brew cask 是 brew的增强版本</p>
 <p><a href="https://github.com/sindresorhus/quick-look-plugins" target="_blank" rel="external">plugins</a></p>
 <p>自己安装的各种软件</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">// 代码</span><br><span class="line">brew cask <span class="operator"><span class="keyword">install</span> qlcolorcode</span><br><span class="line">// <span class="keyword">json</span></span><br><span class="line">brew cask <span class="keyword">install</span> quicklook-<span class="keyword">json</span></span><br><span class="line"></span><br><span class="line">// markdown 预览器</span><br><span class="line">$ brew cask <span class="keyword">install</span> qlmarkdown</span><br><span class="line">// <span class="keyword">json</span> 预览器</span><br><span class="line">$ brew cask <span class="keyword">install</span> quicklook-<span class="keyword">json</span></span><br><span class="line"></span><br><span class="line">// 进程管理</span><br><span class="line">//brew cask <span class="keyword">install</span> launchrocket</span><br><span class="line"></span><br><span class="line">// <span class="keyword">keep</span> awake</span><br><span class="line">brew cask <span class="keyword">install</span> keepingyouawake</span><br><span class="line"></span><br><span class="line">// dash</span><br><span class="line">brew cask <span class="keyword">install</span> dash</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">// 代码</div><div class="line">brew cask <span class="keyword">install</span> qlcolorcode</div><div class="line">// <span class="keyword">json</span></div><div class="line">brew cask <span class="keyword">install</span> quicklook-<span class="keyword">json</span></div><div class="line"></div><div class="line">// markdown 预览器</div><div class="line">$ brew cask <span class="keyword">install</span> qlmarkdown</div><div class="line">// <span class="keyword">json</span> 预览器</div><div class="line">$ brew cask <span class="keyword">install</span> quicklook-<span class="keyword">json</span></div><div class="line"></div><div class="line">// 进程管理</div><div class="line">//brew cask <span class="keyword">install</span> launchrocket</div><div class="line"></div><div class="line">// <span class="keyword">keep</span> awake</div><div class="line">brew cask <span class="keyword">install</span> keepingyouawake</div><div class="line"></div><div class="line">// dash</div><div class="line">brew cask <span class="keyword">install</span> dash</div></pre></td></tr></table></figure>
 <p>brew cask install –force ： 强制重新安装</p>
 <p>卸载</p>
 <p>brew cask uninstall</p>
@@ -125,7 +125,7 @@ brew github
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/01/2016-06-01-MAC配置-brew/" data-id="cixext4ah0054xgvm5rtxfopm" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/01/2016-06-01-MAC配置-brew/" data-id="cixkjnha4001tdfvm2z2inle1" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/06/01/2016-06-01-MAC配置-brew/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -207,6 +207,10 @@ brew github
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -220,10 +224,6 @@ brew github
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -290,11 +290,11 @@ brew github
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

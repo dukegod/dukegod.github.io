@@ -29,7 +29,7 @@ browserify是一个编译工具,通过它可以在浏览器环境下像nodejs一
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -101,21 +101,21 @@ browserify是一个编译工具,通过它可以在浏览器环境下像nodejs一
 <p>browserify模块化的用法和node是一样的,所以npm上那些原本仅仅用于node环境的包,在浏览器环境里也一样能用.</p>
 <p>现在npm上有越来越多的包,在设计的时候就是想好既能在node环境下用,也能在浏览器环境下用的.甚至还有很多包就是给浏览器环境使用的. npm是为所有的javascript服务的,无论前端后端.</p>
 <a id="more"></a>
-<h2 id="gulp_+_browserify"><a href="#gulp_+_browserify" class="headerlink" title="gulp + browserify"></a>gulp + browserify</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);</span><br><span class="line"><span class="keyword">var</span> browserify = <span class="built_in">require</span>(<span class="string">"browserify"</span>);</span><br><span class="line"><span class="keyword">var</span> sourcemaps = <span class="built_in">require</span>(<span class="string">"gulp-sourcemaps"</span>);</span><br><span class="line"><span class="keyword">var</span> source = <span class="built_in">require</span>(<span class="string">'vinyl-source-stream'</span>); <span class="comment">//用于将Browserify的bundle()的输出转换为Gulp可用的[vinyl][]（一种虚拟文件格式）流</span></span><br><span class="line"><span class="keyword">var</span> buffer = <span class="built_in">require</span>(<span class="string">'vinyl-buffer'</span>); <span class="comment">//用于将vinyl流转化为buffered vinyl文件（gulp-sourcemaps及大部分Gulp插件都需要这种格式）</span></span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">"browserify"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = browserify(&#123;</span><br><span class="line">      entries: <span class="string">"./javascripts/src/main.js"</span>,</span><br><span class="line">      debug: <span class="literal">true</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> b.bundle()</span><br><span class="line">    .pipe(source(<span class="string">"bundle.js"</span>))</span><br><span class="line">    .pipe(buffer())</span><br><span class="line">    .pipe(sourcemaps.init(&#123;loadMaps: <span class="literal">true</span>&#125;))</span><br><span class="line">    .pipe(sourcemaps.write(<span class="string">"."</span>))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">"./javascripts/dist"</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="gulp-browserify"><a href="#gulp-browserify" class="headerlink" title="gulp + browserify"></a>gulp + browserify</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);</div><div class="line"><span class="keyword">var</span> browserify = <span class="built_in">require</span>(<span class="string">"browserify"</span>);</div><div class="line"><span class="keyword">var</span> sourcemaps = <span class="built_in">require</span>(<span class="string">"gulp-sourcemaps"</span>);</div><div class="line"><span class="keyword">var</span> source = <span class="built_in">require</span>(<span class="string">'vinyl-source-stream'</span>); <span class="comment">//用于将Browserify的bundle()的输出转换为Gulp可用的[vinyl][]（一种虚拟文件格式）流</span></div><div class="line"><span class="keyword">var</span> buffer = <span class="built_in">require</span>(<span class="string">'vinyl-buffer'</span>); <span class="comment">//用于将vinyl流转化为buffered vinyl文件（gulp-sourcemaps及大部分Gulp插件都需要这种格式）</span></div><div class="line"></div><div class="line">gulp.task(<span class="string">"browserify"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> b = browserify(&#123;</div><div class="line">      <span class="attr">entries</span>: <span class="string">"./javascripts/src/main.js"</span>,</div><div class="line">      <span class="attr">debug</span>: <span class="literal">true</span></div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> b.bundle()</div><div class="line">    .pipe(source(<span class="string">"bundle.js"</span>))</div><div class="line">    .pipe(buffer())</div><div class="line">    .pipe(sourcemaps.init(&#123;<span class="attr">loadMaps</span>: <span class="literal">true</span>&#125;))</div><div class="line">    .pipe(sourcemaps.write(<span class="string">"."</span>))</div><div class="line">    .pipe(gulp.dest(<span class="string">"./javascripts/dist"</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h4 id="watchify"><a href="#watchify" class="headerlink" title="watchify"></a>watchify</h4><p>browserify和watchify是同一个作者的作品，browserify的作用是把分析js源文件的依赖关系，把N个js文件”编译”成一个js文件；而browserify在编译时，没有缓存，即当文件修改时，所有的文件都要重新编译一遍，这样编译时间就比较长（其实也不算长，基本上几秒钟搞定）；watchify为browserify加上缓存功能，当文件发生变化时，只编译修改过的文件，这样就大幅缩短了编译时间，重新编译基本上不到1秒。</p>
-<h4 id="u8F93_u51FA_u591A_u4E2Abundle_u6587_u4EF6"><a href="#u8F93_u51FA_u591A_u4E2Abundle_u6587_u4EF6" class="headerlink" title="输出多个bundle文件"></a>输出多个bundle文件</h4><p>文件中通过require(或者import) 方式加载依赖文件</p>
+<h4 id="输出多个bundle文件"><a href="#输出多个bundle文件" class="headerlink" title="输出多个bundle文件"></a>输出多个bundle文件</h4><p>文件中通过require(或者import) 方式加载依赖文件</p>
 <p>通过循环的方式按照文件目录输出</p>
-<h4 id="u5904_u7406zepto"><a href="#u5904_u7406zepto" class="headerlink" title="处理zepto"></a>处理zepto</h4><p>zepto-browserify插件</p>
+<h4 id="处理zepto"><a href="#处理zepto" class="headerlink" title="处理zepto"></a>处理zepto</h4><p>zepto-browserify插件</p>
 <p><a href="https://github.com/vigetlabs/gulp-starter" target="_blank" rel="external">gulp+browserify+watchify用例</a></p>
-<h2 id="u95EE_u9898_u603B_u7ED3"><a href="#u95EE_u9898_u603B_u7ED3" class="headerlink" title="问题总结"></a>问题总结</h2><figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="type">SyntaxError</span>: <span class="symbol">'import'</span> <span class="keyword">and</span> <span class="symbol">'export'</span> may appear only <span class="keyword">with</span> <span class="symbol">'sourceType</span>: module'</span><br></pre></td></tr></table></figure>
+<h2 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h2><figure class="highlight sml"><table><tr><td class="code"><pre><div class="line"><span class="type">SyntaxError</span>: <span class="symbol">'import'</span> <span class="keyword">and</span> <span class="symbol">'export'</span> may appear only <span class="keyword">with</span> <span class="symbol">'sourceType</span>: module'</div></pre></td></tr></table></figure>
 <p>解决方案见:<a href="http://stackoverflow.com/questions/30386317/babelify-throws-parseerror-on-import-a-module-from-node-modules" target="_blank" rel="external">stackoverflow</a></p>
-<h2 id="u53C2_u8003_u6587_u6863"><a href="#u53C2_u8003_u6587_u6863" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.w2bc.com/article/120144" target="_blank" rel="external">http://www.w2bc.com/article/120144</a></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.w2bc.com/article/120144" target="_blank" rel="external">http://www.w2bc.com/article/120144</a></p>
 <p><a href="https://github.com/substack/browserify-handbook" target="_blank" rel="external">https://github.com/substack/browserify-handbook</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/05/31/2016-05-31-Browserify/" data-id="cixext4ai0056xgvmujgct7w5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/05/31/2016-05-31-Browserify/" data-id="cixkjnha2001sdfvmk20mn8bk" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/05/31/2016-05-31-Browserify/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -197,6 +197,10 @@ browserify是一个编译工具,通过它可以在浏览器环境下像nodejs一
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -210,10 +214,6 @@ browserify是一个编译工具,通过它可以在浏览器环境下像nodejs一
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -280,11 +280,11 @@ browserify是一个编译工具,通过它可以在浏览器环境下像nodejs一
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

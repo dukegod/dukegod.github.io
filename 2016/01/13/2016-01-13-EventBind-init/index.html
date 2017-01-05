@@ -23,7 +23,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -91,14 +91,14 @@
         <p>事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。</p>
 <p>最常见的例子就是绑定li方法的委托事件。</p>
 <a id="more"></a>
-<figure class="highlight pf"><table><tr><td class="code"><pre><span class="line"><span class="variable">&lt;ul&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">1</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">2</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">3</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">4</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">1</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">2</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">3</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line">  <span class="variable">&lt;li&gt;</span><span class="number">4</span><span class="variable">&lt;/li&gt;</span></span><br><span class="line"><span class="variable">&lt;/ul&gt;</span></span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  $('body').<span class="keyword">on</span>('click', 'li', function(event) &#123;</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    /* Act <span class="keyword">on</span> the event */</span><br><span class="line">    console.<span class="keyword">log</span>(this);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)(jQuery)</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">  &lt;<span class="keyword">li</span>&gt;1&lt;/<span class="keyword">li</span>&gt;</div><div class="line">  &lt;<span class="keyword">li</span>&gt;2&lt;/<span class="keyword">li</span>&gt;</div><div class="line">  &lt;<span class="keyword">li</span>&gt;3&lt;/<span class="keyword">li</span>&gt;</div><div class="line">  &lt;<span class="keyword">li</span>&gt;4&lt;/<span class="keyword">li</span>&gt;</div><div class="line">  &lt;<span class="keyword">li</span>&gt;1&lt;/<span class="keyword">li</span>&gt;</div><div class="line">  &lt;<span class="keyword">li</span>&gt;2&lt;/<span class="keyword">li</span>&gt;</div><div class="line">  &lt;<span class="keyword">li</span>&gt;3&lt;/<span class="keyword">li</span>&gt;</div><div class="line">  &lt;<span class="keyword">li</span>&gt;4&lt;/<span class="keyword">li</span>&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">(function()&#123;</div><div class="line">  $('body').<span class="keyword">on</span>('click', '<span class="keyword">li</span>', function(event) &#123;</div><div class="line">    event.preventDefault();</div><div class="line">    <span class="comment">/* Act on the event */</span></div><div class="line">    console.<span class="built_in">log</span>(this);</div><div class="line">  &#125;);</div><div class="line">&#125;)(jQuery)</div></pre></td></tr></table></figure>
 <p>借用了jquery的on事件作为事件委托的方法。不介意使用bind方法。</p>
 <p>原生方法可以用addEventListener方法进行绑定。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/" data-id="cixext4cf008fxgvmgcd2hu4u" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/" data-id="cixkjnh8v000edfvmcepsn1eb" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -180,6 +180,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -193,10 +197,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -263,11 +263,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

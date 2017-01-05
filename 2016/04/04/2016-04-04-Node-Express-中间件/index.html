@@ -29,7 +29,7 @@ express 3.x版本依赖于connect中间件，connect中间件有22个内置的�
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -96,11 +96,11 @@ express 3.x版本依赖于connect中间件，connect中间件有22个内置的�
       
         <p>最初产生于中间件，然后才有了express。</p>
 <p>express 3.x版本依赖于connect中间件，connect中间件有22个内置的中间件可以运用。<br>express 4.x不是依赖connect中间件，需要自行下载</p>
-<h3 id="u4E2D_u95F4_u4EF6_u6302_u8F7D_3A"><a href="#u4E2D_u95F4_u4EF6_u6302_u8F7D_3A" class="headerlink" title="中间件挂载:"></a>中间件挂载:</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">app.<span class="function"><span class="title">use</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="u9ED8_u8BA4_u7684_u4E2D_u95F4_uFF0C_u7528_u6765_u5904_u7406_u9759_u6001_u6587_u4EF6_uFF0Cexpress-static_28_29"><a href="#u9ED8_u8BA4_u7684_u4E2D_u95F4_uFF0C_u7528_u6765_u5904_u7406_u9759_u6001_u6587_u4EF6_uFF0Cexpress-static_28_29" class="headerlink" title="默认的中间，用来处理静态文件，express.static()"></a>默认的中间，用来处理静态文件，express.static()</h4><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">app.<span class="keyword">use</span>(express.<span class="keyword">static</span>(path.join(__dirname, <span class="string">'./public/'</span>)));</span><br></pre></td></tr></table></figure>
-<h4 id="u81EA_u5B9A_u4E49_u4E2D_u95F4_u4EF6"><a href="#u81EA_u5B9A_u4E49_u4E2D_u95F4_u4EF6" class="headerlink" title="自定义中间件"></a>自定义中间件</h4><p>验证登陆，加密处理，通过next()继承中间件<br>默认’/‘可以省略掉</p>
-<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">app.<span class="keyword">use</span>(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span><span class="params">(req, res, next)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> err = <span class="keyword">new</span> Error(<span class="string">'Not Found'</span>);</span><br><span class="line">  err.status = <span class="number">404</span>;</span><br><span class="line">  next(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="u5E38_u7528_u7684_u4E2D_u95F4_u4EF6"><a href="#u5E38_u7528_u7684_u4E2D_u95F4_u4EF6" class="headerlink" title="常用的中间件"></a>常用的中间件</h4><ul>
+<h3 id="中间件挂载"><a href="#中间件挂载" class="headerlink" title="中间件挂载:"></a>中间件挂载:</h3><figure class="highlight stata"><table><tr><td class="code"><pre><div class="line"><span class="keyword">app</span>.<span class="keyword">use</span>()</div></pre></td></tr></table></figure>
+<h4 id="默认的中间，用来处理静态文件，express-static"><a href="#默认的中间，用来处理静态文件，express-static" class="headerlink" title="默认的中间，用来处理静态文件，express.static()"></a>默认的中间，用来处理静态文件，express.static()</h4><figure class="highlight cs"><table><tr><td class="code"><pre><div class="line">app.use(express.<span class="keyword">static</span>(path.<span class="keyword">join</span>(__dirname, <span class="string">'./public/'</span>)));</div></pre></td></tr></table></figure>
+<h4 id="自定义中间件"><a href="#自定义中间件" class="headerlink" title="自定义中间件"></a>自定义中间件</h4><p>验证登陆，加密处理，通过next()继承中间件<br>默认’/‘可以省略掉</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">app.use(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Not Found'</span>);</div><div class="line">  err.status = <span class="number">404</span>;</div><div class="line">  next(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="常用的中间件"><a href="#常用的中间件" class="headerlink" title="常用的中间件"></a>常用的中间件</h4><ul>
 <li>morgan : 处理日志记录</li>
 <li>body-parser : 处理POST方式提交的数据，放回到body中，得到数据’req.body’</li>
 <li>cookie-parser : 用来解析cookie，服务器解析给浏览器中的数据</li>
@@ -111,7 +111,7 @@ express 3.x版本依赖于connect中间件，connect中间件有22个内置的�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/04/2016-04-04-Node-Express-中间件/" data-id="cixext4ay005zxgvm999nb6tl" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/04/2016-04-04-Node-Express-中间件/" data-id="cixkjnh9t001gdfvmd0v2rx49" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/04/2016-04-04-Node-Express-中间件/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -193,6 +193,10 @@ express 3.x版本依赖于connect中间件，connect中间件有22个内置的�
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -206,10 +210,6 @@ express 3.x版本依赖于connect中间件，connect中间件有22个内置的�
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -276,11 +276,11 @@ express 3.x版本依赖于connect中间件，connect中间件有22个内置的�
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

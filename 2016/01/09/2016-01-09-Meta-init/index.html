@@ -35,7 +35,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -100,35 +100,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u5171_u6027"><a href="#u5171_u6027" class="headerlink" title="共性"></a>共性</h2><ol>
+        <h2 id="共性"><a href="#共性" class="headerlink" title="共性"></a>共性</h2><ol>
 <li>不让页面缩放，变化。</li>
 </ol>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nix"><table><tr><td class="code"><pre><div class="line">&lt;meta <span class="attr">name="viewport"</span> <span class="attr">content="width=device-width,</span> <span class="attr">initial-scale=1,</span> <span class="attr">maximum-scale=1,</span> <span class="attr">user-scalable=no"&gt;</span></div></pre></td></tr></table></figure>
 <p>2 优先使用最新版本 IE 和 Chrome</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=edge,chrome=1"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><h4 id="1-_Meta__u4E4B_format-detection"><a href="#1-_Meta__u4E4B_format-detection" class="headerlink" title="1.   Meta 之 format-detection"></a>1.   Meta 之 format-detection</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”format-detection”</span> <span class="attribute">content</span>=<span class="value">”telephone=no”</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><h4 id="1-Meta-之-format-detection"><a href="#1-Meta-之-format-detection" class="headerlink" title="1.   Meta 之 format-detection"></a>1.   Meta 之 format-detection</h4><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”format-detection”</span> <span class="attr">content</span>=<span class="string">”telephone</span>=<span class="string">no”</span> /&gt;</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>你明明写的一串数字没加链接样式，而iPhone会自动把你这个文字加链接样式、并且点击这个数字还会自动拨号！想去掉这个拨号链接该如何操作呢？这时我们的meta又该大显神通了，代码如下</p>
 <p>telephone=no就禁止了把数字转化为拨号链接！</p>
 <p>telephone=yes就开启了把数字转化为拨号链接，要开启转化功能，这个meta就不用写了,在默认是情况下就是开启！</p>
-<h4 id="2-_Meta__u4E4B_apple-mobile-web-app-capable"><a href="#2-_Meta__u4E4B_apple-mobile-web-app-capable" class="headerlink" title="2.  Meta 之 apple-mobile-web-app-capable"></a>2.  Meta 之 apple-mobile-web-app-capable</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”apple-mobile-web-app-capable”</span> <span class="attribute">content</span>=<span class="value">”yes”</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-Meta-之-apple-mobile-web-app-capable"><a href="#2-Meta-之-apple-mobile-web-app-capable" class="headerlink" title="2.  Meta 之 apple-mobile-web-app-capable"></a>2.  Meta 之 apple-mobile-web-app-capable</h4><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”apple-mobile-web-app-capable”</span> <span class="attr">content</span>=<span class="string">”yes”</span> /&gt;</span></div></pre></td></tr></table></figure>
 <p>这meta的作用就是删除默认的苹果工具栏和菜单栏。content有两个值”yes”和”no”,当我们需要显示工具栏和菜单栏时，这个行meta就不用加了，默认就是显示。加了该meta的情况</p>
-<h4 id="3-_Meta__u4E4B_apple-mobile-web-app-status-bar-style"><a href="#3-_Meta__u4E4B_apple-mobile-web-app-status-bar-style" class="headerlink" title="3.  Meta 之 apple-mobile-web-app-status-bar-style"></a>3.  Meta 之 apple-mobile-web-app-status-bar-style</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”apple-mobile-web-app-status-bar-style”</span> <span class="attribute">content</span>=<span class="value">”default”</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”apple-mobile-web-app-status-bar-style”</span> <span class="attribute">content</span>=<span class="value">”black”</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">”apple-mobile-web-app-status-bar-style”</span> <span class="attribute">content</span>=<span class="value">”black-translucent”</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-Meta-之-apple-mobile-web-app-status-bar-style"><a href="#3-Meta-之-apple-mobile-web-app-status-bar-style" class="headerlink" title="3.  Meta 之 apple-mobile-web-app-status-bar-style"></a>3.  Meta 之 apple-mobile-web-app-status-bar-style</h4><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”apple-mobile-web-app-status-bar-style”</span> <span class="attr">content</span>=<span class="string">”default”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”apple-mobile-web-app-status-bar-style”</span> <span class="attr">content</span>=<span class="string">”black”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”apple-mobile-web-app-status-bar-style”</span> <span class="attr">content</span>=<span class="string">”black-translucent”</span> /&gt;</span></div></pre></td></tr></table></figure>
 <p>作用是控制状态栏显示样式</p>
-<h4 id="4-_Meta__u4E4B_apple-mobile"><a href="#4-_Meta__u4E4B_apple-mobile" class="headerlink" title="4. Meta 之 apple-mobile"></a>4. Meta 之 apple-mobile</h4><p>apple-touch-icon:在IOS6及以下的版本会自动为图标添加一层高光效果（IOS7开始已使用扁平化的设计风格）</p>
+<h4 id="4-Meta-之-apple-mobile"><a href="#4-Meta-之-apple-mobile" class="headerlink" title="4. Meta 之 apple-mobile"></a>4. Meta 之 apple-mobile</h4><p>apple-touch-icon:在IOS6及以下的版本会自动为图标添加一层高光效果（IOS7开始已使用扁平化的设计风格）</p>
 <p>使用apple-touch-icon-precomposed属性为“设计原图图标”；</p>
-<h4 id="5-_meta__u4E4B_u91CD_u5B9A_u5411_u548C_u5B9A_u65F6_u5237_u65B0_u529F_u80FD"><a href="#5-_meta__u4E4B_u91CD_u5B9A_u5411_u548C_u5B9A_u65F6_u5237_u65B0_u529F_u80FD" class="headerlink" title="5. meta 之重定向和定时刷新功能"></a>5. meta 之重定向和定时刷新功能</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 每隔5秒定时刷新 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="title">meta http-equiv="refresh" content="5;</span> <span class="attribute">url</span>=<span class="value">" /&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="6_OS_Web_app_u542F_u52A8_u52A8_u753B"><a href="#6_OS_Web_app_u542F_u52A8_u52A8_u753B" class="headerlink" title="6 OS Web app启动动画"></a>6 OS Web app启动动画</h4><p>由于iPad 的启动画面是不包括状态栏区域的。所以启动图片需要减去状态栏区域所对应的方向上的20px大小，相应地在retina设备上要减去40px的大小。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-320x460.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 320px)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-640x960.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 320px) and (-webkit-device-pixel-ratio: 2)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-768x1004.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 768px) and (orientation: portrait)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-748x1024.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 768px) and (orientation: landscape)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-1536x2008.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"apple-touch-startup-image-2048x1496.png"</span> <span class="attribute">media</span>=<span class="value">"(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h4 id="1__u79FB_u52A8_u7AEF_u90AE_u7BB1_u8BC6_u522B_uFF08Android_uFF09"><a href="#1__u79FB_u52A8_u7AEF_u90AE_u7BB1_u8BC6_u522B_uFF08Android_uFF09" class="headerlink" title="1 移动端邮箱识别（Android）"></a>1 移动端邮箱识别（Android）</h4><p>与电话号码的识别一样，在安卓上会对符合邮箱格式的字符串进行识别，我们可以通过如下的meta来管别邮箱的自动识别：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;meta content=<span class="string">"email=no"</span> <span class="property">name</span>=<span class="string">"format-detection"</span> /&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="u63A8_u8350_u8D44_u6E90"><a href="#u63A8_u8350_u8D44_u6E90" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://www.imooc.com/article/1115" target="_blank" rel="external">移动开发技巧</a></p>
+<h4 id="5-meta-之重定向和定时刷新功能"><a href="#5-meta-之重定向和定时刷新功能" class="headerlink" title="5. meta 之重定向和定时刷新功能"></a>5. meta 之重定向和定时刷新功能</h4><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 每隔5秒定时刷新 --&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"5; url="</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="6-OS-Web-app启动动画"><a href="#6-OS-Web-app启动动画" class="headerlink" title="6 OS Web app启动动画"></a>6 OS Web app启动动画</h4><p>由于iPad 的启动画面是不包括状态栏区域的。所以启动图片需要减去状态栏区域所对应的方向上的20px大小，相应地在retina设备上要减去40px的大小。</p>
+<figure class="highlight nix"><table><tr><td class="code"><pre><div class="line">&lt;link <span class="attr">href="apple-touch-startup-image-320x460.png"</span> <span class="attr">media="(device-width:</span> <span class="number">320</span>px)<span class="string">" rel="</span>apple-touch-startup-image<span class="string">"&gt;</span></div><div class="line"></div><div class="line">&lt;link href="apple-touch-startup-image-<span class="number">640</span>x960.png<span class="string">" media="</span>(device-width: <span class="number">320</span>px) <span class="literal">and</span> (-webkit-device-pixel-ratio: <span class="number">2</span>)<span class="string">" rel="</span>apple-touch-startup-image<span class="string">"&gt;</span></div><div class="line"></div><div class="line">&lt;link href="apple-touch-startup-image-<span class="number">768</span>x1004.png<span class="string">" media="</span>(device-width: <span class="number">768</span>px) <span class="literal">and</span> (orientation: portrait)<span class="string">" rel="</span>apple-touch-startup-image<span class="string">"&gt;</span></div><div class="line"></div><div class="line">&lt;link href="apple-touch-startup-image-<span class="number">748</span>x1024.png<span class="string">" media="</span>(device-width: <span class="number">768</span>px) <span class="literal">and</span> (orientation: landscape)<span class="string">" rel="</span>apple-touch-startup-image<span class="string">"&gt;</span></div><div class="line"></div><div class="line">&lt;link href="apple-touch-startup-image-<span class="number">1536</span>x2008.png<span class="string">" media="</span>(device-width: <span class="number">1536</span>px) <span class="literal">and</span> (orientation: portrait) <span class="literal">and</span> (-webkit-device-pixel-ratio: <span class="number">2</span>)<span class="string">" rel="</span>apple-touch-startup-image<span class="string">"&gt;</span></div><div class="line"></div><div class="line">&lt;link href="apple-touch-startup-image-<span class="number">2048</span>x1496.png<span class="string">" media="</span>(device-width: <span class="number">1536</span>px)  <span class="literal">and</span> (orientation: landscape) <span class="literal">and</span> (-webkit-device-pixel-ratio: <span class="number">2</span>)<span class="string">" rel="</span>apple-touch-startup-image<span class="string">"&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h4 id="1-移动端邮箱识别（Android）"><a href="#1-移动端邮箱识别（Android）" class="headerlink" title="1 移动端邮箱识别（Android）"></a>1 移动端邮箱识别（Android）</h4><p>与电话号码的识别一样，在安卓上会对符合邮箱格式的字符串进行识别，我们可以通过如下的meta来管别邮箱的自动识别：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">&lt;meta content=<span class="string">"email=no"</span> <span class="built_in">name</span>=<span class="string">"format-detection"</span> /&gt;</div></pre></td></tr></table></figure>
+<h2 id="推荐资源"><a href="#推荐资源" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://www.imooc.com/article/1115" target="_blank" rel="external">移动开发技巧</a></p>
 <p><a href="http://www.cnblogs.com/pifoo/archive/2011/05/28/webkit-webapp.html" target="_blank" rel="external">移动开发技巧2</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/09/2016-01-09-Meta-init/" data-id="cixext4ck008rxgvmlsrdlonz" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/09/2016-01-09-Meta-init/" data-id="cixkjnh8p000adfvmx2q8an5y" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/09/2016-01-09-Meta-init/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -210,6 +210,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -223,10 +227,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -293,11 +293,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

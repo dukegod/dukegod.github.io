@@ -23,7 +23,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -91,11 +91,11 @@
         <p>很早以前就应该做这个总结了，一直没有时间，一直拖到现在才开始真正的着手处理这件事情。<br>mysql的一些操作就不做出说明了，看看相关的书籍就可以了。  </p>
 <p>本文主要说明下，安装，链接，简单运用。</p>
 <a id="more"></a>
-<h3 id="u5B89_u88C5"><a href="#u5B89_u88C5" class="headerlink" title="安装"></a>安装</h3><p>使用brew就可以了，自行谷歌具体的安装问题。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>使用brew就可以了，自行谷歌具体的安装问题。</p>
 <p>安装node，更不用说明了。自行谷歌吧。</p>
-<h3 id="u8FDE_u63A5_u6570_u636E_u5E93"><a href="#u8FDE_u63A5_u6570_u636E_u5E93" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>中间件使用 <a href="https://github.com/mysqljs/mysql" target="_blank" rel="external">mysql</a></p>
-<h3 id="u5BA2_u6237_u7AEF"><a href="#u5BA2_u6237_u7AEF" class="headerlink" title="客户端"></a>客户端</h3><p>推荐 sequel Pro</p>
-<h3 id="u5E38_u89C1_u7684_u9519_u8BEF_u4FE1_u606F_u603B_u7ED3"><a href="#u5E38_u89C1_u7684_u9519_u8BEF_u4FE1_u606F_u603B_u7ED3" class="headerlink" title="常见的错误信息总结"></a>常见的错误信息总结</h3><ul>
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>中间件使用 <a href="https://github.com/mysqljs/mysql" target="_blank" rel="external">mysql</a></p>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>推荐 sequel Pro</p>
+<h3 id="常见的错误信息总结"><a href="#常见的错误信息总结" class="headerlink" title="常见的错误信息总结"></a>常见的错误信息总结</h3><ul>
 <li><p><a href="http://stackoverflow.com/questions/5527676/warning-the-user-local-mysql-data-directory-is-not-owned-by-the-mysql-user/35259654#35259654" target="_blank" rel="external">重新开机启动不了mysql数据库</a></p>
 </li>
 <li><p><a href="http://stackoverflow.com/questions/15450091/for-a-newbie-error-2002-hy000-cant-connect-to-local-mysql-server-through-so" target="_blank" rel="external">可能已经打开，需要关闭一些进程</a></p>
@@ -103,12 +103,12 @@
 <li><p><a href="http://www.lai18.com/content/8651784.html" target="_blank" rel="external">修改密码过期：如下</a></p>
 </li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">最近安装mySQL5.7.9，发现安装完后会自动生成一个随机密码，然后用sql工具登录，发现这个密码已经过期了，不能登录。</span><br><span class="line"></span><br><span class="line">终于解决好了，这里分享下处理步骤：</span><br><span class="line"></span><br><span class="line">1.先关闭mysql服务；</span><br><span class="line"></span><br><span class="line">2.进入终端，输入指令：cd /usr/local/mysql/bin/，进入安装目录；</span><br><span class="line"></span><br><span class="line">3.输入指令：sudo su，切换到root用户；</span><br><span class="line"></span><br><span class="line">4.输入指令：./mysqld_safe <span class="comment">--skip-grant-tables &amp;，禁止mysql验证功能。此时mysql服务会自动重启了；</span></span><br><span class="line">5. 用工具（比如Sequal Pro）登录mySQL。配置的时候，只配用户名为root，密码不配。</span><br><span class="line">6. 登录进去以后，数据库选择mysql，修改user表下用户名为root的那条记录，将password_expired设为N。这样随机密码就有效了，可以用密码登录了。</span><br><span class="line"></span><br><span class="line">如果希望修改root密码，则在登录mysql后，执行下面两条sql即可：</span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">update</span> mysql.<span class="keyword">user</span> <span class="keyword">set</span> authentication_string=<span class="keyword">password</span>(<span class="string">'123456'</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span> <span class="keyword">and</span> Host = <span class="string">'localhost'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">最近安装mySQL5.7.9，发现安装完后会自动生成一个随机密码，然后用sql工具登录，发现这个密码已经过期了，不能登录。</div><div class="line"></div><div class="line">终于解决好了，这里分享下处理步骤：</div><div class="line"></div><div class="line">1.先关闭mysql服务；</div><div class="line"></div><div class="line">2.进入终端，输入指令：cd /usr/local/mysql/bin/，进入安装目录；</div><div class="line"></div><div class="line">3.输入指令：sudo su，切换到root用户；</div><div class="line"></div><div class="line">4.输入指令：./mysqld_safe <span class="comment">--skip-grant-tables &amp;，禁止mysql验证功能。此时mysql服务会自动重启了；</span></div><div class="line">5. 用工具（比如Sequal Pro）登录mySQL。配置的时候，只配用户名为root，密码不配。</div><div class="line">6. 登录进去以后，数据库选择mysql，修改user表下用户名为root的那条记录，将password_expired设为N。这样随机密码就有效了，可以用密码登录了。</div><div class="line"></div><div class="line">如果希望修改root密码，则在登录mysql后，执行下面两条sql即可：</div><div class="line"></div><div class="line"><span class="keyword">update</span> mysql.user <span class="keyword">set</span> authentication_string=<span class="keyword">password</span>(<span class="string">'123456'</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span> <span class="keyword">and</span> Host = <span class="string">'localhost'</span>;</div><div class="line"></div><div class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cixext47j000ixgvmjy23opzu" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cixkjnhbg003mdfvmlzzr6zsa" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -190,6 +190,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -203,10 +207,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -273,11 +273,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

@@ -38,7 +38,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -109,8 +109,8 @@
 <p>可以参考以前的文章。</p>
 <p>我们的设计图是以750为标准的（也就是iPhone6为标准）</p>
 <p>我们一rem位单位，设计图给二倍图。通过修改html的基础字体，实现不同比率的适应。</p>
-<h3 id="u7B80_u5355_u70B9_u4E3A"><a href="#u7B80_u5355_u70B9_u4E3A" class="headerlink" title="简单点为"></a>简单点为</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span><br><span class="line">  <span class="keyword">var</span> rootFontSize = deviceWidth / <span class="number">7.5</span>;</span><br><span class="line">  <span class="keyword">if</span>(deviceWidth &gt; <span class="number">750</span>) &#123;</span><br><span class="line">      deviceWidth = <span class="number">750</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.documentElement.style.fontSize = rootFontSize  + <span class="string">'px'</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="u590D_u6742_u70B9"><a href="#u590D_u6742_u70B9" class="headerlink" title="复杂点"></a>复杂点</h3><p>解决方案：</p>
+<h3 id="简单点为"><a href="#简单点为" class="headerlink" title="简单点为"></a>简单点为</h3><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</div><div class="line">  <span class="keyword">var</span> rootFontSize = deviceWidth / <span class="number">7.5</span>;</div><div class="line">  <span class="keyword">if</span>(deviceWidth &gt; <span class="number">750</span>) &#123;</div><div class="line">      deviceWidth = <span class="number">750</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">document</span>.documentElement.style.fontSize = rootFontSize  + <span class="string">'px'</span>;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="复杂点"><a href="#复杂点" class="headerlink" title="复杂点"></a>复杂点</h3><p>解决方案：</p>
 <ul>
 <li>去掉先定义META</li>
 <li>通过js动态计算，添加META标签（推荐<a href="https://github.com/dukegod/h5-demos/blob/master/demos/dynamic_modifing_meta/resolution.js" target="_blank" rel="external">resolution.js</a>）</li>
@@ -120,7 +120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/" data-id="cixext49b0030xgvm9n3z2w68" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/" data-id="cixkjnhau002kdfvm9btesgoy" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/08/29/2016-08-29-页面字体缩放优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -202,6 +202,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -215,10 +219,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -285,11 +285,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

@@ -32,7 +32,7 @@ ajax无刷新
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -104,19 +104,19 @@ ajax无刷新
 <li>防止scroll强刷</li>
 </ul>
 <a id="more"></a>
-<h3 id="u5E94_u7528zepto_u5C01_u88C5_u4E86ajax_u65B9_u6CD5"><a href="#u5E94_u7528zepto_u5C01_u88C5_u4E86ajax_u65B9_u6CD5" class="headerlink" title="应用zepto封装了ajax方法"></a>应用zepto封装了ajax方法</h3><p>对于简单的页面没有多大的效果，但是对于整个项目的这么封装是比较方便的。减少可以避免的重复数据。</p>
-<h3 id="u6570_u636E_u52A0_u8F7D_u4E0E_u9632_u6B62_u5F3A_u5237"><a href="#u6570_u636E_u52A0_u8F7D_u4E0E_u9632_u6B62_u5F3A_u5237" class="headerlink" title="数据加载与防止强刷"></a>数据加载与防止强刷</h3><p>用的是一般的解决方案，只是用seTimeout()阻塞了加载罢了。后期可以进一步的优化加载方法。</p>
+<h3 id="应用zepto封装了ajax方法"><a href="#应用zepto封装了ajax方法" class="headerlink" title="应用zepto封装了ajax方法"></a>应用zepto封装了ajax方法</h3><p>对于简单的页面没有多大的效果，但是对于整个项目的这么封装是比较方便的。减少可以避免的重复数据。</p>
+<h3 id="数据加载与防止强刷"><a href="#数据加载与防止强刷" class="headerlink" title="数据加载与防止强刷"></a>数据加载与防止强刷</h3><p>用的是一般的解决方案，只是用seTimeout()阻塞了加载罢了。后期可以进一步的优化加载方法。</p>
 <p>通过document监听scroll，每当距离底部不足20px开始加载，每一次加载5条数据。</p>
 <p>加载数据的通过flog控制加载的过程，没有渲染成功不去请求下一次接口。</p>
 <p>可以控制想要加载的页数，也说超过了就不在进行加载了。</p>
-<h3 id="u6570_u636E_u653E_u5728sessionStorage"><a href="#u6570_u636E_u653E_u5728sessionStorage" class="headerlink" title="数据放在sessionStorage"></a>数据放在sessionStorage</h3><p>这样处理可以优化数据渲染，没有必要每次进入页面都要请求数据，这样处理，可以减少请求数。</p>
+<h3 id="数据放在sessionStorage"><a href="#数据放在sessionStorage" class="headerlink" title="数据放在sessionStorage"></a>数据放在sessionStorage</h3><p>这样处理可以优化数据渲染，没有必要每次进入页面都要请求数据，这样处理，可以减少请求数。</p>
 <p>我们通过$(“body”).scrollTop()记录我们浏览的距离，记录我们刚才访问的页面的位置，优化用户体验。</p>
 <p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/loadingDates" target="_blank" rel="external">数据加载demo</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/20/2016-04-20-数据加载N部曲/" data-id="cixext4at005pxgvm12bq7yxi" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/20/2016-04-20-数据加载N部曲/" data-id="cixkjnh9x001kdfvmexv1vkx4" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/20/2016-04-20-数据加载N部曲/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -198,6 +198,10 @@ ajax无刷新
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -211,10 +215,6 @@ ajax无刷新
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -281,11 +281,11 @@ ajax无刷新
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

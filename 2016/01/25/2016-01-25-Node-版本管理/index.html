@@ -32,7 +32,7 @@ brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -98,19 +98,19 @@ brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0
     <div class="article-entry" itemprop="articleBody">
       
         <p>nvm主要用来管理node各个版本的工具。</p>
-<h2 id="node_u7248_u672C_u7BA1_u7406_u5DE5_u5177"><a href="#node_u7248_u672C_u7BA1_u7406_u5DE5_u5177" class="headerlink" title="node版本管理工具"></a>node版本管理工具</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>可以用tj大牛的n去管理node各个版本。</p>
+<h2 id="node版本管理工具"><a href="#node版本管理工具" class="headerlink" title="node版本管理工具"></a>node版本管理工具</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>可以用tj大牛的n去管理node各个版本。</p>
 <p>具体查看<a href="https://github.com/tj/n" target="_blank" rel="external">github n</a></p>
-<h3 id="brew_install_node__u7248_u672C"><a href="#brew_install_node__u7248_u672C" class="headerlink" title="brew install node 版本"></a>brew install node 版本</h3><p>也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">brew <span class="operator"><span class="keyword">install</span> **</span><br><span class="line"></span><br><span class="line"># node 环境变量修改</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">PATH</span>=/usr/<span class="keyword">local</span>/Cellar/node/<span class="number">6.1</span><span class="number">.0</span>/<span class="keyword">bin</span>:$<span class="keyword">PATH</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="u7528nvm__u7BA1_u7406node_u7248_u672C"><a href="#u7528nvm__u7BA1_u7406node_u7248_u672C" class="headerlink" title="用nvm 管理node版本"></a>用nvm 管理node版本</h3><p>这个是我主要介绍的，用n管理不好控制npm版本，直接安装总是需要手动修改环境变量。</p>
+<h3 id="brew-install-node-版本"><a href="#brew-install-node-版本" class="headerlink" title="brew install node 版本"></a>brew install node 版本</h3><p>也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">brew <span class="keyword">install</span> **</div><div class="line"></div><div class="line"># node 环境变量修改</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">PATH</span>=/usr/<span class="keyword">local</span>/Cellar/node/<span class="number">6.1</span><span class="number">.0</span>/<span class="keyword">bin</span>:$<span class="keyword">PATH</span></div></pre></td></tr></table></figure>
+<h3 id="用nvm-管理node版本"><a href="#用nvm-管理node版本" class="headerlink" title="用nvm 管理node版本"></a>用nvm 管理node版本</h3><p>这个是我主要介绍的，用n管理不好控制npm版本，直接安装总是需要手动修改环境变量。</p>
 <p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm github地址</a>，你可以通过这个地址，更多的了解nvm</p>
 <p>推荐通过brew安装nvm</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">brew install nvm</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个目录</span></span><br><span class="line">mkdir  ~/.nvm</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当前用的node版本</span></span><br><span class="line">nvm use v6<span class="number">.0</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置全局的node版本</span></span><br><span class="line"></span><br><span class="line">nvm alias defaule system/v6<span class="number">.3</span><span class="number">.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在bash_prifile中添加路径</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#nvm</span></span><br><span class="line"><span class="keyword">export</span> NVM_DIR=<span class="string">"$HOME/.nvm"</span></span><br><span class="line">  . <span class="string">"$(brew --prefix nvm)/nvm.sh"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><div class="line">brew install nvm</div><div class="line"></div><div class="line">// 创建一个目录</div><div class="line">mkdir  ~/.nvm</div><div class="line"></div><div class="line">// 当前用的<span class="keyword">node</span><span class="title">版本</span></div><div class="line">nvm use v6.<span class="number">0.0</span></div><div class="line"></div><div class="line">// 设置全局的<span class="keyword">node</span><span class="title">版本</span></div><div class="line"></div><div class="line">nvm alias defaule system/v6.<span class="number">3.1</span></div><div class="line"></div><div class="line">// 在bash_prifile中添加路径</div><div class="line"></div><div class="line"><span class="comment">#nvm</span></div><div class="line">export <span class="attr">NVM_DIR=</span><span class="string">"$HOME/.nvm"</span></div><div class="line">  . <span class="string">"$(brew --prefix nvm)/nvm.sh"</span></div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/" data-id="cixext4c7007zxgvmzoso96mb" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/" data-id="cixkjnh90000jdfvmosrw7jrx" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -192,6 +192,10 @@ brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -205,10 +209,6 @@ brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -275,11 +275,11 @@ brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

@@ -8,10 +8,10 @@
   <meta name="description" content="伴随着移动互联的大潮，当今越来越多的网站已经从网页模式进化到了 Webapp 模式。它们运行在现代的高级浏览器里，使用 HTML5、 CSS3、 ES6 等更新的技术来开发丰富的功能，网页已经不仅仅是完成浏览的基本需求，并且webapp通常是一个单页面应用，每一个视图通过异步的方式加载，这导致页面初始化和使用过程中会加载越来越多的 JavaScript 代码，这给前端开发的流程和资源组织带来了巨大">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端开发模块管理">
-<meta property="og:url" content="http://dukegod.github.io/2016/05/25/2016-05-25-前端模块管理/index.html">
+<meta property="og:url" content="http://dukegod.github.io/2016/05/25/2016-05-25-前端模块-AMD-CMD-UMD/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="伴随着移动互联的大潮，当今越来越多的网站已经从网页模式进化到了 Webapp 模式。它们运行在现代的高级浏览器里，使用 HTML5、 CSS3、 ES6 等更新的技术来开发丰富的功能，网页已经不仅仅是完成浏览的基本需求，并且webapp通常是一个单页面应用，每一个视图通过异步的方式加载，这导致页面初始化和使用过程中会加载越来越多的 JavaScript 代码，这给前端开发的流程和资源组织带来了巨大">
-<meta property="og:updated_time" content="2016-11-07T10:47:09.000Z">
+<meta property="og:updated_time" content="2017-01-04T06:11:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发模块管理">
 <meta name="twitter:description" content="伴随着移动互联的大潮，当今越来越多的网站已经从网页模式进化到了 Webapp 模式。它们运行在现代的高级浏览器里，使用 HTML5、 CSS3、 ES6 等更新的技术来开发丰富的功能，网页已经不仅仅是完成浏览的基本需求，并且webapp通常是一个单页面应用，每一个视图通过异步的方式加载，这导致页面初始化和使用过程中会加载越来越多的 JavaScript 代码，这给前端开发的流程和资源组织带来了巨大">
@@ -20,7 +20,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -63,9 +63,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-05-25-前端模块管理" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-05-25-前端模块-AMD-CMD-UMD" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/25/2016-05-25-前端模块管理/" class="article-date">
+    <a href="/2016/05/25/2016-05-25-前端模块-AMD-CMD-UMD/" class="article-date">
   <time datetime="2016-05-24T16:00:00.000Z" itemprop="datePublished">2016-05-25</time>
 </a>
     
@@ -88,9 +88,9 @@
         <p>伴随着移动互联的大潮，当今越来越多的网站已经从网页模式进化到了 Webapp 模式。它们运行在现代的高级浏览器里，使用 HTML5、 CSS3、 ES6 等更新的技术来开发丰富的功能，网页已经不仅仅是完成浏览的基本需求，并且webapp通常是一个单页面应用，每一个视图通过异步的方式加载，这导致页面初始化和使用过程中会加载越来越多的 JavaScript 代码，这给前端开发的流程和资源组织带来了巨大的挑战。</p>
 <p>前端开发和其他开发工作的主要区别，首先是前端是基于多语言、多层次的编码和组织工作，其次前端产品的交付是基于浏览器，这些资源是通过增量加载的方式运行到浏览器端，如何在开发环境组织好这些碎片化的代码和资源，并且保证他们在浏览器端快速、优雅的加载和更新，就需要一个模块化系统，这个理想中的模块化系统是前端工程师多年来一直探索的难题。</p>
 <a id="more"></a>
-<h2 id="u6A21_u5757_u7CFB_u7EDF_u6F14_u5316"><a href="#u6A21_u5757_u7CFB_u7EDF_u6F14_u5316" class="headerlink" title="模块系统演化"></a>模块系统演化</h2><p>模块系统主要解决模块的定义、依赖和导出，先来看看已经存在的模块系统。</p>
-<h3 id="26lt_3Bscript_26gt_3B_u6807_u7B7E"><a href="#26lt_3Bscript_26gt_3B_u6807_u7B7E" class="headerlink" title="&lt;script&gt;标签"></a>&lt;script&gt;标签</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"module1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"module2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"libraryA.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"module3.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>这是最原始的 JavaScript 文件加载方式，如果把每一个文件看做是一个模块，那么他们的接口通常是暴露在全局作用域下，也就是定义在 <code>window</code> 对象中，不同模块的接口调用都是一个作用域中，一些复杂的框架，会使用命名空间的概念来组织这些模块的接口，典型的例子如 <a href="http://yuilibrary.com" target="_blank" rel="external">YUI</a> 库。</p>
+<h2 id="模块系统演化"><a href="#模块系统演化" class="headerlink" title="模块系统演化"></a>模块系统演化</h2><p>模块系统主要解决模块的定义、依赖和导出，先来看看已经存在的模块系统。</p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a><script>标签</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;script src=<span class="string">"module1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"module2.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"libraryA.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"module3.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>这是最原始的 JavaScript 文件加载方式，如果把每一个文件看做是一个模块，那么他们的接口通常是暴露在全局作用域下，也就是定义在 <code>window</code> 对象中，不同模块的接口调用都是一个作用域中，一些复杂的框架，会使用命名空间的概念来组织这些模块的接口，典型的例子如 <a href="http://yuilibrary.com">YUI</a> 库。</p>
 <p>这种原始的加载方式暴露了一些显而易见的弊端：</p>
 <ul>
 <li>全局作用域下容易造成变量冲突</li>
@@ -98,12 +98,12 @@
 <li>开发人员必须主观解决模块和代码库的依赖关系</li>
 <li>在大型项目中各种资源难以管理，长期积累的问题导致代码库混乱不堪</li>
 </ul>
-<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>服务器端的 Node.js 遵循 <a href="http://wiki.commonjs.org/wiki/CommonJS" target="_blank" rel="external">CommonJS规范</a>，该规范的核心思想是允许模块通过 <code>require</code> 方法来同步加载所要依赖的其他模块，然后通过 <code>exports</code> 或 <code>module.exports</code> 来导出需要暴露的接口。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"module"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"../file.js"</span>);</span><br><span class="line">exports.doStuff = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="built_in">module</span>.exports = someValue;</span><br></pre></td></tr></table></figure>
+<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>服务器端的 Node.js 遵循 <a href="http://wiki.commonjs.org/wiki/CommonJS">CommonJS规范</a>，该规范的核心思想是允许模块通过 <code>require</code> 方法来同步加载所要依赖的其他模块，然后通过 <code>exports</code> 或 <code>module.exports</code> 来导出需要暴露的接口。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">"module"</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">"../file.js"</span>);</div><div class="line">exports.doStuff = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">module</span>.exports = someValue;</div></pre></td></tr></table></figure>
 <p>优点：</p>
 <ul>
 <li>服务器端模块便于重用</li>
-<li><a href="https://www.npmjs.com" target="_blank" rel="external">NPM</a> 中已经有将近20万个可以使用模块包</li>
+<li><a href="https://www.npmjs.com">NPM</a> 中已经有将近20万个可以使用模块包</li>
 <li>简单并容易使用</li>
 </ul>
 <p>缺点：</p>
@@ -113,12 +113,12 @@
 </ul>
 <p>实现：</p>
 <ul>
-<li>服务器端的 <a href="http://www.nodejs.org" target="_blank" rel="external">Node.js</a></li>
-<li><a href="http://browserify.org" target="_blank" rel="external">Browserify</a>，浏览器端的 CommonJS 实现，可以使用 NPM 的模块，但是编译打包后的文件体积可能很大</li>
-<li><a href="https://github.com/medikoo/modules-webmake" target="_blank" rel="external">modules-webmake</a>，类似Browserify，还不如 Browserify 灵活</li>
-<li><a href="https://github.com/substack/wreq" target="_blank" rel="external">wreq</a>，Browserify 的前身</li>
+<li>服务器端的 <a href="http://www.nodejs.org">Node.js</a></li>
+<li><a href="http://browserify.org">Browserify</a>，浏览器端的 CommonJS 实现，可以使用 NPM 的模块，但是编译打包后的文件体积可能很大</li>
+<li><a href="https://github.com/medikoo/modules-webmake">modules-webmake</a>，类似Browserify，还不如 Browserify 灵活</li>
+<li><a href="https://github.com/substack/wreq">wreq</a>，Browserify 的前身</li>
 </ul>
-<h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><p><a href="https://github.com/amdjs/amdjs-api" target="_blank" rel="external">Asynchronous Module Definition</a> 规范其实只有一个主要接口 <code>define(id?, dependencies?, factory)</code>，它要在声明模块的时候指定所有的依赖 <code>dependencies</code>，并且还要当做形参传到 <code>factory</code> 中，对于依赖的模块提前执行，依赖前置。</p>
+<h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><p><a href="https://github.com/amdjs/amdjs-api">Asynchronous Module Definition</a> 规范其实只有一个主要接口 <code>define(id?, dependencies?, factory)</code>，它要在声明模块的时候指定所有的依赖 <code>dependencies</code>，并且还要当做形参传到 <code>factory</code> 中，对于依赖的模块提前执行，依赖前置。</p>
 <p>AMD（异步模块定义）是为浏览器环境设计的，因为 CommonJS 模块系统是同步加载的，当前浏览器环境还没有准备好同步加载模块的条件。</p>
 <p>优点：</p>
 <ul>
@@ -132,16 +132,16 @@
 </ul>
 <p>实现：</p>
 <ul>
-<li><a href="http://requirejs.org" target="_blank" rel="external">RequireJS</a></li>
-<li><a href="https://github.com/cujojs/curl" target="_blank" rel="external">curl</a></li>
+<li><a href="http://requirejs.org">RequireJS</a></li>
+<li><a href="https://github.com/cujojs/curl">curl</a></li>
 </ul>
-<h4 id="requirejs__u7B80_u5355_u4ECB_u7ECD"><a href="#requirejs__u7B80_u5355_u4ECB_u7ECD" class="headerlink" title="requirejs 简单介绍"></a>requirejs 简单介绍</h4><p>在 Require.js 中模块名是全局作用域，可以在全局引用</p>
-<figure class="highlight delphi"><table><tr><td class="code"><pre><span class="line">define(id?: <span class="keyword">String</span>, dependencies?: <span class="keyword">String</span>[], factory: <span class="function"><span class="keyword">Function</span>|<span class="title">Object</span>);</span></span><br><span class="line"></span><br><span class="line">define(<span class="function"><span class="keyword">function</span><span class="params">(require, <span class="keyword">exports</span>, module)</span> <span class="comment">&#123;&#125;</span>）</span></span><br></pre></td></tr></table></figure>
+<h4 id="requirejs-简单介绍"><a href="#requirejs-简单介绍" class="headerlink" title="requirejs 简单介绍"></a>requirejs 简单介绍</h4><p>在 Require.js 中模块名是全局作用域，可以在全局引用</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><div class="line">define(id?: <span class="built_in">String</span>, dependencies?: <span class="built_in">String</span>[], factory: <span class="built_in">Function</span>|<span class="built_in">Object</span>);</div><div class="line"></div><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) </span>&#123;&#125;）</div></pre></td></tr></table></figure>
 <p>id 是模块的名字，它是可选的参数。</p>
 <p>dependencies 指定了所要依赖的模块列表，它是一个数组，也是可选的参数，每个依赖的模块的输出将作为参数一次传入 factory 中。如果没有指定 dependencies，那么它的默认值是 [“require”, “exports”, “module”]</p>
 <p>factory 是最后一个参数，它包裹了模块的具体实现，它是一个函数或者对象。如果是函数，那么它的返回值就是模块的输出接口或值。</p>
-<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p><a href="https://github.com/cmdjs/specification/blob/master/draft/module.md" target="_blank" rel="external">Common Module Definition</a> 规范和 AMD 很相似，尽量保持简单，并与 CommonJS 和 Node.js 的 Modules 规范保持了很大的兼容性。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">  <span class="keyword">var</span> Spinning = <span class="built_in">require</span>(<span class="string">'./spinning'</span>);</span><br><span class="line">  exports.doSomething = ...</span><br><span class="line">  <span class="built_in">module</span>.exports = ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p><a href="https://github.com/cmdjs/specification/blob/master/draft/module.md">Common Module Definition</a> 规范和 AMD 很相似，尽量保持简单，并与 CommonJS 和 Node.js 的 Modules 规范保持了很大的兼容性。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</div><div class="line">  <span class="keyword">var</span> Spinning = <span class="built_in">require</span>(<span class="string">'./spinning'</span>);</div><div class="line">  exports.doSomething = ...</div><div class="line">  module.exports = ...</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>优点：</p>
 <ul>
 <li>依赖就近，延迟执行</li>
@@ -153,12 +153,14 @@
 </ul>
 <p>实现：</p>
 <ul>
-<li><a href="http://seajs.org/" target="_blank" rel="external">Sea.js</a></li>
-<li><a href="https://github.com/cloudcome/coolie" target="_blank" rel="external">coolie</a></li>
+<li><a href="http://seajs.org/">Sea.js</a></li>
+<li><a href="https://github.com/cloudcome/coolie">coolie</a></li>
 </ul>
-<h3 id="UMD"><a href="#UMD" class="headerlink" title="UMD"></a>UMD</h3><p><a href="https://github.com/umdjs/umd" target="_blank" rel="external">Universal Module Definition</a> 规范类似于兼容 CommonJS 和 AMD 的语法糖，是模块定义的跨平台解决方案。</p>
-<h3 id="ES6__u6A21_u5757"><a href="#ES6__u6A21_u5757" class="headerlink" title="ES6 模块"></a>ES6 模块</h3><p>EcmaScript6 标准增加了 JavaScript 语言层面的模块体系定义。<a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="external">ES6 模块</a>的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"jquery"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">doStuff</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="built_in">module</span> <span class="string">"localModule"</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="UMD"><a href="#UMD" class="headerlink" title="UMD"></a>UMD</h3><p><a href="https://github.com/umdjs/umd">Universal Module Definition</a> 规范类似于兼容 CommonJS 和 AMD 的语法糖，是模块定义的跨平台解决方案。</p>
+<p>使用一下方式，兼容各个模式与浏览器方式引用</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">global, factory</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</div><div class="line">    <span class="comment">// AMD环境中</span></div><div class="line">    define( <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> factory(global);</div><div class="line">    &#125;);</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">module</span> !== <span class="string">'undefined'</span> &amp;&amp; <span class="built_in">module</span>.exports) &#123;</div><div class="line">    <span class="comment">// CMD环境中</span></div><div class="line">    <span class="built_in">module</span>.exports = factory(global);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// 浏览器环境，添加到global中</span></div><div class="line">    global.getDateInstance = factory(global);</div><div class="line">  &#125;</div><div class="line">&#125;(<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span> ? <span class="built_in">window</span> : <span class="keyword">this</span>, <span class="function"><span class="keyword">function</span>(<span class="params">window</span>) </span>&#123;</div><div class="line">  <span class="comment">// 抛出去函数方法</span></div><div class="line">  <span class="keyword">var</span> getDateInstance = &#123;&#125;;</div><div class="line">&#125;))</div></pre></td></tr></table></figure>
+<h3 id="ES6-模块"><a href="#ES6-模块" class="headerlink" title="ES6 模块"></a>ES6 模块</h3><p>EcmaScript6 标准增加了 JavaScript 语言层面的模块体系定义。<a href="http://es6.ruanyifeng.com/#docs/module">ES6 模块</a>的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">"jquery"</span>;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">doStuff</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="built_in">module</span> <span class="string">"localModule"</span> &#123;&#125;</div></pre></td></tr></table></figure>
 <p>优点：</p>
 <ul>
 <li>容易进行静态分析</li>
@@ -171,18 +173,18 @@
 </ul>
 <p>实现：</p>
 <ul>
-<li><a href="https://babeljs.io/" target="_blank" rel="external">Babel</a></li>
+<li><a href="https://babeljs.io/">Babel</a></li>
 </ul>
-<h3 id="u671F_u671B_u7684_u6A21_u5757_u7CFB_u7EDF"><a href="#u671F_u671B_u7684_u6A21_u5757_u7CFB_u7EDF" class="headerlink" title="期望的模块系统"></a>期望的模块系统</h3><p>可以兼容多种模块风格，尽量可以利用已有的代码，不仅仅只是 JavaScript 模块化，还有 CSS、图片、字体等资源也需要模块化。</p>
+<h3 id="期望的模块系统"><a href="#期望的模块系统" class="headerlink" title="期望的模块系统"></a>期望的模块系统</h3><p>可以兼容多种模块风格，尽量可以利用已有的代码，不仅仅只是 JavaScript 模块化，还有 CSS、图片、字体等资源也需要模块化。</p>
 <p>见 webpack 总结</p>
-<h3 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h3><p><a href="http://webpackdoc.com/index.html" target="_blank" rel="external">webapack</a></p>
-
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://webpackdoc.com/index.html">webapack</a></p>
+</script></h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/05/25/2016-05-25-前端模块管理/" data-id="cixext4ao005gxgvmsknssecm" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/05/25/2016-05-25-前端模块-AMD-CMD-UMD/" data-id="cixkjnh9z001ndfvmivakf1x1" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/05/25/2016-05-25-前端模块管理/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/05/25/2016-05-25-前端模块-AMD-CMD-UMD/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
@@ -262,6 +264,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -275,10 +281,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -330,7 +332,7 @@
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/05/25/2016-05-25-前端模块管理/';
+  var disqus_url = 'http://dukegod.github.io/2016/05/25/2016-05-25-前端模块-AMD-CMD-UMD/';
   
   (function(){
     var dsq = document.createElement('script');
@@ -345,11 +347,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

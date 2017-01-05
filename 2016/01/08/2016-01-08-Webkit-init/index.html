@@ -23,7 +23,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
@@ -88,28 +88,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="webkit-tap-highlight-color_3Argba_28255_2C255_2C255_2C0_29"><a href="#webkit-tap-highlight-color_3Argba_28255_2C255_2C255_2C0_29" class="headerlink" title="-webkit-tap-highlight-color:rgba(255,255,255,0)"></a>-webkit-tap-highlight-color:rgba(255,255,255,0)</h3><p>可以同时屏蔽ios和android下点击元素时出现的<strong>阴影</strong>。</p>
+        <h3 id="webkit-tap-highlight-color-rgba-255-255-255-0"><a href="#webkit-tap-highlight-color-rgba-255-255-255-0" class="headerlink" title="-webkit-tap-highlight-color:rgba(255,255,255,0)"></a>-webkit-tap-highlight-color:rgba(255,255,255,0)</h3><p>可以同时屏蔽ios和android下点击元素时出现的<strong>阴影</strong>。</p>
 <p>备注：transparent的属性值在android下无效。</p>
 <a id="more"></a>
-<h3 id="webkit-appearance_3Anone"><a href="#webkit-appearance_3Anone" class="headerlink" title="-webkit-appearance:none"></a>-webkit-appearance:none</h3><p>可以同时屏蔽输入框怪异的内阴影。</p>
-<h3 id="webkit-transform_3Atranslate3d_280_2C_0_2C_0_29"><a href="#webkit-transform_3Atranslate3d_280_2C_0_2C_0_29" class="headerlink" title="-webkit-transform:translate3d(0, 0, 0)"></a>-webkit-transform:translate3d(0, 0, 0)</h3><p>在ios下可以让动画更加流畅（这个属性会调用硬件加速模式），但是在android下不可乱用，很多见所未见的bug就是因为这个。</p>
+<h3 id="webkit-appearance-none"><a href="#webkit-appearance-none" class="headerlink" title="-webkit-appearance:none"></a>-webkit-appearance:none</h3><p>可以同时屏蔽输入框怪异的内阴影。</p>
+<h3 id="webkit-transform-translate3d-0-0-0"><a href="#webkit-transform-translate3d-0-0-0" class="headerlink" title="-webkit-transform:translate3d(0, 0, 0)"></a>-webkit-transform:translate3d(0, 0, 0)</h3><p>在ios下可以让动画更加流畅（这个属性会调用硬件加速模式），但是在android下不可乱用，很多见所未见的bug就是因为这个。</p>
 <h3 id="webkit-background-size"><a href="#webkit-background-size" class="headerlink" title="-webkit-background-size"></a>-webkit-background-size</h3><p>可以做高清图标，不过一些低版本的android只能识别background-size，所以有必要两个都要写上；用这个属性的时候推荐树勇cover这个值，可以自动去匹配宽和高。</p>
-<h3 id="webkit-touch-callout_3A_none_3B"><a href="#webkit-touch-callout_3A_none_3B" class="headerlink" title="-webkit-touch-callout: none;"></a>-webkit-touch-callout: none;</h3><p>长按时不触发系统的菜单, 可用在图片上加这个属性禁止下载图片;</p>
+<h3 id="webkit-touch-callout-none"><a href="#webkit-touch-callout-none" class="headerlink" title="-webkit-touch-callout: none;"></a>-webkit-touch-callout: none;</h3><p>长按时不触发系统的菜单, 可用在图片上加这个属性禁止下载图片;</p>
 <p>亲测iOS可以，Android不支持</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">img</span><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-touch-callout</span>:<span class="value"> none</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line"><span class="attribute">-webkit-touch-callout</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="webkit-user-select"><a href="#webkit-user-select" class="headerlink" title="-webkit-user-select"></a>-webkit-user-select</h3><p>不是标准属性</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">-webkit-user-select</span>: none; <span class="comment">//文档中不让文本选择</span></span><br><span class="line"><span class="attribute">-webkit-user-select</span>: text; <span class="comment">//文档中只可以操作文本</span></span><br><span class="line"><span class="attribute">-webkit-user-select</span>: all;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">-webkit-user-<span class="keyword">select</span>: <span class="keyword">none</span>; //文档中不让文本选择</div><div class="line">-webkit-user-<span class="keyword">select</span>: <span class="built_in">text</span>; //文档中只可以操作文本</div><div class="line">-webkit-user-<span class="keyword">select</span>: all;</div></pre></td></tr></table></figure>
 <h3 id="webkit-text-size-adjust"><a href="#webkit-text-size-adjust" class="headerlink" title="-webkit-text-size-adjust"></a>-webkit-text-size-adjust</h3><p>主要是兼容Google对于字体的兼容性问题</p>
 <p>当移动设备横竖屏切换时，文本的大小会重新计算，进行相应的缩放，当我们不需要这种情况时，可以选择禁止</p>
 <p>需要注意的是，PC端的该属性已经被移除，该属性在移动端要生效，必须设置 meta viewport。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">-webkit-text-size-adjust</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="u63A8_u8350_u8D44_u6E90"><a href="#u63A8_u8350_u8D44_u6E90" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://ued.ctrip.com/webkitcss/" target="_blank" rel="external">webkit前缀(携程)</a></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="attribute">-webkit-text-size-adjust</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="推荐资源"><a href="#推荐资源" class="headerlink" title="推荐资源"></a>推荐资源</h2><p><a href="http://ued.ctrip.com/webkitcss/" target="_blank" rel="external">webkit前缀(携程)</a></p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Webkit_Extensions" target="_blank" rel="external">mozilla_ webkit</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/" data-id="cixext4cl008uxgvm1p4vkst4" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/" data-id="cixkjnh8l0008dfvm9yfgod60" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -191,6 +191,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/01/2017-01-01/">新的一年</a>
           </li>
         
@@ -204,10 +208,6 @@
         
           <li>
             <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
           </li>
         
       </ul>
@@ -274,11 +274,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>
