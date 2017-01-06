@@ -64,6 +64,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-02-15-Javascript-原型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/15/2016-02-15-Javascript-原型/" class="article-date">
+  <time datetime="2016-02-14T16:00:00.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/15/2016-02-15-Javascript-原型/">原型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>构造函数.prototype = 原型对象</p>
+</li>
+<li><p>原型对象.constructor = 构造函数(模板)</p>
+</li>
+<li><p>原型对象.isPrototypeof(实例对象)   判断实例对象的原型 是不是当前对象</p>
+</li>
+</ol>
+<p>每一个对象创建的时候都会有一个prototype属性。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> Person); <span class="comment">// function</span></div><div class="line"><span class="built_in">console</span>.log(Person.prototype); <span class="comment">// &#123;&#125;</span></div><div class="line"><span class="built_in">console</span>.log(Person.prototype.constructor); <span class="comment">//[Function]</span></div></pre></td></tr></table></figure>
+<p>空函数，prototype指向本身，constructor指向最高一级［Function］。原型链查找就是层级向上查找的。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;;</div><div class="line">Person.prototype.common = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'person common prototype'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'duke'</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">'duke2'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(Person.prototype); <span class="comment">//  common: [Function] &#125;</span></div><div class="line"><span class="built_in">console</span>.log(Person.prototype.constructor == Person); <span class="comment">// ture</span></div><div class="line"><span class="built_in">console</span>.log(person.constructor);[<span class="built_in">Function</span>]</div><div class="line"><span class="built_in">console</span>.log(person.constructor == Person);<span class="comment">// ture</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> person); <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(person.prototype); <span class="comment">// undefined</span></div><div class="line"><span class="built_in">console</span>.log(person.prototype.constructor); <span class="comment">// error</span></div></pre></td></tr></table></figure>
+<p>实例方法的constructor指向构造方法，构造函数的属性的constructor指向构造函数本身。</p>
+<p>最好的实现，应用 寄生组合式模式开发。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> Person);</div><div class="line"><span class="built_in">console</span>.log(Person.prototype);</div><div class="line"><span class="built_in">console</span>.log(Person.constructor === <span class="built_in">Function</span>); <span class="comment">// 构造函数的constructor指向Function</span></div><div class="line"><span class="built_in">console</span>.log(p.constructor === Person); <span class="comment">// 实例函数的constructor指向构造函数</span></div><div class="line"><span class="built_in">console</span>.log(p.prototype);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Child'</span>);</div><div class="line"><span class="keyword">var</span> Child = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Child.prototype = Person.prototype;</div><div class="line">Child.prototype.constructor = Child; <span class="comment">// 没有这条，ch.constructor ！== Child 而是指向ch.constructor === Person</span></div><div class="line"><span class="keyword">var</span> ch = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(ch <span class="keyword">instanceof</span> Child);</div><div class="line"><span class="built_in">console</span>.log(Child.prototype);</div><div class="line"><span class="built_in">console</span>.log(Child.constructor === <span class="built_in">Function</span>);</div><div class="line"><span class="built_in">console</span>.log(ch.constructor === Person);</div><div class="line"><span class="built_in">console</span>.log(ch.constructor === Child);</div><div class="line"><span class="built_in">console</span>.log(ch.prototype);</div></pre></td></tr></table></figure>
+<p>使用原型链实现继承的时候，我们需要注意的点。</p>
+<p>因为Child.prototype = Person.prototype，所以我们需要手动的把Child.prototype.constructor重新修改为指向自己，否则实例对象的constructor都是指向Person。</p>
+<p><a href="https://keelii.github.io/2016/07/02/javascript-definitive-guide-note-8/" target="_blank" rel="external">原型，类，构造方法</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/" data-id="cixljed28001dpzvmer1loulk" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-02-14-Javascript-函数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/14/2016-02-14-Javascript-函数/" class="article-date">
@@ -116,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/14/2016-02-14-Javascript-函数/" data-id="cixkjnh9i0010dfvmdzjud0rr" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/14/2016-02-14-Javascript-函数/" data-id="cixljed1y0010pzvmsmxb72qm" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/14/2016-02-14-Javascript-函数/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -167,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/" data-id="cixkjnh9h000zdfvm682nayy2" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/" data-id="cixljed1y000zpzvmhy6cgi0e" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -225,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/" data-id="cixkjnh9g000xdfvm9lsbnvhp" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/" data-id="cixljed1x000ypzvm3w9j5rum" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -277,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/" data-id="cixkjnh9h000ydfvm5vyyvii4" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/" data-id="cixljed1w000xpzvmkzc04ypg" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -318,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" data-id="cixkjnh9d000wdfvmsv8ry359" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" data-id="cixljed1r000vpzvmktaa28qg" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -359,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/" data-id="cixkjnh9c000vdfvmji4p6vre" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/" data-id="cixljed1r000upzvm7tg4pb79" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -403,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="cixkjnh9b000tdfvmhxl5dbtf" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="cixljed1s000wpzvm6kg2axie" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -482,7 +540,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/" data-id="cixkjnh9b000udfvm9xdlq0ck" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/" data-id="cixljed1q000tpzvmolwkx24y" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -525,63 +583,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/" data-id="cixkjnh99000sdfvmeijsrevq" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/" data-id="cixljed1o000rpzvm2zg9tc1r" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-02-05-MAC外接机械键盘" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/05/2016-02-05-MAC外接机械键盘/" class="article-date">
-  <time datetime="2016-02-04T16:00:00.000Z" itemprop="datePublished">2016-02-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/05/2016-02-05-MAC外接机械键盘/">mac外接机器键盘配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><ul>
-<li>win ==&gt; common</li>
-<li>alt ==&gt; option</li>
-</ul>
-<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><ul>
-<li>ctrl + (-&gt;,&lt;-)  切屏</li>
-<li>F11                         显示桌面</li>
-</ul>
-<h3 id="webstrom-快捷键"><a href="#webstrom-快捷键" class="headerlink" title="webstrom 快捷键"></a>webstrom 快捷键</h3><ul>
-<li>ctrl + shift + r ： 执行当前文件</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/05/2016-02-05-MAC外接机械键盘/" data-id="cixkjnh99000rdfvm2gl8cprs" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/02/05/2016-02-05-MAC外接机械键盘/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
 
     </footer>
   </div>
@@ -616,7 +623,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15px;">App</a> <a href="/tags/CSS/" style="font-size: 17px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 13px;">Google</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 12px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 14px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 12px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 14px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 11px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 14px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 15px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.45px;">App</a> <a href="/tags/CSS/" style="font-size: 17.27px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 11.82px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 12.73px;">Google</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.82px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 14.55px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.82px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 10.91px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 15.45px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.82px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16.36px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.82px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.64px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10.91px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.09px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.64px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 15.45px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10.91px;">转载翻译</a>
     </div>
   </div>
 
@@ -638,6 +645,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/06/2017-01-06-前端开发-坑-SafariB/">Safari不能把事件绑定到body上</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
           </li>
         
@@ -651,10 +662,6 @@
         
           <li>
             <a href="/2016/12/28/2016-12-28-前端持续集成开发/">前端开源项目持续集成三剑客</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
           </li>
         
       </ul>

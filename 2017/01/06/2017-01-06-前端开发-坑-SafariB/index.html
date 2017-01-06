@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Lua | Hello World</title>
+  <title>Safari不能把事件绑定到body上 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活，沉淀人生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://dukegod.github.io/tags/Lua/index.html">
+  <meta name="description" content="ios开发不能把事件绑定到body上  
+也就是说，window，document，body 绑定click事件时，点击body不会触发，是Safari中的坑，所有的ios设备都是这样。
+解决方案：
+&amp;lt;body&amp;gt;  &amp;lt;div id=&quot;ios&quot;&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;$(&apos;#ios&apos;).on()
+绑定到最近的父一级的DOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Safari不能把事件绑定到body上">
+<meta property="og:url" content="http://dukegod.github.io/2017/01/06/2017-01-06-前端开发-坑-SafariB/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="记录生活，沉淀人生">
+<meta property="og:description" content="ios开发不能把事件绑定到body上  
+也就是说，window，document，body 绑定click事件时，点击body不会触发，是Safari中的坑，所有的ios设备都是这样。
+解决方案：
+&amp;lt;body&amp;gt;  &amp;lt;div id=&quot;ios&quot;&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;$(&apos;#ios&apos;).on()
+绑定到最近的父一级的DOM">
+<meta property="og:updated_time" content="2017-01-06T08:25:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="记录生活，沉淀人生">
+<meta name="twitter:title" content="Safari不能把事件绑定到body上">
+<meta name="twitter:description" content="ios开发不能把事件绑定到body上  
+也就是说，window，document，body 绑定click事件时，点击body不会触发，是Safari中的坑，所有的ios设备都是这样。
+解决方案：
+&amp;lt;body&amp;gt;  &amp;lt;div id=&quot;ios&quot;&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;$(&apos;#ios&apos;).on()
+绑定到最近的父一级的DOM">
   
   
     <link rel="icon" href="/favicon.png">
@@ -62,40 +75,67 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/19/2016-09-19-Lua/" class="archive-article-date">
-  <time datetime="2016-09-18T16:00:00.000Z" itemprop="datePublished">9月 19</time>
+        <section id="main"><article id="post-2017-01-06-前端开发-坑-SafariB" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/06/2017-01-06-前端开发-坑-SafariB/" class="article-date">
+  <time datetime="2017-01-05T16:00:00.000Z" itemprop="datePublished">2017-01-06</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/19/2016-09-19-Lua/">Lua 学习</a>
+    <h1 class="article-title" itemprop="name">
+      Safari不能把事件绑定到body上
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ios开发不能把事件绑定到body上  </p>
+<p>也就是说，window，document，body 绑定click事件时，点击body不会触发，是Safari中的坑，所有的ios设备都是这样。</p>
+<p>解决方案：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"ios"</span>&gt;</div><div class="line"></div><div class="line">  &lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">$('<span class="comment">#ios').on()</span></div></pre></td></tr></table></figure>
+<p>绑定到最近的父一级的DOM</p>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/01/06/2017-01-06-前端开发-坑-SafariB/" data-id="cixljed48003qpzvmq7q5c3wy" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/01/06/2017-01-06-前端开发-坑-SafariB/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">clear与overflow特别说明</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -207,11 +247,13 @@
 <script>
   var disqus_shortname = 'dukehui1991';
   
+  var disqus_url = 'http://dukegod.github.io/2017/01/06/2017-01-06-前端开发-坑-SafariB/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
