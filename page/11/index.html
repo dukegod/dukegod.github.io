@@ -64,6 +64,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-02-16-Javascript-bind" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/16/2016-02-16-Javascript-bind/" class="article-date">
+  <time datetime="2016-02-15T16:00:00.000Z" itemprop="datePublished">2016-02-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/16/2016-02-16-Javascript-bind/">Bind</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>bind()方法会创建一个新函数，当这个新函数被调用时，它的this值是传递给bind()的第一个参数, 它的参数是bind()的其他参数和其原本的参数</p>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">fn</span>.bind<span class="params">(a,b,c,d)</span></span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>this值绑定到第一个参数(a),[null，undefined表示调用自身]</li>
+<li>其他的参数添加到a以后</li>
+<li>bind 返回的是一个没有执行的函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">  <span class="attr">b</span>: <span class="number">2</span>,</div><div class="line">  <span class="attr">getCount</span>: <span class="function"><span class="keyword">function</span>(<span class="params">c, d</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="keyword">this</span>.b + c + d;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">Function</span>.prototype.bind = <span class="built_in">Function</span>.prototype.bind || <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// console.log(arguments); // console [3,4] if ie&lt;6-8&gt;</span></div><div class="line">    <span class="keyword">return</span> that.apply(context, <span class="built_in">arguments</span>);</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.a = <span class="built_in">window</span>.b = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> func = obj.getCount.bind(obj);</div><div class="line"><span class="built_in">console</span>.log(func(<span class="number">3</span>, <span class="number">4</span>));  <span class="comment">// 10</span></div><div class="line"></div><div class="line"><span class="comment">// 用apply调用</span></div><div class="line"><span class="keyword">var</span> ans = obj.getCount.apply(obj, [<span class="number">3</span>, <span class="number">4</span>]);</div><div class="line"><span class="built_in">console</span>.log(ans); <span class="comment">// 10</span></div></pre></td></tr></table></figure>
+<p>以上说明第三点，bind返回一个未执行的函数</p>
+<p>bind()提供this的上下文</p>
+<figure class="highlight fortran"><table><tr><td class="code"><pre><div class="line">var slice = <span class="function"><span class="keyword">Function</span>.<span class="title">prototype</span></span>.<span class="keyword">call</span>.<span class="keyword">bind</span>(Array.prototype.slice);</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(slice)// <span class="function"><span class="keyword">function</span></span> <span class="keyword">call</span>()&#123;&#125;</div><div class="line"></div><div class="line">slice([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="number">0</span>,<span class="number">1</span>);</div></pre></td></tr></table></figure>
+<p>理解为，我们先绑定了slice，这个时候this已经指向slice这个方法，<br>然后我们再去通过call在绑定一次，把以前绑定的方法作为call的方法，去执行。</p>
+<p>待研究：</p>
+<ul>
+<li><a href="http://www.zcfy.cc/article/borrowing-methods-in-javascript-by-david-shariff-794.html" target="_blank" rel="external">函数借用</a></li>
+<li><a href="http://liuwanlin.info/javascriptzhong-bindfang-fa-de-shi-xian/" target="_blank" rel="external">函数柯里化</a></li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank" rel="external">mozilla</a><br><a href="http://www.cnblogs.com/zichi/p/4357023.html" target="_blank" rel="external">参考</a><br><a href="https://github.com/hanzichi/underscore-analysis/issues/18" target="_blank" rel="external">hanzichi</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/16/2016-02-16-Javascript-bind/" data-id="cixsnt5ow0014fdvmv4dpvdin" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/16/2016-02-16-Javascript-bind/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-02-15-Javascript-原型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/15/2016-02-15-Javascript-原型/" class="article-date">
@@ -108,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/" data-id="cixribnfg001179vmxk7vrp4b" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/" data-id="cixsnt5ot000zfdvmuw08bh19" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/15/2016-02-15-Javascript-原型/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -174,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/14/2016-02-14-Javascript-函数/" data-id="cixribnff001079vmac4s177b" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/14/2016-02-14-Javascript-函数/" data-id="cixsnt5ot000yfdvmcrvvzozz" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/14/2016-02-14-Javascript-函数/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -225,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/" data-id="cixribnff000z79vmsthrn1ya" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/" data-id="cixsnt5ou0011fdvmnq4oqxmw" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/13/2016-02-13-Javascript-传递/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -283,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/" data-id="cixribnfe000y79vmr5k3ua6s" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/" data-id="cixsnt5ou0010fdvmb3chs28z" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/12/2016-02-12-Javascript-内存泄露/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -335,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/" data-id="cixribnfd000x79vmn0ez4ebo" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/" data-id="cixsnt5os000xfdvm8ro2m7ei" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -376,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" data-id="cixribnfa000w79vmxjfjvatx" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" data-id="cixsnt5op000wfdvme5tys8eh" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -417,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/" data-id="cixribnf9000v79vm4n5fewi8" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/" data-id="cixsnt5oo000ufdvmsib7z7zs" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -461,7 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="cixribnf8000u79vmxo2uhiea" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="cixsnt5oo000vfdvmdmkj2jyu" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -540,55 +598,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/" data-id="cixribnf8000t79vm55w7aa6w" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/" data-id="cixsnt5on000tfdvm5ioh1aum" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-02-06-Jquery-on" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/06/2016-02-06-Jquery-on/" class="article-date">
-  <time datetime="2016-02-05T16:00:00.000Z" itemprop="datePublished">2016-02-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/06/2016-02-06-Jquery-on/">jQuery的on()在ios上失灵</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>已经渲染好的页面没有问题</p>
-<p>ios系统中动态创建元素用on()方法做事件委托失效，但是在Android与browser中没有问题。</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在页面渲染完成以后再去绑定相关的方法。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/" data-id="cixribnf6000s79vmvmn8pl4z" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
     </footer>
   </div>
@@ -645,6 +660,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/11/2017-01-11-Alfred/">Alfred 配置笔记</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/06/2017-01-06-前端开发-坑-SafariB/">Safari不能把事件绑定到body上</a>
           </li>
         
@@ -658,10 +677,6 @@
         
           <li>
             <a href="/2016/12/29/2016-12-29-Google-Devtools/">谷歌开发工具</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/28/2016-12-28-前端持续集成开发/">前端开源项目持续集成三剑客</a>
           </li>
         
       </ul>

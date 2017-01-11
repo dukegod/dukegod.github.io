@@ -64,6 +64,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-01-07-Click-tap-init" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/07/2016-01-07-Click-tap-init/" class="article-date">
+  <time datetime="2016-01-06T16:00:00.000Z" itemprop="datePublished">2016-01-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/07/2016-01-07-Click-tap-init/">移动开发点击事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="移动页面300ms延迟"><a href="#移动页面300ms延迟" class="headerlink" title="移动页面300ms延迟"></a>移动页面300ms延迟</h4><h4 id="产生的原因"><a href="#产生的原因" class="headerlink" title="产生的原因"></a>产生的原因</h4><p>2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。<br>双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。<br>原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/07/2016-01-07-Click-tap-init/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/07/2016-01-07-Click-tap-init/" data-id="cixsnt5nu0009fdvmcdwpeh4a" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/07/2016-01-07-Click-tap-init/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-01-06-BackgroudSize" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/06/2016-01-06-BackgroudSize/" class="article-date">
@@ -96,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/06/2016-01-06-BackgroudSize/" data-id="cixribnei000679vm5rli3khk" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/06/2016-01-06-BackgroudSize/" data-id="cixsnt5nt0007fdvmdi9rzi36" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/06/2016-01-06-BackgroudSize/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -146,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/" data-id="cixribnej000779vmh0dk9nq6" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/" data-id="cixsnt5ns0006fdvm8ev7kw6f" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -193,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/04/2016-01-04-Webstorm/" data-id="cixribneh000579vmppnur2ch" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/04/2016-01-04-Webstorm/" data-id="cixsnt5nq0005fdvmnfudngvw" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/04/2016-01-04-Webstorm/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -238,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/03/2016-01-03-Sublime/" data-id="cixribneg000479vmzua4g6et" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/03/2016-01-03-Sublime/" data-id="cixsnt5nl0002fdvmbuhm6x55" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/03/2016-01-03-Sublime/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -284,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/02/2016-01-02-Git-基本命令/" data-id="cixribneb000279vm5hdfxj3n" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/02/2016-01-02-Git-基本命令/" data-id="cixsnt5nq0004fdvmm8q0ncw2" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/02/2016-01-02-Git-基本命令/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -334,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/01/2016-01-01-firstkiss/" data-id="cixribnef000379vm4c6guhrm" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/01/2016-01-01-firstkiss/" data-id="cixsnt5np0003fdvm01xgqlxi" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/01/2016-01-01-firstkiss/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -396,6 +441,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/11/2017-01-11-Alfred/">Alfred 配置笔记</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/06/2017-01-06-前端开发-坑-SafariB/">Safari不能把事件绑定到body上</a>
           </li>
         
@@ -409,10 +458,6 @@
         
           <li>
             <a href="/2016/12/29/2016-12-29-Google-Devtools/">谷歌开发工具</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/28/2016-12-28-前端持续集成开发/">前端开源项目持续集成三剑客</a>
           </li>
         
       </ul>
