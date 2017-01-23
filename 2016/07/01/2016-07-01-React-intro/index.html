@@ -3,30 +3,35 @@
 <head>
   <meta charset="utf-8">
   
-  <title>数据加载 | Hello World</title>
+  <title>react介绍 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据加载，前后端连接点就在于如何优雅的渲染数据，实现数据与行为的分离。先说下自己面对的具体业务需求。
-
-滑动加载
-ajax无刷新
-防止scroll强刷">
+  <meta name="description" content="react开始
+生命周期
+获取dom操作
+2
+react之前mvc的不断的操作dom,浪费渲染时间，性能需要优化
+介绍react不之间操作dom，操作虚拟dom树操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据加载">
-<meta property="og:url" content="http://dukegod.github.io/2016/04/20/Javascript-2016-04-20-滚动数据加载/index.html">
+<meta property="og:title" content="react介绍">
+<meta property="og:url" content="http://dukegod.github.io/2016/07/01/2016-07-01-React-intro/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="数据加载，前后端连接点就在于如何优雅的渲染数据，实现数据与行为的分离。先说下自己面对的具体业务需求。
-
-滑动加载
-ajax无刷新
-防止scroll强刷">
-<meta property="og:updated_time" content="2017-01-23T10:50:30.000Z">
+<meta property="og:description" content="react开始
+生命周期
+获取dom操作
+2
+react之前mvc的不断的操作dom,浪费渲染时间，性能需要优化
+介绍react不之间操作dom，操作虚拟dom树操作">
+<meta property="og:image" content="https://mzkmzk.gitbooks.io/study_react/content/3-3-component-lifecycle.jpg">
+<meta property="og:updated_time" content="2016-11-21T12:37:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据加载">
-<meta name="twitter:description" content="数据加载，前后端连接点就在于如何优雅的渲染数据，实现数据与行为的分离。先说下自己面对的具体业务需求。
-
-滑动加载
-ajax无刷新
-防止scroll强刷">
+<meta name="twitter:title" content="react介绍">
+<meta name="twitter:description" content="react开始
+生命周期
+获取dom操作
+2
+react之前mvc的不断的操作dom,浪费渲染时间，性能需要优化
+介绍react不之间操作dom，操作虚拟dom树操作">
+<meta name="twitter:image" content="https://mzkmzk.gitbooks.io/study_react/content/3-3-component-lifecycle.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -75,10 +80,10 @@ ajax无刷新
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Javascript-2016-04-20-滚动数据加载" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-07-01-React-intro" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/04/20/Javascript-2016-04-20-滚动数据加载/" class="article-date">
-  <time datetime="2016-04-19T16:00:00.000Z" itemprop="datePublished">2016-04-20</time>
+    <a href="/2016/07/01/2016-07-01-React-intro/" class="article-date">
+  <time datetime="2016-06-30T16:00:00.000Z" itemprop="datePublished">2016-07-01</time>
 </a>
     
   </div>
@@ -89,7 +94,7 @@ ajax无刷新
         
   
     <h1 class="article-title" itemprop="name">
-      数据加载
+      react介绍
     </h1>
   
 
@@ -97,31 +102,23 @@ ajax无刷新
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数据加载，前后端连接点就在于如何优雅的渲染数据，实现数据与行为的分离。先说下自己面对的具体业务需求。</p>
-<ul>
-<li>滑动加载</li>
-<li>ajax无刷新</li>
-<li>防止scroll强刷</li>
-</ul>
-<a id="more"></a>
-<h3 id="应用zepto封装了ajax方法"><a href="#应用zepto封装了ajax方法" class="headerlink" title="应用zepto封装了ajax方法"></a>应用zepto封装了ajax方法</h3><p>对于简单的页面没有多大的效果，但是对于整个项目的这么封装是比较方便的。减少可以避免的重复数据。</p>
-<h3 id="数据加载与防止强刷"><a href="#数据加载与防止强刷" class="headerlink" title="数据加载与防止强刷"></a>数据加载与防止强刷</h3><p>用的是一般的解决方案，只是用seTimeout()阻塞了加载罢了。后期可以进一步的优化加载方法。</p>
-<p>通过document监听scroll，每当距离底部不足20px开始加载，每一次加载5条数据。</p>
-<p>加载数据的通过flog控制加载的过程，没有渲染成功不去请求下一次接口。</p>
-<p>可以控制想要加载的页数，也说超过了就不在进行加载了。</p>
-<h3 id="数据放在sessionStorage"><a href="#数据放在sessionStorage" class="headerlink" title="数据放在sessionStorage"></a>数据放在sessionStorage</h3><p>这样处理可以优化数据渲染，没有必要每次进入页面都要请求数据，这样处理，可以减少请求数。</p>
-<p>我们通过$(“body”).scrollTop()记录我们浏览的距离，记录我们刚才访问的页面的位置，优化用户体验。</p>
-<p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/loadingDates" target="_blank" rel="external">数据加载demo</a></p>
+        <p>react开始</p>
+<p><a href="https://csspod.com/understanding-reactjs-lifecycle-methods/" target="_blank" rel="external">生命周期</a></p>
+<p><a href="https://segmentfault.com/a/1190000002676131" target="_blank" rel="external">获取dom操作</a></p>
+<p><a href="https://mzkmzk.gitbooks.io/study_react/content/" target="_blank" rel="external">2</a></p>
+<h2 id="react之前mvc的"><a href="#react之前mvc的" class="headerlink" title="react之前mvc的"></a>react之前mvc的</h2><p>不断的操作dom,浪费渲染时间，性能需要优化</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>react不之间操作dom，操作虚拟dom树操作</p>
+<p><img src="https://mzkmzk.gitbooks.io/study_react/content/3-3-component-lifecycle.jpg" alt=""></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/20/Javascript-2016-04-20-滚动数据加载/" data-id="ciy9z2q76003wemvmlw1uglxm" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/01/2016-07-01-React-intro/" data-id="ciya0h2c00027rovm9pyfhefi" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/04/20/Javascript-2016-04-20-滚动数据加载/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/07/01/2016-07-01-React-intro/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
 
     </footer>
   </div>
@@ -129,19 +126,19 @@ ajax无刷新
     
 <nav id="article-nav">
   
-    <a href="/2016/05/01/2016-05-01-Position-弹框问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/07/02/2016-07-02-开发工具-模块加载-Webpack/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          苹果下弹框问题
+          webpack 配置与用法
         
       </div>
     </a>
   
   
-    <a href="/2016/04/15/2016-04-15-Node-Socket/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/06/22/2016-06-24-开发规范-Eshint/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">node 通信之 socket</div>
+      <div class="article-nav-title">项目开发规范之Eshint</div>
     </a>
   
 </nav>
@@ -266,7 +263,7 @@ ajax无刷新
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/04/20/Javascript-2016-04-20-滚动数据加载/';
+  var disqus_url = 'http://dukegod.github.io/2016/07/01/2016-07-01-React-intro/';
   
   (function(){
     var dsq = document.createElement('script');
