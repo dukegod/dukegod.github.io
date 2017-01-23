@@ -64,6 +64,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-01-23-Javascript-Lodash" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/23/2017-01-23-Javascript-Lodash/" class="article-date">
+  <time datetime="2017-01-22T16:00:00.000Z" itemprop="datePublished">2017-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/23/2017-01-23-Javascript-Lodash/">lodash</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>类似underscore.js的一个node 包。封装了，大量的原生js方法。</p>
+<h3 id="lodash-cli"><a href="#lodash-cli" class="headerlink" title="lodash-cli"></a>lodash-cli</h3><p><a href="https://lodash.com/custom-builds" target="_blank" rel="external">lodash doc</a></p>
+<p>lodash 命令客户端，可以根据自己的需求生成代码库。</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><div class="line">lodash <span class="meta"><span class="meta-keyword">include</span>=throttle -o throttle.js</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/01/23/2017-01-23-Javascript-Lodash/" data-id="ciy9z2q77003xemvmknh240ro" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/01/23/2017-01-23-Javascript-Lodash/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2017-01-18-Hack-touchmove" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/18/2017-01-18-Hack-touchmove/" class="article-date">
+  <time datetime="2017-01-17T16:00:00.000Z" itemprop="datePublished">2017-01-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/18/2017-01-18-Hack-touchmove/">移动端对touchmove支持度不同</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有的手机支持touchmove方法不是很理想。开发中遇到的如oppo,Nubia</p>
+<p>把对touchmove的监听，换做对scroll的监听</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'category-content-list'</span>).addEventListener(<span class="string">'touchmove'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;,<span class="literal">false</span>)</div><div class="line"></div><div class="line"><span class="comment">// 换做如下</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'category-content-list'</span>).addEventListener(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;,<span class="literal">false</span>)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/01/18/2017-01-18-Hack-touchmove/" data-id="ciy9z2q76003vemvm91xcbsfk" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/01/18/2017-01-18-Hack-touchmove/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hack/">Hack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-01-17-App-滚动优化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/17/2017-01-17-App-滚动优化/" class="article-date">
@@ -86,13 +173,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前有个通过css实现的案例<a href="http://blog.stakecode.com/2016/01/12/2016-01-12-Scroll-init/" target="_blank" rel="external">-webkit-overflow-scrolling</a><br>也有个比较笔记考究的实现方法<a href="http://blog.stakecode.com/2016/09/17/2016-09-17-%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E6%BB%9A%E5%8A%A8/" target="_blank" rel="external">scroll</a>   </p>
-<p>今天介绍一个通过iscroll 实现方案</p>
+        <p>之前有个通过css实现的案例<a href="http://blog.stakecode.com/2016/01/12/2016-01-12-Scroll-init/" target="_blank" rel="external">-webkit-overflow-scrolling</a>    </p>
+<p>也有个比较笔记考究的实现方法<a href="http://blog.stakecode.com/2016/09/17/2016-09-17-%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E6%BB%9A%E5%8A%A8/" target="_blank" rel="external">scroll</a>   </p>
+<p>iScroll 可以解决在安卓与iOS 上的滚动优化</p>
+<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>在 ios上会出现，你快速滑动，用手去触摸屏幕，直接点进去的bug</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/17/2017-01-17-App-滚动优化/" data-id="ciy1ksb9h003w4ivmnl2k5be8" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/17/2017-01-17-App-滚动优化/" data-id="ciy9z2q75003temvm0jsyhnx3" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/17/2017-01-17-App-滚动优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -128,11 +217,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><a href="http://www.browsersync.cn/" target="_blank" rel="external">中文文档</a></p>
+<p><a href="https://browsersync.io/" target="_blank" rel="external">官方文档</a></p>
+<p>能够在本地服务器启动完成时自动帮我们打开浏览器，并且在相应的 jade，livescript，scss 文件改变时自动刷新浏览器.</p>
+<p><a href="http://www.imooc.com/learn/718" target="_blank" rel="external">browsersync 与 liveload的比较的慕课视频</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();</div><div class="line"><span class="keyword">var</span> reload      = browserSync.reload;</div><div class="line">gulp.task(<span class="string">'browsersync'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    browserSync.init(&#123;</div><div class="line">        <span class="attr">server</span>: <span class="string">'./dist'</span>，</div><div class="line">        proxy: <span class="string">''</span>,</div><div class="line">        <span class="comment">// 选择在哪个浏览器打开</span></div><div class="line">        browser:<span class="string">''</span>,</div><div class="line">        <span class="attr">port</span>:</div><div class="line"></div><div class="line">    &#125;);</div><div class="line">    gulp.watch(<span class="string">'dist/*.html'</span>).on(<span class="string">'change'</span>, reload);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/16/2017-01-16-Browser-sync/" data-id="ciy1ksb9g003v4ivmzwsi5pm5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/16/2017-01-16-Browser-sync/" data-id="ciy9z2q76003uemvmwp7mihcb" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/16/2017-01-16-Browser-sync/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -188,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/11/2017-01-11-Alfred/" data-id="ciy1ksb9g003u4ivmn4qa0c2h" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/11/2017-01-11-Alfred/" data-id="ciy9z2q77003yemvm08p7t1fb" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/11/2017-01-11-Alfred/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -202,9 +296,9 @@
 
 
   
-    <article id="post-2017-01-06-前端开发-坑-SafariB" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-01-06-Hack-SafariB" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/06/2017-01-06-前端开发-坑-SafariB/" class="article-date">
+    <a href="/2017/01/06/2017-01-06-Hack-SafariB/" class="article-date">
   <time datetime="2017-01-05T16:00:00.000Z" itemprop="datePublished">2017-01-06</time>
 </a>
     
@@ -216,7 +310,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/06/2017-01-06-前端开发-坑-SafariB/">Safari不能把事件绑定到body上</a>
+      <a class="article-title" href="/2017/01/06/2017-01-06-Hack-SafariB/">Safari不能把事件绑定到body上</a>
     </h1>
   
 
@@ -233,12 +327,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/06/2017-01-06-前端开发-坑-SafariB/" data-id="ciy1ksb9f003t4ivm5sf8jrnv" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/" data-id="ciy9z2q74003remvmp710ngs0" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2017/01/06/2017-01-06-前端开发-坑-SafariB/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hack/">Hack</a></li></ul>
 
     </footer>
   </div>
@@ -280,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/" data-id="ciy1ksb9f003s4ivmw0lydc8s" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/" data-id="ciy9z2q78003zemvmqd2il59q" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -329,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/01/2017-01-01/" data-id="ciy1ksb9e003r4ivmav0euxs3" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/01/2017-01-01/" data-id="ciy9z2q75003semvmlgy9d15s" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/01/2017-01-01/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -371,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="ciy1ksb9e003q4ivmf0r2yveu" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="ciy9z2q70003pemvml3yyxciu" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -412,7 +506,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="ciy1ksb9a003p4ivmr063pv86" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="ciy9z2q6w003memvm2xxlqz0k" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -426,101 +520,10 @@
 
 
   
-    <article id="post-2016-12-22-Nginx" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/22/2016-12-22-Nginx/" class="article-date">
-  <time datetime="2016-12-21T16:00:00.000Z" itemprop="datePublished">2016-12-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/22/2016-12-22-Nginx/">Nginx</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Nginx 是一款面向性能设计的 HTTP 服务器，能反向代理 HTTP，HTTPS 和邮件相关(SMTP，POP3，IMAP)的协议链接。并且提供了负载均衡以及 HTTP 缓存。<br>它的设计充分使用异步事件模型，削减上下文调度的开销，提高服务器并发能力。采用了模块化设计，提供了丰富模块的第三方模块。</p>
-<p>所以关于 Nginx，有这些标签：「异步」「事件」「模块化」「高性能」「高并发」「反向代理」「负载均衡」</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/12/22/2016-12-22-Nginx/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="ciy1ksb99003o4ivmbkgx2b0c" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openResty/">openResty</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-12-03-Http-缓存处理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/03/2016-12-03-Http-缓存处理/" class="article-date">
-  <time datetime="2016-12-02T16:00:00.000Z" itemprop="datePublished">2016-12-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Http 缓存机制作为 web 性能优化的重要手段，对从事 Web 开发的小伙伴们来说是必须要掌握的知识，但最近我遇到了几个缓存头设置相关的题目，<br>发现有好几道题答错了，有的甚至在知道了正确答案后依然不明白其原因，可谓相当的郁闷呢！！为了确认下是否只是自己理解不深，我特意请教了其他<br>几位小伙伴，发现情况也或多或少和我类似。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/12/03/2016-12-03-Http-缓存处理/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/" data-id="ciy1ksb98003n4ivmr3vwfxp0" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -533,7 +536,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
     </div>
   </div>
 
@@ -543,7 +546,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.36px;">App</a> <a href="/tags/CSS/" style="font-size: 17.27px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 11.82px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 12.73px;">Google</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.82px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 14.55px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.82px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 10.91px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 15.45px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.82px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16.36px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.82px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.64px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10.91px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.09px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.64px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 15.45px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 10.91px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16px;">App</a> <a href="/tags/CSS/" style="font-size: 17px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 13px;">Google</a> <a href="/tags/Hack/" style="font-size: 11px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 12px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 14px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 12px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 14px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 11px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 14px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 15px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11px;">转载翻译</a>
     </div>
   </div>
 
@@ -565,6 +568,14 @@
       <ul>
         
           <li>
+            <a href="/2017/01/23/2017-01-23-Javascript-Lodash/">lodash</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/18/2017-01-18-Hack-touchmove/">移动端对touchmove支持度不同</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/17/2017-01-17-App-滚动优化/">app滚动优化方案再议</a>
           </li>
         
@@ -574,14 +585,6 @@
         
           <li>
             <a href="/2017/01/11/2017-01-11-Alfred/">Alfred 配置笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/06/2017-01-06-前端开发-坑-SafariB/">Safari不能把事件绑定到body上</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
           </li>
         
       </ul>
