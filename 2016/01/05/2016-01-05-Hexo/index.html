@@ -19,7 +19,7 @@ Mac pro
 node 5.0
 GitHub
 Hexo 3.2有关node的安装，github安装（或者git安装）自行Google下，网上的案例很多的。我就根据自己搭载需要注意或者出现的问题记录下。">
-<meta property="og:updated_time" content="2017-01-05T15:43:51.000Z">
+<meta property="og:updated_time" content="2017-01-24T08:04:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO note by mac">
 <meta name="twitter:description" content="安装环境
@@ -108,8 +108,8 @@ Hexo 3.2有关node的安装，github安装（或者git安装）自行Google下�
 <figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">comments:</span> 默认是<span class="literal">true</span>， 具体某个页面不需要评论改为：<span class="literal">false</span></div><div class="line"><span class="attr">title:</span> postName <span class="comment">#文章页面上的显示名称，可以任意修改，不会出现在URL中</span></div><div class="line"><span class="attr">date:</span> <span class="number">2013</span><span class="bullet">-12</span><span class="bullet">-02</span> <span class="number">15</span>:<span class="number">30</span>:<span class="number">16</span> <span class="comment">#文章生成时间，一般不改，当然也可以任意修改</span></div><div class="line"><span class="attr">categories:</span> example <span class="comment">#分类</span></div><div class="line"><span class="attr">tags:</span> [tag1,tag2,tag3] <span class="comment">#文章标签，可空，多标签请用格式，注意:后面有个空格</span></div><div class="line"><span class="attr">description:</span> 附加一段文章摘要，字数最好在<span class="number">140</span>字以内。</div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
 <h3 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h3><p>md文档用 <a href="http://macdown.uranusjr.com/" target="_blank" rel="external">macdown</a>编辑器</p>
 <h3 id="增添README"><a href="#增添README" class="headerlink" title="增添README"></a>增添README</h3><p>public作为对外输出的文件，也就是要传到github上的。</p>
-<p>skip_render调过渲染</p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><div class="line"><span class="symbol">skip_render:</span></div><div class="line">  - README.md</div></pre></td></tr></table></figure>
+<p>skip_render调过某些文件或者文件夹</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">skip_render:</div><div class="line">  - README<span class="selector-class">.md</span></div><div class="line">  - markdowns<span class="comment">/**/</span>*<span class="selector-class">.md</span> 调过这个文件夹中所有的文件</div></pre></td></tr></table></figure>
 <h4 id="支持disqus"><a href="#支持disqus" class="headerlink" title="支持disqus"></a>支持disqus</h4><p>第一步肯定是注册一个账号</p>
 <p>然后点击 setting &gt; Add Disqus To Site 进入另一个页面 &gt; 点击用户名旁边有个[ install on your site] &gt; site name: 输入你的网站; 你就可以看到所谓的’short_name’</p>
 <p>如果不行的话，进入 setup 页面 找到 website name 与 website url 重新输入，然后保存下</p>
@@ -136,7 +136,7 @@ Hexo 3.2有关node的安装，github安装（或者git安装）自行Google下�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/" data-id="ciyb8dpfj0007pqvmzzds7ggq" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/" data-id="ciyb8l6xs0006wsvmokfk5dd9" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
