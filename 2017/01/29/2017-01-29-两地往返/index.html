@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>zsh | Hello World</title>
+  <title>小小总结在外地过节 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zsh备受程序员喜爱，在加上oh-my-zsh这个赤手可热的框架支持，让编写shell变得如此超乎想象的赞。此文总结了自己平时所用。">
+  <meta name="description" content="人生中第一次在外面过年，没有想到就是在老丈人家过年，体验了不一样的过年气氛。
+这边过年气氛确实比较的强烈，烟花那是大量的放，炮仗也是大量的放，有点小小的奢侈。
+最让人不可思议的是，晚上我们就要坐火车回安徽了，又是一番不一样的体验。
+期待下，晚上又会发生什么事情。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zsh">
-<meta property="og:url" content="http://dukegod.github.io/2016/06/04/2016-06-04-MAC配置-zsh/index.html">
+<meta property="og:title" content="小小总结在外地过节">
+<meta property="og:url" content="http://dukegod.github.io/2017/01/29/2017-01-29-两地往返/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="zsh备受程序员喜爱，在加上oh-my-zsh这个赤手可热的框架支持，让编写shell变得如此超乎想象的赞。此文总结了自己平时所用。">
-<meta property="og:updated_time" content="2016-08-04T01:42:48.000Z">
+<meta property="og:description" content="人生中第一次在外面过年，没有想到就是在老丈人家过年，体验了不一样的过年气氛。
+这边过年气氛确实比较的强烈，烟花那是大量的放，炮仗也是大量的放，有点小小的奢侈。
+最让人不可思议的是，晚上我们就要坐火车回安徽了，又是一番不一样的体验。
+期待下，晚上又会发生什么事情。">
+<meta property="og:updated_time" content="2017-01-29T01:48:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zsh">
-<meta name="twitter:description" content="zsh备受程序员喜爱，在加上oh-my-zsh这个赤手可热的框架支持，让编写shell变得如此超乎想象的赞。此文总结了自己平时所用。">
+<meta name="twitter:title" content="小小总结在外地过节">
+<meta name="twitter:description" content="人生中第一次在外面过年，没有想到就是在老丈人家过年，体验了不一样的过年气氛。
+这边过年气氛确实比较的强烈，烟花那是大量的放，炮仗也是大量的放，有点小小的奢侈。
+最让人不可思议的是，晚上我们就要坐火车回安徽了，又是一番不一样的体验。
+期待下，晚上又会发生什么事情。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -63,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-06-04-MAC配置-zsh" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2017-01-29-两地往返" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/04/2016-06-04-MAC配置-zsh/" class="article-date">
-  <time datetime="2016-06-03T16:00:00.000Z" itemprop="datePublished">2016-06-04</time>
+    <a href="/2017/01/29/2017-01-29-两地往返/" class="article-date">
+  <time datetime="2017-01-28T16:00:00.000Z" itemprop="datePublished">2017-01-29</time>
 </a>
     
   </div>
@@ -77,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      zsh
+      小小总结在外地过节
     </h1>
   
 
@@ -85,33 +94,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>zsh备受程序员喜爱，在加上oh-my-zsh这个赤手可热的框架支持，让编写shell变得如此超乎想象的赞。此文总结了自己平时所用。</p>
-<a id="more"></a>
-<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><h3 id="显示与更改shell-登陆状态下"><a href="#显示与更改shell-登陆状态下" class="headerlink" title="显示与更改shell(登陆状态下)"></a>显示与更改shell(登陆状态下)</h3><p>查看系统安装了哪些shell</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><div class="line">cat <span class="regexp">/etc/</span>shells</div></pre></td></tr></table></figure>
-<p>查看当前正在使用的shell：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><div class="line">[rocrocket<span class="variable">@localhost</span> ~]<span class="variable">$ </span>echo <span class="variable">$SHELL</span></div></pre></td></tr></table></figure>
-<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p>mac默认是bash语法，但是mac自带了许多shell。其中我们可以修改为我们自己喜欢的shell，其中zsh无疑是最受大家欢迎的。Mac 系统自带了 Zsh, 一般不是最新版，如果需要最新版可通过 Homebrew 来安装</p>
-<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><div class="line">brew install zsh</div><div class="line"><span class="comment"></span></div><div class="line">// 查看zsh版本</div><div class="line">zsh <span class="comment">--vesion</span></div></pre></td></tr></table></figure>
-<p>修改shell为zsh</p>
-<p>给当前用户添加~/.zshrc，修改与保存自己的配置文件。</p>
-<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><figure class="highlight awk"><table><tr><td class="code"><pre><div class="line"><span class="regexp">//</span>在 <span class="regexp">/etc/</span>shells 文件中加入如下一行</div><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>zsh</div><div class="line"></div><div class="line"><span class="regexp">//</span>然后运行命令</div><div class="line">chsh -s <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>zsh</div></pre></td></tr></table></figure>
-<h4 id="方法二-推荐"><a href="#方法二-推荐" class="headerlink" title="方法二(推荐)"></a>方法二(推荐)</h4><p><a href="http://man.linuxde.net/chsh" target="_blank" rel="external">chsh</a></p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><div class="line"><span class="regexp">//</span> 改为zsh</div><div class="line">chsh -s <span class="regexp">/bin/</span>zsh</div><div class="line"></div><div class="line"><span class="regexp">//</span> 改为bash</div><div class="line">chsh -s <span class="regexp">/bin/</span>bash</div></pre></td></tr></table></figure>
-<p>其他的shell修改方式类似，你可以在终端输入bash,zsh,csh…更改当前页为哪一个shell语言。</p>
-<h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><p><a href="http://ohmyz.sh/" target="_blank" rel="external">官网</a>，安装很简单，按照官网的说明就行了。</p>
-<p>可以一些配置需要从.bash_profile迁移到 .zshrc中就可以正常使用了</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h2 id="常规默认配置"><a href="#常规默认配置" class="headerlink" title="常规默认配置"></a>常规默认配置</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="built_in">alias</span> lla=<span class="string">'ls -al'</span></div><div class="line"><span class="comment"># npm list top level modules</span></div><div class="line"><span class="built_in">alias</span> ng=<span class="string">"npm list -g --depth=0 2&gt;/dev/null"</span></div><div class="line"><span class="built_in">alias</span> nl=<span class="string">"npm list --depth=0 2&gt;/dev/null"</span></div><div class="line"></div><div class="line"><span class="comment"># sublime</span></div><div class="line"><span class="built_in">alias</span> subl=<span class="string">'/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'</span></div><div class="line"></div><div class="line"><span class="comment"># mysql</span></div><div class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/mysql/bin:<span class="variable">$PATH</span></div><div class="line"></div><div class="line"><span class="comment"># mongodb</span></div><div class="line"><span class="built_in">export</span> MONGO_PATH=/usr/<span class="built_in">local</span>/Cellar/mongodb/3.2.0</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$MONGO_PATH</span>/bin</div><div class="line"></div><div class="line"><span class="comment"># node</span></div><div class="line"><span class="comment"># export PATH=/usr/local/Cellar/node/6.1.0/bin:$PATH</span></div><div class="line"><span class="comment"># export PATH=/usr/local/Cellar/node/6.2.0/bin:$PATH</span></div><div class="line"></div><div class="line"><span class="comment">#nvm</span></div><div class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></div><div class="line">  . <span class="string">"<span class="variable">$(brew --prefix nvm)</span>/nvm.sh"</span></div><div class="line"></div><div class="line"><span class="comment">#archey auto</span></div><div class="line"><span class="comment">#archey</span></div></pre></td></tr></table></figure>
+        <p>人生中第一次在外面过年，没有想到就是在老丈人家过年，体验了不一样的过年气氛。</p>
+<p>这边过年气氛确实比较的强烈，烟花那是大量的放，炮仗也是大量的放，有点小小的奢侈。</p>
+<p>最让人不可思议的是，晚上我们就要坐火车回安徽了，又是一番不一样的体验。</p>
+<p>期待下，晚上又会发生什么事情。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/04/2016-06-04-MAC配置-zsh/" data-id="ciyi2pmlg002219vmy5w7jbn3" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/29/2017-01-29-两地往返/" data-id="ciyi2pmn9004y19vmlsw2jo8q" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/06/04/2016-06-04-MAC配置-zsh/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2017/01/29/2017-01-29-两地往返/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
 
     </footer>
   </div>
@@ -119,19 +115,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/05/2016-06-05-MAC配置-vim/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          vim 总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/03/2016-06-03-MAC配置-bash/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/01/23/2017-01-23-Javascript-Lodash/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MAC配置bash</div>
+      <div class="article-nav-title">lodash</div>
     </a>
   
 </nav>
@@ -256,7 +243,7 @@
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/06/04/2016-06-04-MAC配置-zsh/';
+  var disqus_url = 'http://dukegod.github.io/2017/01/29/2017-01-29-两地往返/';
   
   (function(){
     var dsq = document.createElement('script');
