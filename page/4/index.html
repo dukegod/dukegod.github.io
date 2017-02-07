@@ -64,6 +64,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-10-29-Node-module" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/29/2016-10-29-Node-module/" class="article-date">
+  <time datetime="2016-10-28T16:00:00.000Z" itemprop="datePublished">2016-10-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/29/2016-10-29-Node-module/">Node 模块化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="exports-模块调用"><a href="#exports-模块调用" class="headerlink" title="exports 模块调用"></a>exports 模块调用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// a.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">exports.A = A;</div><div class="line"><span class="comment">// 引用</span></div><div class="line"><span class="keyword">let</span> AA = <span class="built_in">require</span>(<span class="string">'./a'</span>);</div><div class="line"><span class="built_in">console</span>.log(AA); <span class="comment">// &#123; A: [Function: A &#125;</span></div><div class="line">AA.A();</div></pre></td></tr></table></figure>
+<p>exports返回的是一个对象，引用的时候需要调用这个函数名称.</p>
+<h3 id="module-模块调用"><a href="#module-模块调用" class="headerlink" title="module 模块调用"></a>module 模块调用</h3><p>创建全局对象<br>通过module调用函数直接返回全局对象，返回的函数直接可以调用</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">//em.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">em</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'module function'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = em;</div><div class="line"><span class="comment">// 调用</span></div><div class="line"><span class="keyword">let</span> callem = <span class="built_in">require</span>(<span class="string">'./em'</span>);</div><div class="line"><span class="built_in">console</span>.log(callem) <span class="comment">// [Function: em]</span></div><div class="line">callem()</div></pre></td></tr></table></figure>
+<p>自动执行函数</p>
+<figure class="highlight dust"><table><tr><td class="code"><pre><div class="line"><span class="xml">// 自动执行写法</span></div><div class="line">module.exports = function()<span class="template-variable">&#123;&#125;</span><span class="xml">()</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- es6 写法 --&gt;</span></div><div class="line">module.exports = ()=&gt;<span class="template-variable">&#123;&#125;</span><span class="xml"></span></div><div class="line">// 自动执行函数  </div><div class="line">module.exports = (()=&gt;<span class="template-variable">&#123;&#125;</span><span class="xml">)()</span></div></pre></td></tr></table></figure>
+<p>返回多个函数，返回值以对象的方式返回</p>
+<figure class="highlight fortran"><table><tr><td class="code"><pre><div class="line">const <span class="keyword">name</span> = <span class="string">'duke'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span></span> showName(<span class="keyword">name</span>)&#123;</div><div class="line">  console.<span class="built_in">log</span>(<span class="keyword">name</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">module</span>.exports = &#123;<span class="keyword">name</span>, showName&#125;</div><div class="line">// 返回值类型</div><div class="line">&#123; <span class="keyword">name</span>: <span class="string">'duke'</span>, showName: [<span class="function"><span class="keyword">Function</span></span>: showName] &#125;</div></pre></td></tr></table></figure>
+<h3 id="配合es2015-class写法"><a href="#配合es2015-class写法" class="headerlink" title="配合es2015 class写法"></a>配合es2015 class写法</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span></span>&#123;&#125;</div><div class="line"><span class="keyword">module</span>.<span class="keyword">exports</span> = Point</div></pre></td></tr></table></figure>
+<p><strong>注意与es2015原生js写法的不同</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/10/29/2016-10-29-Node-module/" data-id="ciyv9th6q003awvvm6t5dg29q" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/10/29/2016-10-29-Node-module/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-10-28-Node_DEV" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/28/2016-10-28-Node_DEV/" class="article-date">
@@ -95,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/28/2016-10-28-Node_DEV/" data-id="ciyv9s2u90036ttvmu1qb3pai" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/10/28/2016-10-28-Node_DEV/" data-id="ciyv9th6o0036wvvmkcbu9d0e" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/10/28/2016-10-28-Node_DEV/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -136,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/20/2016-10-20-旅游游玩/" data-id="ciyv9s2u90035ttvmp3vrxybd" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/10/20/2016-10-20-旅游游玩/" data-id="ciyv9th6o0035wvvmc0gylnvf" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/10/20/2016-10-20-旅游游玩/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -180,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/25/2016-09-25-云南游玩/" data-id="ciyv9s2u80034ttvm4l0qsha2" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/25/2016-09-25-云南游玩/" data-id="ciyv9th6n0034wvvmdllybv5c" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/25/2016-09-25-云南游玩/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -221,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/23/2016-09-23-Echo-图片懒加载/" data-id="ciyv9s2u70033ttvm712xt8s0" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/23/2016-09-23-Echo-图片懒加载/" data-id="ciyv9th6n0033wvvmpcqy13wx" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/23/2016-09-23-Echo-图片懒加载/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -264,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/22/2016-09-22-Linux/" data-id="ciyv9s2u70032ttvm7xmsk24i" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/22/2016-09-22-Linux/" data-id="ciyv9th6m0032wvvmxfda6zc3" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/22/2016-09-22-Linux/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -309,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/21/2016-09-21-OpenResty/" data-id="ciyv9s2u60031ttvmyf0p7hur" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/21/2016-09-21-OpenResty/" data-id="ciyv9th6l0031wvvmk0c7eor2" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/21/2016-09-21-OpenResty/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -357,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/20/2016-09-20-Css-控制多行文本/" data-id="ciyv9s2u40030ttvmn8fsc3g9" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/20/2016-09-20-Css-控制多行文本/" data-id="ciyv9th6k0030wvvmwfm94f3k" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/20/2016-09-20-Css-控制多行文本/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -402,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/19/2016-09-19-Lua/" data-id="ciyv9s2u4002zttvm85q042c4" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/19/2016-09-19-Lua/" data-id="ciyv9th6j002zwvvmjjmfmzc1" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/19/2016-09-19-Lua/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -447,62 +497,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/18/2016-09-18-Markdown-笔记/" data-id="ciyv9s2u3002yttvmjm1dbum4" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/18/2016-09-18-Markdown-笔记/" data-id="ciyv9th6j002ywvvmdl311ltt" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/18/2016-09-18-Markdown-笔记/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-09-17-Javascript-高性能的滚动" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/17/2016-09-17-Javascript-高性能的滚动/" class="article-date">
-  <time datetime="2016-09-16T16:00:00.000Z" itemprop="datePublished">2016-09-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/17/2016-09-17-Javascript-高性能的滚动/">scroll</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前面的文章分析节流与去抖的概念，用法，区别。这次总结，在实际项目中的应用</p>
-<h3 id="使用-rAF（requestAnimationFrame）触发滚动事件"><a href="#使用-rAF（requestAnimationFrame）触发滚动事件" class="headerlink" title="使用 rAF（requestAnimationFrame）触发滚动事件"></a>使用 rAF（requestAnimationFrame）触发滚动事件</h3><p>上面介绍的抖动与节流实现的方式都是借助了定时器 setTimeout ，但是如果页面只需要兼容高版本浏览器或应用在移动端，又或者页面需要追求高精度的效果，那么可以使用浏览器的原生方法 rAF（requestAnimationFrame）。</p>
-<p>requestAnimationFrame</p>
-<p>window.requestAnimationFrame()这个方法是用来在页面重绘之前，通知浏览器调用一个指定的函数。这个方法接受一个函数为参，该函数会在重绘前调用。</p>
-<p>rAF 常用于 web 动画的制作，用于准确控制页面的帧刷新渲染，让动画效果更加流畅，当然它的作用不仅仅局限于动画制作，我们可以利用它的特性将它视为一个定时器。（当然它不是定时器）</p>
-<p>通常来说，rAF 被调用的频率是每秒 60 次，也就是 1000/60 ，触发频率大概是 16.7ms 。（当执行复杂操作时，当它发现无法维持 60fps 的频率时，它会把频率降低到 30fps 来保持帧数的稳定。）</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> ticking = <span class="literal">false</span>; <span class="comment">// rAF 触发锁</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">onScroll</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!ticking) &#123;</div><div class="line">    requestAnimationFrame(realFunc);</div><div class="line">    ticking = <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">realFunc</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// do something...</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Success"</span>);</div><div class="line">    ticking = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 滚动事件监听</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, onScroll, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
-<p>使用 requestAnimationFrame 优缺点并存，首先我们不得不考虑它的兼容问题，其次因为它只能实现以 16.7ms 的频率来触发，代表它的可调节性十分差,16.7ms 触发一次 handler，降低了可控性，但是提升了性能和精确度。</p>
-<p><a href="https://github.com/hanzichi/underscore-analysis/issues/20" target="_blank" rel="external">https://github.com/hanzichi/underscore-analysis/issues/20</a></p>
-<p><a href="https://www.shiyanlou.com/questions/4303" target="_blank" rel="external">https://www.shiyanlou.com/questions/4303</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/17/2016-09-17-Javascript-高性能的滚动/" data-id="ciyv9s2u3002xttvm44zii6il" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/09/17/2016-09-17-Javascript-高性能的滚动/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -546,7 +546,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -557,6 +557,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/07/2017-02-07-Github-gitattributes/">修改github显示项目类型之gitattributes</a>
+          </li>
         
           <li>
             <a href="/2017/01/29/2017-01-29-两地往返/">小小总结在外地过节</a>
@@ -572,10 +576,6 @@
         
           <li>
             <a href="/2017/01/17/2017-01-17-App-滚动优化/">app滚动优化方案再议</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/16/2017-01-16-Browser-sync/">browser-sync</a>
           </li>
         
       </ul>

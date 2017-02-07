@@ -64,6 +64,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-09-17-Javascript-高性能的滚动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/17/2016-09-17-Javascript-高性能的滚动/" class="article-date">
+  <time datetime="2016-09-16T16:00:00.000Z" itemprop="datePublished">2016-09-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/17/2016-09-17-Javascript-高性能的滚动/">scroll</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前面的文章分析节流与去抖的概念，用法，区别。这次总结，在实际项目中的应用</p>
+<h3 id="使用-rAF（requestAnimationFrame）触发滚动事件"><a href="#使用-rAF（requestAnimationFrame）触发滚动事件" class="headerlink" title="使用 rAF（requestAnimationFrame）触发滚动事件"></a>使用 rAF（requestAnimationFrame）触发滚动事件</h3><p>上面介绍的抖动与节流实现的方式都是借助了定时器 setTimeout ，但是如果页面只需要兼容高版本浏览器或应用在移动端，又或者页面需要追求高精度的效果，那么可以使用浏览器的原生方法 rAF（requestAnimationFrame）。</p>
+<p>requestAnimationFrame</p>
+<p>window.requestAnimationFrame()这个方法是用来在页面重绘之前，通知浏览器调用一个指定的函数。这个方法接受一个函数为参，该函数会在重绘前调用。</p>
+<p>rAF 常用于 web 动画的制作，用于准确控制页面的帧刷新渲染，让动画效果更加流畅，当然它的作用不仅仅局限于动画制作，我们可以利用它的特性将它视为一个定时器。（当然它不是定时器）</p>
+<p>通常来说，rAF 被调用的频率是每秒 60 次，也就是 1000/60 ，触发频率大概是 16.7ms 。（当执行复杂操作时，当它发现无法维持 60fps 的频率时，它会把频率降低到 30fps 来保持帧数的稳定。）</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> ticking = <span class="literal">false</span>; <span class="comment">// rAF 触发锁</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">onScroll</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!ticking) &#123;</div><div class="line">    requestAnimationFrame(realFunc);</div><div class="line">    ticking = <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">realFunc</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// do something...</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Success"</span>);</div><div class="line">    ticking = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 滚动事件监听</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, onScroll, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
+<p>使用 requestAnimationFrame 优缺点并存，首先我们不得不考虑它的兼容问题，其次因为它只能实现以 16.7ms 的频率来触发，代表它的可调节性十分差,16.7ms 触发一次 handler，降低了可控性，但是提升了性能和精确度。</p>
+<p><a href="https://github.com/hanzichi/underscore-analysis/issues/20" target="_blank" rel="external">https://github.com/hanzichi/underscore-analysis/issues/20</a></p>
+<p><a href="https://www.shiyanlou.com/questions/4303" target="_blank" rel="external">https://www.shiyanlou.com/questions/4303</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/09/17/2016-09-17-Javascript-高性能的滚动/" data-id="ciyv9th6i002xwvvmbjfdjudm" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/09/17/2016-09-17-Javascript-高性能的滚动/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-09-16-Javascript-函数节流" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/16/2016-09-16-Javascript-函数节流/" class="article-date">
@@ -102,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/16/2016-09-16-Javascript-函数节流/" data-id="ciyv9s2u2002wttvmnnkw7dvs" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/16/2016-09-16-Javascript-函数节流/" data-id="ciyv9th6h002wwvvmvyhiovhy" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/16/2016-09-16-Javascript-函数节流/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -153,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/15/2016-09-15-Javascript-函数去抖/" data-id="ciyv9s2u2002vttvmzseql4bc" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/15/2016-09-15-Javascript-函数去抖/" data-id="ciyv9th6h002vwvvmw8khz8yh" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/15/2016-09-15-Javascript-函数去抖/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -195,54 +245,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/14/2016-09-14-Underscore-源码解析/" data-id="ciyv9s2u1002tttvmyhwcdq0f" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/14/2016-09-14-Underscore-源码解析/" data-id="ciyv9th6g002uwvvm14npwi4p" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/14/2016-09-14-Underscore-源码解析/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-09-11-Jquery-源码解析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/10/2016-09-11-Jquery-源码解析/" class="article-date">
-  <time datetime="2016-09-09T16:00:00.000Z" itemprop="datePublished">2016-09-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/10/2016-09-11-Jquery-源码解析/">jQuery-源码解析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>jQuery 源码捣鼓</p>
-<p><a href="https://github.com/JsAaron/jQuery" target="_blank" rel="external">1</a><br><a href="http://www.cnblogs.com/sky000/archive/2013/03/29/2988952.html" target="_blank" rel="external">2</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/10/2016-09-11-Jquery-源码解析/" data-id="ciyv9s2u1002uttvmxojhu94h" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/09/10/2016-09-11-Jquery-源码解析/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
     </footer>
   </div>
@@ -279,12 +287,54 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/10/2016-09-10-Zepto-源码解析/" data-id="ciyv9s2u0002sttvm1o9wcvxd" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/10/2016-09-10-Zepto-源码解析/" data-id="ciyv9th6f002swvvmdqxecdh2" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/10/2016-09-10-Zepto-源码解析/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-09-11-Jquery-源码解析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/10/2016-09-11-Jquery-源码解析/" class="article-date">
+  <time datetime="2016-09-09T16:00:00.000Z" itemprop="datePublished">2016-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/10/2016-09-11-Jquery-源码解析/">jQuery-源码解析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jQuery 源码捣鼓</p>
+<p><a href="https://github.com/JsAaron/jQuery" target="_blank" rel="external">1</a><br><a href="http://www.cnblogs.com/sky000/archive/2013/03/29/2988952.html" target="_blank" rel="external">2</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/09/10/2016-09-11-Jquery-源码解析/" data-id="ciyv9th6g002twvvmd825ylrk" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/09/10/2016-09-11-Jquery-源码解析/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
     </footer>
   </div>
@@ -323,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/09/2016-09-09-Return/" data-id="ciyv9s2u0002rttvm2xloaf0o" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/09/2016-09-09-Return/" data-id="ciyv9th6d002qwvvmlvcip7vc" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/09/2016-09-09-Return/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -369,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/08/2016-09-08-Javascript-reduce/" data-id="ciyv9s2tz002qttvmr76nm98s" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/08/2016-09-08-Javascript-reduce/" data-id="ciyv9th6f002rwvvmgs0d25d0" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/08/2016-09-08-Javascript-reduce/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -419,7 +469,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/06/2016-09-06-设计模型-单例模型/" data-id="ciyv9s2tx002pttvmfdgjwv53" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/06/2016-09-06-设计模型-单例模型/" data-id="ciyv9th6c002pwvvm7re7ujlv" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/06/2016-09-06-设计模型-单例模型/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -465,58 +515,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/" data-id="ciyv9s2tx002ottvmxomjvpmp" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/" data-id="ciyv9th6b002owvvmrsfd1bgh" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-09-04-测试环境" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/04/2016-09-04-测试环境/" class="article-date">
-  <time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/04/2016-09-04-测试环境/">测试环境搭建</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Karma"><a href="#Karma" class="headerlink" title="Karma"></a>Karma</h2><p>使用 Karma 可以比较方便地搭建出测试环境。</p>
-<h2 id="Mocha"><a href="#Mocha" class="headerlink" title="Mocha"></a>Mocha</h2><p>Mocha 既是测试框架，也是一个测试 runner ，它主要用在 Node.js里的单元测试，当然也可以用在浏览器端，不过得手动配置各种适配脚本。</p>
-<h2 id="Chai"><a href="#Chai" class="headerlink" title="Chai"></a>Chai</h2><p>断言库</p>
-<p>shoule/ expect</p>
-<p><a href="http://jaywcjlove.github.io/handbook/html/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/mocha.html" target="_blank" rel="external">mocha</a><br><a href="http://jaywcjlove.github.io/handbook/html/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/chai.html" target="_blank" rel="external">Chai</a><br><a href="http://jaywcjlove.github.io/handbook/html/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/should.html" target="_blank" rel="external">should</a></p>
-<p><a href="https://segmentfault.com/a/1190000000317146" target="_blank" rel="external">前端开发单元测试</a><br><a href="http://taobaofed.org/blog/2016/01/08/karma-origin/" target="_blank" rel="external">karma的设计思想</a><br><a href="http://www.cnblogs.com/lewis617/p/4872996.html" target="_blank" rel="external">karma 入门</a><br><a href="http://wwsun.github.io/posts/testing-node.js-with-mocha-and-chai.html" target="_blank" rel="external">mocha-chai</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/04/2016-09-04-测试环境/" data-id="ciyv9s2tw002nttvmphpg5vm2" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/09/04/2016-09-04-测试环境/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
 
     </footer>
   </div>
@@ -560,7 +564,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -571,6 +575,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/07/2017-02-07-Github-gitattributes/">修改github显示项目类型之gitattributes</a>
+          </li>
         
           <li>
             <a href="/2017/01/29/2017-01-29-两地往返/">小小总结在外地过节</a>
@@ -586,10 +594,6 @@
         
           <li>
             <a href="/2017/01/17/2017-01-17-App-滚动优化/">app滚动优化方案再议</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/16/2017-01-16-Browser-sync/">browser-sync</a>
           </li>
         
       </ul>
