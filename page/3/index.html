@@ -64,6 +64,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-11-14-Vue-V1-V2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/14/2016-11-14-Vue-V1-V2/" class="article-date">
+  <time datetime="2016-11-13T16:00:00.000Z" itemprop="datePublished">2016-11-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/14/2016-11-14-Vue-V1-V2/">vue2 与 vue1的变化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结v2比较v1的变化</p>
+<ul>
+<li><p>Vue2.0已经废弃1.0的ready钩子函数，进而使用mounted替换，同时还新增了beforeMount、beforeUpdate、updated等</p>
+</li>
+<li><p>Vue2.0同时已经废弃$events、$dispatch、$broadcast,官方推荐使用vuex作为全局的事件驱动，然而废弃的这些方法在vux UI框架中很多地方都有使用，无疑在项目中用到它的地方在2.0版本都会不起作用，甚至会报错。</p>
+</li>
+<li><p>v-for循环中常用的$index、$key也已不支持使用，trackby被key属性替换。</p>
+</li>
+<li><p>v-ref、v-el 弃用 统一使用ref属性为元素或组件添加标记，然后通过this.$refs获取</p>
+</li>
+<li><p>Vue2.0将不提供任何内置的过滤器，推荐使用单独的库，例如moment.js来格式化日期，accounting.js来格式化货币。对过滤器的决定性改变是对其语法的改变，使其与函数调用{/{ date | formatDate(‘YY-MM-DD’) }/}内联。</p>
+</li>
+<li><p>v-else不再适用于v-show，请使用其他的否定表达式。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cizbjucjc003kpuvm59rz4xtx" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2016-11-13-Vue-进阶-总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/13/2016-11-13-Vue-进阶-总结/" class="article-date">
@@ -90,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-总结/" data-id="ciyv9th6u003hwvvmalqcr94r" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-总结/" data-id="cizbjucja003hpuvmwsu3qyav" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-总结/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -146,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/" data-id="ciyv9th6t003gwvvmmonxpbny" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/" data-id="cizbjucj9003fpuvm5evzc8ke" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -212,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/" data-id="ciyv9th6t003ewvvmhz5wc65x" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/" data-id="cizbjucj9003gpuvm2p2035i7" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -259,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/" data-id="ciyv9th6t003fwvvmvqwcvbmj" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/" data-id="cizbjucj8003epuvmhjrj9fku" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -301,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/" data-id="ciyv9th6s003dwvvmh5uvlzsd" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/" data-id="cizbjucj8003dpuvmkx44havd" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -343,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/" data-id="ciyv9th6r003bwvvmpuk8z9nu" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/" data-id="cizbjucj7003cpuvmmhxgvb1s" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -387,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/" data-id="ciyv9th6q0039wvvmbg23e7vp" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/" data-id="cizbjucj7003bpuvm2ks6ssun" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -432,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/02/2016-11-02-iPhone手机找回/" data-id="ciyv9th6r003cwvvmqr0nlax3" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/02/2016-11-02-iPhone手机找回/" data-id="cizbjucj6003apuvm8f6hu8cc" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/02/2016-11-02-iPhone手机找回/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -473,66 +528,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/01/2016-11-01-Css-css居中/" data-id="ciyv9th6p0038wvvmcd39aamt" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/01/2016-11-01-Css-css居中/" data-id="cizbjucj60039puvm8ift4tr1" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/01/2016-11-01-Css-css居中/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-10-30-Node-概括" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/30/2016-10-30-Node-概括/" class="article-date">
-  <time datetime="2016-10-29T16:00:00.000Z" itemprop="datePublished">2016-10-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/30/2016-10-30-Node-概括/">Node 总体概括</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>node核心库</p>
-<h3 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h3><ul>
-<li>global 全局命名空间</li>
-<li>process 提供关键功能,I/O流输入输出</li>
-<li>buffer 存储和操作原始数据功能</li>
-<li>console 各种输出信息</li>
-<li>__dirname 当前目录</li>
-<li>__filename 文件绝对路径</li>
-</ul>
-<h3 id="其他核心库"><a href="#其他核心库" class="headerlink" title="其他核心库"></a>其他核心库</h3><ul>
-<li>os 操作系统相关信息</li>
-<li>http 网络协议相关的操作</li>
-<li>net 网络协议操作<br>+</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/30/2016-10-30-Node-概括/" data-id="ciyv9th6p0037wvvmen13wu10" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/10/30/2016-10-30-Node-概括/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
 
     </footer>
   </div>
@@ -589,6 +590,10 @@
       <ul>
         
           <li>
+            <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/07/2017-02-07-Github-gitattributes/">修改github显示项目类型之gitattributes</a>
           </li>
         
@@ -602,10 +607,6 @@
         
           <li>
             <a href="/2017/01/18/2017-01-18-Hack-touchmove/">移动端对touchmove支持度不同</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/17/2017-01-17-App-滚动优化/">app滚动优化方案再议</a>
           </li>
         
       </ul>
