@@ -6,27 +6,21 @@
   <title>node 版本管理工具 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="nvm主要用来管理node各个版本的工具。
-node版本管理工具n可以用tj大牛的n去管理node各个版本。
-具体查看github n
-brew install node 版本也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本
-brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0/bin">
+node版本管理工具在使用各种node管理工具的时候，可以试着把自己本地默认安装的node删除，然后根据不同的版本去安装不同的包文件。
+#查看已经安装在全局的模块，以便删除这些全局模块后再按照不同的 node 版本重新进行全局安装npm ls -g --depth=0#删除全局 node_modules 目录sudo rm -rf /usr/local/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node 版本管理工具">
 <meta property="og:url" content="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="nvm主要用来管理node各个版本的工具。
-node版本管理工具n可以用tj大牛的n去管理node各个版本。
-具体查看github n
-brew install node 版本也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本
-brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0/bin">
-<meta property="og:updated_time" content="2016-08-22T09:26:13.000Z">
+node版本管理工具在使用各种node管理工具的时候，可以试着把自己本地默认安装的node删除，然后根据不同的版本去安装不同的包文件。
+#查看已经安装在全局的模块，以便删除这些全局模块后再按照不同的 node 版本重新进行全局安装npm ls -g --depth=0#删除全局 node_modules 目录sudo rm -rf /usr/local/">
+<meta property="og:updated_time" content="2017-02-21T09:06:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node 版本管理工具">
 <meta name="twitter:description" content="nvm主要用来管理node各个版本的工具。
-node版本管理工具n可以用tj大牛的n去管理node各个版本。
-具体查看github n
-brew install node 版本也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本
-brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0/bin">
+node版本管理工具在使用各种node管理工具的时候，可以试着把自己本地默认安装的node删除，然后根据不同的版本去安装不同的包文件。
+#查看已经安装在全局的模块，以便删除这些全局模块后再按照不同的 node 版本重新进行全局安装npm ls -g --depth=0#删除全局 node_modules 目录sudo rm -rf /usr/local/">
   
   
     <link rel="icon" href="/favicon.png">
@@ -98,7 +92,9 @@ brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0
     <div class="article-entry" itemprop="articleBody">
       
         <p>nvm主要用来管理node各个版本的工具。</p>
-<h2 id="node版本管理工具"><a href="#node版本管理工具" class="headerlink" title="node版本管理工具"></a>node版本管理工具</h2><h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>可以用tj大牛的n去管理node各个版本。</p>
+<h2 id="node版本管理工具"><a href="#node版本管理工具" class="headerlink" title="node版本管理工具"></a>node版本管理工具</h2><p>在使用各种node管理工具的时候，可以试着把自己本地默认安装的node删除，然后根据不同的版本去安装不同的包文件。</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><div class="line"><span class="comment">#查看已经安装在全局的模块，以便删除这些全局模块后再按照不同的 node 版本重新进行全局安装</span></div><div class="line">npm ls -g --depth=<span class="number">0</span></div><div class="line"><span class="comment">#删除全局 node_modules 目录</span></div><div class="line">sudo rm -rf /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">node_modules</span></span></div><div class="line"><span class="comment">#删除 node</span></div><div class="line">sudo rm /usr/local/bin/node</div><div class="line"><span class="comment">#删除全局 node 模块注册的软链</span></div><div class="line">cd  /usr/local/bin &amp;&amp; ls -l | grep <span class="string">"../lib/node_modules/"</span> | awk <span class="string">'&#123;print $9&#125;'</span>| xargs rm</div></pre></td></tr></table></figure>
+<h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>可以用tj大牛的n去管理node各个版本。</p>
 <p>具体查看<a href="https://github.com/tj/n" target="_blank" rel="external">github n</a></p>
 <h3 id="brew-install-node-版本"><a href="#brew-install-node-版本" class="headerlink" title="brew install node 版本"></a>brew install node 版本</h3><p>也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">brew <span class="keyword">install</span> **</div><div class="line"></div><div class="line"># node 环境变量修改</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">PATH</span>=/usr/<span class="keyword">local</span>/Cellar/node/<span class="number">6.1</span><span class="number">.0</span>/<span class="keyword">bin</span>:$<span class="keyword">PATH</span></div></pre></td></tr></table></figure>
@@ -106,11 +102,13 @@ brew install **# node 环境变量修改export PATH=/usr/local/Cellar/node/6.1.0
 <p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm github地址</a>，你可以通过这个地址，更多的了解nvm</p>
 <p>推荐通过brew安装nvm</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><div class="line">brew install nvm</div><div class="line"></div><div class="line">// 创建一个目录</div><div class="line">mkdir  ~/.nvm</div><div class="line"></div><div class="line">// 当前用的<span class="keyword">node</span><span class="title">版本</span></div><div class="line">nvm use v6.<span class="number">0.0</span></div><div class="line"></div><div class="line">// 设置全局的<span class="keyword">node</span><span class="title">版本</span></div><div class="line"></div><div class="line">nvm alias defaule system/v6.<span class="number">3.1</span></div><div class="line"></div><div class="line">// 在bash_prifile中添加路径</div><div class="line"></div><div class="line"><span class="comment">#nvm</span></div><div class="line">export <span class="attr">NVM_DIR=</span><span class="string">"$HOME/.nvm"</span></div><div class="line">  . <span class="string">"$(brew --prefix nvm)/nvm.sh"</span></div></pre></td></tr></table></figure>
+<h4 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h4><p>npm 不建议不同的版本使用一套全局的npm modules</p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><div class="line"># 同步安装包（nvm install node --reinstall-packages-<span class="keyword">from</span>=node）</div><div class="line">nvm reinstall-packages</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/" data-id="cizbjucgu000ipuvm8gffa4px" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/" data-id="cizihcgp2001098vm3b21bbme" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/#disqus_thread" class="article-comment-link">Comments</a>
       
