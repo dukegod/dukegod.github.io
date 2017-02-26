@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://dukegod.github.io/2016/01/11/2016-01-11-Node-npm/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="npm 基础安装npm install -g pkg   // 全局安装npm install pkc --save-dev  // 本地安装，并且保存在package.json中//安装package时自动加入依赖列表npm install &amp;lt;package_name&amp;gt; --save  //加入到dependenciesnpm install &amp;lt;package_name&amp;gt;">
-<meta property="og:updated_time" content="2017-01-17T14:01:36.000Z">
+<meta property="og:updated_time" content="2017-02-25T04:10:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm基本操作">
 <meta name="twitter:description" content="npm 基础安装npm install -g pkg   // 全局安装npm install pkc --save-dev  // 本地安装，并且保存在package.json中//安装package时自动加入依赖列表npm install &amp;lt;package_name&amp;gt; --save  //加入到dependenciesnpm install &amp;lt;package_name&amp;gt;">
@@ -85,7 +85,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="npm-基础"><a href="#npm-基础" class="headerlink" title="npm 基础"></a>npm 基础</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight q"><table><tr><td class="code"><pre><div class="line"></div><div class="line">npm install -g pkg   <span class="comment">// 全局安装</span></div><div class="line"></div><div class="line">npm install pkc --<span class="built_in">save</span>-<span class="built_in">dev</span>  <span class="comment">// 本地安装，并且保存在package.json中</span></div><div class="line"></div><div class="line"><span class="comment">//安装package时自动加入依赖列表</span></div><div class="line"></div><div class="line">npm install &lt;package_name&gt; --<span class="built_in">save</span>  <span class="comment">//加入到dependencies</span></div><div class="line">npm install &lt;package_name&gt; --<span class="built_in">save</span>-<span class="built_in">dev</span>  <span class="comment">//加入到devDependencies</span></div></pre></td></tr></table></figure>
+        <h2 id="npm-基础"><a href="#npm-基础" class="headerlink" title="npm 基础"></a>npm 基础</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight q"><table><tr><td class="code"><pre><div class="line">npm install -g pkg   <span class="comment">// 全局安装</span></div><div class="line"></div><div class="line">npm install pkc --<span class="built_in">save</span>-<span class="built_in">dev</span>  <span class="comment">// 本地安装，并且保存在package.json中</span></div><div class="line"></div><div class="line"><span class="comment">//安装package时自动加入依赖列表</span></div><div class="line"></div><div class="line">npm install &lt;package_name&gt; --<span class="built_in">save</span>  <span class="comment">//加入到dependencies</span></div><div class="line">npm install &lt;package_name&gt; --<span class="built_in">save</span>-<span class="built_in">dev</span>  <span class="comment">//加入到devDependencies</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="包文件相关的管理"><a href="#包文件相关的管理" class="headerlink" title="包文件相关的管理"></a>包文件相关的管理</h3><h4 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h4><figure class="highlight openscad"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 搜索包</span></div><div class="line">npm <span class="built_in">search</span> pkg</div></pre></td></tr></table></figure>
 <h4 id="查看本地所有的安装包"><a href="#查看本地所有的安装包" class="headerlink" title="查看本地所有的安装包"></a>查看本地所有的安装包</h4><figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 列出各种包</span></div><div class="line">npm ls</div><div class="line"><span class="comment">// 列出全局安装的各种包</span></div><div class="line">npm ls -g</div><div class="line"><span class="comment">// 列出全局安装的各种包树节点包</span></div><div class="line">npm ls --depth = <span class="number">1</span> <span class="number">2</span>&gt;<span class="regexp">/dev/</span><span class="keyword">null</span></div><div class="line"><span class="comment">// 可以去定点去查找具体的包</span></div><div class="line">npm ls --depth = <span class="number">1</span> <span class="number">2</span>&gt;<span class="regexp">/dev/</span><span class="keyword">null</span> | <span class="keyword">grep</span> generator</div><div class="line"><span class="comment">// 仅仅列举最外层的模块</span></div><div class="line">npm list --depth=<span class="number">0</span> <span class="number">2</span>&gt;<span class="regexp">/dev/</span><span class="keyword">null</span></div></pre></td></tr></table></figure>
@@ -128,7 +128,7 @@ Email: YOUR_EMAIL@domain.com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11-Node-npm/" data-id="cizj49zq3000hskvmwwy01twc" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11-Node-npm/" data-id="cizmmxobi000h5zvmrqvtf1qm" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/11/2016-01-11-Node-npm/#disqus_thread" class="article-comment-link">Comments</a>
       
