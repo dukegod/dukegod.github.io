@@ -19,7 +19,7 @@ Mac pro
 node 5.0
 GitHub
 Hexo 3.2有关node的安装，github安装（或者git安装）自行Google下，网上的案例很多的。我就根据自己搭载需要注意或者出现的问题记录下。">
-<meta property="og:updated_time" content="2017-01-24T08:04:37.000Z">
+<meta property="og:updated_time" content="2017-02-26T15:11:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO note by mac">
 <meta name="twitter:description" content="安装环境
@@ -115,6 +115,18 @@ Hexo 3.2有关node的安装，github安装（或者git安装）自行Google下�
 <p>如果不行的话，进入 setup 页面 找到 website name 与 website url 重新输入，然后保存下</p>
 <p>然后修改_config.yml</p>
 <figure class="highlight avrasm"><table><tr><td class="code"><pre><div class="line"><span class="meta"># disqus</span></div><div class="line"><span class="symbol">disqus_shortname:</span> 就是你的用户名</div></pre></td></tr></table></figure>
+<h4 id="支持多说"><a href="#支持多说" class="headerlink" title="支持多说"></a>支持多说</h4><ul>
+<li>第一步申请多说账号，使用其他的应用授权就可以了。</li>
+<li>第二步创建多说站点，参考<a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">这个</a></li>
+<li>修改代码 <strong>themes/landscape/layout/_partial/article.ejs</strong>, 参考<a href="https://lgcagithub.github.io/2016/08/15/add-comments-for-blog-using-duoshuo/" target="_blank" rel="external">这个</a></li>
+</ul>
+<figure class="highlight mojolicious"><table><tr><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="perl"> <span class="keyword">if</span> (!<span class="keyword">index</span> &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"comments"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"disqus_thread"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>Please enable JavaScript to view the <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></div></pre></td></tr></table></figure>
+<p>改为：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">index</span> &amp;&amp; <span class="attr">post.comments</span> &amp;&amp; <span class="attr">config.duoshuo_shortname</span>)&#123; %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"comments"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说评论框 start --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ds-thread"</span> <span class="attr">data-thread-key</span>=<span class="string">"&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;"</span> <span class="attr">data-title</span>=<span class="string">"&lt;%= post.title %&gt;"</span> <span class="attr">data-url</span>=<span class="string">"&lt;%= page.permalink %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说评论框 end --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> duoshuoQuery = &#123;<span class="attr">short_name</span>:<span class="string">'&lt;%= config.duoshuo_shortname %&gt;'</span>&#125;;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> ds = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">  ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="literal">true</span>;</div><div class="line">  ds.src = (<span class="built_in">document</span>.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.js'</span>;</div><div class="line">  ds.charset = <span class="string">'UTF-8'</span>;</div><div class="line">  (<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]</div><div class="line">   || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);</div><div class="line">&#125;)();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说公共JS代码 end --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>修改配置文件 <strong><em>_config.yml</em></strong></li>
+</ul>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><div class="line"><span class="symbol">duoshuo_shortname:</span> 多说的二级域名</div></pre></td></tr></table></figure>
 <h4 id="修改域名"><a href="#修改域名" class="headerlink" title="[修改域名]"></a>[修改域名]</h4><p><a href="https://dcc.godaddy.com/" target="_blank" rel="external">https://dcc.godaddy.com/</a> 购买域名</p>
 <p>通过dnspod 管理域名<br>(<a href="https://www.dnspod.cn/" target="_blank" rel="external">https://www.dnspod.cn/</a>)</p>
 <p>设置CNAME</p>
@@ -136,9 +148,7 @@ Hexo 3.2有关node的安装，github安装（或者git安装）自行Google下�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/" data-id="cizmmxobd000b5zvmbmodp1s6" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
+      <a data-url="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/" data-id="cizmtdn8g0007wbvmv5anhrdm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -168,13 +178,29 @@ Hexo 3.2有关node的安装，github安装（或者git安装）自行Google下�
 
   
 </article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
 
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-2016-01-05-Hexo" data-title="HEXO note by mac" data-url="http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'stackcode'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
 </section>
         
           <aside id="sidebar">
@@ -283,20 +309,6 @@ Hexo 3.2有关node的安装，github安装（或者git安装）自行Google下�
   
 </nav>
     
-<script>
-  var disqus_shortname = 'dukehui1991';
-  
-  var disqus_url = 'http://dukegod.github.io/2016/01/05/2016-01-05-Hexo/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
