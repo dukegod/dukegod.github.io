@@ -64,6 +64,127 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-08-02-Source-map" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/02/2016-08-02-Source-map/" class="article-date">
+  <time datetime="2016-08-01T16:00:00.000Z" itemprop="datePublished">2016-08-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/02/2016-08-02-Source-map/">sourceMap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在前端优化中，普遍采用压缩文件的方式来减少文件体积提高加载速度，但是这个办法也有一定的坏处，比如：在调试程序是不能很好地定位追踪，而且阅读也很困难<br>针对上述问题，google为我们提供了Source Maps这一解决方案.</p>
+<p>Source Map 提供了连接生产环境代码和原始代码的方式。其实 Source Map就是一个信息文件存储了位置信息也就是存了压缩后代码的每一个位置所对应的压缩前的位置。<br>Source Map文件内容是 JSON 格式的。当代码出错后，浏览器会根据Source Map加载.map文件，然后直接将错误信息定位到压缩前的代码。</p>
+<p>Chrome和FireFox提供了很好地支持。不过在Chrome中默认是没有开启的，要在开发人员工具箱中设置一下，勾选Enalbe source maps。</p>
+<h3 id="解决Source-Map跨域问题"><a href="#解决Source-Map跨域问题" class="headerlink" title="解决Source Map跨域问题"></a>解决Source Map跨域问题</h3><p>那我们把js文件调用地址修改为127.0.0.1来测试一下跨域，经测试发现Source Map在跨域下不可用。   </p>
+<p>那解决办法自然我们就行到了HTML5中的crossorigin。在引用js的script标签上添加crossorigin，再来看是什么样子，这次又可以正确的提示代码的信息了</p>
+<p>在Apache中如何添加响应头？</p>
+<p>1、检查是否开启了LoadModule headers_module modules/mod_headers.so，没有开启的话在配置文件中将这句前面的#去掉。</p>
+<p>2、在<directory>下添加Header set Access-Control-Allow-Origin=”*”。</directory></p>
+<p>3、重启服务，然后刷新页面，看看Response Headers中是否有Access-Control-Allow-Origin:*。</p>
+<p>在Apache中添加header响应头可以再<directory>, <location>, <files> , <virtualhost> , .htaccess中添加。</virtualhost></files></location></directory></p>
+<p>语法：</p>
+<p>Header set 响应头 “取值”<br>帮助地址：mod_headers</p>
+<p>在Apache中如何添加响应类型？</p>
+<p>1、打开mime.types这个配置文件。</p>
+<p>2、按照格式添加即可。比如：application/map json。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>css实现sourcemap功能</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">gulp</span><span class="selector-class">.task</span>(<span class="string">'scss'</span>, function() &#123;</div><div class="line">  <span class="selector-tag">return</span> <span class="selector-tag">gulp</span><span class="selector-class">.src</span>(<span class="string">'./src/scss/pages/*.scss'</span>)</div><div class="line">    <span class="selector-class">.pipe</span>(sourcemaps.init())</div><div class="line">    <span class="selector-class">.pipe</span>(sass(&#123; <span class="attribute">style</span>: <span class="string">'expanded'</span> &#125;).on(<span class="string">'error'</span>, sass.logError))</div><div class="line">    <span class="comment">// .pipe(gulp.dest('dist/css'))</span></div><div class="line">    <span class="selector-class">.pipe</span>(autoprefixer(&#123;</div><div class="line">      <span class="attribute">browsers</span>: [<span class="string">'ios 4'</span>, <span class="string">'ios 5'</span>, <span class="string">'ios 6'</span>, <span class="string">'android 4'</span>, <span class="string">'android 2.2'</span>, <span class="string">'Safari 6'</span>, <span class="string">'Safari 7'</span>],</div><div class="line">      <span class="attribute">cascade</span>: false</div><div class="line">    &#125;))</div><div class="line">    <span class="selector-class">.pipe</span>(cleanCSS())</div><div class="line">    <span class="selector-class">.pipe</span>(sourcemaps.write(<span class="string">'.'</span>))</div><div class="line">    <span class="selector-class">.pipe</span>(gulp.dest(<span class="string">'dist/css'</span>))</div><div class="line">    <span class="selector-class">.pipe</span>(reload(&#123; <span class="attribute">stream</span>: true &#125;));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>sourcemaps.init() 方法一定要放在源码以后。  </p>
+<p>sourcemaps.write(): 控制输出的文件</p>
+<ul>
+<li>sourcemaps.write(‘.’)；这么配置输出的为 xxx.map结尾</li>
+<li>sourcemaps.write(‘./map’); 输出到文件中</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1、Source Map 使我们可以更有好的调试代码。</p>
+<p>2、Source Map 可以定位到源文件中的行数。但是使用window.onerror是不能正确捕获错误发生的行号的。</p>
+<p>3、Source Map 不支持跨域。</p>
+<p>4、并不是所有浏览器都支持Source Map。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/fsjohnhuang/p/4208566.html" target="_blank" rel="external">http://www.cnblogs.com/fsjohnhuang/p/4208566.html</a></p>
+<p><a href="http://wanbei.github.io/2016/03/01/go-go-go-source-map/" target="_blank" rel="external">http://wanbei.github.io/2016/03/01/go-go-go-source-map/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/08/02/2016-08-02-Source-map/" data-id="cizth4ubb005l58vm82sbj9xb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+
+  
+    <article id="post-2016-08-01-Css-Box-sizing" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/01/2016-08-01-Css-Box-sizing/" class="article-date">
+  <time datetime="2016-07-31T16:00:00.000Z" itemprop="datePublished">2016-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/01/2016-08-01-Css-Box-sizing/">Box-sizing</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>盒模型:</p>
+<ul>
+<li>border</li>
+<li>padding</li>
+<li>margin</li>
+</ul>
+<p>box-sizing: border-box, content-box</p>
+<p>content-box(默认): 元素的宽度/高度（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度/高度（content width/height）;</p>
+<p>border-box : 内容宽度/高度=width/height-border-padding</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/08/01/2016-08-01-Css-Box-sizing/" data-id="cizth4ub9005g58vmq5o2qks8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+
+  
     <article id="post-2016-07-08-ReactNative2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/08/2016-07-08-ReactNative2/" class="article-date">
@@ -94,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/08/2016-07-08-ReactNative2/" data-id="cizmtdnbn005fwbvm4vq0f1d2" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/08/2016-07-08-ReactNative2/" data-id="cizth4ub8005d58vm2r2zdijo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -140,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/07/2016-07-07-ReactNative/" data-id="cizmtdnbl005awbvmg6bzcmvp" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/07/2016-07-07-ReactNative/" data-id="cizth4ub5005858vmnghvm9a0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -185,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/06/2016-07-06-React/" data-id="cizmtdnbm005dwbvmfwtx40u8" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/06/2016-07-06-React/" data-id="cizth4ub7005b58vm0e360skj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -227,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/05/2016-07-05-React-fetch/" data-id="cizmtdnbk0058wbvm2c4fb8je" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/05/2016-07-05-React-fetch/" data-id="cizth4ub4005658vmt7ivzzqt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -272,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/04/2016-07-04-React-router/" data-id="cizmtdnbh0055wbvmwzl5m6st" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/04/2016-07-04-React-router/" data-id="cizth4ub1005158vmkxweb5ng" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -315,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/03/2016-07-03-React-props/" data-id="cizmtdnbg0053wbvm3o51hxs5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/03/2016-07-03-React-props/" data-id="cizth4ub0004y58vmj7ez1cy2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -364,7 +485,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/02/2016-07-02-开发工具-模块加载-Webpack/" data-id="cizmtdnbf0050wbvm665bldnk" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/02/2016-07-02-开发工具-模块加载-Webpack/" data-id="cizth4ub2005358vmj0pqu36v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
@@ -412,104 +533,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/01/2016-07-01-React-intro/" data-id="cizmtdnbe004ywbvm5qfjwfo4" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/01/2016-07-01-React-intro/" data-id="cizth4uaw004r58vmkob7yh3a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
-<!--  -->
-<!-- 多说 -->
-
-
-  
-    <article id="post-2016-06-24-开发规范-Eshint" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/22/2016-06-24-开发规范-Eshint/" class="article-date">
-  <time datetime="2016-06-21T16:00:00.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/22/2016-06-24-开发规范-Eshint/">项目开发规范之Eshint</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用Eslint，搭载Airbnb规范检测提高我们的代码的标准。  </p>
-<p>全局安装一下依赖：<br><figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">npm <span class="keyword">install</span> eslint -g</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> eslint-config-airbnb -g</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> eslint-<span class="keyword">plugin</span>-jsx-a11y -g</div><div class="line"></div><div class="line">npm <span class="keyword">install</span> eslint-<span class="keyword">plugin</span>-<span class="keyword">import</span> -g</div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/22/2016-06-24-开发规范-Eshint/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-24-开发规范-Eshint/" data-id="cizmtdnbd004vwbvmq2urchjy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
-<!--  -->
-<!-- 多说 -->
-
-
-  
-    <article id="post-2016-06-23-开发规范-jshint" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/22/2016-06-23-开发规范-jshint/" class="article-date">
-  <time datetime="2016-06-21T16:00:00.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/22/2016-06-23-开发规范-jshint/">项目开发规范之jshint</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>项目中配置.jshintrc<br>可以在全局环境中配置.jshint.json</p>
-<p>主要是一些jshint本地配置的说明</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/22/2016-06-23-开发规范-jshint/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-23-开发规范-jshint/" data-id="cizmtdnbc004twbvmnst66h8g" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
 
     </footer>
   </div>
@@ -547,7 +574,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 16.67px;">App</a> <a href="/tags/CSS/" style="font-size: 17.78px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/Github/" style="font-size: 11.11px;">Github</a> <a href="/tags/Google/" style="font-size: 13.33px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.11px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 12.22px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 14.44px;">Mac</a> <a href="/tags/Meta/" style="font-size: 12.22px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.11px;">Nginx</a> <a href="/tags/Node/" style="font-size: 17.78px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 15.56px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 12.22px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16.67px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 12.22px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 11.11px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 18.89px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 14.44px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.11px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.45px;">App</a> <a href="/tags/CSS/" style="font-size: 17.27px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.73px;">Git</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Google/" style="font-size: 12.73px;">Google</a> <a href="/tags/Hack/" style="font-size: 10.91px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.82px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.64px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.82px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 10.91px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 14.55px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.82px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.45px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.82px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.73px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10.91px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.09px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.64px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.36px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.82px;">转载翻译</a>
     </div>
   </div>
 
@@ -556,7 +583,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -569,6 +596,14 @@
       <ul>
         
           <li>
+            <a href="/2017/03/03/2017-03-03-Node-should-know/">node开发应该知道的知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
           </li>
         
@@ -578,14 +613,6 @@
         
           <li>
             <a href="/2017/01/29/2017-01-29-两地往返/">小小总结在外地过节</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/23/2017-01-23-Javascript-Lodash/">lodash</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/18/2017-01-18-Hack-touchmove/">移动端对touchmove支持度不同</a>
           </li>
         
       </ul>

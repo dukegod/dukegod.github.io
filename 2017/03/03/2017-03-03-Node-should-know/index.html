@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>node开发应该知道的知识点 | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="虽然是一个关于推广的一遍文章，当时里面有很多支持点，对于入门的新手还是比较有用的，做一个备份。
+
+这是个node全局对象的清单
+你应该知道的知识点(暂时没有翻译)
+
+How come when you declare a global variable in any Node.js file it’s not really global to all modules?    
+When expor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node开发应该知道的知识点">
+<meta property="og:url" content="http://dukegod.github.io/2017/03/03/2017-03-03-Node-should-know/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="虽然是一个关于推广的一遍文章，当时里面有很多支持点，对于入门的新手还是比较有用的，做一个备份。
+
+这是个node全局对象的清单
+你应该知道的知识点(暂时没有翻译)
+
+How come when you declare a global variable in any Node.js file it’s not really global to all modules?    
+When expor">
+<meta property="og:image" content="http://7xsubf.com1.z0.glb.clouddn.com/node-g-list.png">
+<meta property="og:updated_time" content="2017-03-03T06:00:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node开发应该知道的知识点">
+<meta name="twitter:description" content="虽然是一个关于推广的一遍文章，当时里面有很多支持点，对于入门的新手还是比较有用的，做一个备份。
+
+这是个node全局对象的清单
+你应该知道的知识点(暂时没有翻译)
+
+How come when you declare a global variable in any Node.js file it’s not really global to all modules?    
+When expor">
+<meta name="twitter:image" content="http://7xsubf.com1.z0.glb.clouddn.com/node-g-list.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      <!---  <a href="/" id="logo">Hello World</a> -->
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about.html">About</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukegod.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2017-03-03-Node-should-know" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/03/2017-03-03-Node-should-know/" class="article-date">
+  <time datetime="2017-03-02T16:00:00.000Z" itemprop="datePublished">2017-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node开发应该知道的知识点
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>虽然是一个关于推广的一遍文章，当时里面有很多支持点，对于入门的新手还是比较有用的，做一个备份。</p>
+<p><img src="http://7xsubf.com1.z0.glb.clouddn.com/node-g-list.png" alt="image"></p>
+<p>这是个node全局对象的清单</p>
+<p>你应该知道的知识点(暂时没有翻译)</p>
+<ol>
+<li>How come when you declare a global variable in any Node.js file it’s not really global to all modules?    </li>
+<li>When exporting the API of a Node module, why can we sometimes use exports and other times we have to use module.exports?   </li>
+<li>Can we require local files without using relative paths?    </li>
+<li>What is the Event Loop? Is it part of V8?   </li>
+<li>What is the Call Stack? Is it part of V8?   </li>
+<li>What is the difference between setImmediate and process.nextTick?   </li>
+<li>How do you make an asynchronous function return a value?    </li>
+<li>Can callbacks be used with promises or is it one way or the other?    </li>
+<li>What are the major differences between spawn, exec, and fork?   </li>
+<li>How does the cluster module work? How is it different than using a load balancer?   </li>
+<li>What are the –harmony-* flags?   </li>
+<li>How can you read and inspect the memory usage of a Node.js process?   </li>
+<li>Can reverse-search in commands history be used inside Node’s REPL?    </li>
+<li>What are V8 object and function templates?    </li>
+<li>What is libuv and how does Node.js use it?    </li>
+<li>How can you make Node’s REPL always use JavaScript strict mode?   </li>
+<li>How can we do one final operation before a Node process exits? Can that operation be done asynchronously?   </li>
+<li>Besides V8 and libuv, what other external dependencies does Node have?    </li>
+<li>What’s the problem with the process uncaughtException event? How is it different than the exit event?   </li>
+<li>Do Node buffers use V8 memory? Can they be resized?   </li>
+<li>What’s the difference between Buffer.alloc and Buffer.allocUnsafe?    </li>
+<li>How is the slice method on buffers different from that on arrays?   </li>
+<li>What is the string_decoder module useful for? How is it different than casting buffers to strings?    </li>
+<li>What are the 5 major steps that the require function does?    </li>
+<li>What is the require.resolve function and what is it useful for?   </li>
+<li>What is the main property in package.json useful for?   </li>
+<li>What are circular modular dependencies in Node and how can they be avoided?   </li>
+<li>What are the 3 file extensions that will be automatically tried by the require function?    </li>
+<li>When creating an http server and writing a response for a request, why is the end() function required?    </li>
+<li>When is it ok to use the file system *Sync methods?   </li>
+<li>How can you print only one level of a deeply nested object?   </li>
+<li>What is the node-gyp package used for?    </li>
+<li>The objects exports, require, and module are all globally available in every module but they are different in every module. How?    </li>
+<li>How can a module be both requirable by other modules and executable directly using the node command?    </li>
+<li>What’s an example of a built-in stream in Node that is both readable and writable?    </li>
+<li>What’s the difference between using event emitters and using simple callback functions to allow for asynchronous handling of code?    </li>
+<li>The require function always caches the module it requires. What can you do if you need to execute the code in a required module many times?   </li>
+<li>What’s the difference between the Paused and the Flowing modes of readable streams?   </li>
+<li>What does the –inspect argument do for the node command?   </li>
+<li>When working with streams, when do you use the pipe function and when do you use events? Can those two methods be combined?   </li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/03/03/2017-03-03-Node-should-know/" data-id="cizth4ud5009n58vm7j274ia6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/18/2017-02-26-Kindle/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">kindle 用法总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-2017-03-03-Node-should-know" data-title="node开发应该知道的知识点" data-url="http://dukegod.github.io/2017/03/03/2017-03-03-Node-should-know/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'stackcode'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.45px;">App</a> <a href="/tags/CSS/" style="font-size: 17.27px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.73px;">Git</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Google/" style="font-size: 12.73px;">Google</a> <a href="/tags/Hack/" style="font-size: 10.91px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.82px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.64px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.82px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 10.91px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 14.55px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.82px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.45px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.82px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.73px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10.91px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.09px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.64px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.36px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.82px;">转载翻译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/03/2017-03-03-Node-should-know/">node开发应该知道的知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/07/2017-02-07-Github-gitattributes/">修改github显示项目类型之gitattributes</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/29/2017-01-29-两地往返/">小小总结在外地过节</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 liu hui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <div id="link">
+  	<a href="https://github.com/dukegod">Github</a>
+  	<a href="https://www.zhihu.com/people/dukegod">知</a>
+  	<a href="https://www.quora.com/profile/Hui-Liu-37">Quora</a>
+  	<a href="https://twitter.com/dukegod1991">Twitter</a>
+  	<a href="https://www.facebook.com/profile.php?id=100009852840417">Facebook</a>
+    <p style="margin-top:10px">
+      <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </p>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about.html" class="mobile-nav-link">About</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
