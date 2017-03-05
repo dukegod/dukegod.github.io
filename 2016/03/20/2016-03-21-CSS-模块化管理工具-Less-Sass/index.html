@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css 模块化管理工具总结 | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端开发现在比较流行的两个管理工具：less，sass实现了css继承，组装管理，在项目开发中，更加方便的使用css。搭建项目还需要配合一些脚手架处理css处理工具：
+
+gulp
+webpack
+autoprefixed
+postcss
+sourceMap
+gulp-clean-css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css 模块化管理工具总结">
+<meta property="og:url" content="http://dukegod.github.io/2016/03/20/2016-03-21-CSS-模块化管理工具-Less-Sass/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="前端开发现在比较流行的两个管理工具：less，sass实现了css继承，组装管理，在项目开发中，更加方便的使用css。搭建项目还需要配合一些脚手架处理css处理工具：
+
+gulp
+webpack
+autoprefixed
+postcss
+sourceMap
+gulp-clean-css">
+<meta property="og:updated_time" content="2017-03-05T10:10:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css 模块化管理工具总结">
+<meta name="twitter:description" content="前端开发现在比较流行的两个管理工具：less，sass实现了css继承，组装管理，在项目开发中，更加方便的使用css。搭建项目还需要配合一些脚手架处理css处理工具：
+
+gulp
+webpack
+autoprefixed
+postcss
+sourceMap
+gulp-clean-css">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      <!---  <a href="/" id="logo">Hello World</a> -->
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about.html">About</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukegod.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2016-03-21-CSS-模块化管理工具-Less-Sass" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/20/2016-03-21-CSS-模块化管理工具-Less-Sass/" class="article-date">
+  <time datetime="2016-03-19T16:00:00.000Z" itemprop="datePublished">2016-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css 模块化管理工具总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端开发现在比较流行的两个管理工具：less，sass<br>实现了css继承，组装管理，在项目开发中，更加方便的使用css。<br>搭建项目还需要配合一些脚手架处理css处理工具：</p>
+<ul>
+<li>gulp</li>
+<li>webpack</li>
+<li>autoprefixed</li>
+<li>postcss</li>
+<li>sourceMap</li>
+<li>gulp-clean-css</li>
+</ul>
+<a id="more"></a>
+<h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="meta">@</span></div></pre></td></tr></table></figure>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><figure class="highlight less"><table><tr><td class="code"><pre><div class="line"><span class="variable">@H:</span> <span class="number">200px</span>;</div><div class="line"><span class="selector-class">.col</span>&#123;</div><div class="line">  <span class="attribute">color</span>:red;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">height</span>:<span class="variable">@H</span>;</div><div class="line">  <span class="selector-class">.col</span>();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="sass"><a href="#sass" class="headerlink" title="sass"></a>sass</h2><h3 id="基本语法-1"><a href="#基本语法-1" class="headerlink" title="基本语法"></a>基本语法</h3><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><figure class="highlight actionscript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/* */</span></div><div class="line"></div><div class="line"><span class="comment">//</span></div></pre></td></tr></table></figure>
+<h4 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h4><ul>
+<li>变量</li>
+<li>默认变量： !default</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="variable">$fontSize</span>: <span class="number">12px</span>;</div><div class="line"><span class="variable">$fontC</span>: <span class="number">#ffffff</span> !default;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>:<span class="variable">$fontSize</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="variable">$fontC</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="嵌套-Nesting"><a href="#嵌套-Nesting" class="headerlink" title="嵌套(Nesting)"></a>嵌套(Nesting)</h4><figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="variable">$h</span>: <span class="number">100px</span>;</div><div class="line"><span class="selector-id">#nest</span> &#123;</div><div class="line">  <span class="attribute">height</span>:<span class="variable">$h</span>;</div><div class="line">  <span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">height</span>:<span class="number">50px</span>;</div><div class="line">    <span class="selector-tag">img</span> &#123;</div><div class="line">      <span class="attribute">height</span>:<span class="number">10px</span>;</div><div class="line">    &#125;</div><div class="line">    @at-root:&#123;</div><div class="line">      <span class="attribute">font-size</span>:<span class="number">24px</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  <span class="selector-tag">a</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">    &amp;:after&#123;</div><div class="line">      <span class="attribute">content</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>&amp; : 表示父级</li>
+<li>@at-root: 用来跳出选择器嵌套的。默认所有的嵌套，继承所有上级选择器，但有了这个就可以跳出所有上级选择器。<br>普通跳出嵌套</li>
+<li>@at-root (without: …)和@at-root (with: …)</li>
+<li>@at-root 与 &amp; 配合使用</li>
+</ul>
+<h4 id="混合-mixin"><a href="#混合-mixin" class="headerlink" title="混合(mixin)"></a>混合(mixin)</h4><p>@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> center-block &#123;</div><div class="line">    <span class="attribute">margin-left</span>:auto;</div><div class="line">    <span class="attribute">margin-right</span>:auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo</span>&#123;</div><div class="line">    @<span class="keyword">include</span> center-block;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//css style</span></div><div class="line"><span class="comment">//-------------------------------</span></div><div class="line"><span class="selector-class">.demo</span>&#123;</div><div class="line">    <span class="attribute">margin-left</span>:auto;</div><div class="line">    <span class="attribute">margin-right</span>:auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>@content: @content在sass3.2.0中引入，可以用来解决css3的@media等带来的问题。它可以使@mixin接受一整块样式，接受的样式从@content开始。</li>
+</ul>
+<h4 id="继承-extend"><a href="#继承-extend" class="headerlink" title="继承(extend)"></a>继承(extend)</h4><figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="comment">//sass style</span></div><div class="line"><span class="comment">//-------------------------------</span></div><div class="line"><span class="selector-tag">h1</span>&#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">4px</span> solid <span class="number">#ff9aa9</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.speaker</span>&#123;</div><div class="line">  @<span class="keyword">extend</span> h1;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//css style</span></div><div class="line"><span class="comment">//-------------------------------</span></div><div class="line"><span class="selector-tag">h1</span>,<span class="selector-class">.speaker</span>&#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">4px</span> solid <span class="number">#ff9aa9</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.speaker</span>&#123;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>占位选择器%</li>
+</ul>
+<h4 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h4><figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 through 9 &#123;</div><div class="line">  <span class="selector-class">.item</span>#&#123;<span class="variable">$i</span>&#125; &#123;</div><div class="line">    <span class="attribute">width</span> : <span class="number">30px</span> * <span class="variable">$i</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">20px</span> * <span class="variable">$i</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid red;</div><div class="line">    @<span class="keyword">include</span>  fb-flex(<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="sass-cli本地运用"><a href="#sass-cli本地运用" class="headerlink" title="sass-cli本地运用"></a>sass-cli本地运用</h4><p>sass –watch style.scss:style.css –style expanded</p>
+<h2 id="less-VS-sass"><a href="#less-VS-sass" class="headerlink" title="less VS sass"></a>less VS sass</h2><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://www.w3cplus.com/sassguide/compile.html" target="_blank" rel="external">sass</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/03/20/2016-03-21-CSS-模块化管理工具-Less-Sass/" data-id="cizwwucmc002mivvmiy389cfp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Less/">Less</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/01/2016-04-01-Css-Flexbox/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Flexbox
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/15/2016-03-15-Google-plugin-develop/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">谷歌插件开发总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-2016-03-21-CSS-模块化管理工具-Less-Sass" data-title="css 模块化管理工具总结" data-url="http://dukegod.github.io/2016/03/20/2016-03-21-CSS-模块化管理工具-Less-Sass/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'stackcode'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Less/">Less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.45px;">App</a> <a href="/tags/CSS/" style="font-size: 17.27px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.73px;">Git</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Google/" style="font-size: 12.73px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.82px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.82px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.64px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.82px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 10.91px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 14.55px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.82px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.45px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.82px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.73px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10.91px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.09px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.64px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.36px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.82px;">转载翻译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/05/2017-03-05-Hack-Safari-Date/">修复Safari 时间显示问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/03/2017-03-03-Node-should-know/">node开发应该知道的知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 liu hui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <div id="link">
+  	<a href="https://github.com/dukegod">Github</a>
+  	<a href="https://www.zhihu.com/people/dukegod">知</a>
+  	<a href="https://www.quora.com/profile/Hui-Liu-37">Quora</a>
+  	<a href="https://twitter.com/dukegod1991">Twitter</a>
+  	<a href="https://www.facebook.com/profile.php?id=100009852840417">Facebook</a>
+    <p style="margin-top:10px">
+      <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </p>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about.html" class="mobile-nav-link">About</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
