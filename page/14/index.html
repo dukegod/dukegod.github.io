@@ -64,60 +64,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2016-01-25-Node-版本管理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/25/2016-01-25-Node-版本管理/" class="article-date">
-  <time datetime="2016-01-24T16:00:00.000Z" itemprop="datePublished">2016-01-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/25/2016-01-25-Node-版本管理/">node 版本管理工具</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>nvm主要用来管理node各个版本的工具。</p>
-<h2 id="node版本管理工具"><a href="#node版本管理工具" class="headerlink" title="node版本管理工具"></a>node版本管理工具</h2><p>在使用各种node管理工具的时候，可以试着把自己本地默认安装的node删除，然后根据不同的版本去安装不同的包文件。</p>
-<figure class="highlight crystal"><table><tr><td class="code"><pre><div class="line"><span class="comment">#查看已经安装在全局的模块，以便删除这些全局模块后再按照不同的 node 版本重新进行全局安装</span></div><div class="line">npm ls -g --depth=<span class="number">0</span></div><div class="line"><span class="comment">#删除全局 node_modules 目录</span></div><div class="line">sudo rm -rf /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">node_modules</span></span></div><div class="line"><span class="comment">#删除 node</span></div><div class="line">sudo rm /usr/local/bin/node</div><div class="line"><span class="comment">#删除全局 node 模块注册的软链</span></div><div class="line">cd  /usr/local/bin &amp;&amp; ls -l | grep <span class="string">"../lib/node_modules/"</span> | awk <span class="string">'&#123;print $9&#125;'</span>| xargs rm</div></pre></td></tr></table></figure>
-<h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>可以用tj大牛的n去管理node各个版本。</p>
-<p>具体查看<a href="https://github.com/tj/n" target="_blank" rel="external">github n</a></p>
-<h3 id="brew-install-node-版本"><a href="#brew-install-node-版本" class="headerlink" title="brew install node 版本"></a>brew install node 版本</h3><p>也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">brew <span class="keyword">install</span> **</div><div class="line"></div><div class="line"># node 环境变量修改</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">PATH</span>=/usr/<span class="keyword">local</span>/Cellar/node/<span class="number">6.1</span><span class="number">.0</span>/<span class="keyword">bin</span>:$<span class="keyword">PATH</span></div></pre></td></tr></table></figure>
-<h3 id="用nvm-管理node版本"><a href="#用nvm-管理node版本" class="headerlink" title="用nvm 管理node版本"></a>用nvm 管理node版本</h3><p>这个是我主要介绍的，用n管理不好控制npm版本，直接安装总是需要手动修改环境变量。</p>
-<p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm github地址</a>，你可以通过这个地址，更多的了解nvm</p>
-<p>推荐通过brew安装nvm</p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><div class="line">brew install nvm</div><div class="line"></div><div class="line">// 创建一个目录</div><div class="line">mkdir  ~/.nvm</div><div class="line"></div><div class="line">// 当前用的<span class="keyword">node</span><span class="title">版本</span></div><div class="line">nvm use v6.<span class="number">0.0</span></div><div class="line"></div><div class="line">// 设置全局的<span class="keyword">node</span><span class="title">版本</span></div><div class="line"></div><div class="line">nvm alias defaule system/v6.<span class="number">3.1</span></div><div class="line"></div><div class="line">// 在bash_prifile中添加路径</div><div class="line"></div><div class="line"><span class="comment">#nvm</span></div><div class="line">export <span class="attr">NVM_DIR=</span><span class="string">"$HOME/.nvm"</span></div><div class="line">  . <span class="string">"$(brew --prefix nvm)/nvm.sh"</span></div></pre></td></tr></table></figure>
-<h4 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h4><p>npm 不建议不同的版本使用一套全局的npm modules</p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><div class="line"># 同步安装包（nvm install node --reinstall-packages-<span class="keyword">from</span>=node）</div><div class="line">nvm reinstall-packages</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/" data-id="cizwwucl3000yivvm7j16pp4j" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
-<!--  -->
-<!-- 多说 -->
-
-
-  
     <article id="post-2016-01-22-Ajax-action" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/22/2016-01-22-Ajax-action/" class="article-date">
@@ -150,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22-Ajax-action/" data-id="cizwwucl60010ivvmw23ft5yq" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22-Ajax-action/" data-id="cizy5rdzw000zj2vm6ikbdahm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -200,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/21/2016-01-21-Http-action/" data-id="cizwwucl1000wivvmk6xvzzzo" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/21/2016-01-21-Http-action/" data-id="cizy5rdzt000wj2vmpq1vc24n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -246,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/" data-id="cizwwuckz000tivvmno3488ft" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/" data-id="cizy5rdzr000tj2vmss94evne" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -289,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/19/2016-01-19/" data-id="cizwwucky000rivvm0dr8a1z5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/19/2016-01-19/" data-id="cizy5rdzq000rj2vmskzteory" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
@@ -333,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/18/2016-01-18/" data-id="cizwwuckx000pivvm5t55gy0b" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/18/2016-01-18/" data-id="cizy5rdzp000pj2vmmh80wirb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
@@ -380,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/" data-id="cizwwuckv000nivvmm8skrfzv" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/" data-id="cizy5rdzk000nj2vmqsc0xrl4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -426,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12-App-Scroll-init/" data-id="cizwwucku000livvmtwlbp6zf" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12-App-Scroll-init/" data-id="cizy5rdzh000jj2vmxwvy2zfo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li></ul>
@@ -472,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11-Node-npm/" data-id="cizwwucks000jivvmnlkmfkqw" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11-Node-npm/" data-id="cizy5rdzg000hj2vmwzm8ahcc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Npm/">Npm</a></li></ul>
@@ -530,10 +476,62 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/10/2016-01-10-Font-action/" data-id="cizwwuckq000hivvm5nxu261h" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/10/2016-01-10-Font-action/" data-id="cizy5rdzi000lj2vmr6yuhkge" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Font/">Font</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+
+  
+    <article id="post-2016-01-09-Meta-init" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/09/2016-01-09-Meta-init/" class="article-date">
+  <time datetime="2016-01-08T16:00:00.000Z" itemprop="datePublished">2016-01-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/09/2016-01-09-Meta-init/">移动开发常用的META设置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="共性"><a href="#共性" class="headerlink" title="共性"></a>共性</h2><ol>
+<li>不让页面缩放，变化。</li>
+</ol>
+<figure class="highlight nix"><table><tr><td class="code"><pre><div class="line">&lt;meta <span class="attr">name="viewport"</span> <span class="attr">content="width=device-width,</span> <span class="attr">initial-scale=1,</span> <span class="attr">maximum-scale=1,</span> <span class="attr">user-scalable=no"&gt;</span></div></pre></td></tr></table></figure>
+<p>2 优先使用最新版本 IE 和 Chrome</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><h4 id="1-Meta-之-format-detection"><a href="#1-Meta-之-format-detection" class="headerlink" title="1.   Meta 之 format-detection"></a>1.   Meta 之 format-detection</h4><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”format-detection”</span> <span class="attr">content</span>=<span class="string">”telephone</span>=<span class="string">no”</span> /&gt;</span></div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/09/2016-01-09-Meta-init/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/09/2016-01-09-Meta-init/" data-id="cizy5rdzd000fj2vmlbfpfswl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meta/">Meta</a></li></ul>
 
     </footer>
   </div>
@@ -605,11 +603,11 @@
           </li>
         
           <li>
-            <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
+            <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
           </li>
         
           <li>
-            <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
+            <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
           </li>
         
       </ul>

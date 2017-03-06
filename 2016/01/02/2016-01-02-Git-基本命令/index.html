@@ -13,7 +13,7 @@ git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲�
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="git 命令与相关的操作操作流程每一个提交的时候，先git pull下，以免覆盖其他人的提交信息
 git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲突提交）=》git push">
-<meta property="og:updated_time" content="2017-02-07T07:43:41.000Z">
+<meta property="og:updated_time" content="2017-03-06T13:44:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git git git">
 <meta name="twitter:description" content="git 命令与相关的操作操作流程每一个提交的时候，先git pull下，以免覆盖其他人的提交信息
@@ -108,6 +108,8 @@ git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲�
 <h2 id="git-图形工具"><a href="#git-图形工具" class="headerlink" title="git 图形工具"></a>git 图形工具</h2><p>储存本地信息，不需要每一次提交都要再一次输入的问题</p>
 <figure class="highlight accesslog"><table><tr><td class="code"><pre><div class="line"><span class="string">[user]</span></div><div class="line">	name = ***</div><div class="line"><span class="string">[user]</span></div><div class="line">	email = ***@<span class="number">777</span>.com</div><div class="line"><span class="string">[credential]</span></div><div class="line">	helper = store</div></pre></td></tr></table></figure>
 <h3 id="Mac-sourceTree"><a href="#Mac-sourceTree" class="headerlink" title="Mac sourceTree"></a>Mac sourceTree</h3><p>可以不用注册，有个针对个人开发的，免费用</p>
+<h4 id="修改sourceTree经常需要输入密码的问题"><a href="#修改sourceTree经常需要输入密码的问题" class="headerlink" title="修改sourceTree经常需要输入密码的问题"></a>修改sourceTree经常需要输入密码的问题</h4><p>在设置中=&gt;远程账号=&gt; 最下面的 “编辑配置文件“。添加如下</p>
+<figure class="highlight accesslog"><table><tr><td class="code"><pre><div class="line"><span class="string">[user]</span></div><div class="line">  name = ***</div><div class="line"><span class="string">[user]</span></div><div class="line">  email = ***@<span class="number">777</span>.com</div><div class="line"><span class="string">[credential]</span></div><div class="line">  helper = store</div></pre></td></tr></table></figure>
 <h2 id="github-获取主分支的更新内容"><a href="#github-获取主分支的更新内容" class="headerlink" title="github 获取主分支的更新内容"></a>github 获取主分支的更新内容</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line"><span class="comment">//获取主分支的</span></div><div class="line">git remote -v</div><div class="line"></div><div class="line">JacksonTian	<span class="string">https:</span><span class="comment">//github.com/JacksonTian/fks.git (fetch)</span></div><div class="line">JacksonTian	<span class="string">https:</span><span class="comment">//github.com/JacksonTian/fks.git (push)</span></div><div class="line">origin	<span class="string">https:</span><span class="comment">//github.com/dukegod/fks.git (fetch)</span></div><div class="line">origin	<span class="string">https:</span><span class="comment">//github.com/dukegod/fks.git (push)</span></div><div class="line"></div><div class="line"><span class="comment">// next</span></div><div class="line">git fetch <span class="string">https:</span><span class="comment">//github.com/JacksonTian/fks.git</span></div><div class="line"></div><div class="line"><span class="comment">//next</span></div><div class="line">git merge JacksonTian/master</div><div class="line"></div><div class="line"><span class="comment">//next</span></div><div class="line"></div><div class="line">git push</div></pre></td></tr></table></figure>
 <h2 id="Mac-下配置全局的-gitignore-global"><a href="#Mac-下配置全局的-gitignore-global" class="headerlink" title="Mac 下配置全局的 .gitignore_global"></a>Mac 下配置全局的 .gitignore_global</h2><p>用来去除mac下一些自己不想提交的东西，省的每一次在.gitignore中写一顿东西;</p>
 <p>配置一个.gitignore_global放在用户目录下：cd ~;</p>
@@ -116,7 +118,7 @@ git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/02/2016-01-02-Git-基本命令/" data-id="cizwwuck60003ivvm3p0083x9" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/02/2016-01-02-Git-基本命令/" data-id="cizy5rdyn0002j2vmfrkpbz9b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -224,11 +226,11 @@ git commit =》 git pull =》 git 解决是否有冲突 =》git commit（有冲�
           </li>
         
           <li>
-            <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
+            <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
           </li>
         
           <li>
-            <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
+            <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
           </li>
         
       </ul>
