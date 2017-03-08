@@ -64,6 +64,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-07-02-开发工具-模块加载-Webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/02/2016-07-02-开发工具-模块加载-Webpack/" class="article-date">
+  <time datetime="2016-07-01T16:00:00.000Z" itemprop="datePublished">2016-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/02/2016-07-02-开发工具-模块加载-Webpack/">webpack 配置与用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端模块要在客户端中执行，所以他们需要增量加载到浏览器中。</p>
+<p>模块的加载和传输，我们首先能想到两种极端的方式，一种是每个模块文件都单独请求，另一种是把所有模块打包成一个文件然后只请求一次。显而易见，每个模块都发起单独的请求造成了请求次数过多，导致应用启动速度慢；一次请求加载所有模块导致流量浪费、初始化过程慢。这两种方式都不是好的解决方案，它们过于简单粗暴。</p>
+<p><strong>分块传输</strong>，按需进行懒加载，在实际用到某些模块的时候再增量更新，才是较为合理的模块加载方案。</p>
+<p>要实现模块的按需加载，就需要一个对整个代码库中的模块进行静态分析、编译打包的过程。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/02/2016-07-02-开发工具-模块加载-Webpack/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/07/02/2016-07-02-开发工具-模块加载-Webpack/" data-id="cj01j7mkh0052wavmsyt6o0y3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+
+  
     <article id="post-2016-07-01-React-intro" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/01/2016-07-01-React-intro/" class="article-date">
@@ -97,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/07/01/2016-07-01-React-intro/" data-id="cizy5re26004yj2vmfz3pnku2" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/07/01/2016-07-01-React-intro/" data-id="cj01j7mke004vwavmuv4q11lj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -155,54 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-22-开发规范-目录/" data-id="cizy5re24004qj2vm19f4scy7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
-<!--  -->
-<!-- 多说 -->
-
-
-  
-    <article id="post-2016-06-23-开发规范-jshint" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/22/2016-06-23-开发规范-jshint/" class="article-date">
-  <time datetime="2016-06-21T16:00:00.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/22/2016-06-23-开发规范-jshint/">项目开发规范之jshint</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>项目中配置.jshintrc<br>可以在全局环境中配置.jshint.json</p>
-<p>主要是一些jshint本地配置的说明</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/22/2016-06-23-开发规范-jshint/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-23-开发规范-jshint/" data-id="cizy5re26004vj2vmw0afk96w" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-22-开发规范-目录/" data-id="cj01j7mka004nwavmftgc8ubp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
@@ -249,7 +251,54 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-24-开发规范-Eshint/" data-id="cizy5re25004tj2vmhg9a9ec0" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-24-开发规范-Eshint/" data-id="cj01j7mkd004swavmcojiiblz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+
+  
+    <article id="post-2016-06-23-开发规范-jshint" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/22/2016-06-23-开发规范-jshint/" class="article-date">
+  <time datetime="2016-06-21T16:00:00.000Z" itemprop="datePublished">2016-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/22/2016-06-23-开发规范-jshint/">项目开发规范之jshint</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>项目中配置.jshintrc<br>可以在全局环境中配置.jshint.json</p>
+<p>主要是一些jshint本地配置的说明</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/22/2016-06-23-开发规范-jshint/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/06/22/2016-06-23-开发规范-jshint/" data-id="cj01j7mkc004qwavmbvr5xk50" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
@@ -296,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/20/2016-06-21-开发规范-编写可维护的JavaScript/" data-id="cizy5re22004oj2vmtzf56b07" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/20/2016-06-21-开发规范-编写可维护的JavaScript/" data-id="cj01j7mk7004lwavmltjzn3ir" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
@@ -354,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/20/2016-06-20-开发规范/" data-id="cizy5re20004lj2vmcub1ef5z" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/20/2016-06-20-开发规范/" data-id="cj01j7mk7004iwavm6i9y6jdv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发规范/">开发规范</a></li></ul>
@@ -398,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/10/2016-06-10-Shell进阶/" data-id="cizy5re1z004jj2vmbwzt6bde" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/10/2016-06-10-Shell进阶/" data-id="cj01j7mk6004gwavmik8xo9yt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -445,7 +494,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/09/2016-06-09-Shell基础/" data-id="cizy5re1z004gj2vmzb0bg2pl" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/09/2016-06-09-Shell基础/" data-id="cj01j7mk5004dwavm9vxljq49" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -496,56 +545,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/06/2016-06-06-MAC配置-c超屌的软件/" data-id="cizy5re1x004cj2vmkmgya3t8" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/06/2016-06-06-MAC配置-c超屌的软件/" data-id="cj01j7mk4004bwavmgj84tz1e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
-<!--  -->
-<!-- 多说 -->
-
-
-  
-    <article id="post-2016-06-05-MAC配置-vim" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/05/2016-06-05-MAC配置-vim/" class="article-date">
-  <time datetime="2016-06-04T16:00:00.000Z" itemprop="datePublished">2016-06-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/05/2016-06-05-MAC配置-vim/">vim 总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在终端，我们经常使用的文本编辑器就是Vim。对于新手简直头痛，慢慢解决它。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/05/2016-06-05-MAC配置-vim/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/05/2016-06-05-MAC配置-vim/" data-id="cizy5re1y004ej2vm11qc6imo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
 
     </footer>
   </div>
@@ -605,6 +608,10 @@
       <ul>
         
           <li>
+            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
+          </li>
+        
+          <li>
             <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
           </li>
         
@@ -618,10 +625,6 @@
         
           <li>
             <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
           </li>
         
       </ul>
