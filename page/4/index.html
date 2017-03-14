@@ -64,6 +64,121 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-11-11-Vue-进阶" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/11/2016-11-11-Vue-进阶/" class="article-date">
+  <time datetime="2016-11-10T16:00:00.000Z" itemprop="datePublished">2016-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/11/2016-11-11-Vue-进阶/">Vue1.0 进阶</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight less"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">new</span> <span class="selector-tag">Vue</span>(&#123;</div><div class="line">	<span class="attribute">el</span>:<span class="string">'#app'</span>,</div><div class="line">	<span class="attribute">template</span>:<span class="string">''</span>,</div><div class="line">	<span class="attribute">created</span>:function()&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">ready</span>:function()&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">computed</span>:&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">conponents</span>:&#123;</div><div class="line">		hello</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">data</span>:&#123;</div><div class="line">		<span class="attribute">msg </span>: <span class="string">'hello '</span></div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">method</span>:&#123;&#125;,</div><div class="line">	<span class="attribute">watch</span>:&#123;</div><div class="line">		<span class="attribute">msg</span>:function(value,oldValue)&#123;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"> &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<ul>
+<li>method: 对象类型，常用方法储存地点</li>
+<li>watch: 对象类型，监听数据变化</li>
+<li>computed: 对象类型</li>
+<li><p>components</p>
+<ul>
+<li><p>必须先在components中引用，然后在template中引用，或者在html中引用。</p>
+ <figure class="highlight gauss"><table><tr><td class="code"><pre><div class="line">	<span class="comment">// 1</span></div><div class="line">	<span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: '<span class="meta">#app',</span></div><div class="line">    template: '&lt;div&gt;&lt;components-<span class="built_in">header</span>&gt;&lt;/components-<span class="built_in">header</span>&gt;&lt;/div&gt;',</div><div class="line">    components:&#123;</div><div class="line">      components-<span class="built_in">header</span></div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">);</div><div class="line"><span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: '<span class="meta">#app',</span></div><div class="line">    components:&#123;</div><div class="line">      components-<span class="built_in">header</span></div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">);</div><div class="line"><span class="comment">// html 中引用</span></div><div class="line">&lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">   &lt;componentsheader&gt;&lt;/componentsheader&gt;</div><div class="line"> 	&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>组件文件(myCom.vue)命名用可以<strong>驼峰命名法</strong>,引用的组件名字<strong>必须用全小写的形式,并且需要把大写转为下划线加上对应大写的小写</strong></p>
+ <figure class="highlight dts"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 组件</span></div><div class="line">comA</div><div class="line"><span class="comment">// 转为</span></div><div class="line"><span class="params">&lt;com-a&gt;</span><span class="params">&lt;com-a/&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>name 必须是全小写</p>
+</li>
+<li>组件命名禁止使用vue内置的属性或者保留的html标签</li>
+<li>组件应用可以用<hello></hello>或者<hello></hello></li>
+<li>每一个组件外面都要嵌套一个div(<div><hello></hello></div>)</li>
+<li><p>组件通讯，父类向子类传递数据，需要通过props获取,或者this.$broadcast()</p>
+ <figure class="highlight dust"><table><tr><td class="code"><pre><div class="line"><span class="xml">	// 父类模板,绑定 father</span></div><div class="line">	<span class="tag">&lt;<span class="name">temp-footer</span> <span class="attr">:father</span>=<span class="string">"fatherfooter"</span>&gt;</span><span class="tag">&lt;/<span class="name">temp-footer</span>&gt;</span></div><div class="line">	data()<span class="template-variable">&#123;</span></div><div class="line">     return &#123;</div><div class="line">       msg: '',</div><div class="line">       fatherfooter:'father msg',</div><div class="line">   &#125;<span class="xml">,</span></div><div class="line">	// 子类获取绑定的props:father</div><div class="line">	<span class="tag">&lt;<span class="name">template</span> <span class="attr">lang</span>=<span class="string">"html"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></div><div class="line">    <span class="template-tag">&#123;/&#123;<span class="name">fTitle</span>&#125;</span><span class="xml">/&#125;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="template-tag">&#123;/&#123;<span class="name">father</span>&#125;</span><span class="xml">/&#125;<span class="tag">&lt;<span class="name">span</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="template-variable">&#123;</span></div><div class="line">    data()&#123;</div><div class="line">      return &#123;</div><div class="line">        fTitle:'this is my footer!!!!'</div><div class="line">      &#125;<span class="xml"><span class="actionscript"></span></span></div><div class="line">    &#125;,</div><div class="line">    props:[<span class="string">'father'</span>]</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>子类像父类通讯，需要事件绑定，父类添加一个方法，一个数据类型，子类可以用$emit()或者用this.$dispatch().    一定要<strong>注意写在组件中方法名字，是不是全小写，或者驼峰</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/" data-id="cj09ms176007sczvmwfsm923z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+
+  
+    <article id="post-2016-11-10-Vue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/10/2016-11-10-Vue/" class="article-date">
+  <time datetime="2016-11-09T16:00:00.000Z" itemprop="datePublished">2016-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/10/2016-11-10-Vue/">Vue1.0总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>社区活跃，上手快，文档齐全。</p>
+<p>组件化方便</p>
+<p>支持css,less,sass</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/11/10/2016-11-10-Vue/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/" data-id="cj09ms17d007xczvmlzj6wkrq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+
+  
     <article id="post-2016-11-05-Node-Buffer" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/05/2016-11-05-Node-Buffer/" class="article-date">
@@ -92,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/" data-id="cj01javtf007s1evm9ibeh9eh" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/" data-id="cj09ms174007nczvm91lusjub" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
@@ -135,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/" data-id="cj01javte007q1evmjn2fip8e" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/" data-id="cj09ms17c007uczvmqygi8rq4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
@@ -180,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/" data-id="cj01javtd007n1evm7qyyy2n6" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/" data-id="cj09ms171007gczvmrhupwoa2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
@@ -226,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/02/2016-11-02-iPhone手机找回/" data-id="cj01javtc007l1evmtg0v95d5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/02/2016-11-02-iPhone手机找回/" data-id="cj09ms173007kczvmvbtk6ls4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
@@ -281,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/30/2016-10-30-Node-概括/" data-id="cj01javtb007j1evmx20jlowu" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/10/30/2016-10-30-Node-概括/" data-id="cj09ms172007iczvm0zwyuwjw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
@@ -332,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/29/2016-10-29-Node-module/" data-id="cj01javta007g1evm7apnv830" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/10/29/2016-10-29-Node-module/" data-id="cj09ms170007dczvmxoaynk79" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
@@ -378,7 +493,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/28/2016-10-28-Node_DEV/" data-id="cj01javt9007e1evmrfmiw756" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/10/28/2016-10-28-Node_DEV/" data-id="cj09ms16z007bczvm6i7keeug" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
@@ -420,97 +535,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/20/2016-10-20-旅游游玩/" data-id="cj01javt9007b1evmgxokxus7" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/10/20/2016-10-20-旅游游玩/" data-id="cj09ms16y0078czvmef7x9wjs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
-<!--  -->
-<!-- 多说 -->
-
-
-  
-    <article id="post-2016-09-25-云南游玩" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/25/2016-09-25-云南游玩/" class="article-date">
-  <time datetime="2016-09-24T16:00:00.000Z" itemprop="datePublished">2016-09-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/25/2016-09-25-云南游玩/">彩云之南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>从28号开始准备！！！</p>
-<p>10月2号就开始有点激动</p>
-<p>10月3号，更加的激动</p>
-<p>10月 7好开始出去旅游</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/25/2016-09-25-云南游玩/" data-id="cj01javt800791evmmkmugucq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
-<!--  -->
-<!-- 多说 -->
-
-
-  
-    <article id="post-2016-09-23-Echo-图片懒加载" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/23/2016-09-23-Echo-图片懒加载/" class="article-date">
-  <time datetime="2016-09-22T16:00:00.000Z" itemprop="datePublished">2016-09-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/23/2016-09-23-Echo-图片懒加载/">图片懒加载</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://toddmotto.com/labs/echo/" target="_blank" rel="external">官网</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/23/2016-09-23-Echo-图片懒加载/" data-id="cj01javt700761evmkqwxx87n" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -525,7 +553,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -570,11 +598,15 @@
       <ul>
         
           <li>
-            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
+            <a href="/2017/03/14/2017-03-14-Charles/">Charles 配置笔记</a>
           </li>
         
           <li>
             <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
           </li>
         
           <li>
@@ -583,10 +615,6 @@
         
           <li>
             <a href="/2017/03/03/2017-03-03-Node-should-know/">node开发应该知道的知识点</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
           </li>
         
       </ul>
