@@ -64,6 +64,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-02-11-Javascript-类型检测" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/11/2016-02-11-Javascript-类型检测/" class="article-date">
+  <time datetime="2016-02-10T16:00:00.000Z" itemprop="datePublished">2016-02-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/11/2016-02-11-Javascript-类型检测/">类型检测</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="避免空比较"><a href="#避免空比较" class="headerlink" title="避免空比较"></a>避免空比较</h3><p>null不作为检测对象，如果需要检测使用===，与！==检测</p>
+<h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><p>基本类型的检测：string，number，boolean，undefined, Symbol</p>
+<p>函数检测: 最好的方法就是使用typeof，可以跨帧（frame）使用</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="number">11</span>));</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="literal">false</span>));</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(<span class="string">'aiiai'</span>));</div><div class="line"><span class="keyword">var</span> i;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(i));</div><div class="line"><span class="keyword">var</span> sy = <span class="built_in">Symbol</span>();</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(sy));</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">typeType</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(typeType));</div><div class="line"></div><div class="line"><span class="comment">// output:</span></div><div class="line"></div><div class="line"><span class="comment">// number</span></div><div class="line"><span class="comment">// boolean</span></div><div class="line"><span class="comment">// string</span></div><div class="line"><span class="comment">// undefined</span></div><div class="line"><span class="comment">// symbol</span></div><div class="line"><span class="comment">// function</span></div></pre></td></tr></table></figure>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>typeof用来检测基本类型可以，检测引用值有点力不从心。好多类型都会报出为object。</p>
+<h4 id="检测引用类型"><a href="#检测引用类型" class="headerlink" title="检测引用类型"></a>检测引用类型</h4><p>检测常见的引用类型</p>
+<figure class="highlight qml"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(&#123;&#125; <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</div><div class="line"><span class="built_in">console</span>.log([] <span class="keyword">instanceof</span> <span class="built_in">Array</span>);</div><div class="line"><span class="built_in">var</span> <span class="built_in">date</span> = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">date</span> <span class="keyword">instanceof</span> <span class="built_in">Date</span>);</div></pre></td></tr></table></figure>
+<h4 id="检测原型"><a href="#检测原型" class="headerlink" title="检测原型"></a>检测原型</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> Person);</div><div class="line"><span class="built_in">console</span>.log(Person.prototype);</div><div class="line"><span class="built_in">console</span>.log(Person.constructor === <span class="built_in">Function</span>); <span class="comment">// 构造函数的constructor指向Function</span></div><div class="line"><span class="built_in">console</span>.log(p.constructor === Person); <span class="comment">// 实例函数的constructor指向构造函数</span></div><div class="line"><span class="built_in">console</span>.log(p.prototype);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Child'</span>);</div><div class="line"><span class="keyword">var</span> Child = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Child.prototype = Person.prototype; <span class="comment">// 继承Person</span></div><div class="line">Child.prototype.constructor = Child; <span class="comment">// 实例对象constructor重新指向Child</span></div><div class="line"><span class="keyword">var</span> ch = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(ch <span class="keyword">instanceof</span> Child);</div><div class="line"><span class="built_in">console</span>.log(Child.prototype);</div><div class="line"><span class="built_in">console</span>.log(Child.constructor === <span class="built_in">Function</span>);</div><div class="line"><span class="built_in">console</span>.log(ch.constructor === Person);</div><div class="line"><span class="built_in">console</span>.log(ch.constructor === Child);</div><div class="line"><span class="built_in">console</span>.log(ch.prototype);</div></pre></td></tr></table></figure>
+<h3 id="in-hasOwnProperty"><a href="#in-hasOwnProperty" class="headerlink" title="in / hasOwnProperty()"></a>in / hasOwnProperty()</h3><p>检测对象属性的判断</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="attr">title</span>: <span class="string">'lh'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="string">'title'</span> <span class="keyword">in</span> obj)&#123;</div><div class="line">  <span class="built_in">console</span>.log(obj.title);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(obj.hasOwnProperty(<span class="string">'title'</span>)) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h3><p>终极方法，toString是object原型对象上一个方法，放回其调用者具体的类型。</p>
+<figure class="highlight elm"><table><tr><td class="code"><pre><div class="line"><span class="title">function</span> isType(e)&#123;</div><div class="line">  console.log(<span class="type">Object</span>.proto<span class="keyword">type</span>.toString.call(e).split(' ')[1].slice(0,-1).toLocaleLowerCase());</div><div class="line">  return <span class="type">Object</span>.proto<span class="keyword">type</span>.toString.call(e).split(' ')[1].slice(0,-1).toLocaleLowerCase();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/11/2016-02-11-Javascript-类型检测/" data-id="cj0f7wtvu001uk9vmgxv7czud" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+<!--  -->
+<!-- 多说 -->
+
+
+  
     <article id="post-2016-02-10-Javascript-堆栈队列操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" class="article-date">
@@ -91,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" data-id="cj0axvc22001u9wvmgicppyn2" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/10/2016-02-10-Javascript-堆栈队列操作/" data-id="cj0f7wtvt001rk9vmi4aipj0q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -133,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/" data-id="cj0axvc1v001m9wvm226p375f" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/09/2016-02-09-Javascript-内存分配/" data-id="cj0f7wtvq001pk9vmpg0hfuku" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -178,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="cj0axvc1t001k9wvmygbzmrmf" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="cj0f7wtvl001kk9vmdgt8izjd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -259,7 +312,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/" data-id="cj0axvc20001r9wvmmub61oq4" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/07/2016-02-07-Javascript-作用域与上下文/" data-id="cj0f7wtvo001mk9vm3loz8h94" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
@@ -303,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/" data-id="cj0axvc1p001f9wvmv4jg3n1i" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/06/2016-02-06-Jquery-on/" data-id="cj0f7wtvg001dk9vm7vc9sn0c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -355,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/05/2016-02-05-MAC外接机械键盘/" data-id="cj0axvc1q001i9wvm4bziy87e" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/05/2016-02-05-MAC外接机械键盘/" data-id="cj0f7wtvi001hk9vm9hqybsno" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
@@ -396,7 +449,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/04/2016-02-04-li不换行/" data-id="cj0axvc1n001a9wvmgk0kx5qq" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/04/2016-02-04-li不换行/" data-id="cj0f7wtve001ak9vmg8c4a1m9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -446,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/03/2016-02-03-微信晃动/" data-id="cj0axvc1o001d9wvm83vjjknv" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/03/2016-02-03-微信晃动/" data-id="cj0f7wtvh001fk9vm0ni3x4p9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meta/">Meta</a></li></ul>
@@ -494,55 +547,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/02/2016-02-02-Css-样式居中/" data-id="cj0axvc1m00189wvm95z1lcu6" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/02/2016-02-02-Css-样式居中/" data-id="cj0f7wtva0015k9vmotvrp6io" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
-<!--  -->
-<!-- 多说 -->
-
-
-  
-    <article id="post-2016-02-01-Zepto-option-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/01/2016-02-01-Zepto-option-init/" class="article-date">
-  <time datetime="2016-01-31T16:00:00.000Z" itemprop="datePublished">2016-02-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/01/2016-02-01-Zepto-option-init/">zepto中操作option</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>zepto中操作option不能直接使用$(‘option:selected’)。</p>
-<p>需要使用$(‘option:checked’)代替</p>
-<p>或者使用如下代码</p>
-<pre><code>$(&apos;option&apos;).not(function(){ return !this.selected })
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option-init/" data-id="cj0axvc1k00169wvmxlm26jsq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li></ul>
 
     </footer>
   </div>
@@ -570,7 +578,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Less/">Less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Less/">Less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Npm/">Npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
     </div>
   </div>
 
@@ -580,7 +588,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.45px;">App</a> <a href="/tags/CSS/" style="font-size: 17.27px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.73px;">Git</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Google/" style="font-size: 12.73px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.82px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.82px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.64px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.82px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 10.91px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 14.55px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.82px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.45px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.82px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.73px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10.91px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.09px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.64px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.36px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.82px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.45px;">App</a> <a href="/tags/CSS/" style="font-size: 17.27px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.73px;">Git</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Google/" style="font-size: 12.73px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.82px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.82px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.64px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.82px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 10.91px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.18px;">Node</a> <a href="/tags/Npm/" style="font-size: 10px;">Npm</a> <a href="/tags/React/" style="font-size: 14.55px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.82px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.45px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.82px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.73px;">jQuery</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/openResty/" style="font-size: 10.91px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.09px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.64px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.36px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 11.82px;">转载翻译</a>
     </div>
   </div>
 
@@ -602,6 +610,10 @@
       <ul>
         
           <li>
+            <a href="/2017/03/18/2017-03-18-Node-Redis/">Redis</a>
+          </li>
+        
+          <li>
             <a href="/2017/03/14/2017-03-14-Charles/">Charles 配置笔记</a>
           </li>
         
@@ -615,10 +627,6 @@
         
           <li>
             <a href="/2017/03/05/2017-03-05-Hack-Safari-Date/">修复Safari 时间显示问题</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/03/2017-03-03-Node-should-know/">node开发应该知道的知识点</a>
           </li>
         
       </ul>
