@@ -6,7 +6,7 @@
   <title>node中buffer与stream的区别 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="buffer:
-为数据缓冲对象，是一个类似数组结构的对象，可以通过指定开始写入的位置及写入的数据长度，往其中写入二进制数据
+为数据缓2冲对象，是一个类似数组结构的对象，可以通过指定开始写入的位置及写入的数据长度，往其中写入二进制数据
 stream:
 是对buffer对象的高级封装，其操作的底层还是buffer对象，stream可以设置为可读、可写，或者即可读也可写，在nodejs中继承了EventEmitter接口，可以监听读入、写入的过程。具体实现有文件流，httpresponse等~~">
 <meta property="og:type" content="article">
@@ -14,14 +14,14 @@ stream:
 <meta property="og:url" content="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="buffer:
-为数据缓冲对象，是一个类似数组结构的对象，可以通过指定开始写入的位置及写入的数据长度，往其中写入二进制数据
+为数据缓2冲对象，是一个类似数组结构的对象，可以通过指定开始写入的位置及写入的数据长度，往其中写入二进制数据
 stream:
 是对buffer对象的高级封装，其操作的底层还是buffer对象，stream可以设置为可读、可写，或者即可读也可写，在nodejs中继承了EventEmitter接口，可以监听读入、写入的过程。具体实现有文件流，httpresponse等~~">
-<meta property="og:updated_time" content="2016-11-23T03:13:36.000Z">
+<meta property="og:updated_time" content="2017-03-21T06:28:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node中buffer与stream的区别">
 <meta name="twitter:description" content="buffer:
-为数据缓冲对象，是一个类似数组结构的对象，可以通过指定开始写入的位置及写入的数据长度，往其中写入二进制数据
+为数据缓2冲对象，是一个类似数组结构的对象，可以通过指定开始写入的位置及写入的数据长度，往其中写入二进制数据
 stream:
 是对buffer对象的高级封装，其操作的底层还是buffer对象，stream可以设置为可读、可写，或者即可读也可写，在nodejs中继承了EventEmitter接口，可以监听读入、写入的过程。具体实现有文件流，httpresponse等~~">
   
@@ -95,14 +95,16 @@ stream:
     <div class="article-entry" itemprop="articleBody">
       
         <p>buffer:</p>
-<p>为数据缓冲对象，是一个类似数组结构的对象，可以通过指定开始写入的位置及写入的数据长度，往其中写入二进制数据</p>
+<p>为数据缓2冲对象，是一个类似数组结构的对象，可以通过指定开始写入的位置及写入的数据长度，往其中写入二进制数据</p>
 <p>stream:</p>
 <p>是对buffer对象的高级封装，其操作的底层还是buffer对象，stream可以设置为可读、可写，或者即可读也可写，在nodejs中继承了EventEmitter接口，可以监听读入、写入的过程。具体实现有文件流，httpresponse等~~</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/" data-id="cj0gcj2tb007of7vm8wi0ugcd" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/" data-id="cj0nfbwft007nu8vmu6962oth" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
@@ -133,28 +135,17 @@ stream:
   
 </article>
 <!-- disqus -->
-<!--  -->
-<!-- 多说 -->
 
-  <section id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-2016-11-03-Node-buffer-stream" data-title="node中buffer与stream的区别" data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'stackcode'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-  </section>
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
 </section>
         
           <aside id="sidebar">
@@ -263,6 +254,20 @@ stream:
   
 </nav>
     
+<script>
+  var disqus_shortname = 'dukehui1991';
+  
+  var disqus_url = 'http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
