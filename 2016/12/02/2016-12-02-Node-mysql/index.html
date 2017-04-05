@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="很早以前就应该做这个总结了，一直没有时间，一直拖到现在才开始真正的着手处理这件事情。mysql的一些操作就不做出说明了，看看相关的书籍就可以了。  
 本文主要说明下，安装，链接，简单运用。">
-<meta property="og:updated_time" content="2016-12-26T07:37:16.000Z">
+<meta property="og:updated_time" content="2017-03-27T08:11:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node中使用mysql数据库">
 <meta name="twitter:description" content="很早以前就应该做这个总结了，一直没有时间，一直拖到现在才开始真正的着手处理这件事情。mysql的一些操作就不做出说明了，看看相关的书籍就可以了。  
@@ -103,12 +103,24 @@
 <li><p><a href="http://www.lai18.com/content/8651784.html" target="_blank" rel="external">修改密码过期：如下</a></p>
 </li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">最近安装mySQL5.7.9，发现安装完后会自动生成一个随机密码，然后用sql工具登录，发现这个密码已经过期了，不能登录。</div><div class="line"></div><div class="line">终于解决好了，这里分享下处理步骤：</div><div class="line"></div><div class="line">1.先关闭mysql服务；</div><div class="line"></div><div class="line">2.进入终端，输入指令：cd /usr/local/mysql/bin/，进入安装目录；</div><div class="line"></div><div class="line">3.输入指令：sudo su，切换到root用户；</div><div class="line"></div><div class="line">4.输入指令：./mysqld_safe <span class="comment">--skip-grant-tables &amp;，禁止mysql验证功能。此时mysql服务会自动重启了；</span></div><div class="line">5. 用工具（比如Sequal Pro）登录mySQL。配置的时候，只配用户名为root，密码不配。</div><div class="line">6. 登录进去以后，数据库选择mysql，修改user表下用户名为root的那条记录，将password_expired设为N。这样随机密码就有效了，可以用密码登录了。</div><div class="line"></div><div class="line">如果希望修改root密码，则在登录mysql后，执行下面两条sql即可：</div><div class="line"></div><div class="line"><span class="keyword">update</span> mysql.user <span class="keyword">set</span> authentication_string=<span class="keyword">password</span>(<span class="string">'123456'</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span> <span class="keyword">and</span> Host = <span class="string">'localhost'</span>;</div><div class="line"></div><div class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</div></pre></td></tr></table></figure>
+<p>最近安装mySQL5.7.9，发现安装完后会自动生成一个随机密码，然后用sql工具登录，发现这个密码已经过期了，不能登录。</p>
+<p>终于解决好了，这里分享下处理步骤：</p>
+<p>1.先关闭mysql服务；</p>
+<p>2.进入终端，输入指令：cd /usr/local/mysql/bin/，进入安装目录；</p>
+<p>3.输入指令：sudo su，切换到root用户；</p>
+<p>4.输入指令：./mysqld_safe –skip-grant-tables &amp;，禁止mysql验证功能。此时mysql服务会自动重启了；</p>
+<ol>
+<li><p>用工具（比如Sequal Pro）登录mySQL。配置的时候，只配用户名为root，密码不配。</p>
+</li>
+<li><p>登录进去以后，数据库选择mysql，修改user表下用户名为root的那条记录，将password_expired设为N。这样随机密码就有效了，可以用密码登录了。</p>
+</li>
+</ol>
+<h5 id="如果希望修改root密码，则在登录mysql后，执行下面两条sql即可："><a href="#如果希望修改root密码，则在登录mysql后，执行下面两条sql即可：" class="headerlink" title="如果希望修改root密码，则在登录mysql后，执行下面两条sql即可："></a>如果希望修改root密码，则在登录mysql后，执行下面两条sql即可：</h5><figure class="highlight sql"><table><tr><td class="code"><pre><div class="line"><span class="keyword">update</span> mysql.user <span class="keyword">set</span> authentication_string=<span class="keyword">password</span>(<span class="string">'123456'</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span> <span class="keyword">and</span> Host = <span class="string">'localhost'</span>;</div><div class="line"></div><div class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</div><div class="line"></div><div class="line">// 或者</div><div class="line"></div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'MyNewPass'</span></div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cj0nfbwg4008hu8vmhduknvhm" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cj14e1whj008g3nvmptt8guxc" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -207,11 +219,11 @@
           </li>
         
           <li>
-            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
+            <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
           </li>
         
           <li>
-            <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
+            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
           </li>
         
       </ul>

@@ -14,7 +14,8 @@ option + esc : 开始朗读信息
 fn + fn : 开始听写
 CMD + i ： 修改权限
 cmd + up/down 返回上一级和进入文件
-Command +Option+V ： 实现剪切">
+Command +Option+V ： 实现剪切
+Command + shift + .">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MAC配置">
 <meta property="og:url" content="http://dukegod.github.io/2016/06/02/2016-06-02-MAC配置-mac/index.html">
@@ -28,8 +29,9 @@ option + esc : 开始朗读信息
 fn + fn : 开始听写
 CMD + i ： 修改权限
 cmd + up/down 返回上一级和进入文件
-Command +Option+V ： 实现剪切">
-<meta property="og:updated_time" content="2017-03-01T04:57:17.000Z">
+Command +Option+V ： 实现剪切
+Command + shift + .">
+<meta property="og:updated_time" content="2017-04-05T02:59:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAC配置">
 <meta name="twitter:description" content="mac 下一些快捷的操作习惯
@@ -41,7 +43,8 @@ option + esc : 开始朗读信息
 fn + fn : 开始听写
 CMD + i ： 修改权限
 cmd + up/down 返回上一级和进入文件
-Command +Option+V ： 实现剪切">
+Command +Option+V ： 实现剪切
+Command + shift + .">
   
   
     <link rel="icon" href="/favicon.png">
@@ -122,29 +125,30 @@ Command +Option+V ： 实现剪切">
 <li>CMD + i ： 修改权限</li>
 <li>cmd + up/down 返回上一级和进入文件</li>
 <li>Command +Option+V ： 实现剪切</li>
+<li>Command + shift + . : 打开隐藏文件</li>
 </ul>
 <a id="more"></a>
-<h2 id="在终端下使用下面的命令可以关闭dashboard"><a href="#在终端下使用下面的命令可以关闭dashboard" class="headerlink" title="在终端下使用下面的命令可以关闭dashboard"></a>在终端下使用下面的命令可以关闭dashboard</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.dashboard</span> mcx-disabled -boolean YES &amp;&amp; killall Dock</div><div class="line"><span class="comment">//当然要恢复也很方便</span></div><div class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.dashboard</span> mcx-disabled -boolean NO &amp;&amp; killall Dock</div></pre></td></tr></table></figure>
-<h2 id="在Finder中显示文件完整路径"><a href="#在Finder中显示文件完整路径" class="headerlink" title="在Finder中显示文件完整路径"></a>在Finder中显示文件完整路径</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> _FXShowPosixPathInTitle -bool YES</div></pre></td></tr></table></figure>
-<h2 id="mac打包-zip"><a href="#mac打包-zip" class="headerlink" title="mac打包 zip"></a>mac打包 zip</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">Zip -<span class="selector-tag">q</span> dist<span class="selector-class">.zip</span> *</div></pre></td></tr></table></figure>
-<h2 id="隐藏显示文件"><a href="#隐藏显示文件" class="headerlink" title="隐藏显示文件"></a>隐藏显示文件</h2><p>必须切换到苹果默认的终端下执行</p>
+<h2 id="mac下使用命令操作相关的设置"><a href="#mac下使用命令操作相关的设置" class="headerlink" title="mac下使用命令操作相关的设置"></a>mac下使用命令操作相关的设置</h2><h3 id="在终端下使用下面的命令可以关闭dashboard"><a href="#在终端下使用下面的命令可以关闭dashboard" class="headerlink" title="在终端下使用下面的命令可以关闭dashboard"></a>在终端下使用下面的命令可以关闭dashboard</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.dashboard</span> mcx-disabled -boolean YES &amp;&amp; killall Dock</div><div class="line"><span class="comment">//当然要恢复也很方便</span></div><div class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.dashboard</span> mcx-disabled -boolean NO &amp;&amp; killall Dock</div></pre></td></tr></table></figure>
+<h3 id="在Finder中显示文件完整路径"><a href="#在Finder中显示文件完整路径" class="headerlink" title="在Finder中显示文件完整路径"></a>在Finder中显示文件完整路径</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> _FXShowPosixPathInTitle -bool YES</div></pre></td></tr></table></figure>
+<h3 id="mac打包-zip"><a href="#mac打包-zip" class="headerlink" title="mac打包 zip"></a>mac打包 zip</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">Zip -<span class="selector-tag">q</span> dist<span class="selector-class">.zip</span> *</div></pre></td></tr></table></figure>
+<h3 id="隐藏显示文件"><a href="#隐藏显示文件" class="headerlink" title="隐藏显示文件"></a>隐藏显示文件</h3><p>使用快捷键: command+shift+.</p>
 <figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 显示</span></div><div class="line">defaults <span class="keyword">write</span> com.apple.finder AppleShowAllFiles -<span class="keyword">boolean</span> <span class="keyword">true</span> ; killall Finder</div><div class="line"><span class="comment">// 隐藏</span></div><div class="line">defaults <span class="keyword">write</span> com.apple.finder AppleShowAllFiles -<span class="keyword">boolean</span> <span class="keyword">false</span> ; killall Finder</div></pre></td></tr></table></figure>
-<h2 id="全局搜索"><a href="#全局搜索" class="headerlink" title="全局搜索"></a>全局搜索</h2><p>common + F : 全局搜索</p>
+<h3 id="全局搜索"><a href="#全局搜索" class="headerlink" title="全局搜索"></a>全局搜索</h3><p>common + F : 全局搜索</p>
 <p>直接打开Finder，按下Shift＋Command＋G</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><div class="line"></div><div class="line">~<span class="regexp">/Library/</span>Application Support</div></pre></td></tr></table></figure>
-<h2 id="查看mac运行时间"><a href="#查看mac运行时间" class="headerlink" title="查看mac运行时间"></a>查看mac运行时间</h2><figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">uptime</span></div><div class="line"></div><div class="line">23<span class="selector-pseudo">:18</span>  <span class="selector-tag">up</span> 20 <span class="selector-tag">days</span>,  8<span class="selector-pseudo">:25</span>, 2 <span class="selector-tag">users</span>, <span class="selector-tag">load</span> <span class="selector-tag">averages</span>: 1<span class="selector-class">.32</span> 1<span class="selector-class">.68</span> 1<span class="selector-class">.66</span></div></pre></td></tr></table></figure>
+<h3 id="查看mac运行时间"><a href="#查看mac运行时间" class="headerlink" title="查看mac运行时间"></a>查看mac运行时间</h3><figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">uptime</span></div><div class="line"></div><div class="line">23<span class="selector-pseudo">:18</span>  <span class="selector-tag">up</span> 20 <span class="selector-tag">days</span>,  8<span class="selector-pseudo">:25</span>, 2 <span class="selector-tag">users</span>, <span class="selector-tag">load</span> <span class="selector-tag">averages</span>: 1<span class="selector-class">.32</span> 1<span class="selector-class">.68</span> 1<span class="selector-class">.66</span></div></pre></td></tr></table></figure>
 <p>现在事件，开机了多少天，用户</p>
-<h2 id="在Mac-OS-X中查看自己的路由器IP地址"><a href="#在Mac-OS-X中查看自己的路由器IP地址" class="headerlink" title="在Mac OS X中查看自己的路由器IP地址"></a>在Mac OS X中查看自己的路由器IP地址</h2><figure class="highlight ebnf"><table><tr><td class="code"><pre><div class="line"><span class="attribute">ifconfig</span></div></pre></td></tr></table></figure>
-<h2 id="MAC-修改host文件"><a href="#MAC-修改host文件" class="headerlink" title="MAC 修改host文件"></a>MAC 修改host文件</h2><p>sudo vi /etc/hosts(修改这个)</p>
+<h3 id="在Mac-OS-X中查看自己的路由器IP地址"><a href="#在Mac-OS-X中查看自己的路由器IP地址" class="headerlink" title="在Mac OS X中查看自己的路由器IP地址"></a>在Mac OS X中查看自己的路由器IP地址</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><div class="line"><span class="attribute">ifconfig</span></div></pre></td></tr></table></figure>
+<h3 id="MAC-修改host文件"><a href="#MAC-修改host文件" class="headerlink" title="MAC 修改host文件"></a>MAC 修改host文件</h3><p>sudo vi /etc/hosts(修改这个)</p>
 <p>/private/etc/hosts</p>
 <p><a href="https://github.com/oldj/SwitchHosts/downloads" target="_blank" rel="external">推荐一款app</a></p>
-<h2 id="命令行打开移动硬盘"><a href="#命令行打开移动硬盘" class="headerlink" title="命令行打开移动硬盘"></a>命令行打开移动硬盘</h2><figure class="highlight scilab"><table><tr><td class="code"><pre><div class="line">~ hui$ <span class="built_in">cd</span> /   <span class="comment">//进入根目录</span></div><div class="line"></div><div class="line"><span class="built_in">cd</span> ~/ <span class="comment">// 进入用户目录</span></div><div class="line"></div><div class="line"><span class="built_in">cd</span> Volumes/</div></pre></td></tr></table></figure>
-<h2 id="mac截屏"><a href="#mac截屏" class="headerlink" title="mac截屏"></a>mac截屏</h2><p>command+shift+3 三个键按下则抓取/截取全屏<br>command+shift+4 然后用鼠标框选则抓取该区域的截图<br>command+shift+4 然后按空格则抓取软件窗口</p>
+<h3 id="命令行打开移动硬盘"><a href="#命令行打开移动硬盘" class="headerlink" title="命令行打开移动硬盘"></a>命令行打开移动硬盘</h3><figure class="highlight scilab"><table><tr><td class="code"><pre><div class="line">~ hui$ <span class="built_in">cd</span> /   <span class="comment">//进入根目录</span></div><div class="line"></div><div class="line"><span class="built_in">cd</span> ~/ <span class="comment">// 进入用户目录</span></div><div class="line"></div><div class="line"><span class="built_in">cd</span> Volumes/</div></pre></td></tr></table></figure>
+<h3 id="mac截屏"><a href="#mac截屏" class="headerlink" title="mac截屏"></a>mac截屏</h3><p>command+shift+3 三个键按下则抓取/截取全屏<br>command+shift+4 然后用鼠标框选则抓取该区域的截图<br>command+shift+4 然后按空格则抓取软件窗口</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/06/02/2016-06-02-MAC配置-mac/" data-id="cj0nfbwe00045u8vm0q20gytj" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/06/02/2016-06-02-MAC配置-mac/" data-id="cj14e1wfi00413nvm1iljgzw9" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/06/02/2016-06-02-MAC配置-mac/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -243,11 +247,11 @@ Command +Option+V ： 实现剪切">
           </li>
         
           <li>
-            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
+            <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
           </li>
         
           <li>
-            <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
+            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
           </li>
         
       </ul>
