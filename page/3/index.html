@@ -93,7 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="cj14e1whn008q3nvmlv4zpbno" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="cj1diqj6v008r3gvmvgx4bjdy" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -139,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="cj14e1whr008s3nvm50c7vkle" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="cj1diqj72008w3gvmu84e10ie" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -190,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cj14e1whm008n3nvm3fkcyd99" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cj1diqj6v008p3gvmozeposfr" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -231,7 +231,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Http 缓存机制作为 web 性能优化的重要手段，对从事 Web 开发的小伙伴们来说是必须要掌握的知识，但最近我遇到了几个缓存头设置相关的题目，<br>发现有好几道题答错了，有的甚至在知道了正确答案后依然不明白其原因，可谓相当的郁闷呢！！为了确认下是否只是自己理解不深，我特意请教了其他<br>几位小伙伴，发现情况也或多或少和我类似。</p>
+        <p>开发遇到的问题详情：<br>以下为 page.html 内容：<br><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>page页<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/head.png"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"page.html"</span>&gt;</span>重新访问page页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>首次访问该页面，页面中 head.png 响应头信息如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line"><span class="keyword">Cache</span>-Control: <span class="keyword">no</span>-<span class="keyword">cache</span></div><div class="line"><span class="keyword">Content</span>-<span class="keyword">Type</span>: image/png</div><div class="line"><span class="keyword">Last</span>-Modified: Tue, <span class="number">08</span> Nov <span class="number">2016</span> <span class="number">06</span>:<span class="number">59</span>:<span class="number">00</span> GMT</div><div class="line"><span class="keyword">Accept</span>-Ranges: <span class="keyword">bytes</span></div><div class="line"><span class="built_in">Date</span>: Thu, <span class="number">10</span> Nov <span class="number">2016</span> <span class="number">02</span>:<span class="number">48</span>:<span class="number">50</span> GMT</div><div class="line"><span class="keyword">Content</span>-<span class="keyword">Length</span>: <span class="number">3534</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>问题1：请问当点击“重新访问 page 页”链接重新加载该页面后， head.png 如何二次加载？</p>
+</li>
+<li><p>问题2：如果将上述信息中的 Cache-Control 设置为 private，那么结果又会如何呢？</p>
+</li>
+</ul>
+<p>以上2道题，如果你能全部答对（哈哈，还请仔细确认下 why，以防歪打正着），那么恭喜你，你已对这些知识理解非常透彻了，我后面讲的内容你可以忽略，否则还请继续陪我往下唠唠吧！</p>
+<p>首先回到开篇提到很多小伙伴（包括我）在解答 Http 缓存题目时栽跟头的问题，我觉得出现这种现象的根本原因在于我们吸收的知识还不够体系化，平时我们在学习这些知识时多半将其当作知识点来记，什么这个缓存头作什么、那个缓存头作什么用的，但实际中缓存头往往是多个之间相互配合协同工作的，有一套完整的工作体系。</p>
         
           <p class="article-more-link">
             <a href="/2016/12/03/2016-12-03-Http-缓存处理/#more">Read More</a>
@@ -240,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/" data-id="cj14e1whl008l3nvmv94fylj5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/" data-id="cj1diqj6u008m3gvmzowkhxzh" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -291,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cj14e1whj008g3nvmptt8guxc" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cj1diqj6t008k3gvmjbwuglxj" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -370,7 +380,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/" data-id="cj14e1whk008i3nvmrtfjzebn" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/" data-id="cj1diqj6s008h3gvm96n9ygi6" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -417,7 +427,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vuex-源码/" data-id="cj14e1whi008d3nvm1pi0ck9s" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vuex-源码/" data-id="cj1diqj6s008f3gvmzlzd7qjd" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/24/2016-11-24-Vuex-源码/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -465,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-V2-进阶/" data-id="cj14e1whh008b3nvmbzp0s3k2" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-V2-进阶/" data-id="cj1diqj6r008d3gvm1udle1io" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-V2-进阶/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -511,7 +521,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/" data-id="cj14e1whf00863nvm2kxruiar" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/" data-id="cj1diqj6q00883gvmupdo2v6g" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -571,7 +581,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cj14e1whg00883nvm86q17dkm" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cj1diqj6q008a3gvm6g482map" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -650,11 +660,11 @@
           </li>
         
           <li>
-            <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
+            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
           </li>
         
           <li>
-            <a href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
+            <a href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
           </li>
         
       </ul>
