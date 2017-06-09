@@ -28,6 +28,6 @@ Zepto;
 Node;
 Google;
 Mysql;  
-linux;  
+Linux;  
 App(-App-): 专注于移动端的页面
 Hack : 专注开发的各种坑
