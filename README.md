@@ -29,5 +29,11 @@ Node;
 Google;
 Mysql;  
 Linux;  
-App(-App-): 专注于移动端的页面
-Hack : 专注开发的各种坑
+App(-App-): 专注于移动端的页面;
+Hack : 专注开发的各种坑;
+
+### 框架研究
+
+BackBone;   
+Vue;    
+React;    

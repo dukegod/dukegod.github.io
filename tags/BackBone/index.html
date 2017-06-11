@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>css伪类属性 | Hello World</title>
+  <title>Tag: BackBone | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="伪劣属性，在前端开发如今用到的越来越多，平时获取修改伪类属性，会遇到一些坑。
-jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素，伪类不属于DOM属性，jquery只能和我们说拜拜啦。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="css伪类属性">
-<meta property="og:url" content="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/index.html">
+  <meta name="description" content="记录生活，沉淀人生">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://dukegod.github.io/tags/BackBone/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="伪劣属性，在前端开发如今用到的越来越多，平时获取修改伪类属性，会遇到一些坑。
-jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素，伪类不属于DOM属性，jquery只能和我们说拜拜啦。">
-<meta property="og:updated_time" content="2016-09-18T06:51:26.000Z">
+<meta property="og:description" content="记录生活，沉淀人生">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css伪类属性">
-<meta name="twitter:description" content="伪劣属性，在前端开发如今用到的越来越多，平时获取修改伪类属性，会遇到一些坑。
-jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素，伪类不属于DOM属性，jquery只能和我们说拜拜啦。">
+<meta name="twitter:title" content="Hello World">
+<meta name="twitter:description" content="记录生活，沉淀人生">
   
   
     <link rel="icon" href="/favicon.png">
@@ -66,94 +62,135 @@ jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素�
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-09-05-Css-伪类属性" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/05/2016-09-05-Css-伪类属性/" class="article-date">
-  <time datetime="2016-09-04T16:00:00.000Z" itemprop="datePublished">2016-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      css伪类属性
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/03/08/2016-03-08-Backbone-源码解析/" class="archive-article-date">
+  <time datetime="2016-03-07T16:00:00.000Z" itemprop="datePublished">3月 8</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/03/08/2016-03-08-Backbone-源码解析/">Backbone源码解析</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>伪劣属性，在前端开发如今用到的越来越多，平时获取修改伪类属性，会遇到一些坑。</p>
-<p>jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素，伪类不属于DOM属性，jquery只能和我们说拜拜啦。</p>
-<a id="more"></a>
-<h2 id="获取伪类属性"><a href="#获取伪类属性" class="headerlink" title="获取伪类属性"></a>获取伪类属性</h2><p>window.getComputedStyle(ele,pseudo).getPropertyValue(attr);</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 原生获取样式,只读的方式找到样式</span></div><div class="line"><span class="keyword">var</span> hth = <span class="built_in">document</span>.getElementsById(<span class="string">'styleId'</span>);</div><div class="line"><span class="keyword">var</span> rawStyle = getStyle(hth,<span class="string">'width'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'rawStyle----'</span>,rawStyle);</div><div class="line"></div><div class="line"><span class="comment">// 获取伪类的样式</span></div><div class="line"><span class="keyword">var</span> fakeStyle = <span class="built_in">window</span>.getComputedStyle(hth, <span class="string">':after'</span>).getPropertyValue(<span class="string">'width'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取伪类元素的内容---'</span>,fakeStyle);</div><div class="line"><span class="keyword">var</span> fakestyle2 = getStyle(hth,<span class="string">':after'</span>,<span class="string">'width'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'fakestyle2---'</span>,fakestyle2);</div></pre></td></tr></table></figure>
-<h2 id="修改伪类属性"><a href="#修改伪类属性" class="headerlink" title="修改伪类属性"></a>修改伪类属性</h2><p>如果想要用JavaScript动态更改伪元素属性值的话，思路如下：</p>
-<ul>
-<li>JavaScript更改data-属性值来更改伪元素的content值</li>
-<li>创建多个class，通过切换class来达到改变样式的目的</li>
-<li>利用CSSStyleSheet的insertRule方法来添加样式</li>
-<li>利用内部css样式的高优先级来覆盖外部css</li>
-</ul>
-<h4 id="JavaScript更改data-属性值来更改伪元素的content值"><a href="#JavaScript更改data-属性值来更改伪元素的content值" class="headerlink" title="JavaScript更改data-属性值来更改伪元素的content值"></a>JavaScript更改data-属性值来更改伪元素的content值</h4><p>利用DOM的data-属性来更改content的值，这样JavaScript可以获取到此DOM的值了，就可以动态的修改样式了。</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><div class="line">&lt;p id=<span class="string">"pp"</span> style=<span class="string">"width:200px;"</span>&gt;&lt;/p&gt;</div><div class="line">#pp<span class="type">::after</span>&#123;</div><div class="line">  width: <span class="number">100</span>px;</div><div class="line">  font<span class="params">-size</span>: <span class="number">28</span>px;</div><div class="line">  color: #7f9fd4;</div><div class="line">  content: attr(<span class="built_in">data</span><span class="params">-cont</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">var</span> pp = document.getElementById(<span class="string">'pp'</span>);</div><div class="line">console.<span class="keyword">log</span>(getStyle(pp, <span class="string">':after'</span>, <span class="string">'content'</span>));</div><div class="line"></div><div class="line"><span class="comment">// 动态修改content值</span></div><div class="line">$(<span class="string">'#pp'</span>).attr(<span class="string">'data-cont'</span>,<span class="string">'aaa'</span>);</div><div class="line">console.<span class="keyword">log</span>(getStyle(pp, <span class="string">':after'</span>, <span class="string">'content'</span>));</div></pre></td></tr></table></figure>
-<h4 id="创建多个class，通过切换class来达到改变样式的目的"><a href="#创建多个class，通过切换class来达到改变样式的目的" class="headerlink" title="创建多个class，通过切换class来达到改变样式的目的"></a>创建多个class，通过切换class来达到改变样式的目的</h4><h4 id="利用CSSStyleSheet的insertRule方法来添加样式"><a href="#利用CSSStyleSheet的insertRule方法来添加样式" class="headerlink" title="利用CSSStyleSheet的insertRule方法来添加样式"></a>利用CSSStyleSheet的insertRule方法来添加样式</h4><h4 id="利用内部css样式的高优先级来覆盖外部css"><a href="#利用内部css样式的高优先级来覆盖外部css" class="headerlink" title="利用内部css样式的高优先级来覆盖外部css"></a>利用内部css样式的高优先级来覆盖外部css</h4><p>项目地址</p>
-<p><a href="https://github.com/dukegod/h5-demos/tree/master/demos/getStyle" target="_blank" rel="external">getStyle</a></p>
-<p>参考</p>
-<p><a href="http://chitanda.me/2015/07/15/get-and-modify-pseudo-elements-value-by-javascript/" target="_blank" rel="external">利用javascript获取并修改伪元素的值</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/" data-id="cj3sox3l9005yfkvm9k2ovwa9" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/09/06/2016-09-06-设计模型-单例模型/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          单例模型
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/09/04/2016-09-04-测试环境/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">测试环境搭建</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-<!-- disqus -->
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/03/07/2016-03-07-Backbone-router/" class="archive-article-date">
+  <time datetime="2016-03-06T16:00:00.000Z" itemprop="datePublished">3月 7</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/03/07/2016-03-07-Backbone-router/">Backbone之router</a>
+    </h1>
+  
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </header>
   </div>
-</section>
- 
-<!-- 多说 -->
-<!-- 
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/03/06/2016-03-06-Backbone-view/" class="archive-article-date">
+  <time datetime="2016-03-05T16:00:00.000Z" itemprop="datePublished">3月 6</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/03/06/2016-03-06-Backbone-view/">Backbone之view</a>
+    </h1>
+  
 
-  -->
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/03/05/2016-03-05-Backbone-collection/" class="archive-article-date">
+  <time datetime="2016-03-04T16:00:00.000Z" itemprop="datePublished">3月 5</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/03/05/2016-03-05-Backbone-collection/">Backbone之collection</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/03/04/2016-03-04-Backbone-model/" class="archive-article-date">
+  <time datetime="2016-03-03T16:00:00.000Z" itemprop="datePublished">3月 4</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/03/04/2016-03-04-Backbone-model/">backbone之model</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/03/03/2016-03-03-Backbone总述/" class="archive-article-date">
+  <time datetime="2016-03-02T16:00:00.000Z" itemprop="datePublished">3月 3</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/03/03/2016-03-03-Backbone总述/">Backbone总体说明</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
 </section>
         
           <aside id="sidebar">
@@ -265,13 +302,11 @@ jquery并不能获取伪类属性的样式，因为jquery只能获取DOM元素�
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/09/05/2016-09-05-Css-伪类属性/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
