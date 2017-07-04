@@ -64,6 +64,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-01-11-Alfred" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/11/2017-01-11-Alfred/" class="article-date">
+  <time datetime="2017-01-10T16:00:00.000Z" itemprop="datePublished">2017-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/11/2017-01-11-Alfred/">Alfred 配置笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最好用的全局搜素工具。</p>
+<h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><ul>
+<li>Startup：设置系统启动时是否自启动。</li>
+<li>Alfred Hotkey：设置呼出 Alfred 的热键。</li>
+<li>Where are you：这个设置比较特别，因为 Alfred 内置了常用网站搜索功能，在这里设置了你所在的国家后，Alfred 在搜索时会打开搜索网站对应国家的网站。</li>
+<li>Essentials：可以设置搜索「应用程序」、「联系人」、「设置」、「Safari 书签」、其它的还能查询「文件夹」、「文本文件」、「压缩文件」、「图片」、「AppleScript」等其它文件。</li>
+<li>Search all file types：搜索所有文件类型，不过 Alfred 建议我们可以通过 Open + 关键字 或者 Space（空格键） 来查询文件或者文件夹，因为如果全部选中的话不但影响查询速度，还容易混淆查询结果。</li>
+<li>Search Scope：设置 Alfred 查询时会搜索的文件夹，我们在这里可以自己添加和删除文件夹。</li>
+<li>Fallbacks： 是设置如果没有查到结果使用 Google 还是其它网站来搜索结果。默认反馈结果为 Google、Amazon、Wikipedia 网页搜索。<ul>
+<li>检索外置移动硬盘数据：如果需要 Alfred 也所能搜索外置移动硬盘中的文件、应用程序和元数据的话，请添加外置移动硬盘的目录或拖动文件夹到 Search Scope 中；</li>
+<li>排除 Library 文件夹：为了保证搜索结果的准确性和相关性，建议排除应用程序文件存放位置 ~Library；</li>
+<li>检索 Chrome 书签：Alfred 检索的书签是 Safari 中的数据，因此，如果你的主力浏览器是 Chrome 的话，则需要打开 Safari 后，通过文件→ 导入自→ 谷歌 Chrome 导入书签数据。</li>
+</ul>
+</li>
+</ul>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><ul>
+<li>查看文件的时候，点击<strong>shift</strong>可以预览文件</li>
+<li>clipboard : 查看剪切板</li>
+<li>‘: 只查看文件</li>
+</ul>
+<h2 id="抢大的workflow"><a href="#抢大的workflow" class="headerlink" title="抢大的workflow"></a>抢大的workflow</h2><p>支持各种脚本，最重要的是这些插件是开源的，开源万岁，可以随便使用，也可以随着自己的心情做修改。</p>
+<h3 id="加载workflow插件"><a href="#加载workflow插件" class="headerlink" title="加载workflow插件"></a>加载workflow插件</h3><p>直接下载.alfredworkflow为后缀的文件，拖入到worlflow就可以了。</p>
+<h3 id="常用的workflow插件"><a href="#常用的workflow插件" class="headerlink" title="常用的workflow插件"></a>常用的workflow插件</h3><ul>
+<li>Dash workflow : Dash是一个api查询工具，不仅可以查询各种语言的api，还可以查各种工具或者框架的api，对于程序员来讲非常有用</li>
+<li>evernote workflow: 使用evernote的同学可以使用这个workflow快速找到自己的笔记</li>
+<li><a href="https://github.com/liszd/whyliam.workflows.youdao" target="_blank" rel="external">youdao</a></li>
+<li><a href="http://www.packal.org/workflow/stackoverflow-search" target="_blank" rel="external">stackoverflow</a></li>
+<li><a href="http://www.packal.org/workflow/chrome-bookmarks-0" target="_blank" rel="external">chrome</a></li>
+</ul>
+<h3 id="workflows安装包"><a href="#workflows安装包" class="headerlink" title="workflows安装包"></a>workflows安装包</h3><p><a href="https://github.com/hzlzh/AlfredWorkflow.com" target="_blank" rel="external">AlfredWorkflow.com</a><br><a href="http://www.packal.org/" target="_blank" rel="external">packal</a></p>
+<h3 id="开发workflow-插件"><a href="#开发workflow-插件" class="headerlink" title="开发workflow 插件"></a>开发workflow 插件</h3><p>支持 bash, zsh, PHP, Ruby, Python, Perl, Apple Script</p>
+<p>这件事情还没有开始着手做，先记录一些文档。</p>
+<p><a href="http://myg0u.com/python/2015/05/23/tutorial-alfred-workflow.html" target="_blank" rel="external">py</a><br><a href="https://www.zhihu.com/question/22301362" target="_blank" rel="external">知乎大法</a><br><a href="http://sspai.com/32979" target="_blank" rel="external">少数派</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/01/11/2017-01-11-Alfred/" data-id="cj4php2af008vl8vmlbzq5uby" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/01/11/2017-01-11-Alfred/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2017-01-06-Hack-SafariB" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/06/2017-01-06-Hack-SafariB/" class="article-date">
@@ -95,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/" data-id="cj4j9ys4j00ajm0vmy9f7c22n" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/" data-id="cj4php2ae008ql8vm3t6uk3cj" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -147,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/" data-id="cj4j9ys4f00adm0vmno8h80ny" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/" data-id="cj4php2af008tl8vmbibo4gnw" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -201,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/01/2017-01-01/" data-id="cj4j9ys4h00afm0vmagmkrr7r" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/01/2017-01-01/" data-id="cj4php2ad008ol8vmj55eec2p" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/01/2017-01-01/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -249,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="cj4j9ys4800a9m0vm506lue2z" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="cj4php2ac008ll8vm38653j7q" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -295,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="cj4j9ys4900abm0vmme4o30yk" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="cj4php2a4008el8vmnpchmde5" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -346,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cj4j9ys4800a6m0vmxf32as6z" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cj4php2a6008jl8vma4ip5z26" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -406,7 +484,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/" data-id="cj4j9ys4i00ahm0vm3q99xcxy" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/" data-id="cj4php2a5008gl8vm3hye95bu" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -457,7 +535,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cj4j9ys4700a4m0vm88ohay4m" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cj4php2a2008bl8vmu5j3xfry" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -536,59 +614,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/" data-id="cj4j9ys4600a2m0vmbnhot5da" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/" data-id="cj4php2a20089l8vmk4vhiymd" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-11-24-Vuex-源码" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/24/2016-11-24-Vuex-源码/" class="article-date">
-  <time datetime="2016-11-23T16:00:00.000Z" itemprop="datePublished">2016-11-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/24/2016-11-24-Vuex-源码/">Vuex</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vuex2.0 源码分析</p>
-<p><a href="http://mp.weixin.qq.com/s/vWUCsjt8RlxJd2LrTeutBg" target="_blank" rel="external">http://mp.weixin.qq.com/s/vWUCsjt8RlxJd2LrTeutBg</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vuex-源码/" data-id="cj4j9ys4500a0m0vmzwff9fcy" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/11/24/2016-11-24-Vuex-源码/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
 
     </footer>
   </div>
@@ -628,7 +659,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 13.33px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 14.17px;">转载翻译</a>
     </div>
   </div>
 
@@ -637,7 +668,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -648,6 +679,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/01/2017-07-01-Node-npm技巧/">让你备受刮目相看的8个npm技巧</a>
+          </li>
         
           <li>
             <a href="/2017/06/01/2017-06-01-Node-npm@5/">npm@5规范</a>
@@ -663,10 +698,6 @@
         
           <li>
             <a href="/2017/03/19/2017-03-19-Node-Nginx/">node 中使用 nginx</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/18/2017-03-18-Node-Redis/">Redis</a>
           </li>
         
       </ul>
