@@ -64,6 +64,85 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-12-01-Google-setting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/01/2016-12-01-Google-setting/" class="article-date">
+  <time datetime="2016-11-30T16:00:00.000Z" itemprop="datePublished">2016-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/01/2016-12-01-Google-setting/">谷歌使用总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以开发者为导向的文档说明</p>
+<h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome://"></a>chrome://</h2><h4 id="chrome-version"><a href="#chrome-version" class="headerlink" title="chrome://version/"></a>chrome://version/</h4><p>浏览器相关的信息</p>
+<h4 id="chrome-flags"><a href="#chrome-flags" class="headerlink" title="chrome://flags/"></a>chrome://flags/</h4><p>用来设置谷歌实验性的行功能，可以执行选择是否开启</p>
+<ul>
+<li>enable-javascript-harmony : 允许网页使用实验性 JavaScript 功能,可以用来调试ES6新功能。</li>
+<li>enable-point-point : 设为禁用，可以解决zepto报错的问题</li>
+</ul>
+<h4 id="chrome-extensions"><a href="#chrome-extensions" class="headerlink" title="chrome://extensions/"></a>chrome://extensions/</h4><p>扩展插件控制</p>
+<h4 id="chrome-setting"><a href="#chrome-setting" class="headerlink" title="chrome://setting"></a>chrome://setting</h4><p>设置</p>
+<h4 id="chrome-crashes"><a href="#chrome-crashes" class="headerlink" title="chrome://crashes/"></a>chrome://crashes/</h4><p>崩溃报告，记录crash的具体id上报</p>
+<h2 id="谷歌浏览器设置"><a href="#谷歌浏览器设置" class="headerlink" title="谷歌浏览器设置"></a>谷歌浏览器设置</h2><ul>
+<li>字体 : 平-方</li>
+</ul>
+<h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><ul>
+<li>Better History ：管理浏览器历史记录</li>
+<li>Fast Video Downloader ：视频下载</li>
+<li>HTTP/2 and SPDY indicator ：检测是不是启用了http2.0协议</li>
+<li>JSON-handle</li>
+<li>Markdown Editor</li>
+<li>Octotree ： 用来管理github仓库，代码以树形结构显示</li>
+<li>Proxy SwitchySharp ： 代理</li>
+<li>React Developer Tools</li>
+<li>Scratch JS ： ES6 代码书写</li>
+<li>show ip</li>
+<li>SoundCloud Music Downloader</li>
+<li>Vue.js devtools</li>
+<li>WEB前端助手(FeHelper)</li>
+</ul>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ul>
+<li>在mac崩溃</li>
+</ul>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><div class="line">sudo chown -R $<span class="keyword">USER</span> <span class="title">~/Library</span>/Google</div></pre></td></tr></table></figure>
+<p>Thread 56 CRASHED [EXC_BAD_ACCESS / EXC_I386_GPFLT @ 0x000000010d16d6e4 ] MAGIC SIGNATURE THREAD 问题</p>
+<p>It is related to Chrome Sync, so you may want to try signing out of Chrome sync and then logging back in. 意思是可能是因为同步的问题，清理日志与缓存重新登录下。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/" data-id="cj5c0y4c7008g5fnkog80l60z" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2016-11-24-Vuex-源码" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/24/2016-11-24-Vuex-源码/" class="article-date">
@@ -92,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vuex-源码/" data-id="cj57i4n9a008cekvmat6zeoys" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vuex-源码/" data-id="cj5c0y4c300895fnk9bffgqyd" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/24/2016-11-24-Vuex-源码/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -140,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-V2-进阶/" data-id="cj57i4n9a008aekvmhahp91g1" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-V2-进阶/" data-id="cj5c0y4c8008j5fnkw5emz6nb" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-V2-进阶/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -186,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/" data-id="cj57i4n990087ekvmpxvl9say" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/" data-id="cj5c0y4c200845fnkbjkwngui" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -246,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cj57i4n980085ekvmpvkiycbp" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cj5c0y4c200865fnk1o24qhe5" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -291,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-总结/" data-id="cj57i4n970082ekvm2ukhrb7x" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-总结/" data-id="cj5c0y4c100815fnk05vhvjx8" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-总结/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -352,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/" data-id="cj57i4n970080ekvmvi0gd81s" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/" data-id="cj5c0y4bz007w5fnk83pjdl2s" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -423,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/" data-id="cj57i4n96007xekvmyy9e2i64" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/" data-id="cj5c0y4c0007z5fnkencno11y" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -475,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/" data-id="cj57i4n95007vekvm2bj5d1gp" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/" data-id="cj5c0y4by007u5fnkdf299vfk" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -522,56 +601,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/" data-id="cj57i4n8z007sekvmgbibgad6" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/" data-id="cj5c0y4bx007r5fnk1yod1ehn" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-11-04-Node-Stream" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/04/2016-11-04-Node-Stream/" class="article-date">
-  <time datetime="2016-11-03T16:00:00.000Z" itemprop="datePublished">2016-11-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/04/2016-11-04-Node-Stream/">node之stream</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/jabez128/stream-handbook" target="_blank" rel="external">https://github.com/jabez128/stream-handbook</a></p>
-<p><a href="https://github.com/substack/stream-handbook" target="_blank" rel="external">https://github.com/substack/stream-handbook</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/" data-id="cj57i4n8y007qekvmnjjczj54" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
@@ -614,7 +646,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 14.17px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15px;">转载翻译</a>
     </div>
   </div>
 
@@ -636,6 +668,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/17/2017-07-17-Css-Sass-Mixin/">Sass mixin的指令</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/01/2017-07-01-Node-npm技巧/">让你备受刮目相看的8个npm技巧</a>
           </li>
         
@@ -649,10 +685,6 @@
         
           <li>
             <a href="/2017/04/01/2017-04-01-Javascript-Promise-Libs/">Promise 框架的相关解析</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/19/2017-03-19-Node-Nginx/">node 中使用 nginx</a>
           </li>
         
       </ul>
