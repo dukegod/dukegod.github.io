@@ -64,6 +64,342 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-11-14-Vue-V1-V2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/14/2016-11-14-Vue-V1-V2/" class="article-date">
+  <time datetime="2016-11-13T16:00:00.000Z" itemprop="datePublished">2016-11-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/14/2016-11-14-Vue-V1-V2/">vue2 与 vue1的变化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结v2比较v1的变化</p>
+<ul>
+<li><p>Vue2.0已经废弃1.0的ready钩子函数，进而使用mounted替换，同时还新增了beforeMount、beforeUpdate、updated等</p>
+</li>
+<li><p>Vue2.0同时已经废弃$events、$dispatch、$broadcast,官方推荐使用vuex作为全局的事件驱动，然而废弃的这些方法在vux UI框架中很多地方都有使用，无疑在项目中用到它的地方在2.0版本都会不起作用，甚至会报错。</p>
+</li>
+<li><p>v-for循环中常用的$index、$key也已不支持使用，trackby被key属性替换。</p>
+</li>
+<li><p>v-ref、v-el 弃用 统一使用ref属性为元素或组件添加标记，然后通过this.$refs获取</p>
+</li>
+<li><p>Vue2.0将不提供任何内置的过滤器，推荐使用单独的库，例如moment.js来格式化日期，accounting.js来格式化货币。对过滤器的决定性改变是对其语法的改变，使其与函数调用{/{ date | formatDate(‘YY-MM-DD’) }/}内联。</p>
+</li>
+<li><p>v-else不再适用于v-show，请使用其他的否定表达式。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cj6kz9djj0081b69k7w3tdku7" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-11-13-Vue-进阶-总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/13/2016-11-13-Vue-进阶-总结/" class="article-date">
+  <time datetime="2016-11-12T16:00:00.000Z" itemprop="datePublished">2016-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/13/2016-11-13-Vue-进阶-总结/">Vue1.0 进阶 模板</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-总结/" data-id="cj6kz9djh007wb69kpb5r6id6" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-总结/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-11-12-Vue-进阶-模板" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/12/2016-11-12-Vue-进阶-模板/" class="article-date">
+  <time datetime="2016-11-11T16:00:00.000Z" itemprop="datePublished">2016-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/12/2016-11-12-Vue-进阶-模板/">Vue1.0 进阶 模板</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>v-bind: 属性，class，style的绑定，添加与隐藏效果</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line">v-<span class="string">bind:</span><span class="class"><span class="keyword">class</span> = "&#123;</span><span class="string">finished:</span><span class="number">0</span>&#125;<span class="string">"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>v-on: 事件绑定，添加具体的事件</li>
+</ul>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">v-<span class="keyword">on</span>:click=<span class="string">"add()"</span></div></pre></td></tr></table></figure>
+<p>add方法放在methods这个对象中</p>
+<ul>
+<li>v-model: 对应data中的数据，只用在input，selected，textarea</li>
+<li>v-text : {/{}/}</li>
+<li>v-html: 可以执行data里面的html</li>
+<li>v-for: 循环数组数据, 循环数据value，循环索引index</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"id"</span>: <span class="string">"581b0c4ebb9452c9052e7acb"</span>,</div><div class="line">  <span class="string">"author_id"</span>: <span class="string">"5110f2bedf9e9fcc584e4677"</span>,</div><div class="line">  <span class="string">"tab"</span>: <span class="string">"share"</span>,</div><div class="line">  <span class="string">"title"</span>: <span class="string">"title title"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;<span class="selector-tag">li</span> v-<span class="keyword">for</span>=<span class="string">"(value, index) in msg"</span>&gt;</div><div class="line">  &lt;h3&gt;&#123;&#123; value<span class="selector-class">.title</span> &#125;&#125;&lt;/h3&gt;</div><div class="line">  &lt;div&gt;&#123;&#123; value<span class="selector-class">.id</span> &#125;&#125;&lt;/div&gt;</div><div class="line">  &lt;div&gt;&#123;&#123; value<span class="selector-class">.tab</span> &#125;&#125;&lt;/div&gt;</div><div class="line">&lt;/li&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/" data-id="cj6kz9dji007yb69kx1ocra0j" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-11-11-Vue-进阶" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/11/2016-11-11-Vue-进阶/" class="article-date">
+  <time datetime="2016-11-10T16:00:00.000Z" itemprop="datePublished">2016-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/11/2016-11-11-Vue-进阶/">Vue1.0 进阶</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight less"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">new</span> <span class="selector-tag">Vue</span>(&#123;</div><div class="line">	<span class="attribute">el</span>:<span class="string">'#app'</span>,</div><div class="line">	<span class="attribute">template</span>:<span class="string">''</span>,</div><div class="line">	<span class="attribute">created</span>:function()&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">ready</span>:function()&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">computed</span>:&#123;</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">conponents</span>:&#123;</div><div class="line">		hello</div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">data</span>:&#123;</div><div class="line">		<span class="attribute">msg </span>: <span class="string">'hello '</span></div><div class="line">	&#125;,</div><div class="line">	<span class="attribute">method</span>:&#123;&#125;,</div><div class="line">	<span class="attribute">watch</span>:&#123;</div><div class="line">		<span class="attribute">msg</span>:function(value,oldValue)&#123;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"> &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<ul>
+<li>method: 对象类型，常用方法储存地点</li>
+<li>watch: 对象类型，监听数据变化</li>
+<li>computed: 对象类型</li>
+<li><p>components</p>
+<ul>
+<li><p>必须先在components中引用，然后在template中引用，或者在html中引用。</p>
+ <figure class="highlight gauss"><table><tr><td class="code"><pre><div class="line">	<span class="comment">// 1</span></div><div class="line">	<span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: '<span class="meta">#app',</span></div><div class="line">    template: '&lt;div&gt;&lt;components-<span class="built_in">header</span>&gt;&lt;/components-<span class="built_in">header</span>&gt;&lt;/div&gt;',</div><div class="line">    components:&#123;</div><div class="line">      components-<span class="built_in">header</span></div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">);</div><div class="line"><span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: '<span class="meta">#app',</span></div><div class="line">    components:&#123;</div><div class="line">      components-<span class="built_in">header</span></div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">);</div><div class="line"><span class="comment">// html 中引用</span></div><div class="line">&lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">   &lt;componentsheader&gt;&lt;/componentsheader&gt;</div><div class="line"> 	&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>组件文件(myCom.vue)命名用可以<strong>驼峰命名法</strong>,引用的组件名字<strong>必须用全小写的形式,并且需要把大写转为下划线加上对应大写的小写</strong></p>
+ <figure class="highlight dts"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 组件</span></div><div class="line">comA</div><div class="line"><span class="comment">// 转为</span></div><div class="line"><span class="params">&lt;com-a&gt;</span><span class="params">&lt;com-a/&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>name 必须是全小写</p>
+</li>
+<li>组件命名禁止使用vue内置的属性或者保留的html标签</li>
+<li>组件应用可以用<hello></hello>或者<hello></hello></li>
+<li>每一个组件外面都要嵌套一个div(<div><hello></hello></div>)</li>
+<li><p>组件通讯，父类向子类传递数据，需要通过props获取,或者this.$broadcast()</p>
+ <figure class="highlight dust"><table><tr><td class="code"><pre><div class="line"><span class="xml">	// 父类模板,绑定 father</span></div><div class="line">	<span class="tag">&lt;<span class="name">temp-footer</span> <span class="attr">:father</span>=<span class="string">"fatherfooter"</span>&gt;</span><span class="tag">&lt;/<span class="name">temp-footer</span>&gt;</span></div><div class="line">	data()<span class="template-variable">&#123;</span></div><div class="line">     return &#123;</div><div class="line">       msg: '',</div><div class="line">       fatherfooter:'father msg',</div><div class="line">   &#125;<span class="xml">,</span></div><div class="line">	// 子类获取绑定的props:father</div><div class="line">	<span class="tag">&lt;<span class="name">template</span> <span class="attr">lang</span>=<span class="string">"html"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></div><div class="line">    <span class="template-tag">&#123;/&#123;<span class="name">fTitle</span>&#125;</span><span class="xml">/&#125;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="template-tag">&#123;/&#123;<span class="name">father</span>&#125;</span><span class="xml">/&#125;<span class="tag">&lt;<span class="name">span</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="template-variable">&#123;</span></div><div class="line">    data()&#123;</div><div class="line">      return &#123;</div><div class="line">        fTitle:'this is my footer!!!!'</div><div class="line">      &#125;<span class="xml"><span class="actionscript"></span></span></div><div class="line">    &#125;,</div><div class="line">    props:[<span class="string">'father'</span>]</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>子类像父类通讯，需要事件绑定，父类添加一个方法，一个数据类型，子类可以用$emit()或者用this.$dispatch().    一定要<strong>注意写在组件中方法名字，是不是全小写，或者驼峰</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/" data-id="cj6kz9djf007rb69kear5dlxi" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-11-10-Vue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/10/2016-11-10-Vue/" class="article-date">
+  <time datetime="2016-11-09T16:00:00.000Z" itemprop="datePublished">2016-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/10/2016-11-10-Vue/">Vue1.0总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>社区活跃，上手快，文档齐全。</p>
+<p>组件化方便</p>
+<p>支持css,less,sass</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/11/10/2016-11-10-Vue/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/" data-id="cj6kz9djg007tb69k5jef1tbw" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-11-05-Node-Buffer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/05/2016-11-05-Node-Buffer/" class="article-date">
+  <time datetime="2016-11-04T16:00:00.000Z" itemprop="datePublished">2016-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/05/2016-11-05-Node-Buffer/">node中buffer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对于JavaScript来说，对Unicode编码的数据很容易处理的但是对于二进制数据就没什么处理方法了。<br>但是在一些TCP数据流或者在操作一些文件数据流的时候，字节流的处理方法还是必须的。<br>nodeJS中便出了处理的策略方法~提供了与String类似对等的全局构造函数Buffer（与其说与String对等，还不如说与Array类似但是有些不同方面还是需要注意），<br>全局那么自然就不要每次的require了。Buffer则node中储存二进制数据的中介者。</p>
+<p><a href="https://www.15yan.com/story/gn1nYZr6hUQ/" target="_blank" rel="external">https://www.15yan.com/story/gn1nYZr6hUQ/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/" data-id="cj6kz9dj7007kb69kp1n1njti" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2016-11-04-Node-Stream" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/04/2016-11-04-Node-Stream/" class="article-date">
@@ -92,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/" data-id="cj5c0y4bw007p5fnkwhrex34g" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/" data-id="cj6kz9dj8007mb69k2lxjl5g9" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -141,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/" data-id="cj5c0y4bv007m5fnk3a9dgqfb" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/" data-id="cj6kz9dje007ob69kxgig2d7p" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/03/2016-11-03-Node-buffer-stream/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -191,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/02/2016-11-02-iPhone手机找回/" data-id="cj5c0y4bu007k5fnkk3zg948f" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/02/2016-11-02-iPhone手机找回/" data-id="cj6kz9dj6007hb69ks4x7zib7" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/02/2016-11-02-iPhone手机找回/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -250,7 +586,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/30/2016-10-30-Node-概括/" data-id="cj5c0y4bt007h5fnk55csq5i4" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/10/30/2016-10-30-Node-概括/" data-id="cj6kz9dj2007ab69k7w2eto6c" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/10/30/2016-10-30-Node-概括/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -269,304 +605,10 @@
   -->
 
   
-    <article id="post-2016-10-29-Node-module" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/29/2016-10-29-Node-module/" class="article-date">
-  <time datetime="2016-10-28T16:00:00.000Z" itemprop="datePublished">2016-10-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/29/2016-10-29-Node-module/">Node 模块化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="exports-模块调用"><a href="#exports-模块调用" class="headerlink" title="exports 模块调用"></a>exports 模块调用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// a.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">exports.A = A;</div><div class="line"><span class="comment">// 引用</span></div><div class="line"><span class="keyword">let</span> AA = <span class="built_in">require</span>(<span class="string">'./a'</span>);</div><div class="line"><span class="built_in">console</span>.log(AA); <span class="comment">// &#123; A: [Function: A &#125;</span></div><div class="line">AA.A();</div></pre></td></tr></table></figure>
-<p>exports返回的是一个对象，引用的时候需要调用这个函数名称.</p>
-<h3 id="module-模块调用"><a href="#module-模块调用" class="headerlink" title="module 模块调用"></a>module 模块调用</h3><p>创建全局对象<br>通过module调用函数直接返回全局对象，返回的函数直接可以调用</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">//em.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">em</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'module function'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = em;</div><div class="line"><span class="comment">// 调用</span></div><div class="line"><span class="keyword">let</span> callem = <span class="built_in">require</span>(<span class="string">'./em'</span>);</div><div class="line"><span class="built_in">console</span>.log(callem) <span class="comment">// [Function: em]</span></div><div class="line">callem()</div></pre></td></tr></table></figure>
-<p>自动执行函数</p>
-<figure class="highlight dust"><table><tr><td class="code"><pre><div class="line"><span class="xml">// 自动执行写法</span></div><div class="line">module.exports = function()<span class="template-variable">&#123;&#125;</span><span class="xml">()</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- es6 写法 --&gt;</span></div><div class="line">module.exports = ()=&gt;<span class="template-variable">&#123;&#125;</span><span class="xml"></span></div><div class="line">// 自动执行函数  </div><div class="line">module.exports = (()=&gt;<span class="template-variable">&#123;&#125;</span><span class="xml">)()</span></div></pre></td></tr></table></figure>
-<p>返回多个函数，返回值以对象的方式返回</p>
-<figure class="highlight fortran"><table><tr><td class="code"><pre><div class="line">const <span class="keyword">name</span> = <span class="string">'duke'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span></span> showName(<span class="keyword">name</span>)&#123;</div><div class="line">  console.<span class="built_in">log</span>(<span class="keyword">name</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">module</span>.exports = &#123;<span class="keyword">name</span>, showName&#125;</div><div class="line">// 返回值类型</div><div class="line">&#123; <span class="keyword">name</span>: <span class="string">'duke'</span>, showName: [<span class="function"><span class="keyword">Function</span></span>: showName] &#125;</div></pre></td></tr></table></figure>
-<h3 id="配合es2015-class写法"><a href="#配合es2015-class写法" class="headerlink" title="配合es2015 class写法"></a>配合es2015 class写法</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span></span>&#123;&#125;</div><div class="line"><span class="keyword">module</span>.<span class="keyword">exports</span> = Point</div></pre></td></tr></table></figure>
-<p><strong>注意与es2015原生js写法的不同</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/29/2016-10-29-Node-module/" data-id="cj5c0y4bo007d5fnkvvr7ol93" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/10/29/2016-10-29-Node-module/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-10-28-Node-环境变量DEV" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/28/2016-10-28-Node-环境变量DEV/" class="article-date">
-  <time datetime="2016-10-27T16:00:00.000Z" itemprop="datePublished">2016-10-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/28/2016-10-28-Node-环境变量DEV/">Node_dev</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>NODE_ENV可以来设置环境变量（默认值为development）</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/28/2016-10-28-Node-环境变量DEV/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/28/2016-10-28-Node-环境变量DEV/" data-id="cj5c0y4bm00755fnk7qkjgtun" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/10/28/2016-10-28-Node-环境变量DEV/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-10-20-旅游游玩" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/20/2016-10-20-旅游游玩/" class="article-date">
-  <time datetime="2016-10-19T16:00:00.000Z" itemprop="datePublished">2016-10-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/20/2016-10-20-旅游游玩/">彩云之南，我心的地方</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>真的有时间去游玩的时候，却感觉时间过得很慢，但我们坐在洱海的边上，看着海鸥随着水波浮动，这一切是这么漫长。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/10/20/2016-10-20-旅游游玩/" data-id="cj5c0y4bp007f5fnk8gvhbw1j" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/10/20/2016-10-20-旅游游玩/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-09-25-云南游玩" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/25/2016-09-25-云南游玩/" class="article-date">
-  <time datetime="2016-09-24T16:00:00.000Z" itemprop="datePublished">2016-09-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/25/2016-09-25-云南游玩/">彩云之南</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>从28号开始准备！！！</p>
-<p>10月2号就开始有点激动</p>
-<p>10月3号，更加的激动</p>
-<p>10月 7好开始出去旅游</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/25/2016-09-25-云南游玩/" data-id="cj5c0y4bo007a5fnk4390s51r" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/09/25/2016-09-25-云南游玩/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-09-23-Echo-图片懒加载" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/23/2016-09-23-Echo-图片懒加载/" class="article-date">
-  <time datetime="2016-09-22T16:00:00.000Z" itemprop="datePublished">2016-09-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/23/2016-09-23-Echo-图片懒加载/">图片懒加载</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://toddmotto.com/labs/echo/" target="_blank" rel="external">官网</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/23/2016-09-23-Echo-图片懒加载/" data-id="cj5c0y4bn00785fnkwaq3xhbr" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/09/23/2016-09-23-Echo-图片懒加载/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-09-22-Linux" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/22/2016-09-22-Linux/" class="article-date">
-  <time datetime="2016-09-21T16:00:00.000Z" itemprop="datePublished">2016-09-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/22/2016-09-22-Linux/">linux</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>chmod 777 /usr/local/var/log/nginx/access.log</p>
-<p>ps -ef | grep nginx</p>
-<p>kill</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/09/22/2016-09-22-Linux/" data-id="cj5c0y4bk00735fnkhl236h75" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/09/22/2016-09-22-Linux/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -589,7 +631,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15.83px;">转载翻译</a>
     </div>
   </div>
 
@@ -598,7 +640,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -611,23 +653,23 @@
       <ul>
         
           <li>
-            <a href="/2017/07/17/2017-07-17-Css-Sass-Mixin/">Sass mixin的指令</a>
+            <a href="/2017/08/20/2017-08-20-Node-npm-webpack/">书写基于ES6的npm包问题</a>
           </li>
         
           <li>
-            <a href="/2017/07/01/2017-07-01-Node-npm技巧/">让你备受刮目相看的8个npm技巧</a>
+            <a href="/2017/08/15/2017-08-15-CSS-BFC/">BFC(块级可视化上下文)</a>
           </li>
         
           <li>
-            <a href="/2017/06/01/2017-06-01-Node-npm@5/">npm@5规范</a>
+            <a href="/2017/08/01/2017-08-01-Javascript-Async-Await/">async-await</a>
           </li>
         
           <li>
-            <a href="/2017/05/01/2017-05-01-Css-transition/">理解CSS3 transition属性</a>
+            <a href="/2017/07/21/2017-07-21-Javascript-Fetch/">fetch</a>
           </li>
         
           <li>
-            <a href="/2017/04/01/2017-04-01-Javascript-Promise-Libs/">Promise 框架的相关解析</a>
+            <a href="/2017/07/20/2017-07-20-Javascript-Generator/">generator</a>
           </li>
         
       </ul>

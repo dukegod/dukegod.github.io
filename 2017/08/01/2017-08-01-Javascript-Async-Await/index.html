@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>async-await | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="刚出来不久的 ES8 包含了 async 函数，它的出现，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。想较于 Generator，Async 函数的改进在于下面四点：
+
+内置执行器。Generator 函数的执行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="async-await">
+<meta property="og:url" content="http://dukegod.github.io/2017/08/01/2017-08-01-Javascript-Async-Await/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="刚出来不久的 ES8 包含了 async 函数，它的出现，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。想较于 Generator，Async 函数的改进在于下面四点：
+
+内置执行器。Generator 函数的执行">
+<meta property="og:updated_time" content="2017-08-20T16:55:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="async-await">
+<meta name="twitter:description" content="刚出来不久的 ES8 包含了 async 函数，它的出现，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。想较于 Generator，Async 函数的改进在于下面四点：
+
+内置执行器。Generator 函数的执行">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+      <!---  <a href="/" id="logo">Hello World</a> -->
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about.html">About</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/atom.xml">rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dukegod.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2017-08-01-Javascript-Async-Await" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/01/2017-08-01-Javascript-Async-Await/" class="article-date">
+  <time datetime="2017-07-31T16:00:00.000Z" itemprop="datePublished">2017-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      async-await
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚出来不久的 ES8 包含了 async 函数，它的出现，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。<br>async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。<br>想较于 Generator，Async 函数的改进在于下面四点：</p>
+<ul>
+<li>内置执行器。Generator 函数的执行必须依靠执行器，而 Aysnc 函数自带执行器，调用方式跟普通函数的调用一样</li>
+<li>更好的语义。async 和 await 相较于 * 和 yield 更加语义化</li>
+<li>更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise对象。而 async 函数的 await 命令后面则可以是 Promise 或者 原始类型的值（Number，string，boolean，但这时等同于同步操作）</li>
+<li>返回值是 Promise。async 函数返回值是 Promise 对象，比 Generator 函数返回的 Iterator 对象方便，可以直接使用 then() 方法进行调用</li>
+</ul>
+<a id="more"></a>
+<h3 id="Async-与其他异步操作的对比"><a href="#Async-与其他异步操作的对比" class="headerlink" title="Async 与其他异步操作的对比"></a>Async 与其他异步操作的对比</h3><p>先定义一个 Fetch 方法用于获取 github user 的信息：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetchUser</span>(<span class="params"></span>) </span>&#123; </div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">        fetch(<span class="string">'https://api.github.com/users/superman66'</span>)</div><div class="line">        .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</div><div class="line">            resolve(data.json());</div><div class="line">        &#125;, (error) =&gt; &#123;</div><div class="line">            reject(error);</div><div class="line">        &#125;)</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Promise-方式"><a href="#Promise-方式" class="headerlink" title="Promise 方式"></a>Promise 方式</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Promise 方式</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserByPromise</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    fetchUser()</div><div class="line">        .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(data);</div><div class="line">        &#125;, (error) =&gt; &#123;</div><div class="line">            <span class="built_in">console</span>.log(error);</div><div class="line">        &#125;)</div><div class="line">&#125;</div><div class="line">getUserByPromise();</div></pre></td></tr></table></figure>
+<p>Promise 的方式虽然解决了 callback hell，但是这种方式充满了 Promise的 then() 方法，如果处理流程复杂的话，整段代码将充满 then。语义化不明显，代码流程不能很好的表示执行流程。</p>
+<h3 id="Generator-方式"><a href="#Generator-方式" class="headerlink" title="Generator 方式"></a>Generator 方式</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Generator 方式</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fetchUserByGenerator</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> user = <span class="keyword">yield</span> fetchUser();</div><div class="line">    <span class="keyword">return</span> user;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> g = fetchUserByGenerator();</div><div class="line"><span class="keyword">const</span> result = g.next().value;</div><div class="line">result.then(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(v);</div><div class="line">&#125;, (error) =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>Generator 的方式解决了 Promise 的一些问题，流程更加直观、语义化。但是 Generator 的问题在于，函数的执行需要依靠执行器，每次都需要通过 g.next() 的方式去执行。</p>
+<h2 id="async-方式"><a href="#async-方式" class="headerlink" title="async 方式"></a>async 方式</h2><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * async 方式</div><div class="line"> */</div><div class="line"> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getUserByAsync</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="keyword">let</span> user = <span class="keyword">await</span> fetchUser();</div><div class="line">     <span class="keyword">return</span> user;</div><div class="line"> &#125;</div><div class="line">getUserByAsync()</div><div class="line">.then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="built_in">console</span>.log(v));</div></pre></td></tr></table></figure>
+<p>async 函数完美的解决了上面两种方式的问题。流程清晰，直观、语义明显。操作异步流程就如同操作同步流程。同时 async 函数自带执行器，执行的时候无需手动加载。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>async 函数返回一个 Promise 对象</p>
+<p>async 函数内部 return 返回的值。会成为 then 方法回调函数的参数。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span>  <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span></div><div class="line">&#125;;</div><div class="line">f().then( <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(v)) <span class="comment">// hello world</span></div></pre></td></tr></table></figure>
+<p>如果 async 函数内部抛出异常，则会导致返回的 Promise 对象状态变为 reject 状态。抛出的错误而会被 catch 方法回调函数接收到。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">e</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'error'</span>);</div><div class="line">&#125;</div><div class="line">e().then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="built_in">console</span>.log(v))</div><div class="line">.catch( <span class="function"><span class="params">e</span> =&gt;</span> <span class="built_in">console</span>.log(e));</div></pre></td></tr></table></figure>
+<p>async 函数返回的 Promise 对象，必须等到内部所有的 await 命令的 Promise 对象执行完，才会发生状态改变<br>也就是说，只有当 async 函数内部的异步操作都执行完，才会执行 then 方法的回调。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> delay = <span class="function"><span class="params">timeout</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span>=&gt;</span> setTimeout(resolve, timeout));</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">await</span> delay(<span class="number">1000</span>);</div><div class="line">    <span class="keyword">await</span> delay(<span class="number">2000</span>);</div><div class="line">    <span class="keyword">await</span> delay(<span class="number">3000</span>);</div><div class="line">    <span class="keyword">return</span> <span class="string">'done'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f().then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="built_in">console</span>.log(v)); <span class="comment">// 等待6s后才输出 'done'</span></div></pre></td></tr></table></figure>
+<p>正常情况下，await 命令后面跟着的是 Promise ，如果不是的话，也会被转换成一个 立即 resolve 的 Promise<br>如下面这个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span>  <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">await</span> <span class="number">1</span></div><div class="line">&#125;;</div><div class="line">f().then( <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(v)) <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>如果返回的是 reject 的状态，则会被 catch 方法捕获。</p>
+<p>###Async 函数的错误处理</p>
+<p>async 函数的语法不难，难在错误处理上。<br>先来看下面的例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> a;</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">await</span> <span class="built_in">Promise</span>.reject(<span class="string">'error'</span>);</div><div class="line">    a = <span class="keyword">await</span> <span class="number">1</span>; <span class="comment">// 这段 await 并没有执行</span></div><div class="line">&#125;</div><div class="line">f().then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="built_in">console</span>.log(a));</div></pre></td></tr></table></figure>
+<p>如上面所示，当 async 函数中只要一个 await 出现 reject 状态，则后面的 await 都不会被执行。<br>解决办法：可以添加 try/catch。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 正确的写法</span></div><div class="line"><span class="keyword">let</span> a;</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">correct</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">await</span> <span class="built_in">Promise</span>.reject(<span class="string">'error'</span>)</div><div class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</div><div class="line">        <span class="built_in">console</span>.log(error);</div><div class="line">    &#125;</div><div class="line">    a = <span class="keyword">await</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">&#125;</div><div class="line"></div><div class="line">correct().then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="built_in">console</span>.log(a)); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>如果有多个 await 则可以将其都放在 try/catch 中。<br>如何在项目中使用</p>
+<p>依然是通过 babel 来使用。<br>只需要设置 presets 为 stage-3 即可。<br>安装依赖：<br><figure class="highlight mipsasm"><table><tr><td class="code"><pre><div class="line">npm <span class="keyword">install </span><span class="keyword">babel-preset-es2015 </span><span class="keyword">babel-preset-stage-3 </span><span class="keyword">babel-runtime </span><span class="keyword">babel-plugin-transform-runtime</span></div></pre></td></tr></table></figure></p>
+<p>修改.babelrc:<br>“presets”: [“es2015”, “stage-3”],<br>“plugins”: [“transform-runtime”]<br>这样就可以在项目中使用 async 函数了。</p>
+<p><a href="https://chenhuichao.com/2017/07/18/es6/understanding-async-await/" target="_blank" rel="external">来自</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/08/01/2017-08-01-Javascript-Async-Await/" data-id="cj6kz9dkr00anb69kygyyim31" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/08/01/2017-08-01-Javascript-Async-Await/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/15/2017-08-15-CSS-BFC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          BFC(块级可视化上下文)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/21/2017-07-21-Javascript-Fetch/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">fetch</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+<!-- disqus -->
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BackBone/">BackBone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Less/">Less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15.83px;">转载翻译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/20/2017-08-20-Node-npm-webpack/">书写基于ES6的npm包问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/15/2017-08-15-CSS-BFC/">BFC(块级可视化上下文)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/01/2017-08-01-Javascript-Async-Await/">async-await</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/21/2017-07-21-Javascript-Fetch/">fetch</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/20/2017-07-20-Javascript-Generator/">generator</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 liu hui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <div id="link">
+  	<a href="https://github.com/dukegod">Github</a>
+  	<a href="https://www.zhihu.com/people/dukegod">知</a>
+  	<a href="https://www.quora.com/profile/Hui-Liu-37">Quora</a>
+  	<a href="https://twitter.com/dukegod1991">Twitter</a>
+  	<a href="https://www.facebook.com/profile.php?id=100009852840417">Facebook</a>
+    <p style="margin-top:10px">
+      <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </p>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about.html" class="mobile-nav-link">About</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">rss</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'dukehui1991';
+  
+  var disqus_url = 'http://dukegod.github.io/2017/08/01/2017-08-01-Javascript-Async-Await/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

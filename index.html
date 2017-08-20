@@ -64,6 +64,279 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-08-20-Node-npm-webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/2017-08-20-Node-npm-webpack/" class="article-date">
+  <time datetime="2017-08-19T16:00:00.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/20/2017-08-20-Node-npm-webpack/">书写基于ES6的npm包问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前写的npm的发布包都不是基于ES6的，没有遇到在与其他的包一起使用出现，对于ES6的相关问题。<br>今天用es6写了一个包，webpack引入的使用总是报错。</p>
+<figure class="highlight aspectj"><table><tr><td class="code"><pre><div class="line">webpack Unexpected token: punc ())</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/08/20/2017-08-20-Node-npm-webpack/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/08/20/2017-08-20-Node-npm-webpack/" data-id="cj6kz9dkt00asb69kk0vywv9n" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/08/20/2017-08-20-Node-npm-webpack/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-08-15-CSS-BFC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/15/2017-08-15-CSS-BFC/" class="article-date">
+  <time datetime="2017-08-14T16:00:00.000Z" itemprop="datePublished">2017-08-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/15/2017-08-15-CSS-BFC/">BFC(块级可视化上下文)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><h4 id="什么是BFC"><a href="#什么是BFC" class="headerlink" title="什么是BFC"></a>什么是BFC</h4><p>一些元素，如float元素，如position为absolute,inline-block,table-cell或table-caption的元素，以及overflow属性不为visible的元素，它们将会建立一个新的块级格式化上下文。</p>
+<h4 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h4><ul>
+<li>利用BFC可以消除Margin Collapse</li>
+<li>利用BFC去容纳浮动元素</li>
+<li>利用BFC阻止文本换行</li>
+</ul>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>基本在父级加行<code>overflow:hidden</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="http://www.jianshu.com/p/fc1d61dace7b" target="_blank" rel="external">REF</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/08/15/2017-08-15-CSS-BFC/" data-id="cj6kz9dks00aqb69kgrs1kpid" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/08/15/2017-08-15-CSS-BFC/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-08-01-Javascript-Async-Await" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/01/2017-08-01-Javascript-Async-Await/" class="article-date">
+  <time datetime="2017-07-31T16:00:00.000Z" itemprop="datePublished">2017-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/01/2017-08-01-Javascript-Async-Await/">async-await</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚出来不久的 ES8 包含了 async 函数，它的出现，终于让 JavaScript 对于异步操作有了终极解决方案。No more callback hell。<br>async 函数是 Generator 函数的语法糖。使用 关键字 async 来表示，在函数内部使用 await 来表示异步。<br>想较于 Generator，Async 函数的改进在于下面四点：</p>
+<ul>
+<li>内置执行器。Generator 函数的执行必须依靠执行器，而 Aysnc 函数自带执行器，调用方式跟普通函数的调用一样</li>
+<li>更好的语义。async 和 await 相较于 * 和 yield 更加语义化</li>
+<li>更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise对象。而 async 函数的 await 命令后面则可以是 Promise 或者 原始类型的值（Number，string，boolean，但这时等同于同步操作）</li>
+<li>返回值是 Promise。async 函数返回值是 Promise 对象，比 Generator 函数返回的 Iterator 对象方便，可以直接使用 then() 方法进行调用</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2017/08/01/2017-08-01-Javascript-Async-Await/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/08/01/2017-08-01-Javascript-Async-Await/" data-id="cj6kz9dkr00anb69kygyyim31" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/08/01/2017-08-01-Javascript-Async-Await/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-07-21-Javascript-Fetch" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/21/2017-07-21-Javascript-Fetch/" class="article-date">
+  <time datetime="2017-07-20T16:00:00.000Z" itemprop="datePublished">2017-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/21/2017-07-21-Javascript-Fetch/">fetch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>讨论Fetch API之前。我们先说下web实现数据请求的方法及目前的现状，也就是AJAX了。<br>AJAX 即 Asynchronous JavaScript and XML，异步的 JavaScript 和 XML。使用 AJAX 可以无刷新地向服务端发送请求接收服务端响应，并更新页面。</p>
+<p>实现方法(不细讲)：</p>
+<ul>
+<li>js原型实现: 基于浏览器提供的 XMLHttpRequest（XHR）类</li>
+<li>jquery，zepto这种库实现</li>
+</ul>
+<p>缺点：</p>
+<p>使用 jQuery 虽然可以大大简化 XMLHttpRequest 的使用，但 XMLHttpRequest 本质上但并不是一个设计优良的 API：</p>
+<ul>
+<li>不符合关注分离（Separation of Concerns）的原则</li>
+<li>配置和调用方式非常混乱</li>
+<li>使用事件机制来跟踪状态变化</li>
+<li>基于事件的异步模型没有现代的 Promise，generator/yield，async/await 友好</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/21/2017-07-21-Javascript-Fetch/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/07/21/2017-07-21-Javascript-Fetch/" data-id="cj6kz9dkq00alb69kicc9uab4" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/07/21/2017-07-21-Javascript-Fetch/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-07-20-Javascript-Generator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/20/2017-07-20-Javascript-Generator/" class="article-date">
+  <time datetime="2017-07-19T16:00:00.000Z" itemprop="datePublished">2017-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/20/2017-07-20-Javascript-Generator/">generator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 function 语句之后和函数名之前，有一个 * 作为它是一个生成器函数的标示符;<br>引入yield，yield 语句的作用与 return 语句有些相似，但 yield 语句的作用并非退出函数体，而是切出当前函数的运行时，并与此同时可以将一个值（可以是任何类型）带到主线程中。</p>
+<p>通过next，进入函数内的循环调用。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</div><div class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> hw = helloWorldGenerator();</div><div class="line">hw.next();</div><div class="line"></div><div class="line">hw.next()  <span class="comment">//&#123;value: "hello", done: false&#125;done: falsevalue: "hello"__proto__: Object</span></div><div class="line"></div><div class="line">hw.next()  <span class="comment">//&#123;value: "ending", done: true&#125;</span></div></pre></td></tr></table></figure>
+<p>通过yield与next的配合，将会带来异步不一样的操作。<br>参考框架<a href="https://github.com/tj/co" target="_blank" rel="external">co</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/07/20/2017-07-20-Javascript-Generator/" data-id="cj6kz9dkn00adb69kmfvsapnk" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/07/20/2017-07-20-Javascript-Generator/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2017-07-17-Css-Sass-Mixin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/17/2017-07-17-Css-Sass-Mixin/" class="article-date">
@@ -87,69 +360,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="http://p0.qhimg.com/t01584febfaaedeb6df.jpg" alt="Sass Mixins"></p>
-<p>为深入而简明的了解SASS，SitePoint为其所有高级会员提供<a href="https://www.sitepoint.com/premium/books/jump-start-sass" target="_blank" rel="external">SASS</a>这本书籍，来自sass支持者Hugo Giraudel。或者，你也可以只花19美元就能买到一本。</p>
+<p>为深入而简明的了解SASS，SitePoint为其所有高级会员提供<a href="https://www.sitepoint.com/premium/books/jump-start-sass">SASS</a>这本书籍，来自sass支持者Hugo Giraudel。或者，你也可以只花19美元就能买到一本。</p>
 <p><em> 本文首先出现在SitePoint 在2015年，在此出现在2017年6月14日并做了以下一些小的修正和修改 </em></p>
 <p>对于我发现Sass是一个意外的事情。在很长一段时间里，我厌倦了写普通的CSS。对于一个小网站来说，它很好，但对于较大的站点，CSS很快就失控了。调试是一场噩梦，我忍不住的觉得我可以用CSS做更多的工作。</p>
 <p>我关注Sass的一切动向。通过Sass我能分解我的CSS成模块化块，使故障排除的更加容易。在创建CSS时，我还可以使用编程概念，如函数和变量。最重要的是来向我介绍了Sass Mixin。</p>
-<h2 id="Sass-Mixin-是什么"><a href="#Sass-Mixin-是什么" class="headerlink" title="Sass Mixin 是什么?"></a>Sass Mixin 是什么?</h2><p>Mixin 可以让你创建可重用的css模块，避免书写重复的代码. 例如：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color</span>: white; &#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color</span>: blue; &#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: green; &#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: red; &#125;</div></pre></td></tr></table></figure>
-<p>一次又一次地编写这些代码可以很快就过时了，尤其是如果你有一个拥有大量链接的大型站点。你可以为这样的链接创建样式通过Mixin：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> linx (<span class="variable">$link</span>, <span class="variable">$visit</span>, <span class="variable">$hover</span>, <span class="variable">$active</span>) &#123;</div><div class="line">  <span class="selector-tag">a</span> &#123;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$link</span>;</div><div class="line">    &amp;:visited &#123;</div><div class="line">      <span class="attribute">color</span>: <span class="variable">$visit</span>;</div><div class="line">    &#125;</div><div class="line">    &amp;:hover &#123;</div><div class="line">      <span class="attribute">color</span>: <span class="variable">$hover</span>;   </div><div class="line">    &#125;</div><div class="line">    &amp;:active &#123;</div><div class="line">      <span class="attribute">color</span>: <span class="variable">$active</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="怎样引入Sass-Mixin"><a href="#怎样引入Sass-Mixin" class="headerlink" title="怎样引入Sass Mixin"></a>怎样引入Sass Mixin</h2><p>直接把混合放入到你的sass 文件中就可以了，引用上面创建的linx 指令你可以这么做：</p>
-<figure class="highlight processing"><table><tr><td class="code"><pre><div class="line">`@include linx(white, <span class="built_in">blue</span>, <span class="built_in">green</span>, <span class="built_in">red</span>);`</div></pre></td></tr></table></figure>
-<p><code>@include</code>指令用来引入mixins到sass文件中。</p>
-<h2 id="怎么样创建Sass-Mixin"><a href="#怎么样创建Sass-Mixin" class="headerlink" title="怎么样创建Sass Mixin"></a>怎么样创建Sass Mixin</h2><p>通过<code>@mixin</code>指令创建</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> sample &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过<code>@mixin</code>指令创建，你也可以引入写变量，像上面的linx的例子一样。</p>
-<p>可以在mixin中使用变量，你想使用<code>$font-base</code>这个变量，你只需要在mixin中定义就好了:</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="variable">$font-base</span>: <span class="number">12px</span>;</div><div class="line"></div><div class="line">@<span class="keyword">mixin</span> sample &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="variable">$font-base</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  @<span class="keyword">include</span> sample;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>生成的CSS如下:</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Sass-Mixins-参数"><a href="#Sass-Mixins-参数" class="headerlink" title="Sass Mixins 参数"></a>Sass Mixins 参数</h2><p>mixin使用sass的数据值作为参数。当你使用<code>@include</code>引入mixin的时候，这些值就被赋值了相关的值。这些参数作为mixin的变量。参数定义在mixin的名字之后，以逗号分隔：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> headline (<span class="variable">$color</span>, <span class="variable">$size</span>) &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="variable">$size</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  @<span class="keyword">include</span> headline(green, 12px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>编译为:</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: green;   </div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当我们使用基本参数的时候，一定要按照变量指定顺序的顺序。像下面的方式，编译的css将是不合符规则的：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  @<span class="keyword">include</span> headline(<span class="number">12px</span>, green);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">12px</span>;</div><div class="line">  <span class="attribute">font-size</span>: green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>你可以明白了，mixin只是按照你定义的顺序传递参数，并没有生成多余的css代码。</p>
-<p>你也可以使用Sass变量当做参数。如设置<code>$base-color</code>变量：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="variable">$base-color</span>: pink;</div><div class="line"></div><div class="line">@<span class="keyword">mixin</span> headline(<span class="variable">$color</span>, <span class="variable">$size</span>) &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="variable">$size</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123; @<span class="keyword">include</span> headline(<span class="variable">$base-color</span>, 12px);&#125;</div></pre></td></tr></table></figure>
-<p>编译:</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: pink;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Sass-Mixins的默认值"><a href="#Sass-Mixins的默认值" class="headerlink" title="Sass Mixins的默认值"></a>Sass Mixins的默认值</h2><p>当我们创建mixin指定默认的数组作为参数的时候。那么当我们引入mixin的时候，默认值将会被继承下来。如下，如果你更新headline mixin：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> headline(<span class="variable">$size</span>, <span class="variable">$color</span>: red) &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="variable">$size</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  @<span class="keyword">include</span> headline(<span class="number">12px</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  @<span class="keyword">include</span> headline(<span class="number">12px</span>, blue);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>编译为:</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>第一个H1你只指定一个像素大小，所以mixin使用其红色的默认值。在第二个例子中，您提供了一个显式的颜色值，蓝色，从而取代了默认值“红色”。注意，你必须改变参数的顺序为Sass要所必须的。因为<code>$color</code>参数具有默认值，所以在引入中颜色是可选的。还可以将变量指定为默认值：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="variable">$base-color</span>: orange;</div><div class="line"></div><div class="line">@<span class="keyword">mixin</span> headline(<span class="variable">$size</span>, <span class="variable">$color</span>: <span class="variable">$base-color</span>) &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="variable">$size</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Sass-Mixins-的关键参数"><a href="#Sass-Mixins-的关键参数" class="headerlink" title="Sass Mixins 的关键参数"></a>Sass Mixins 的关键参数</h2><p>您也可以选择你的mixin包含关键字参数。即使使用关键字参数可能使代码不那么简洁，但它也也提高可读性，如果其他人将维护您编写的代码，这将是非常重要的。可以以任何顺序包含关键字参数，当然可以省略默认值：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> headline(<span class="variable">$size</span>, <span class="variable">$color</span>: red) &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="variable">$size</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  @<span class="keyword">include</span> headline(<span class="variable">$color</span>: blue, <span class="variable">$size</span>: 12px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>编译为。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Sass-Mixins-中的变量参数"><a href="#Sass-Mixins-中的变量参数" class="headerlink" title="Sass Mixins 中的变量参数"></a>Sass Mixins 中的变量参数</h2><p>有时你可能需要你的mixin接受许多参数。例如，<code>padding</code>属性可以有一到四个参数。在这种情况下，你可以创建一个mixin使用可变参数。变量参数允许您将参数打包为列表。除了他们在最后添加(…)之外，其他与普通的一样：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> pad (<span class="variable">$pads</span>...) &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="variable">$pads</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.one</span> &#123;</div><div class="line">  @<span class="keyword">include</span> pad(<span class="number">20px</span>);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.two</span> &#123;</div><div class="line">  @<span class="keyword">include</span> pad(<span class="number">10px</span> 20px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.three</span> &#123;</div><div class="line">  @<span class="keyword">include</span> pad(<span class="number">10px</span> 20px 40px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.four</span> &#123;</div><div class="line">  @<span class="keyword">include</span> pad(<span class="number">10px</span> 20px 30px 20px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>编译为:</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.one</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.two</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.three</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span> <span class="number">40px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.four</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span> <span class="number">30px</span> <span class="number">20px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>你可以引入常规的参数在变参旁边。</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> pad (<span class="variable">$color</span>,<span class="variable">$pads</span>...) &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="variable">$pads</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.four</span> &#123; @<span class="keyword">include</span> pad(orange, 10px 20px 30px 20px); &#125;</div></pre></td></tr></table></figure>
-<p>编译为：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.four</span> &#123;</div><div class="line">  <span class="attribute">color</span>: orange;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span> <span class="number">30px</span> <span class="number">20px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>正则参数必须出现在变量参数之前。如您所见，剩余的参数被打包并用于填充值。当你引入mixin，你也可以使用变量参数。对于参数，可以从一个值列表或一个映射列表中提取：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="variable">$box-style1</span>: <span class="number">5px</span>, solid, red;</div><div class="line"><span class="variable">$box-style2</span>: (bStyle: dotted, bColor: blue, bWidth: medium);</div><div class="line"></div><div class="line">@<span class="keyword">mixin</span> boxy(<span class="variable">$bWidth</span>, <span class="variable">$bStyle</span>, <span class="variable">$bColor</span>) &#123;</div><div class="line">  <span class="attribute">border-width</span>: <span class="variable">$bWidth</span>;</div><div class="line">  <span class="attribute">border-style</span>: <span class="variable">$bStyle</span>;</div><div class="line">  <span class="attribute">border-color</span>: <span class="variable">$bColor</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.first</span> &#123;</div><div class="line">  @<span class="keyword">include</span> boxy(<span class="variable">$box-style1</span>...);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.second</span> &#123;</div><div class="line">  @<span class="keyword">include</span> boxy(<span class="variable">$box-style2</span>...);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>你可以看到，你已经设置了的列表和映射为你你的mixin。当使用列表时，参数必须以正确的顺序排列。使用map时，顺序无关紧要，因为map值将被视为关键字参数。正如您所看到的，map值的顺序是错误的，但是您仍然得到正确的CSS代码：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.first</span> &#123;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">5px</span>;</div><div class="line">  <span class="attribute">border-style</span>: solid;</div><div class="line">  <span class="attribute">border-color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.second</span> &#123;</div><div class="line">  <span class="attribute">border-width</span>: medium;</div><div class="line">  <span class="attribute">border-style</span>: dotted;</div><div class="line">  <span class="attribute">border-color</span>: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="content"><a href="#content" class="headerlink" title="@content"></a>@content</h2><p>通过<code>@content</code>指令你可以引入没有定义在mixin中的样式。增加的样式将会出现在mixin中的有<code>@content</code>关键字的地方：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> cont &#123;</div><div class="line">  <span class="attribute">background-color</span>: black;</div><div class="line">  <span class="attribute">color</span>: white;</div><div class="line">  @<span class="keyword">content</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>额外的样式将会这样添加进去:</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  @<span class="keyword">include</span> cont &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">    <span class="attribute">font-style</span>: italic;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: black;</div><div class="line">  <span class="attribute">color</span>: white;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">  <span class="attribute">font-style</span>: italic;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如您所见，上面添加的<code>font-size</code> 和 <code>font-style</code>样式已经与编译后的CSS代码相关。<code>@content</code>指令允许您根据需要设置基本样式和自定义。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>你可以看到，mixin是非常有用的sass指令。有这么多的技巧让你可以完成mixin来加快你的工作流程。SASS mixin更多的信息：<a href="https://www.sitepoint.com/sass-mixin-placeholder/" target="_blank" rel="external">mixin或占位符</a>作者Hugo Giraoudel与<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" rel="external">sass 文档</a>。</p>
-<p>你最喜欢的sass mixin是什么？请在评论中分享。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2017/07/17/2017-07-17-Css-Sass-Mixin/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/07/17/2017-07-17-Css-Sass-Mixin/" data-id="cj5c0y4d400ab5fnkttcnm817" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/07/17/2017-07-17-Css-Sass-Mixin/" data-id="cj6kz9dkp00aib69kfv5q3rco" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/07/17/2017-07-17-Css-Sass-Mixin/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -207,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/07/01/2017-07-01-Node-npm技巧/" data-id="cj5c0y4d600ag5fnkva4il7ch" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/07/01/2017-07-01-Node-npm技巧/" data-id="cj6kz9dko00agb69k4s6ab3cu" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/07/01/2017-07-01-Node-npm技巧/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -259,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/06/01/2017-06-01-Node-npm@5/" data-id="cj5c0y4d500ae5fnkpjk64qo4" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/06/01/2017-06-01-Node-npm@5/" data-id="cj6kz9dkm00abb69kfx0gvwn3" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/06/01/2017-06-01-Node-npm@5/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -310,7 +533,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/05/01/2017-05-01-Css-transition/" data-id="cj5c0y4d300a95fnknf78nfeu" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/05/01/2017-05-01-Css-transition/" data-id="cj6kz9dkj00a6b69kyn6orjqq" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/05/01/2017-05-01-Css-transition/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -329,10 +552,10 @@
   -->
 
   
-    <article id="post-2017-04-01-Javascript-Promise-Libs" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-04-10-Javascript-Promise-problems" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/01/2017-04-01-Javascript-Promise-Libs/" class="article-date">
-  <time datetime="2017-03-31T16:00:00.000Z" itemprop="datePublished">2017-04-01</time>
+    <a href="/2017/04/10/2017-04-10-Javascript-Promise-problems/" class="article-date">
+  <time datetime="2017-04-09T16:00:00.000Z" itemprop="datePublished">2017-04-10</time>
 </a>
     
   </div>
@@ -343,7 +566,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/01/2017-04-01-Javascript-Promise-Libs/">Promise 框架的相关解析</a>
+      <a class="article-title" href="/2017/04/10/2017-04-10-Javascript-Promise-problems/">Promise 常见问题总结</a>
     </h1>
   
 
@@ -351,289 +574,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="相关的参考资料总结"><a href="#相关的参考资料总结" class="headerlink" title="相关的参考资料总结"></a>相关的参考资料总结</h3><p><a href="http://liubin.org/promises-book/#introduction" target="_blank" rel="external">Promise小书</a></p>
-<h3 id="相关的框架总结"><a href="#相关的框架总结" class="headerlink" title="相关的框架总结"></a>相关的框架总结</h3><p>+<a href="https://github.com/stefanpenner/es6-promise" target="_blank" rel="external">es6-promise</a> 自己经常用</p>
-<ul>
-<li><a href="http://bluebirdjs.com/docs/getting-started.html" target="_blank" rel="external">bluebird</a> 支持直接在浏览器中使用</li>
-<li><a href="http://documentup.com/kriskowal/q/" target="_blank" rel="external">q</a></li>
-<li><a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">axios</a> 这个也是大多数框架推荐的库，支持度比较的高</li>
-</ul>
-<h3 id="Promise实现"><a href="#Promise实现" class="headerlink" title="Promise实现"></a>Promise实现</h3><p>先参考别人实现的东西</p>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25178630" target="_blank" rel="external">1</a></li>
-<li><a href="http://bruce-xu.github.io/blogs/js/promise" target="_blank" rel="external">2</a></li>
-<li><a href="https://github.com/xieranmaya/blog/issues/3" target="_blank" rel="external">3</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/04/01/2017-04-01-Javascript-Promise-Libs/" data-id="cj5c0y4d200a65fnk3eckzmuw" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/04/01/2017-04-01-Javascript-Promise-Libs/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-03-19-Node-Nginx" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/19/2017-03-19-Node-Nginx/" class="article-date">
-  <time datetime="2017-03-18T16:00:00.000Z" itemprop="datePublished">2017-03-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/19/2017-03-19-Node-Nginx/">node 中使用 nginx</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>node 遇到nginx 带来一种新的web开发体验<br>先对nginx一些概念进行说明下, <a href="http://blog.stakecode.com/2016/12/22/2016-12-22-Nginx/">更多的基础东西参考</a></p>
-<h2 id="正向与反向代理"><a href="#正向与反向代理" class="headerlink" title="正向与反向代理"></a>正向与反向代理</h2><p>正向代理服务器用来让局域网客户机接入外网以访问外网资源<br>反向代理服务器用来让外网的客户端接入局域网中的站点以访问站点中的资源。</p>
-<h3 id="正向代理的服务器配置"><a href="#正向代理的服务器配置" class="headerlink" title="正向代理的服务器配置"></a>正向代理的服务器配置</h3><ul>
-<li>resolver : 指定DNS服务器的IP地址</li>
-<li>resolver_timeout: 设置DNS服务器域名解析超时时间</li>
-<li>proxy_pass: 代理服务器协议和地址</li>
-</ul>
-<h3 id="反向代理服务器配置"><a href="#反向代理服务器配置" class="headerlink" title="反向代理服务器配置"></a>反向代理服务器配置</h3><p>反向代理的相关的指令太多了就不一一详述，其中最重要就是<strong>负载均衡</strong>配置。<br><strong>负载均衡</strong> 大致原理利用一定的分配策略将网络负载均衡平衡的分摊到网络集群的各个操作单元，使的单个重负载任务能够分担到多个单元上并行处理，或者使得大量的并发访问或数据流量分担到多个单元上分别处理，从而减少用户的等待响应时间。<br>nginx实现静态的基于优先级的加权轮询算法，主要使用的配置是proxy_pass指令和upsteam指令。</p>
+        <p><a href="https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">源自</a></p>
+<p>We have a problem with promises</p>
+<p>Fellow JavaScripters, it’s time to admit it: we have a problem with promises.</p>
+<p>No, not with promises themselves. Promises, as defined by the A+ spec, are awesome.</p>
+<p>The big problem, which has revealed itself to me over the course of the past year, as I’ve watched numerous programmers struggle with the PouchDB API and other promise-heavy APIs, is this:</p>
+<p>Many of us are using promises without really understanding them.</p>
+<p>If you find that hard to believe, consider this puzzle I recently posted to Twitter:</p>
+<p>Q: What is the difference between these four promises?</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><div class="line">doSomething().<span class="keyword">then</span>(<span class="keyword">function</span> <span class="title"></span>() &#123;</div><div class="line">  <span class="keyword">return</span> <span class="type">doSomethingElse()</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">doSomething().<span class="keyword">then</span>(<span class="keyword">function</span> <span class="title"></span>() &#123;</div><div class="line">  doSomethingElse();</div><div class="line">&#125;);</div><div class="line"></div><div class="line">doSomething().<span class="keyword">then</span>(doSomethingElse());</div><div class="line"></div><div class="line">doSomething().<span class="keyword">then</span>(doSomethingElse);</div></pre></td></tr></table></figure>
+<p>If you know the answer, then congratulations: you’re a promises ninja. You have my permission to stop reading this blog post.</p>
+<p>For the other 99.99% of you, you’re in good company. Nobody who responded to my tweet could solve it, and I myself was surprised by the answer to #3. Yes, even though I wrote the quiz!</p>
+<p>The answers are at the end of this post, but first, I’d like to explore why promises are so tricky in the first place, and why so many of us – novices and experts alike – get tripped up by them. I’m also going to offer what I consider to be the singular insight, the one weird trick, that makes promises a cinch to understand. And yes, I really do believe they’re not so hard after that!</p>
+<p>But to start with, let’s challenge some common assumptions about promises.</p>
         
           <p class="article-more-link">
-            <a href="/2017/03/19/2017-03-19-Node-Nginx/#more">Read More</a>
+            <a href="/2017/04/10/2017-04-10-Javascript-Promise-problems/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/19/2017-03-19-Node-Nginx/" data-id="cj5c0y4cs009p5fnk6r7onc7h" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/04/10/2017-04-10-Javascript-Promise-problems/" data-id="cj6kz9dkk00a8b69ko9oft3l7" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2017/03/19/2017-03-19-Node-Nginx/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-03-18-Node-Redis" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/18/2017-03-18-Node-Redis/" class="article-date">
-  <time datetime="2017-03-17T16:00:00.000Z" itemprop="datePublished">2017-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/18/2017-03-18-Node-Redis/">Redis</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Redis 解压数据库的频繁操作，redis的存储方式是键值对的方式，只能存储字符串。</p>
-<p>我们只是使用redis搭建一个缓存的功能。</p>
-<p>安装直接通过homebrew安装就可以。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/03/18/2017-03-18-Node-Redis/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/18/2017-03-18-Node-Redis/" data-id="cj5c0y4d200a45fnkqgvc78kv" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/03/18/2017-03-18-Node-Redis/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2017/04/10/2017-04-10-Javascript-Promise-problems/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-03-14-Charles" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/14/2017-03-14-Charles/" class="article-date">
-  <time datetime="2017-03-13T16:00:00.000Z" itemprop="datePublished">2017-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/14/2017-03-14-Charles/">Charles 配置笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Charles是一款用于HTTP信息抓包工具，可以快速有效的获得HTTP信息，非常利于开发者的网页开发和调试修改等！Charles 有着可视化的操作界面，非常利用编辑者的使用和调试！</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/03/14/2017-03-14-Charles/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/14/2017-03-14-Charles/" data-id="cj5c0y4d100a15fnk0k8bnnrd" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/03/14/2017-03-14-Charles/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-03-09" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/06/2017-03-09/" class="article-date">
-  <time datetime="2017-03-05T16:00:00.000Z" itemprop="datePublished">2017-03-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>诺坎普奇迹！<br>诺坎普奇迹！<br>诺坎普奇迹！</p>
-<p><img src="http://7xsubf.com1.z0.glb.clouddn.com/basa.jpg" alt="image"></p>
-<p>也许这真的是奇迹，但中间的苦楚又只有多少人能够体会。</p>
-<p>恩叔，下个赛季可能就不会指教巴萨了，这个就是指教豪门的压力，当我们看到惊天逆转的时候，我们可能想到了恩叔，看到了恩叔的激情庆祝，但是恩叔是不是还会继续指教我萨不知道的事情。</p>
-<p>最后我们看到6-1的比分，有多少人是满眼泪水，为这种全心投入，为这种对于足球的爱的坚定！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/06/2017-03-09/" data-id="cj5c0y4d0009z5fnk6nuv5lr4" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/03/06/2017-03-09/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-03-06-Node-path" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/06/2017-03-06-Node-path/" class="article-date">
-  <time datetime="2017-03-05T16:00:00.000Z" itemprop="datePublished">2017-03-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>NodeJS中的Path对象，用于处理目录的对象，提高开发效率。<br>用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。<br>引入path对象:</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><div class="line"><span class="attribute">var path</span> = require(<span class="string">'path'</span>);</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2017/03/06/2017-03-06-Node-path/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/06/2017-03-06-Node-path/" data-id="cj5c0y4cz009w5fnk5ej9h0ma" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/03/06/2017-03-06-Node-path/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
 
     </footer>
   </div>
@@ -650,7 +617,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -673,7 +640,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15.83px;">转载翻译</a>
     </div>
   </div>
 
@@ -682,7 +649,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -695,23 +662,23 @@
       <ul>
         
           <li>
-            <a href="/2017/07/17/2017-07-17-Css-Sass-Mixin/">Sass mixin的指令</a>
+            <a href="/2017/08/20/2017-08-20-Node-npm-webpack/">书写基于ES6的npm包问题</a>
           </li>
         
           <li>
-            <a href="/2017/07/01/2017-07-01-Node-npm技巧/">让你备受刮目相看的8个npm技巧</a>
+            <a href="/2017/08/15/2017-08-15-CSS-BFC/">BFC(块级可视化上下文)</a>
           </li>
         
           <li>
-            <a href="/2017/06/01/2017-06-01-Node-npm@5/">npm@5规范</a>
+            <a href="/2017/08/01/2017-08-01-Javascript-Async-Await/">async-await</a>
           </li>
         
           <li>
-            <a href="/2017/05/01/2017-05-01-Css-transition/">理解CSS3 transition属性</a>
+            <a href="/2017/07/21/2017-07-21-Javascript-Fetch/">fetch</a>
           </li>
         
           <li>
-            <a href="/2017/04/01/2017-04-01-Javascript-Promise-Libs/">Promise 框架的相关解析</a>
+            <a href="/2017/07/20/2017-07-20-Javascript-Generator/">generator</a>
           </li>
         
       </ul>
