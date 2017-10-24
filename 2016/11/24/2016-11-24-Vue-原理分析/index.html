@@ -3,48 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Vue1.0 进阶 模板 | Hello World</title>
+  <title>vue框架的深入了解 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="v-bind: 属性，class，style的绑定，添加与隐藏效果
+  <meta name="description" content="vue框架为我们开发带来了很多的方便之处，很够系统的明白vue的原理还是很有必要的。通过对于vue，vuex，vue-router源码分析提高对于vue的认识；
+vue响应式系统，实现MVVM模型的框架源码主要用es语法加载着 flow语法
 
-v-bind:class = &quot;&amp;#123;finished:0&amp;#125;&quot;
-
-v-on: 事件绑定，添加具体的事件
-
-v-on:click=&quot;add()&quot;
-add方法放在methods这个对象中
-
-v-model: 对应data中的数据，只用在input，selected，textarea
-v-text : {/{}/}">
+src/compiler: 主要做模板解析渲染的
+core 肯定就是核心代码了
+instance
+observer
+util
+vdom">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue1.0 进阶 模板">
-<meta property="og:url" content="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/index.html">
+<meta property="og:title" content="vue框架的深入了解">
+<meta property="og:url" content="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="v-bind: 属性，class，style的绑定，添加与隐藏效果
+<meta property="og:description" content="vue框架为我们开发带来了很多的方便之处，很够系统的明白vue的原理还是很有必要的。通过对于vue，vuex，vue-router源码分析提高对于vue的认识；
+vue响应式系统，实现MVVM模型的框架源码主要用es语法加载着 flow语法
 
-v-bind:class = &quot;&amp;#123;finished:0&amp;#125;&quot;
-
-v-on: 事件绑定，添加具体的事件
-
-v-on:click=&quot;add()&quot;
-add方法放在methods这个对象中
-
-v-model: 对应data中的数据，只用在input，selected，textarea
-v-text : {/{}/}">
-<meta property="og:updated_time" content="2017-01-02T17:07:09.000Z">
+src/compiler: 主要做模板解析渲染的
+core 肯定就是核心代码了
+instance
+observer
+util
+vdom">
+<meta property="og:updated_time" content="2017-10-24T04:11:57.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue1.0 进阶 模板">
-<meta name="twitter:description" content="v-bind: 属性，class，style的绑定，添加与隐藏效果
+<meta name="twitter:title" content="vue框架的深入了解">
+<meta name="twitter:description" content="vue框架为我们开发带来了很多的方便之处，很够系统的明白vue的原理还是很有必要的。通过对于vue，vuex，vue-router源码分析提高对于vue的认识；
+vue响应式系统，实现MVVM模型的框架源码主要用es语法加载着 flow语法
 
-v-bind:class = &quot;&amp;#123;finished:0&amp;#125;&quot;
-
-v-on: 事件绑定，添加具体的事件
-
-v-on:click=&quot;add()&quot;
-add方法放在methods这个对象中
-
-v-model: 对应data中的数据，只用在input，selected，textarea
-v-text : {/{}/}">
+src/compiler: 主要做模板解析渲染的
+core 肯定就是核心代码了
+instance
+observer
+util
+vdom">
   
   
     <link rel="icon" href="/favicon.png">
@@ -93,10 +87,10 @@ v-text : {/{}/}">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-11-12-Vue-进阶-模板" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016-11-24-Vue-原理分析" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/12/2016-11-12-Vue-进阶-模板/" class="article-date">
-  <time datetime="2016-11-11T16:00:00.000Z" itemprop="datePublished">2016-11-12</time>
+    <a href="/2016/11/24/2016-11-24-Vue-原理分析/" class="article-date">
+  <time datetime="2016-11-23T16:00:00.000Z" itemprop="datePublished">2016-11-24</time>
 </a>
     
   </div>
@@ -107,7 +101,7 @@ v-text : {/{}/}">
         
   
     <h1 class="article-title" itemprop="name">
-      Vue1.0 进阶 模板
+      vue框架的深入了解
     </h1>
   
 
@@ -115,29 +109,29 @@ v-text : {/{}/}">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>v-bind: 属性，class，style的绑定，添加与隐藏效果</li>
-</ul>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line">v-<span class="string">bind:</span><span class="class"><span class="keyword">class</span> = "&#123;</span><span class="string">finished:</span><span class="number">0</span>&#125;<span class="string">"</span></div></pre></td></tr></table></figure>
+        <p>vue框架为我们开发带来了很多的方便之处，很够系统的明白vue的原理还是很有必要的。通过对于vue，vuex，vue-router源码分析提高对于vue的认识；</p>
+<h4 id="vue响应式系统，实现MVVM模型的框架"><a href="#vue响应式系统，实现MVVM模型的框架" class="headerlink" title="vue响应式系统，实现MVVM模型的框架"></a>vue响应式系统，实现MVVM模型的框架</h4><p>源码主要用es语法加载着 flow语法</p>
 <ul>
-<li>v-on: 事件绑定，添加具体的事件</li>
+<li>src/compiler: 主要做模板解析渲染的</li>
+<li>core 肯定就是核心代码了<ul>
+<li>instance</li>
+<li>observer</li>
+<li>util</li>
+<li>vdom</li>
 </ul>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">v-<span class="keyword">on</span>:click=<span class="string">"add()"</span></div></pre></td></tr></table></figure>
-<p>add方法放在methods这个对象中</p>
-<ul>
-<li>v-model: 对应data中的数据，只用在input，selected，textarea</li>
-<li>v-text : {/{}/}</li>
-<li>v-html: 可以执行data里面的html</li>
-<li>v-for: 循环数组数据, 循环数据value，循环索引index</li>
+</li>
 </ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"id"</span>: <span class="string">"581b0c4ebb9452c9052e7acb"</span>,</div><div class="line">  <span class="string">"author_id"</span>: <span class="string">"5110f2bedf9e9fcc584e4677"</span>,</div><div class="line">  <span class="string">"tab"</span>: <span class="string">"share"</span>,</div><div class="line">  <span class="string">"title"</span>: <span class="string">"title title"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;<span class="selector-tag">li</span> v-<span class="keyword">for</span>=<span class="string">"(value, index) in msg"</span>&gt;</div><div class="line">  &lt;h3&gt;&#123;&#123; value<span class="selector-class">.title</span> &#125;&#125;&lt;/h3&gt;</div><div class="line">  &lt;div&gt;&#123;&#123; value<span class="selector-class">.id</span> &#125;&#125;&lt;/div&gt;</div><div class="line">  &lt;div&gt;&#123;&#123; value<span class="selector-class">.tab</span> &#125;&#125;&lt;/div&gt;</div><div class="line">&lt;/li&gt;</div></pre></td></tr></table></figure>
-
+<a id="more"></a>
+<h4 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h4><p>vuex通过<code>install</code>按照第三方插件的方式引入的。<br>对于低于2.0的版本做一个处理,高版本直接通过vue挂载，低的直接作为vue的属性挂载</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> (version &gt;= <span class="number">2</span>) &#123;</div><div class="line">  Vue.mixin(&#123; <span class="attr">beforeCreate</span>: vuexInit &#125;)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="comment">// override init and inject vuex init procedure</span></div><div class="line">  <span class="comment">// for 1.x backwards compatibility.</span></div><div class="line">  <span class="keyword">const</span> _init = Vue.prototype._init</div><div class="line">  Vue.prototype._init = <span class="function"><span class="keyword">function</span> (<span class="params">options = &#123;&#125;</span>) </span>&#123;</div><div class="line">    options.init = options.init</div><div class="line">      ? [vuexInit].concat(options.init)</div><div class="line">      : vuexInit</div><div class="line">    _init.call(<span class="keyword">this</span>, options)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>store.js</code>定义了vuex的核心代码组成</p>
+<h4 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h4>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/" data-id="cj6kz9dji007yb69kx1ocra0j" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/" data-id="cj953t1i4008brd3q784yz1eh" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
@@ -148,19 +142,19 @@ v-text : {/{}/}">
     
 <nav id="article-nav">
   
-    <a href="/2016/11/13/2016-11-13-Vue-进阶-总结/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/12/01/2016-12-01-Google-setting/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Vue1.0 进阶 模板
+          谷歌使用总结
         
       </div>
     </a>
   
   
-    <a href="/2016/11/11/2016-11-11-Vue-进阶/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Vue1.0 进阶</div>
+      <div class="article-nav-title">状态管理 Vuex</div>
     </a>
   
 </nav>
@@ -200,7 +194,7 @@ v-text : {/{}/}">
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15.83px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.38px;">App</a> <a href="/tags/BackBone/" style="font-size: 13.85px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.69px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.31px;">Git</a> <a href="/tags/Github/" style="font-size: 10.77px;">Github</a> <a href="/tags/Google/" style="font-size: 12.31px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.54px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.54px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.08px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.54px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.54px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.46px;">Node</a> <a href="/tags/React/" style="font-size: 14.62px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.77px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.54px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16.15px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.54px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.31px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.77px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.23px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.08px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.92px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15.38px;">转载翻译</a>
     </div>
   </div>
 
@@ -290,7 +284,7 @@ v-text : {/{}/}">
 <script>
   var disqus_shortname = 'dukehui1991';
   
-  var disqus_url = 'http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-模板/';
+  var disqus_url = 'http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/';
   
   (function(){
     var dsq = document.createElement('script');

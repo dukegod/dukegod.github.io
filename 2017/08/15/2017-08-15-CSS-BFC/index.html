@@ -6,33 +6,33 @@
   <title>BFC(块级可视化上下文) | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="BFC什么是BFC一些元素，如float元素，如position为absolute,inline-block,table-cell或table-caption的元素，以及overflow属性不为visible的元素，它们将会建立一个新的块级格式化上下文。
-解决的问题
-利用BFC可以消除Margin Collapse
-利用BFC去容纳浮动元素
-利用BFC阻止文本换行
+形成条件：
 
-解决方案基本在父级加行over">
+根元素
+float的值不为none
+overflow的值不为visible
+display的值为inline-block、tabl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BFC(块级可视化上下文)">
 <meta property="og:url" content="http://dukegod.github.io/2017/08/15/2017-08-15-CSS-BFC/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="BFC什么是BFC一些元素，如float元素，如position为absolute,inline-block,table-cell或table-caption的元素，以及overflow属性不为visible的元素，它们将会建立一个新的块级格式化上下文。
-解决的问题
-利用BFC可以消除Margin Collapse
-利用BFC去容纳浮动元素
-利用BFC阻止文本换行
+形成条件：
 
-解决方案基本在父级加行over">
-<meta property="og:updated_time" content="2017-08-15T07:18:01.000Z">
+根元素
+float的值不为none
+overflow的值不为visible
+display的值为inline-block、tabl">
+<meta property="og:updated_time" content="2017-09-22T03:07:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BFC(块级可视化上下文)">
 <meta name="twitter:description" content="BFC什么是BFC一些元素，如float元素，如position为absolute,inline-block,table-cell或table-caption的元素，以及overflow属性不为visible的元素，它们将会建立一个新的块级格式化上下文。
-解决的问题
-利用BFC可以消除Margin Collapse
-利用BFC去容纳浮动元素
-利用BFC阻止文本换行
+形成条件：
 
-解决方案基本在父级加行over">
+根元素
+float的值不为none
+overflow的值不为visible
+display的值为inline-block、tabl">
   
   
     <link rel="icon" href="/favicon.png">
@@ -104,19 +104,35 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><h4 id="什么是BFC"><a href="#什么是BFC" class="headerlink" title="什么是BFC"></a>什么是BFC</h4><p>一些元素，如float元素，如position为absolute,inline-block,table-cell或table-caption的元素，以及overflow属性不为visible的元素，它们将会建立一个新的块级格式化上下文。</p>
+<p>形成条件：</p>
+<ul>
+<li>根元素</li>
+<li>float的值不为none</li>
+<li>overflow的值不为visible</li>
+<li>display的值为inline-block、table-cell、table-caption<blockquote>
+<p>display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生<br>成了BFC</p>
+</blockquote>
+</li>
+<li>position的值为absolute或fixed</li>
+</ul>
 <h4 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h4><ul>
 <li>利用BFC可以消除Margin Collapse</li>
 <li>利用BFC去容纳浮动元素</li>
 <li>利用BFC阻止文本换行</li>
 </ul>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>基本在父级加行<code>overflow:hidden</code></p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>基本在父级加行<code>overflow:hidden</code></li>
+</ul>
 <figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="http://www.jianshu.com/p/fc1d61dace7b" target="_blank" rel="external">REF</a></p>
+<ul>
+<li>外层包裹块标签</li>
+</ul>
+<p><a href="http://www.jianshu.com/p/fc1d61dace7b" target="_blank" rel="external">REF</a><br><a href="https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md" target="_blank" rel="external">详细介绍BFC</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/08/15/2017-08-15-CSS-BFC/" data-id="cj6kz9dks00aqb69kgrs1kpid" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/08/15/2017-08-15-CSS-BFC/" data-id="cj953t1j900ayrd3qwgwfljjw" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/08/15/2017-08-15-CSS-BFC/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -181,7 +197,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Github/" style="font-size: 10.83px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.67px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.67px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.33px;">Node</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.17px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.33px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.67px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15.83px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.38px;">App</a> <a href="/tags/BackBone/" style="font-size: 13.85px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.69px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.31px;">Git</a> <a href="/tags/Github/" style="font-size: 10.77px;">Github</a> <a href="/tags/Google/" style="font-size: 12.31px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.54px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.54px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.08px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.54px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.54px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.46px;">Node</a> <a href="/tags/React/" style="font-size: 14.62px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.77px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.54px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16.15px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.54px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.31px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.77px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.23px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.08px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.92px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15.38px;">转载翻译</a>
     </div>
   </div>
 
