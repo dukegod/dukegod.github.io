@@ -27,7 +27,7 @@ instance
 observer
 util
 vdom">
-<meta property="og:updated_time" content="2017-10-24T04:11:57.124Z">
+<meta property="og:updated_time" content="2017-10-26T10:16:36.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue框架的深入了解">
 <meta name="twitter:description" content="vue框架为我们开发带来了很多的方便之处，很够系统的明白vue的原理还是很有必要的。通过对于vue，vuex，vue-router源码分析提高对于vue的认识；
@@ -125,11 +125,19 @@ vdom">
 <h4 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h4><p>vuex通过<code>install</code>按照第三方插件的方式引入的。<br>对于低于2.0的版本做一个处理,高版本直接通过vue挂载，低的直接作为vue的属性挂载</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> (version &gt;= <span class="number">2</span>) &#123;</div><div class="line">  Vue.mixin(&#123; <span class="attr">beforeCreate</span>: vuexInit &#125;)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="comment">// override init and inject vuex init procedure</span></div><div class="line">  <span class="comment">// for 1.x backwards compatibility.</span></div><div class="line">  <span class="keyword">const</span> _init = Vue.prototype._init</div><div class="line">  Vue.prototype._init = <span class="function"><span class="keyword">function</span> (<span class="params">options = &#123;&#125;</span>) </span>&#123;</div><div class="line">    options.init = options.init</div><div class="line">      ? [vuexInit].concat(options.init)</div><div class="line">      : vuexInit</div><div class="line">    _init.call(<span class="keyword">this</span>, options)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>store.js</code>定义了vuex的核心代码组成</p>
-<h4 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h4>
+<h4 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h4><p>也是按照第三方插件的方式引入的。</p>
+<p>history 改变触发的事件：</p>
+<ul>
+<li>对于 hash 模式而言触发 window 的 hashchange 事件，</li>
+<li>对于 history 模式而言则触发 window 的 popstate 事件。</li>
+</ul>
+<p>参考</p>
+<p><a href="https://github.com/DDFE/DDFE-blog/issues/9" target="_blank" rel="external">https://github.com/DDFE/DDFE-blog/issues/9</a><br><a href="https://github.com/DDFE/DDFE-blog/issues/11" target="_blank" rel="external">https://github.com/DDFE/DDFE-blog/issues/11</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/" data-id="cj953t1i4008brd3q784yz1eh" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/" data-id="cj98fzvvu008ask3q7cbt9ci2" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -203,7 +211,7 @@ vdom">
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -214,6 +222,10 @@ vdom">
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/09/01/2017-09-01-Javascript-History-Hash/">history 与 hash的区别</a>
+          </li>
         
           <li>
             <a href="/2017/08/20/2017-08-20-Node-npm-webpack/">书写基于ES6的npm包问题</a>
@@ -229,10 +241,6 @@ vdom">
         
           <li>
             <a href="/2017/07/21/2017-07-21-Javascript-Fetch/">fetch</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/20/2017-07-20-Javascript-Generator/">generator</a>
           </li>
         
       </ul>

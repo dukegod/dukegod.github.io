@@ -64,6 +64,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-05-01-Javascript-Position-弹框问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/01/2016-05-01-Javascript-Position-弹框问题/" class="article-date">
+  <time datetime="2016-04-30T16:00:00.000Z" itemprop="datePublished">2016-05-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/01/2016-05-01-Javascript-Position-弹框问题/">苹果下弹框问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="弹框问题"><a href="#弹框问题" class="headerlink" title="弹框问题"></a>弹框问题</h2><p>把弹出框作为一个单独的层级提取出来。</p>
+<p>最外层使用fixed属性，防止遮挡不全的问题。</p>
+<p>最终解决方案：</p>
+<p>  把body的高度设为100%，overflow：hidden</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">&lt;&lt;<span class="selector-tag">div</span> class=<span class="string">"mask"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div&gt;</div><div class="line">  <span class="selector-tag">body</span></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line"><span class="selector-class">.mask</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">9999</span>;</div><div class="line">  <span class="attribute">background</span>: black;</div><div class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</div><div class="line">  -webkit-<span class="attribute">opacity</span>: <span class="number">0.2</span>;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="苹果下弹框问题"><a href="#苹果下弹框问题" class="headerlink" title="苹果下弹框问题"></a>苹果下弹框问题</h2><p>黑色背景框在一个层级，</p>
+<p>内容在另一个层级</p>
+<p>建议使用 absolute属性，解决iPhone手机遮挡不全的问题</p>
+<p>否则活影响内部数据的显示与隐藏</p>
+<p>控制body的样式，加上overflow：hidden属性</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/05/01/2016-05-01-Javascript-Position-弹框问题/" data-id="cj98fzvtc0039sk3qpbjbbl36" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/05/01/2016-05-01-Javascript-Position-弹框问题/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2016-04-20-Javascript-滚动数据加载" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/20/2016-04-20-Javascript-滚动数据加载/" class="article-date">
@@ -100,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/20/2016-04-20-Javascript-滚动数据加载/" data-id="cj953t1fs003frd3q3yeodmkr" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/20/2016-04-20-Javascript-滚动数据加载/" data-id="cj98fzvtd003csk3q5cmgo2wv" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/20/2016-04-20-Javascript-滚动数据加载/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -151,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/15/2016-04-15-Node-Socket/" data-id="cj953t1fs003drd3q1hifbsyo" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/15/2016-04-15-Node-Socket/" data-id="cj98fzvte003esk3q52na39qi" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/15/2016-04-15-Node-Socket/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -201,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/11/2016-04-11-doT/" data-id="cj953t1fl0030rd3q8of0j09c" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/11/2016-04-11-doT/" data-id="cj98fzvtb0037sk3qur8t9fau" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/11/2016-04-11-doT/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -248,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/05/2016-04-05-Node-Express-Route/" data-id="cj953t1fp0035rd3qrtfl12kt" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/05/2016-04-05-Node-Express-Route/" data-id="cj98fzvta0034sk3qkvu3kmjs" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/05/2016-04-05-Node-Express-Route/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -306,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/04/2016-04-04-Node-Express-中间件/" data-id="cj953t1fq0038rd3qc2zynr7m" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/04/2016-04-04-Node-Express-中间件/" data-id="cj98fzvt60032sk3q5a6hl2r6" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/04/2016-04-04-Node-Express-中间件/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -358,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/03/2016-04-03-Node-Express/" data-id="cj953t1fm0033rd3qdtv28wn6" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/03/2016-04-03-Node-Express/" data-id="cj98fzvt1002ssk3qm6cuwvjx" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/03/2016-04-03-Node-Express/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -410,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/02/2016-04-02-Css-Display/" data-id="cj953t1fj002vrd3qt01jyz39" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/02/2016-04-02-Css-Display/" data-id="cj98fzvt4002zsk3qfj54vkrn" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/02/2016-04-02-Css-Display/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -461,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/04/01/2016-04-01-Css-Flexbox/" data-id="cj953t1fi002urd3q5dmgtbhi" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/04/01/2016-04-01-Css-Flexbox/" data-id="cj98fzvt2002usk3qz0l5akzp" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/04/01/2016-04-01-Css-Flexbox/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -519,63 +574,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/03/20/2016-03-21-Css-模块化管理工具-Less-Sass/" data-id="cj953t1fk002yrd3qij8albx5" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/03/20/2016-03-21-Css-模块化管理工具-Less-Sass/" data-id="cj98fzvt4002xsk3q176xxlb8" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/03/20/2016-03-21-Css-模块化管理工具-Less-Sass/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Less/">Less</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-03-15-Google-plugin-develop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/15/2016-03-15-Google-plugin-develop/" class="article-date">
-  <time datetime="2016-03-14T16:00:00.000Z" itemprop="datePublished">2016-03-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/15/2016-03-15-Google-plugin-develop/">谷歌插件开发总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>谷歌插件开发，网上有很多的参考资源，开发的本质还是自己动手，即使开发最简单的功能，也能体验其中的原委。</p>
-<p>这次开发一个“回到顶部”的功能，因为有的时候浏览一起网页，并没有置顶的功能，影响浏览体验。简述开发过程（带完善）</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/03/15/2016-03-15-Google-plugin-develop/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/03/15/2016-03-15-Google-plugin-develop/" data-id="cj953t1fh002srd3qkp748gw9" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/03/15/2016-03-15-Google-plugin-develop/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -624,7 +628,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -635,6 +639,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/09/01/2017-09-01-Javascript-History-Hash/">history 与 hash的区别</a>
+          </li>
         
           <li>
             <a href="/2017/08/20/2017-08-20-Node-npm-webpack/">书写基于ES6的npm包问题</a>
@@ -650,10 +658,6 @@
         
           <li>
             <a href="/2017/07/21/2017-07-21-Javascript-Fetch/">fetch</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/20/2017-07-20-Javascript-Generator/">generator</a>
           </li>
         
       </ul>
