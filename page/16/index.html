@@ -64,6 +64,474 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-02-04-li不换行" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/04/2016-02-04-li不换行/" class="article-date">
+  <time datetime="2016-02-03T16:00:00.000Z" itemprop="datePublished">2016-02-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/04/2016-02-04-li不换行/">使用css控制li不换行的方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用float属性"><a href="#使用float属性" class="headerlink" title="使用float属性"></a>使用float属性</h2><h2 id="使用display，white-space"><a href="#使用display，white-space" class="headerlink" title="使用display，white-space"></a>使用display，white-space</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/04/2016-02-04-li不换行/" data-id="cjcr61kzt001ca19klefmhck8" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/04/2016-02-04-li不换行/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-02-03-微信晃动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/03/2016-02-03-微信晃动/" class="article-date">
+  <time datetime="2016-02-02T16:00:00.000Z" itemprop="datePublished">2016-02-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/03/2016-02-03-微信晃动/">解决在微信浏览器中页面晃动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="去掉META"><a href="#去掉META" class="headerlink" title="去掉META"></a>去掉META</h2><p>一般移动端开发，我们都会手动设计META，伸展比例为1：1，页面不进行缩放，展示如下：</p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;
+</code></pre><p>但是在微信浏览器中（iPhone）中出现晃动。</p>
+<p>解决方案：</p>
+<ul>
+<li>去掉先定义META</li>
+<li>通过js动态计算，添加META标签（推荐<a href="https://github.com/dukegod/h5-demos/blob/master/demos/dynamic_modifing_meta/resolution.js" target="_blank" rel="external">resolution.js</a>）</li>
+<li>最好配合less或者sass使用</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/03/2016-02-03-微信晃动/" data-id="cjcr61kzn0017a19ks85uwfea" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/03/2016-02-03-微信晃动/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meta/">Meta</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-02-02-Css-样式居中" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/02/2016-02-02-Css-样式居中/" class="article-date">
+  <time datetime="2016-02-01T16:00:00.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/2016-02-02-Css-样式居中/">样式居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>模态框控制居中显示情况: fixed, flex, transform;</p>
+<p>需要弹出框不随着页面滚动，给body加上如下代码</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">overflow</span>:hidden;</div><div class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/02/02/2016-02-02-Css-样式居中/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/02/2016-02-02-Css-样式居中/" data-id="cjcr61kzg0010a19k1wx7shw0" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/02/2016-02-02-Css-样式居中/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-02-01-Zepto-option-init" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/01/2016-02-01-Zepto-option-init/" class="article-date">
+  <time datetime="2016-01-31T16:00:00.000Z" itemprop="datePublished">2016-02-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/01/2016-02-01-Zepto-option-init/">zepto中操作option</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>zepto中操作option不能直接使用$(‘option:selected’)。</p>
+<p>需要使用$(‘option:checked’)代替</p>
+<p>或者使用如下代码</p>
+<pre><code>$(&apos;option&apos;).not(function(){ return !this.selected })
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option-init/" data-id="cjcr61kze000xa19kzbl5aign" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/02/01/2016-02-01-Zepto-option-init/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-01-30-jQuery-text-html-init" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/30/2016-01-30-jQuery-text-html-init/" class="article-date">
+  <time datetime="2016-01-29T16:00:00.000Z" itemprop="datePublished">2016-01-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/30/2016-01-30-jQuery-text-html-init/">jquery,zepto中的text,html,val深入理解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="text，html，val共同点"><a href="#text，html，val共同点" class="headerlink" title="text，html，val共同点"></a>text，html，val共同点</h3><p>val用来读取或修改表单元素的value值。</p>
+<p>text用来读取或修改元素的纯文本内容</p>
+<p>html用为读取和修改元素的HTML标签</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/30/2016-01-30-jQuery-text-html-init/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/30/2016-01-30-jQuery-text-html-init/" data-id="cjcr61kzk0015a19kg4ql7nlu" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/30/2016-01-30-jQuery-text-html-init/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-01-26-Koala" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/26/2016-01-26-Koala/" class="article-date">
+  <time datetime="2016-01-25T16:00:00.000Z" itemprop="datePublished">2016-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/26/2016-01-26-Koala/">Koala</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用NWjs开发的一个工具</p>
+<p>解决不支持中文的问题：</p>
+<p>window:</p>
+<p>进入到Koala 安装目录(C:\Koala\rubygems\gems\sass-3.4.9\lib\sass )下找到engine.rb 文件</p>
+<p>在require 最下面 加入以下代码 即可解决</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line">Encoding<span class="selector-class">.default_external</span> = Encoding.find(<span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure>
+<p>Mac:</p>
+<p>在应用程序=》显示包内容=&gt;自行查找，修改如上</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/26/2016-01-26-Koala/" data-id="cjcr61kza000ta19k5djhb9cj" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/26/2016-01-26-Koala/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-01-25-Node-版本管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/2016-01-25-Node-版本管理/" class="article-date">
+  <time datetime="2016-01-24T16:00:00.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/2016-01-25-Node-版本管理/">node 版本管理工具</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>nvm主要用来管理node各个版本的工具。</p>
+<h2 id="node版本管理工具"><a href="#node版本管理工具" class="headerlink" title="node版本管理工具"></a>node版本管理工具</h2><p>在使用各种node管理工具的时候，可以试着把自己本地默认安装的node删除，然后根据不同的版本去安装不同的包文件。</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><div class="line"><span class="comment">#查看已经安装在全局的模块，以便删除这些全局模块后再按照不同的 node 版本重新进行全局安装</span></div><div class="line">npm ls -g --depth=<span class="number">0</span></div><div class="line"><span class="comment">#删除全局 node_modules 目录</span></div><div class="line">sudo rm -rf /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">node_modules</span></span></div><div class="line"><span class="comment">#删除 node</span></div><div class="line">sudo rm /usr/local/bin/node</div><div class="line"><span class="comment">#删除全局 node 模块注册的软链</span></div><div class="line">cd  /usr/local/bin &amp;&amp; ls -l | grep <span class="string">"../lib/node_modules/"</span> | awk <span class="string">'&#123;print $9&#125;'</span>| xargs rm</div></pre></td></tr></table></figure>
+<h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>可以用tj大牛的n去管理node各个版本。</p>
+<p>具体查看<a href="https://github.com/tj/n" target="_blank" rel="external">github n</a></p>
+<h3 id="brew-install-node-版本"><a href="#brew-install-node-版本" class="headerlink" title="brew install node 版本"></a>brew install node 版本</h3><p>也可以用brew 安装不同的弄得版本，自己手动配置node路径去使用不同的版本</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">brew <span class="keyword">install</span> **</div><div class="line"></div><div class="line"># node 环境变量修改</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">PATH</span>=/usr/<span class="keyword">local</span>/Cellar/node/<span class="number">6.1</span><span class="number">.0</span>/<span class="keyword">bin</span>:$<span class="keyword">PATH</span></div></pre></td></tr></table></figure>
+<h3 id="用nvm-管理node版本"><a href="#用nvm-管理node版本" class="headerlink" title="用nvm 管理node版本"></a>用nvm 管理node版本</h3><p>这个是我主要介绍的，用n管理不好控制npm版本，直接安装总是需要手动修改环境变量。</p>
+<p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm github地址</a>，你可以通过这个地址，更多的了解nvm</p>
+<p>推荐通过brew安装nvm</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><div class="line">brew install nvm</div><div class="line"></div><div class="line">// 创建一个目录</div><div class="line">mkdir  ~/.nvm</div><div class="line"></div><div class="line">// 当前用的<span class="keyword">node</span><span class="title">版本</span></div><div class="line">nvm use v6.<span class="number">0.0</span></div><div class="line"></div><div class="line">// 设置全局的<span class="keyword">node</span><span class="title">版本</span></div><div class="line"></div><div class="line">nvm alias defaule system/v6.<span class="number">3.1</span></div><div class="line"></div><div class="line">// 在bash_prifile中添加路径</div><div class="line"></div><div class="line"><span class="comment">#nvm</span></div><div class="line">export <span class="attr">NVM_DIR=</span><span class="string">"$HOME/.nvm"</span></div><div class="line">  . <span class="string">"$(brew --prefix nvm)/nvm.sh"</span></div></pre></td></tr></table></figure>
+<h4 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h4><p>npm 不建议不同的版本使用一套全局的npm modules</p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><div class="line"># 同步安装包（nvm install node --reinstall-packages-<span class="keyword">from</span>=node）</div><div class="line">nvm reinstall-packages</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/" data-id="cjcr61kzq0019a19kx1asj02m" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/25/2016-01-25-Node-版本管理/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-01-22-Ajax-action" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/22/2016-01-22-Ajax-action/" class="article-date">
+  <time datetime="2016-01-21T16:00:00.000Z" itemprop="datePublished">2016-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/22/2016-01-22-Ajax-action/">ajax note</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ajax的全称是Asynchronous JavaScript and XML</p>
+<h3 id="原理与主要的技术点"><a href="#原理与主要的技术点" class="headerlink" title="原理与主要的技术点"></a>原理与主要的技术点</h3><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/22/2016-01-22-Ajax-action/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/22/2016-01-22-Ajax-action/" data-id="cjcr61kzs001aa19k2ax9pfl5" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/22/2016-01-22-Ajax-action/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-01-21-Http-action" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/21/2016-01-21-Http-action/" class="article-date">
+  <time datetime="2016-01-20T16:00:00.000Z" itemprop="datePublished">2016-01-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/21/2016-01-21-Http-action/">http 协议</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HTTP-协议特点"><a href="#HTTP-协议特点" class="headerlink" title="HTTP 协议特点:"></a>HTTP 协议特点:</h2><p>1.支持客户/服务器模式。</p>
+<p>2.简单快速:客户向服务器请求服务时 ,只需传送请求方法和路径 。请求方法常用的有 GET、HEAD、<br>POST。每种方法规定了客户与服务器联系的类型不同 。由于 HTTP 协议简单,使得 HTTP 服务器的程序规 模小,因而通信速度很快。</p>
+<p>3.灵活:HTTP 允许传输任意类型的数据对象。正在传输的类型由 Content-Type 加以标记。</p>
+<p>4.无连接:无连接的含义是限制每次连接只处理一个请求 。服务器处理完客户的请求,并收到客户的 应答后,即断开连接。采用这种方式可以节省传输时间。</p>
+<p>5.无状态:HTTP 协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着 如果后续处理需要前面的信息,则它必须重传,这样可能导致每次连接传送的数据量增大。另一方面 ,在 服务器不需要先前信息时它的应答就较快。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/21/2016-01-21-Http-action/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/01/21/2016-01-21-Http-action/" data-id="cjcr61kzj0012a19k88doclwh" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/01/21/2016-01-21-Http-action/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2016-01-20-Jquery-plugin-init" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/20/2016-01-20-Jquery-plugin-init/" class="article-date">
@@ -95,7 +563,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/" data-id="cj98fzvrn000ysk3qkkgjadcq" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/" data-id="cjcr61kz7000ra19k1aoajhgi" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/01/20/2016-01-20-Jquery-plugin-init/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -114,476 +582,10 @@
   -->
 
   
-    <article id="post-2016-01-19" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/19/2016-01-19/" class="article-date">
-  <time datetime="2016-01-18T16:00:00.000Z" itemprop="datePublished">2016-01-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/19/2016-01-19/">天冷了</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>天冷了！<br>北京的冬天以急速的步伐向我们袭来。<br>在这冷冷的地方，让本来就是挺清净的我难免会增添更多的静，静的悲凉，静的辗转翻侧，不能说服自己好好的去睡觉。<br>但是在这静静的生活中，让我又在想到了过去，但愿回到过去，如今只能久久回味。</p>
-<p>花深人未眠<br>难以说服自己休息，起身做点别的吧。随手打开一本书，以落叶的清香为吻始，以死亡的无情为吻终，我们是应该好好梳理一下了，但是藏在内心的艰难的选择犹如藏在心中的虫一样撕咬着我，每一次想到都是一次比一次的疼痛！<br>选择沉默，但是我们彼此都在清晰的认知着，也许这已经是搁浅在我们心中的共识了吧！但是我们都没有能力去驾驭这艘早早想去漂泊的船！<br>幸福，当我们在谈幸福的时候，总是在想着别人的不幸，想着我们的甜蜜。我们真的是幸福，没有别人的压力，没有别人那样的暧昧的痛苦，更多的是理解！<br>其实我们不能去因为冷怨恨冬天的清净，洁白！只能怨我太害怕冷了，总是去逃避寒冷的冬天。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/19/2016-01-19/" data-id="cj98fzvrd000nsk3qcbv47kx0" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/19/2016-01-19/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-01-18" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/18/2016-01-18/" class="article-date">
-  <time datetime="2016-01-17T16:00:00.000Z" itemprop="datePublished">2016-01-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/18/2016-01-18/">诗</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>曾经觉得这首诗很美，那是确实很美</p>
-<p>乐之穹<br>舞之雯<br>轻歌曼舞若娉婷<br>回眸态生两靥许<br>恁时相见若留心<br>何必到如今。</p>
-<p>近者疏<br>亲着远<br>酒到酣处勾真情<br>难免化作相思语<br>心有未来需躬行<br>弯弓射天狼。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/18/2016-01-18/" data-id="cj98fzvri000rsk3qvuingio7" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/18/2016-01-18/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-01-13-EventBind-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/13/2016-01-13-EventBind-init/" class="article-date">
-  <time datetime="2016-01-12T16:00:00.000Z" itemprop="datePublished">2016-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/13/2016-01-13-EventBind-init/">事件委托</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>事件委托就是事件本身不处理事件，把事件处理的任务托给其父亲或者祖先元素，甚至是根元素。</p>
-<p>最常见的例子就是绑定li方法的委托事件。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/13/2016-01-13-EventBind-init/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/" data-id="cj98fzvra000lsk3ql8y8s74i" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/13/2016-01-13-EventBind-init/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-01-12-App-Scroll-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/12/2016-01-12-App-Scroll-init/" class="article-date">
-  <time datetime="2016-01-11T16:00:00.000Z" itemprop="datePublished">2016-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/12/2016-01-12-App-Scroll-init/">移动端滚动与内置浏览器出界问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="快速回弹滚动以及微信架构页面的思考"><a href="#快速回弹滚动以及微信架构页面的思考" class="headerlink" title="快速回弹滚动以及微信架构页面的思考"></a>快速回弹滚动以及微信架构页面的思考</h3><p>我们先来看看回弹滚动在手机浏览器发展的历史：<br>早期的时候，移动端的浏览器都不支持非body元素的滚动条，所以一般都借助 iScroll;<br>Android 3.0/iOS解决了非body元素的滚动问题，但滚动条不可见，同时iOS上只能通过2个手指进行滚动；<br>Android 4.0解决了滚动条不可见及增加了快速回弹滚动效果，不过随后这个特性又被移除；<br>iOS从5.0开始解决了滚动条不可见及增加了快速回弹滚动效果</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/12/2016-01-12-App-Scroll-init/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/12/2016-01-12-App-Scroll-init/" data-id="cj98fzvrg000psk3q3xqmrtxf" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/12/2016-01-12-App-Scroll-init/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-01-11-Node-npm" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/11/2016-01-11-Node-npm/" class="article-date">
-  <time datetime="2016-01-10T16:00:00.000Z" itemprop="datePublished">2016-01-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/11/2016-01-11-Node-npm/">npm基本操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作为nodejs环境下，最强的包管理工具，并且是依附在node各个版本中，不需要手动安装一次，不过以后的版本更新需要手动更新。</p>
-<h2 id="常见开发命令"><a href="#常见开发命令" class="headerlink" title="常见开发命令"></a>常见开发命令</h2><h4 id="搜素，安装，查看包信息"><a href="#搜素，安装，查看包信息" class="headerlink" title="搜素，安装，查看包信息"></a>搜素，安装，查看包信息</h4><figure class="highlight ceylon"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 搜索包</span></div><div class="line">npm search pkg</div><div class="line"></div><div class="line"><span class="comment">// 全局安装pkg</span></div><div class="line">npm install -g &lt;<span class="keyword">package</span><span class="number">_n</span>ame&gt;</div><div class="line"></div><div class="line"><span class="comment">// 本地安装，安装package时自动加入dependencies依赖列表</span></div><div class="line">npm install &lt;<span class="keyword">package</span><span class="number">_n</span>ame&gt; --save</div><div class="line"></div><div class="line"><span class="comment">// 本地安装，安装package时自动加入devDependencies依赖列表</span></div><div class="line">npm install &lt;<span class="keyword">package</span><span class="number">_n</span>ame&gt; --save-dev  <span class="comment">//加入到devDependencies</span></div><div class="line"></div><div class="line"><span class="comment">// 查看包信息</span></div><div class="line">npm info pkg</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/11/2016-01-11-Node-npm/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/11/2016-01-11-Node-npm/" data-id="cj98fzvr6000dsk3qh0w2mw41" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/11/2016-01-11-Node-npm/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-01-10-Font-action" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/10/2016-01-10-Font-action/" class="article-date">
-  <time datetime="2016-01-09T16:00:00.000Z" itemprop="datePublished">2016-01-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/2016-01-10-Font-action/">前端开发字体研究</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前端开发遇到的字体问题："><a href="#前端开发遇到的字体问题：" class="headerlink" title="前端开发遇到的字体问题："></a>前端开发遇到的字体问题：</h2><h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><h4 id="常见字体的中英文对照"><a href="#常见字体的中英文对照" class="headerlink" title="常见字体的中英文对照"></a>常见字体的中英文对照</h4><p>sans-serif（无衬线），serif（衬线），monospace（等宽），fantasy（梦幻），cuisive（草体），Simsun（宋体），Microsoft Yahei（微软雅黑），Sim hei（黑体），STXihei（华文细黑）</p>
-<h4 id="衬线体与无衬线体解释"><a href="#衬线体与无衬线体解释" class="headerlink" title="衬线体与无衬线体解释"></a>衬线体与无衬线体解释</h4><ul>
-<li><p>Serif是“衬线体”，特点是笔画末端有装饰。中文字体中的“宋体”、“楷体”、“仿宋”都是衬线体。</p>
-</li>
-<li><p>Sans-serif是“无衬线体”，特点是笔画线条简单，末端没什么花哨的装饰。中文中的“黑体”“微软雅黑”就是这种字体。<br>无衬线体由于形状简单，容易矢量化，矢量化后的字体缩放不会出现锯齿，适合液晶屏显示。</p>
-</li>
-<li><p>monospace 字体，每个字母的宽度相等，通常用于计算机相关书籍中排版代码块。</p>
-</li>
-<li><p>fantasy 和 cuisive 字体在浏览器中不常用，在各个浏览器中有明显的差异。</p>
-</li>
-</ul>
-<h4 id="主要的字体分类"><a href="#主要的字体分类" class="headerlink" title="主要的字体分类"></a>主要的字体分类</h4><p>无衬线字体有：Arial、Helvetica、Lucida Grande、Verdana、Tahoma、Trebuchet MS Normal；</p>
-<p>衬线字体有：Georgia、Times New Roman；</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/10/2016-01-10-Font-action/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/10/2016-01-10-Font-action/" data-id="cj98fzvr7000fsk3q8jds86b1" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/10/2016-01-10-Font-action/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Font/">Font</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-01-09-Meta-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/09/2016-01-09-Meta-init/" class="article-date">
-  <time datetime="2016-01-08T16:00:00.000Z" itemprop="datePublished">2016-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/09/2016-01-09-Meta-init/">移动开发常用的META设置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="共性"><a href="#共性" class="headerlink" title="共性"></a>共性</h2><ol>
-<li>不让页面缩放，变化。</li>
-</ol>
-<figure class="highlight nix"><table><tr><td class="code"><pre><div class="line">&lt;meta <span class="attr">name="viewport"</span> <span class="attr">content="width=device-width,</span> <span class="attr">initial-scale=1,</span> <span class="attr">maximum-scale=1,</span> <span class="attr">user-scalable=no"&gt;</span></div></pre></td></tr></table></figure>
-<p>2 优先使用最新版本 IE 和 Chrome</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><h4 id="1-Meta-之-format-detection"><a href="#1-Meta-之-format-detection" class="headerlink" title="1.   Meta 之 format-detection"></a>1.   Meta 之 format-detection</h4><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”format-detection”</span> <span class="attr">content</span>=<span class="string">”telephone</span>=<span class="string">no”</span> /&gt;</span></div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/09/2016-01-09-Meta-init/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/09/2016-01-09-Meta-init/" data-id="cj98fzvr9000jsk3qmyw2td8t" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/09/2016-01-09-Meta-init/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meta/">Meta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-01-08-Webkit-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/08/2016-01-08-Webkit-init/" class="article-date">
-  <time datetime="2016-01-07T16:00:00.000Z" itemprop="datePublished">2016-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/08/2016-01-08-Webkit-init/">移动开发webkit</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="webkit-tap-highlight-color-rgba-255-255-255-0"><a href="#webkit-tap-highlight-color-rgba-255-255-255-0" class="headerlink" title="-webkit-tap-highlight-color:rgba(255,255,255,0)"></a>-webkit-tap-highlight-color:rgba(255,255,255,0)</h3><p>可以同时屏蔽ios和android下点击元素时出现的<strong>阴影</strong>。</p>
-<p>备注：transparent的属性值在android下无效。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/08/2016-01-08-Webkit-init/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/" data-id="cj98fzvr8000hsk3qsqu2o2cy" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/08/2016-01-08-Webkit-init/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Webkit/">Webkit</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-01-07-Click-tap-init" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/07/2016-01-07-Click-tap-init/" class="article-date">
-  <time datetime="2016-01-06T16:00:00.000Z" itemprop="datePublished">2016-01-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/07/2016-01-07-Click-tap-init/">移动开发点击事件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="移动页面300ms延迟"><a href="#移动页面300ms延迟" class="headerlink" title="移动页面300ms延迟"></a>移动页面300ms延迟</h4><h4 id="产生的原因"><a href="#产生的原因" class="headerlink" title="产生的原因"></a>产生的原因</h4><p>2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。<br>双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。<br>原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/01/07/2016-01-07-Click-tap-init/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/01/07/2016-01-07-Click-tap-init/" data-id="cj98fzvr5000bsk3qnqf0sekk" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/01/07/2016-01-07-Click-tap-init/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -606,7 +608,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.38px;">App</a> <a href="/tags/BackBone/" style="font-size: 13.85px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.69px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.31px;">Git</a> <a href="/tags/Github/" style="font-size: 10.77px;">Github</a> <a href="/tags/Google/" style="font-size: 12.31px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.54px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.54px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.08px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.54px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.54px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.46px;">Node</a> <a href="/tags/React/" style="font-size: 14.62px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.77px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.54px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 16.15px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.54px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.31px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.77px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.23px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 13.08px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.92px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 15.38px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15px;">App</a> <a href="/tags/BackBone/" style="font-size: 13.57px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.14px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.14px;">Git</a> <a href="/tags/Github/" style="font-size: 10.71px;">Github</a> <a href="/tags/Google/" style="font-size: 12.14px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.43px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.43px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 12.86px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.43px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.57px;">Node</a> <a href="/tags/React/" style="font-size: 14.29px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.71px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.43px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.71px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.43px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.14px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.71px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.29px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 12.86px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.43px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 17.86px;">转载翻译</a>
     </div>
   </div>
 
@@ -615,7 +617,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -628,23 +630,23 @@
       <ul>
         
           <li>
-            <a href="/2017/09/01/2017-09-01-Javascript-History-Hash/">history 与 hash的区别</a>
+            <a href="/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/">XMLHttpRequest</a>
           </li>
         
           <li>
-            <a href="/2017/08/20/2017-08-20-Node-npm-webpack/">书写基于ES6的npm包问题</a>
+            <a href="/2018/01/08/2018-01-08-web权威指南-HTTP2.0/">HTTP2.0</a>
           </li>
         
           <li>
-            <a href="/2017/08/15/2017-08-15-CSS-BFC/">BFC(块级可视化上下文)</a>
+            <a href="/2018/01/07/2018-01-07-web权威指南-HTTP1.X/">HTTP1.X总结</a>
           </li>
         
           <li>
-            <a href="/2017/08/01/2017-08-01-Javascript-Async-Await/">async-await</a>
+            <a href="/2018/01/06/2018-01-06-web权威指南-HTTP简史/">HTTP简史</a>
           </li>
         
           <li>
-            <a href="/2017/07/21/2017-07-21-Javascript-Fetch/">fetch</a>
+            <a href="/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/">渲染树资源加载</a>
           </li>
         
       </ul>
@@ -659,7 +661,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 liu hui<br>
+      &copy; 2018 liu hui<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
