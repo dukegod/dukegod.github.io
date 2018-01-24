@@ -64,6 +64,108 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-01-06-Hack-SafariB" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/06/2017-01-06-Hack-SafariB/" class="article-date">
+  <time datetime="2017-01-05T16:00:00.000Z" itemprop="datePublished">2017-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/06/2017-01-06-Hack-SafariB/">Safari不能把事件绑定到body上</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ios开发不能把事件绑定到body上  </p>
+<p>也就是说，window，document，body 绑定click事件时，点击body不会触发，是Safari中的坑，所有的ios设备都是这样。</p>
+<p>解决方案：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"ios"</span>&gt;</div><div class="line"></div><div class="line">  &lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">$('<span class="comment">#ios').on()</span></div></pre></td></tr></table></figure>
+<p>绑定到最近的父一级的DOM</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/" data-id="cjcsr3xz5008vww9k8u012gky" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hack/">Hack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-01-05-Css-Clear-Overflow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/" class="article-date">
+  <time datetime="2017-01-03T16:00:00.000Z" itemprop="datePublished">2017-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><p>对于清楚浮动，每一个人都有自己的想法，基本都只知道怎么去清楚浮动，对于一些细节，我们不免需要多注意点，今天主要对于两个属性，强调说明。<br><strong>overflow</strong>与<strong>clear:both</strong></p>
+<h3 id="clear常用写法"><a href="#clear常用写法" class="headerlink" title="clear常用写法"></a>clear常用写法</h3><p>经常使用的是在浮动的下一级的块元素中添加如下代码实现清楚浮动</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.clearfixed</span><span class="selector-pseudo">::after</span>,</div><div class="line"><span class="selector-class">.clearfixed</span><span class="selector-pseudo">::before</span>&#123;</div><div class="line">  <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">  <span class="attribute">display</span>:table;</div><div class="line">  <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/" data-id="cjcsr3xz4008tww9kb6d7mn0a" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2017-01-01" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/01/2017-01-01/" class="article-date">
@@ -99,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/01/2017-01-01/" data-id="cjcr61l4z00b5a19kusd5h401" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/01/2017-01-01/" data-id="cjcsr3xz2008oww9kzedpa1jg" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/01/01/2017-01-01/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -147,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="cjcr61l43008ha19kaywquerh" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="cjcsr3xz3008qww9kg4628q2e" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -193,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="cjcr61l45008ka19k24axkvq8" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="cjcsr3xyw008jww9kgzjuu9gu" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -244,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cjcr61l4a008ma19kjsthtotm" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cjcsr3xz0008lww9kiad4aisi" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -304,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/" data-id="cjcr61l43008fa19knq5eyki1" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/" data-id="cjcsr3xyu008eww9kbjwg68j9" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -355,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cjcr61l4f008ua19kq0139ec3" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cjcsr3xyt008bww9kyp574bd2" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -435,7 +537,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/" data-id="cjcr61l3z0085a19knbz6kg3h" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/" data-id="cjcsr3xys0089ww9k87po16vd" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -496,121 +598,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/" data-id="cjcr61l3y0082a19kjl3gcmna" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/" data-id="cjcsr3xyv008gww9kisr53039" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-11-17-Vue-进阶-状态管理-Vuex" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/" class="article-date">
-  <time datetime="2016-11-16T16:00:00.000Z" itemprop="datePublished">2016-11-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/">状态管理 Vuex</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="状态管理方式："><a href="#状态管理方式：" class="headerlink" title="状态管理方式："></a>状态管理方式：</h4><ul>
-<li>bus</li>
-<li>dispatch，订阅发布模式       </li>
-<li>vuex：单一状态树</li>
-</ul>
-<h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><ul>
-<li>state : 数据状态存储</li>
-<li>getters：状态的处理</li>
-<li>mutations: 更改 Vuex 的 store 中的状态的唯一方法</li>
-<li>action: Action 提交的是 mutation，而不是直接变更状态。可以包含任意异步操作</li>
-<li>modules: 将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/" data-id="cjcr61l41008ca19ksk7phfek" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-11-16-Vue-进阶-状态管理-Bus" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/16/2016-11-16-Vue-进阶-状态管理-Bus/" class="article-date">
-  <time datetime="2016-11-15T16:00:00.000Z" itemprop="datePublished">2016-11-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/2016-11-16-Vue-进阶-状态管理-Bus/">状态管理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>状态管理，通过一个全局的实例化vue实现状态的变化；</p>
-<h4 id="1-首先在store文件夹中建立一个实例空的Vue作为全局对象"><a href="#1-首先在store文件夹中建立一个实例空的Vue作为全局对象" class="headerlink" title="1. 首先在store文件夹中建立一个实例空的Vue作为全局对象"></a>1. 首先在store文件夹中建立一个实例空的Vue作为全局对象</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue();</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/16/2016-11-16-Vue-进阶-状态管理-Bus/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-进阶-状态管理-Bus/" data-id="cjcr61l3u007va19kxfe5q925" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-进阶-状态管理-Bus/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
@@ -643,7 +633,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BackBone/">BackBone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Less/">Less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BackBone/">BackBone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Less/">Less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
     </div>
   </div>
 
@@ -653,7 +643,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15px;">App</a> <a href="/tags/BackBone/" style="font-size: 13.57px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.14px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.14px;">Git</a> <a href="/tags/Github/" style="font-size: 10.71px;">Github</a> <a href="/tags/Google/" style="font-size: 12.14px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.43px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.43px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 12.86px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.43px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.57px;">Node</a> <a href="/tags/React/" style="font-size: 14.29px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.71px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.43px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.71px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.43px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.14px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.71px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.29px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 12.86px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.43px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 17.86px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15px;">App</a> <a href="/tags/BackBone/" style="font-size: 13.57px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.14px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.14px;">Git</a> <a href="/tags/Github/" style="font-size: 10.71px;">Github</a> <a href="/tags/Google/" style="font-size: 12.14px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.43px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.43px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 12.86px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.43px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.57px;">Node</a> <a href="/tags/React/" style="font-size: 14.29px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.71px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.43px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.71px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.43px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.14px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/openResty/" style="font-size: 10.71px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.29px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 12.86px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.43px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 17.86px;">转载翻译</a>
     </div>
   </div>
 
@@ -662,7 +652,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
