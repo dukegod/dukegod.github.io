@@ -64,6 +64,258 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016-12-03-Http-缓存处理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/03/2016-12-03-Http-缓存处理/" class="article-date">
+  <time datetime="2016-12-02T16:00:00.000Z" itemprop="datePublished">2016-12-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/03/2016-12-03-Http-缓存处理/">彻底弄懂 Http 缓存机制 - 基于缓存策略三要素分解法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开发遇到的问题详情：<br>以下为 page.html 内容：<br><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>page页<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/head.png"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"page.html"</span>&gt;</span>重新访问page页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>首次访问该页面，页面中 head.png 响应头信息如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line"><span class="keyword">Cache</span>-Control: <span class="keyword">no</span>-<span class="keyword">cache</span></div><div class="line"><span class="keyword">Content</span>-<span class="keyword">Type</span>: image/png</div><div class="line"><span class="keyword">Last</span>-Modified: Tue, <span class="number">08</span> Nov <span class="number">2016</span> <span class="number">06</span>:<span class="number">59</span>:<span class="number">00</span> GMT</div><div class="line"><span class="keyword">Accept</span>-Ranges: <span class="keyword">bytes</span></div><div class="line"><span class="built_in">Date</span>: Thu, <span class="number">10</span> Nov <span class="number">2016</span> <span class="number">02</span>:<span class="number">48</span>:<span class="number">50</span> GMT</div><div class="line"><span class="keyword">Content</span>-<span class="keyword">Length</span>: <span class="number">3534</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>问题1：请问当点击“重新访问 page 页”链接重新加载该页面后， head.png 如何二次加载？</p>
+</li>
+<li><p>问题2：如果将上述信息中的 Cache-Control 设置为 private，那么结果又会如何呢？</p>
+</li>
+</ul>
+<p>以上2道题，如果你能全部答对（哈哈，还请仔细确认下 why，以防歪打正着），那么恭喜你，你已对这些知识理解非常透彻了，我后面讲的内容你可以忽略，否则还请继续陪我往下唠唠吧！</p>
+<p>首先回到开篇提到很多小伙伴（包括我）在解答 Http 缓存题目时栽跟头的问题，我觉得出现这种现象的根本原因在于我们吸收的知识还不够体系化，平时我们在学习这些知识时多半将其当作知识点来记，什么这个缓存头作什么、那个缓存头作什么用的，但实际中缓存头往往是多个之间相互配合协同工作的，有一套完整的工作体系。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/12/03/2016-12-03-Http-缓存处理/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/" data-id="cje0pt5l6008m5vnkfvw545ex" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/12/03/2016-12-03-Http-缓存处理/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-12-02-Node-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/02/2016-12-02-Node-mysql/" class="article-date">
+  <time datetime="2016-12-01T16:00:00.000Z" itemprop="datePublished">2016-12-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/02/2016-12-02-Node-mysql/">node中使用mysql数据库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很早以前就应该做这个总结了，一直没有时间，一直拖到现在才开始真正的着手处理这件事情。<br>mysql的一些操作就不做出说明了，看看相关的书籍就可以了。  </p>
+<p>本文主要说明下，安装，链接，简单运用。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/12/02/2016-12-02-Node-mysql/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/" data-id="cje0pt5l5008k5vnkfcfogw0k" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/12/02/2016-12-02-Node-mysql/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-12-01-Google-setting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/01/2016-12-01-Google-setting/" class="article-date">
+  <time datetime="2016-11-30T16:00:00.000Z" itemprop="datePublished">2016-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/01/2016-12-01-Google-setting/">谷歌使用总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以开发者为导向的文档说明</p>
+<h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome://"></a>chrome://</h2><h4 id="chrome-version"><a href="#chrome-version" class="headerlink" title="chrome://version/"></a>chrome://version/</h4><p>浏览器相关的信息</p>
+<h4 id="chrome-flags"><a href="#chrome-flags" class="headerlink" title="chrome://flags/"></a>chrome://flags/</h4><p>用来设置谷歌实验性的行功能，可以执行选择是否开启</p>
+<ul>
+<li>enable-javascript-harmony : 允许网页使用实验性 JavaScript 功能,可以用来调试ES6新功能。</li>
+<li>enable-point-point : 设为禁用，可以解决zepto报错的问题</li>
+</ul>
+<h4 id="chrome-extensions"><a href="#chrome-extensions" class="headerlink" title="chrome://extensions/"></a>chrome://extensions/</h4><p>扩展插件控制</p>
+<h4 id="chrome-setting"><a href="#chrome-setting" class="headerlink" title="chrome://setting"></a>chrome://setting</h4><p>设置</p>
+<h4 id="chrome-crashes"><a href="#chrome-crashes" class="headerlink" title="chrome://crashes/"></a>chrome://crashes/</h4><p>崩溃报告，记录crash的具体id上报</p>
+<h4 id="chrome-net-internals"><a href="#chrome-net-internals" class="headerlink" title="chrome://net-internals"></a>chrome://net-internals</h4><p>来帮助你查找被屏蔽的请求以及可能的原因</p>
+<h2 id="谷歌浏览器设置"><a href="#谷歌浏览器设置" class="headerlink" title="谷歌浏览器设置"></a>谷歌浏览器设置</h2><ul>
+<li>字体 : 平-方</li>
+</ul>
+<h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><ul>
+<li>Better History ：管理浏览器历史记录</li>
+<li>Fast Video Downloader ：视频下载</li>
+<li>HTTP/2 and SPDY indicator ：检测是不是启用了http2.0协议</li>
+<li>JSON-handle</li>
+<li>Markdown Editor</li>
+<li>Octotree ： 用来管理github仓库，代码以树形结构显示</li>
+<li>Proxy SwitchySharp ： 代理</li>
+<li>React Developer Tools</li>
+<li>Scratch JS ： ES6 代码书写</li>
+<li>show ip</li>
+<li>SoundCloud Music Downloader</li>
+<li>Vue.js devtools</li>
+<li>WEB前端助手(FeHelper)</li>
+</ul>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ul>
+<li>在mac崩溃</li>
+</ul>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><div class="line">sudo chown -R $<span class="keyword">USER</span> <span class="title">~/Library</span>/Google</div></pre></td></tr></table></figure>
+<p>Thread 56 CRASHED [EXC_BAD_ACCESS / EXC_I386_GPFLT @ 0x000000010d16d6e4 ] MAGIC SIGNATURE THREAD 问题</p>
+<p>It is related to Chrome Sync, so you may want to try signing out of Chrome sync and then logging back in. 意思是可能是因为同步的问题，清理日志与缓存重新登录下。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/" data-id="cje0pt5l3008f5vnkqgr8svtn" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/12/01/2016-12-01-Google-setting/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2016-11-24-Vue-原理分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/24/2016-11-24-Vue-原理分析/" class="article-date">
+  <time datetime="2016-11-23T16:00:00.000Z" itemprop="datePublished">2016-11-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/24/2016-11-24-Vue-原理分析/">vue框架的深入了解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vue框架为我们开发带来了很多的方便之处，很够系统的明白vue的原理还是很有必要的。通过对于vue，vuex，vue-router源码分析提高对于vue的认识；</p>
+<h4 id="vue响应式系统，实现MVVM模型的框架"><a href="#vue响应式系统，实现MVVM模型的框架" class="headerlink" title="vue响应式系统，实现MVVM模型的框架"></a>vue响应式系统，实现MVVM模型的框架</h4><p>源码主要用es语法加载着 flow语法</p>
+<ul>
+<li>src/compiler: 主要做模板解析渲染的</li>
+<li>core 肯定就是核心代码了<ul>
+<li>instance</li>
+<li>observer</li>
+<li>util</li>
+<li>vdom</li>
+</ul>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/11/24/2016-11-24-Vue-原理分析/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/" data-id="cje0pt5l4008h5vnkw6f2vlpx" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2016/11/24/2016-11-24-Vue-原理分析/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2016-11-17-Vue-进阶-状态管理-Vuex" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/" class="article-date">
@@ -106,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/" data-id="cjcsr3xyr0086ww9kjq1l2x4z" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/" data-id="cje0pt5l2008c5vnkfod6az20" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/17/2016-11-17-Vue-进阶-状态管理-Vuex/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -157,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-进阶-状态管理-Bus/" data-id="cjcsr3xyq0084ww9k9n89l54x" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-进阶-状态管理-Bus/" data-id="cje0pt5l2008a5vnkm3iob37e" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/16/2016-11-16-Vue-进阶-状态管理-Bus/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -203,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/" data-id="cjcsr3xyp0082ww9kye8vho0b" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/" data-id="cje0pt5l100875vnkvwuy2pgh" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/15/2016-11-15-Vue-cli/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -263,7 +515,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cjcsr3xyo007zww9kms9kp8wq" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/" data-id="cje0pt5l000855vnk7oqfq80v" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/14/2016-11-14-Vue-V1-V2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -321,7 +573,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-路由/" data-id="cjcsr3xyn007xww9kpu9ftzp0" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-路由/" data-id="cje0pt5kx007x5vnk0fttbdmm" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/13/2016-11-13-Vue-进阶-路由/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -382,7 +634,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-指令/" data-id="cjcsr3xyl007sww9k2a5j2z52" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-指令/" data-id="cje0pt5ky00805vnkoi8fm7d9" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/11/12/2016-11-12-Vue-进阶-指令/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -401,224 +653,10 @@
   -->
 
   
-    <article id="post-2016-11-11-Vue-进阶-通讯" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/11/2016-11-11-Vue-进阶-通讯/" class="article-date">
-  <time datetime="2016-11-10T16:00:00.000Z" itemprop="datePublished">2016-11-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/11/2016-11-11-Vue-进阶-通讯/">Vue 通讯</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="父与子的通信方式"><a href="#父与子的通信方式" class="headerlink" title="父与子的通信方式"></a>父与子的通信方式</h4><ul>
-<li>props: props 可以是数组或对象，用于接收来自父组件的数据。props 可以是简单的数组，或者使用对象作为替代，对象允许配置高级选项，如类型检测、自定义校验和设置默认值。</li>
-</ul>
-<p>props 绑定分为：静态绑定与动态绑定(:message)，<a href="http://cn.vuejs.org/v2/guide/components.html#Prop">详细</a></p>
-<p>注意点：</p>
-<ul>
-<li>组件文件(myCom.vue)命名用可以 <strong>驼峰命名法</strong> ,引用的组件名字 <strong>必须用全小写的形式,并且需要把大写转为下划线加上对应大写的小写</strong></li>
-</ul>
-<h4 id="子与父的通信"><a href="#子与父的通信" class="headerlink" title="子与父的通信"></a>子与父的通信</h4><ul>
-<li>emit()</li>
-</ul>
-<p>通过一个参数的绑定的监听</p>
-<p> 子类像父类通讯，需要事件绑定，父类添加一个方法，一个数据类型，<br> 子类可以用$emit() 一定要<strong>注意写在组件中方法名字，是不是全小写，或者驼峰</strong></p>
-<h4 id="非父子组件通讯"><a href="#非父子组件通讯" class="headerlink" title="非父子组件通讯"></a>非父子组件通讯</h4><ul>
-<li>bus:  一个空的Vue实例作为中央事件总线</li>
-<li>Vuex: 更复杂的状态管理方案</li>
-<li></li>
-</ul>
-<h5 id="bus控制状态"><a href="#bus控制状态" class="headerlink" title="bus控制状态"></a>bus控制状态</h5><p>类似子向父通信，共同监听一个参数</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/11/2016-11-11-Vue-进阶-通讯/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶-通讯/" data-id="cjcsr3xym007uww9ky8767kid" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/11/11/2016-11-11-Vue-进阶-通讯/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-11-10-Vue" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/10/2016-11-10-Vue/" class="article-date">
-  <time datetime="2016-11-09T16:00:00.000Z" itemprop="datePublished">2016-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/2016-11-10-Vue/">Vue总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>MVVM框架</p>
-<p>组件化中可以直接定义html，css，JavaScript，更易于组件化</p>
-<p>Object.defineProperty 是 ES5 中一个无法 shim 的特性，这也就是为什么 Vue 不支持 IE8 以及更低版本浏览器的原因。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/10/2016-11-10-Vue/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/" data-id="cjcsr3xyi007nww9k22svl0ol" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/11/10/2016-11-10-Vue/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-11-05-Node-Buffer" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/05/2016-11-05-Node-Buffer/" class="article-date">
-  <time datetime="2016-11-04T16:00:00.000Z" itemprop="datePublished">2016-11-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/2016-11-05-Node-Buffer/">node中buffer</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于JavaScript来说，对Unicode编码的数据很容易处理的但是对于二进制数据就没什么处理方法了。<br>但是在一些TCP数据流或者在操作一些文件数据流的时候，字节流的处理方法还是必须的。<br>nodeJS中便出了处理的策略方法~提供了与String类似对等的全局构造函数Buffer（与其说与String对等，还不如说与Array类似但是有些不同方面还是需要注意），<br>全局那么自然就不要每次的require了。Buffer则node中储存二进制数据的中介者。</p>
-<p><a href="https://www.15yan.com/story/gn1nYZr6hUQ/" target="_blank" rel="external">https://www.15yan.com/story/gn1nYZr6hUQ/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/" data-id="cjcsr3xyj007pww9kzkodwgrm" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/11/05/2016-11-05-Node-Buffer/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-11-04-Node-Stream" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/04/2016-11-04-Node-Stream/" class="article-date">
-  <time datetime="2016-11-03T16:00:00.000Z" itemprop="datePublished">2016-11-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/04/2016-11-04-Node-Stream/">node之stream</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/jabez128/stream-handbook" target="_blank" rel="external">https://github.com/jabez128/stream-handbook</a></p>
-<p><a href="https://github.com/substack/stream-handbook" target="_blank" rel="external">https://github.com/substack/stream-handbook</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/" data-id="cjcsr3xyh007kww9kq161xq06" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/11/04/2016-11-04-Node-Stream/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -650,7 +688,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -663,6 +701,14 @@
       <ul>
         
           <li>
+            <a href="/2018/01/30/2018-01-30-WebAssembly/">WebAssembly</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/29/2018-01-29-Javascript-querySelectorAll/">JS_querySelectorAll_data</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/">XMLHttpRequest</a>
           </li>
         
@@ -672,14 +718,6 @@
         
           <li>
             <a href="/2018/01/07/2018-01-07-web权威指南-HTTP1.X/">HTTP1.X总结</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/06/2018-01-06-web权威指南-HTTP简史/">HTTP简史</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/">渲染树资源加载</a>
           </li>
         
       </ul>

@@ -64,6 +64,219 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-07-20-Javascript-Generator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/20/2017-07-20-Javascript-Generator/" class="article-date">
+  <time datetime="2017-07-19T16:00:00.000Z" itemprop="datePublished">2017-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/20/2017-07-20-Javascript-Generator/">generator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 function 语句之后和函数名之前，有一个 * 作为它是一个生成器函数的标示符;<br>引入yield，yield 语句的作用与 return 语句有些相似，但 yield 语句的作用并非退出函数体，而是切出当前函数的运行时，并与此同时可以将一个值（可以是任何类型）带到主线程中。</p>
+<p>通过next，进入函数内的循环调用。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</div><div class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> hw = helloWorldGenerator();</div><div class="line">hw.next();</div><div class="line"></div><div class="line">hw.next()  <span class="comment">//&#123;value: "hello", done: false&#125;done: falsevalue: "hello"__proto__: Object</span></div><div class="line"></div><div class="line">hw.next()  <span class="comment">//&#123;value: "ending", done: true&#125;</span></div></pre></td></tr></table></figure>
+<p>通过yield与next的配合，将会带来异步不一样的操作。<br>参考框架<a href="https://github.com/tj/co" target="_blank" rel="external">co</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/07/20/2017-07-20-Javascript-Generator/" data-id="cje0pt5mf00ap5vnkou818oj1" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/07/20/2017-07-20-Javascript-Generator/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-07-17-Css-Sass-Mixin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/17/2017-07-17-Css-Sass-Mixin/" class="article-date">
+  <time datetime="2017-07-16T16:00:00.000Z" itemprop="datePublished">2017-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/2017-07-17-Css-Sass-Mixin/">Sass mixin的指令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://p0.qhimg.com/t01584febfaaedeb6df.jpg" alt="Sass Mixins"></p>
+<p>为深入而简明的了解SASS，SitePoint为其所有高级会员提供<a href="https://www.sitepoint.com/premium/books/jump-start-sass">SASS</a>这本书籍，来自sass支持者Hugo Giraudel。或者，你也可以只花19美元就能买到一本。</p>
+<p><em> 本文首先出现在SitePoint 在2015年，在此出现在2017年6月14日并做了以下一些小的修正和修改 </em></p>
+<p>对于我发现Sass是一个意外的事情。在很长一段时间里，我厌倦了写普通的CSS。对于一个小网站来说，它很好，但对于较大的站点，CSS很快就失控了。调试是一场噩梦，我忍不住的觉得我可以用CSS做更多的工作。</p>
+<p>我关注Sass的一切动向。通过Sass我能分解我的CSS成模块化块，使故障排除的更加容易。在创建CSS时，我还可以使用编程概念，如函数和变量。最重要的是来向我介绍了Sass Mixin。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/17/2017-07-17-Css-Sass-Mixin/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/07/17/2017-07-17-Css-Sass-Mixin/" data-id="cje0pt5me00am5vnknbb3qrk8" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/07/17/2017-07-17-Css-Sass-Mixin/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-07-01-Node-npm技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/01/2017-07-01-Node-npm技巧/" class="article-date">
+  <time datetime="2017-06-30T16:00:00.000Z" itemprop="datePublished">2017-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/01/2017-07-01-Node-npm技巧/">让你备受刮目相看的8个npm技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>你观看一个同事编码时候，你会看到一些速记和技巧被应用，有些方式你并不熟悉，那你就被鄙视了，这种事情在我们每一个一生都会发生的。</p>
+<p>在这篇文章中，我将介绍一些很有用的npm技巧，还有很多这里并不能全收录，我们只关注那些相关的并且有益于我们每天的工作和开发的技巧。</p>
+<h3 id="基本的速记"><a href="#基本的速记" class="headerlink" title="基本的速记"></a>基本的速记</h3><p>为了让大家的对npm有一个一致的理解，尤其是我们的新人，让我们快速了解基本的速记和确保没有错过任何细节。</p>
+<h4 id="安装安装包"><a href="#安装安装包" class="headerlink" title="安装安装包"></a>安装安装包</h4><p>常规: <code>npm install pkg</code>, 速记: <code>npm i pkg</code>.</p>
+<h4 id="全局安装包"><a href="#全局安装包" class="headerlink" title="全局安装包:"></a>全局安装包:</h4><p>常规: <code>npm i --global pkg</code>, 速记: <code>npm i -g pkg</code>.</p>
+<h4 id="安装包并包含在依赖中"><a href="#安装包并包含在依赖中" class="headerlink" title="安装包并包含在依赖中:"></a>安装包并包含在依赖中:</h4><p>常规: <code>npm i --save pkg</code>, 速记: <code>npm i -S pkg</code>.</p>
+<h4 id="安装包并包含在开发依赖中"><a href="#安装包并包含在开发依赖中" class="headerlink" title="安装包并包含在开发依赖中:"></a>安装包并包含在开发依赖中:</h4><p>常规: <code>npm i --save-dev pkg</code>, 速记: <code>npm i -D pkg</code>.</p>
+<p>其他的npm速记阅读npm博客 <a href="https://docs.npmjs.com/misc/config#shorthands-and-other-cli-niceties">速记表</a>.</p>
+<p>下面开始有趣的内容。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/01/2017-07-01-Node-npm技巧/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/07/01/2017-07-01-Node-npm技巧/" data-id="cje0pt5md00ak5vnk89c7dxax" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/07/01/2017-07-01-Node-npm技巧/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-06-01-Node-npm@5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/01/2017-06-01-Node-npm@5/" class="article-date">
+  <time datetime="2017-05-31T16:00:00.000Z" itemprop="datePublished">2017-06-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/01/2017-06-01-Node-npm@5/">npm@5规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NPM是<a href="(http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fnpm%2Fnpm%2Fissues&amp;t=YTIwMGY1OGU5OTZiMzM2NWY2ZmMzMDExZDczZTFiYzQxZTVmZTBmMixjMW1qN3VqZA%3D%3D&amp;b=t%3AnXsLs1P4AptPf1fBr_nFxw&amp;p=http%3A%2F%2Fblog.npmjs.org%2Fpost%2F154473364440%2Fnpm5-specifications-and-our-rfc-process&amp;m=1">GitHub上最活跃的问题导向社区</a>)，所以我们可以不断的接触到你的痛点和关注点。这意味着我们能够通过此去做更好的优化，以及决定什么事情是我们必须先去优化的。然而，由于<a href="(http://blog.npmjs.org/post/143451680695/how-many-npm-users-are-there">用户和项目依赖者的数量巨大</a>)，所以我们必须了解每个人的需求，然后不断的去做优化。</p>
+<p>由于<a href="(http://t.umblr.com/redirect?z=https%3A%2F%2Fgithub.com%2Fnpm%2Fnpm%2Freleases%2Ftag%2Fv4.0.0&amp;t=NjgzYTkxMzA2MTgyM2E5ODUyMGY4NmYxMmZmN2YzZGMzNjQ0MjNhNCxjMW1qN3VqZA%3D%3D&amp;b=t%3AnXsLs1P4AptPf1fBr_nFxw&amp;p=http%3A%2F%2Fblog.npmjs.org%2Fpost%2F154473364440%2Fnpm5-specifications-and-our-rfc-process&amp;m=1">npm@4</a>)的发布，负责NPM的客户端的团队一直在努力开发下一个主要版本”。NPM 4是为了清除以前版本的某些问题，但NPM 5将是一个更加期待的版本，所以我们尝试通过一种新方式征求你的反馈和担忧。</p>
+<p>这个过程被分解成几块内容。让我们来谈谈他们,以及你怎么参与进来。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/06/01/2017-06-01-Node-npm@5/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/06/01/2017-06-01-Node-npm@5/" data-id="cje0pt5m500ac5vnkpcpakb6a" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/06/01/2017-06-01-Node-npm@5/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2017-05-01-Css-transition" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/05/01/2017-05-01-Css-transition/" class="article-date">
@@ -96,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/05/01/2017-05-01-Css-transition/" data-id="cjcsr3xzr00abww9kpwzbni7h" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/05/01/2017-05-01-Css-transition/" data-id="cje0pt5mb00ah5vnk3m7pduu3" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/05/01/2017-05-01-Css-transition/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -158,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/04/10/2017-04-10-Javascript-Promise-problems/" data-id="cjcsr3xzp00a6ww9k2xy4vyfd" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/04/10/2017-04-10-Javascript-Promise-problems/" data-id="cje0pt5ma00af5vnkco9ejz0e" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/04/10/2017-04-10-Javascript-Promise-problems/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -216,7 +429,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/04/01/2017-04-01-Javascript-Promise-Libs/" data-id="cjcsr3xzn00a2ww9kf9o2yl9q" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/04/01/2017-04-01-Javascript-Promise-Libs/" data-id="cje0pt5m100a55vnkfpq08vxn" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/04/01/2017-04-01-Javascript-Promise-Libs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -273,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/19/2017-03-19-Node-Nginx/" data-id="cjcsr3xzm009zww9kgxho94q0" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/03/19/2017-03-19-Node-Nginx/" data-id="cje0pt5m200a75vnkku1jlmpy" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/03/19/2017-03-19-Node-Nginx/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -325,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/18/2017-03-18-Node-Redis/" data-id="cjcsr3xzo00a4ww9ksw7xehfp" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/03/18/2017-03-18-Node-Redis/" data-id="cje0pt5m300aa5vnk2wli7fmu" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/03/18/2017-03-18-Node-Redis/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -375,7 +588,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/14/2017-03-14-Charles/" data-id="cjcsr3xzl009xww9kbu17zl9x" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/03/14/2017-03-14-Charles/" data-id="cje0pt5m000a25vnkblxthc15" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2017/03/14/2017-03-14-Charles/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -394,221 +607,10 @@
   -->
 
   
-    <article id="post-2017-03-09" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/06/2017-03-09/" class="article-date">
-  <time datetime="2017-03-05T16:00:00.000Z" itemprop="datePublished">2017-03-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/06/2017-03-09/">诺坎普奇迹</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>诺坎普奇迹！<br>诺坎普奇迹！<br>诺坎普奇迹！</p>
-<p><img src="http://7xsubf.com1.z0.glb.clouddn.com/basa.jpg" alt="image"></p>
-<p>也许这真的是奇迹，但中间的苦楚又只有多少人能够体会。</p>
-<p>恩叔，下个赛季可能就不会指教巴萨了，这个就是指教豪门的压力，当我们看到惊天逆转的时候，我们可能想到了恩叔，看到了恩叔的激情庆祝，但是恩叔是不是还会继续指教我萨不知道的事情。</p>
-<p>最后我们看到6-1的比分，有多少人是满眼泪水，为这种全心投入，为这种对于足球的爱的坚定！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/06/2017-03-09/" data-id="cjcsr3xzj009uww9kwahxylgz" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/03/06/2017-03-09/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-03-06-Node-path" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/06/2017-03-06-Node-path/" class="article-date">
-  <time datetime="2017-03-05T16:00:00.000Z" itemprop="datePublished">2017-03-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>NodeJS中的Path对象，用于处理目录的对象，提高开发效率。<br>用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。<br>引入path对象:</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><div class="line"><span class="attribute">var path</span> = require(<span class="string">'path'</span>);</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2017/03/06/2017-03-06-Node-path/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/06/2017-03-06-Node-path/" data-id="cjcsr3xzj009sww9kr89jdxli" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/03/06/2017-03-06-Node-path/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-03-05-Hack-Safari-Date" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/05/2017-03-05-Hack-Safari-Date/" class="article-date">
-  <time datetime="2017-03-04T16:00:00.000Z" itemprop="datePublished">2017-03-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/05/2017-03-05-Hack-Safari-Date/">修复Safari 时间显示问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>safari 不支持yyyy-MM-dd这种data类型，因为不是Data的构造函数。但是谷歌浏览器与火狐浏览器都支持。</p>
-<p>标准日期格式：</p>
-<ul>
-<li>MM-dd-yyyy</li>
-<li>yyyy/MM/dd</li>
-<li>MM/dd/yyyy</li>
-<li>MMMM dd, yyyy</li>
-<li>MMM dd, yyyy</li>
-</ul>
-<p>解决方案：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myDate1 = <span class="built_in">Date</span>.parseExact(<span class="string">"29-11-2010"</span>, <span class="string">"dd-MM-yyyy"</span>);</div><div class="line"><span class="keyword">var</span> myDate2 = <span class="built_in">Date</span>.parseExact(<span class="string">"11-29-2010"</span>, <span class="string">"MM-dd-yyyy"</span>);</div><div class="line"><span class="keyword">var</span> myDate3 = <span class="built_in">Date</span>.parseExact(<span class="string">"2010-11-29"</span>, <span class="string">"yyyy-MM-dd"</span>);</div><div class="line"><span class="keyword">var</span> myDate4 = <span class="built_in">Date</span>.parseExact(<span class="string">"2010-29-11"</span>, <span class="string">"yyyy-dd-MM"</span>);</div></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2011-04-12'</span>.replace(<span class="regexp">/-/g</span>, <span class="string">"/"</span>))</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/05/2017-03-05-Hack-Safari-Date/" data-id="cjcsr3xzh009pww9k4ouao506" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/03/05/2017-03-05-Hack-Safari-Date/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hack/">Hack</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-03-03-Node-should-know" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/03/2017-03-03-Node-should-know/" class="article-date">
-  <time datetime="2017-03-02T16:00:00.000Z" itemprop="datePublished">2017-03-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/03/2017-03-03-Node-should-know/">node开发应该知道的知识点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>虽然是一个关于推广的一遍文章，当时里面有很多支持点，对于入门的新手还是比较有用的，做一个备份。</p>
-<p><img src="http://7xsubf.com1.z0.glb.clouddn.com/node-g-list.png" alt="image"></p>
-<p>这是个node全局对象的清单</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/03/03/2017-03-03-Node-should-know/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/03/03/2017-03-03-Node-should-know/" data-id="cjcsr3xzg009nww9kx5wagbax" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/03/03/2017-03-03-Node-should-know/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -640,7 +642,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -653,6 +655,14 @@
       <ul>
         
           <li>
+            <a href="/2018/01/30/2018-01-30-WebAssembly/">WebAssembly</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/29/2018-01-29-Javascript-querySelectorAll/">JS_querySelectorAll_data</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/">XMLHttpRequest</a>
           </li>
         
@@ -662,14 +672,6 @@
         
           <li>
             <a href="/2018/01/07/2018-01-07-web权威指南-HTTP1.X/">HTTP1.X总结</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/06/2018-01-06-web权威指南-HTTP简史/">HTTP简史</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/">渲染树资源加载</a>
           </li>
         
       </ul>

@@ -64,6 +64,113 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-01-30-WebAssembly" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/30/2018-01-30-WebAssembly/" class="article-date">
+  <time datetime="2018-01-29T16:00:00.000Z" itemprop="datePublished">2018-01-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/30/2018-01-30-WebAssembly/">WebAssembly</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是由Google, Microsoft, Mozilla，Apple等几家大公司合作发起的一个关于面向Web的通用二进制和文本格式的项目;</p>
+<p>WebAssembly是一种新的编码方式，可以在现代的网络浏览器中运行 － 它是一种低级的类汇编语言，具有紧凑的二进制格式，可以接近原生的性能运行，并为诸如C / C ++等语言提供一个编译目标，以便它们可以在Web上运行。它也被设计为可以与JavaScript共存，允许两者一起工作。</p>
+<p>五个与WebAssembly有关的词：源代码、编译器、汇编、字节码、机器码，其中字节码是一种可运行于其它应用中的低阶二进制代码表示，机器码是可直接运行于硬件之上的二进制代码表示。而WebAssembly所做的正是为Web打造一套专用的字节码，这项标准在未来应用场景可能是这样的：</p>
+<ul>
+<li>开发应用，但使用任何一门可被编译为WebAssembly的语言编写源代码。</li>
+<li>用编译器将源代码转换为WebAssembly字节码，也可按需转换为汇编代码。</li>
+<li>在浏览器中加载字节码并运行。</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>加速JavaScript的效能：可以让浏览器直接执行，不需要替浏览器添加新功能</li>
+<li>延伸浏览器的应用范围</li>
+<li>贴近底层CPU指令集效能才够快： 二进制格式</li>
+</ul>
+<p>实践相关的可以参考这两个链接<a href="https://segmentfault.com/a/1190000008402872#articleHeader24" target="_blank" rel="external">WebAssembly 实践：如何写代码</a><a href=""></a></p>
+<h6 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h6><p><a href="https://www.ithome.com.tw/people/118517" target="_blank" rel="external">網頁應用飆速新時代來了！WebAssembly讓網頁程式像原生AP一樣快</a><br><a href="http://www.infoq.com/cn/news/2015/10/webassembly-7-things" target="_blank" rel="external">关于WebAssembly你需要了解的7件事</a><br><a href="https://developer.mozilla.org/zh-CN/docs/WebAssembly" target="_blank" rel="external">WebAssembly</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2018/01/30/2018-01-30-WebAssembly/" data-id="cje0pt5n400c25vnkptwc1s1r" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2018/01/30/2018-01-30-WebAssembly/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2018-01-29-Javascript-querySelectorAll" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/2018-01-29-Javascript-querySelectorAll/" class="article-date">
+  <time datetime="2018-01-28T16:00:00.000Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/29/2018-01-29-Javascript-querySelectorAll/">JS_querySelectorAll_data</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过<code>document.querySelectorAll(&#39;[data-bind-username=&quot;name&quot;]&#39;)</code> 获取给定属性值的所有的节点列表</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;p data-bind-username=<span class="string">"name"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">&lt;div data-bind-username=<span class="string">"name"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">&lt;span data-bind-username=<span class="string">"name"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2018/01/29/2018-01-29-Javascript-querySelectorAll/" data-id="cje0pt5n300c05vnkspn0skgg" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2018/01/29/2018-01-29-Javascript-querySelectorAll/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
     <article id="post-2018-01-09-web权威指南-XMLHttpRequest" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/" class="article-date">
@@ -95,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/" data-id="cjcsr3y0b00bnww9knevr768k" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/" data-id="cje0pt5n200bx5vnkzwmc24t4" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -150,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/08/2018-01-08-web权威指南-HTTP2.0/" data-id="cjcsr3y0a00bkww9kj3gh2qw0" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2018/01/08/2018-01-08-web权威指南-HTTP2.0/" data-id="cje0pt5n100bv5vnkriwtq2x6" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2018/01/08/2018-01-08-web权威指南-HTTP2.0/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -208,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/07/2018-01-07-web权威指南-HTTP1.X/" data-id="cjcsr3y0800bfww9k70459zsn" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2018/01/07/2018-01-07-web权威指南-HTTP1.X/" data-id="cje0pt5n000bs5vnkc9q0cdh1" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2018/01/07/2018-01-07-web权威指南-HTTP1.X/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -280,7 +387,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/06/2018-01-06-web权威指南-HTTP简史/" data-id="cjcsr3y0900biww9k6ky6lc5b" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2018/01/06/2018-01-06-web权威指南-HTTP简史/" data-id="cje0pt5mz00bq5vnkw3pgbaod" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2018/01/06/2018-01-06-web权威指南-HTTP简史/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -321,9 +428,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="浏览器解析"><a href="#浏览器解析" class="headerlink" title="浏览器解析 :"></a>浏览器解析 :</h5><p>1、浏览器通过请求的 URL 进行域名解析，向服务器发起请求，接收文件（HTML、CSS、JS、Images等等）。<br>2、HTML 文件加载后，开始构建 DOM Tree<br>3、CSS 样式文件加载后，开始解析和构建 CSS Rule Tree<br>4、Javascript 脚本文件加载后， 通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree </p>
-<h5 id="浏览器渲染"><a href="#浏览器渲染" class="headerlink" title="浏览器渲染 :"></a>浏览器渲染 :</h5><p>1、浏览器引擎通过 DOM Tree 和 CSS Rule Tree 构建 Rendering Tree<br>2、Rendering Tree 并不与 DOM Tree 对应，比如像 <head> 标签内容或带有 display: none; 的元素节点并不包括在 Rendering Tree 中 。<br>3、通过 CSS Rule Tree 匹配 DOM Tree 进行定位坐标和大小，是否换行，以及 position、overflow、z-index 等等属性，这个过程称为 Flow 或 Layout 。<br>4、最终通过调用Native GUI 的 API 绘制网页画面的过程称为 Paint 。    </p>
+        <h5 id="浏览器网页解析过程"><a href="#浏览器网页解析过程" class="headerlink" title="浏览器网页解析过程 :"></a>浏览器网页解析过程 :</h5><p>1、浏览器通过请求的 URL 进行域名解析，向服务器发起请求，接收文件（HTML、CSS、JS、Images等等）。<br>2、HTML 文件加载后，开始构建 DOM Tree<br>3、CSS 样式文件加载后，开始解析和构建 CSS Rule Tree<br>4、结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）<br>5、将布局绘制（paint）在屏幕上<br>6、Javascript 脚本文件加载后， 通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree </p>
 <p><img src="https://upload-images.jianshu.io/upload_images/8133-7a8a0afcd59349d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/630" alt="image"></p>
+<h5 id="浏览器渲染"><a href="#浏览器渲染" class="headerlink" title="浏览器渲染 :"></a>浏览器渲染 :</h5><p>1、浏览器引擎通过 DOM Tree 和 CSS Rule Tree 构建 Rendering Tree<br>2、Rendering Tree 并不与 DOM Tree 对应，比如像 <head> 标签内容或带有 display: none; 的元素节点并不包括在 Rendering Tree 中 。<br>3、通过 CSS Rule Tree 匹配 DOM Tree 进行定位坐标和大小，是否换行，以及 position、overflow、z-index 等等属性，这个过程称为 Flow 或 Layout 。<br>4、最终通过调用Native GUI 的 API 绘制网页画面的过程称为 Paint 。    </p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091502.png" alt="image"></p>
         
           <p class="article-more-link">
             <a href="/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/#more">Read More</a>
@@ -332,7 +440,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/" data-id="cjcsr3y0700bdww9kip6e98az" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/" data-id="cje0pt5my00bn5vnkrjeemk0b" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -387,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/04/2018-01-04-web权威指南-TLS/" data-id="cjcsr3y0600baww9klzuma06v" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2018/01/04/2018-01-04-web权威指南-TLS/" data-id="cje0pt5mx00bl5vnkmlem7l62" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2018/01/04/2018-01-04-web权威指南-TLS/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -434,7 +542,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/03/2018-01-03-web权威指南-UDP构成/" data-id="cjcsr3y0500b8ww9kv9uqxqei" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2018/01/03/2018-01-03-web权威指南-UDP构成/" data-id="cje0pt5mw00bi5vnkz3trf0uu" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2018/01/03/2018-01-03-web权威指南-UDP构成/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -489,7 +597,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/02/2018-01-02-web权威指南-TCP构成/" data-id="cjcsr3y0400b5ww9kwzasuub1" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2018/01/02/2018-01-02-web权威指南-TCP构成/" data-id="cje0pt5mv00bg5vnkle753toq" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2018/01/02/2018-01-02-web权威指南-TCP构成/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -508,134 +616,10 @@
   -->
 
   
-    <article id="post-2018-01-01-web权威指南-延迟与带宽" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/01/2018-01-01-web权威指南-延迟与带宽/" class="article-date">
-  <time datetime="2017-12-31T16:00:00.000Z" itemprop="datePublished">2018-01-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/01/2018-01-01-web权威指南-延迟与带宽/">延迟与带宽</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在看一本web权威指南的书籍，做下笔记。</p>
-<p>延迟： 分组从信息源发送到目的地所需要的时间<br>带宽： 逻辑或物理通信路径最大的吞吐量</p>
-<p>查看网络拓扑结构与速度, 测量网络延迟诊断工具</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">traceroute</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2018/01/01/2018-01-01-web权威指南-延迟与带宽/" data-id="cjcsr3y0100ayww9k7o8wd6f4" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2018/01/01/2018-01-01-web权威指南-延迟与带宽/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-12-01-游戏开发" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/01/2017-12-01-游戏开发/" class="article-date">
-  <time datetime="2017-11-30T16:00:00.000Z" itemprop="datePublished">2017-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/01/2017-12-01-游戏开发/">H5 游戏开发</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>又是一年的年底了，年会是少不了的，炫彩的邀请页面，新颖的活动页面也就落在前端同学小小的肩膀上了。<br>顺便研究了一下H5游戏。</p>
-<h3 id="主流开发"><a href="#主流开发" class="headerlink" title="主流开发"></a>主流开发</h3><h4 id="DOM游戏开发"><a href="#DOM游戏开发" class="headerlink" title="DOM游戏开发"></a>DOM游戏开发</h4><ul>
-<li>html，css3    </li>
-<li>长按动画停止</li>
-</ul>
-<p>CSS3动画：</p>
-<ul>
-<li>translate</li>
-<li>帧动画：animations</li>
-</ul>
-<h4 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h4><ul>
-<li>像素点操作  </li>
-<li>抛弃dom，css</li>
-<li>适合小游戏</li>
-<li>支持度比较高</li>
-</ul>
-<p>类库:</p>
-<ul>
-<li>createjs</li>
-</ul>
-<h4 id="webgl"><a href="#webgl" class="headerlink" title="webgl"></a>webgl</h4><ul>
-<li>加缓存</li>
-<li>3D绘图</li>
-<li>像素点，js与OpenGL</li>
-</ul>
-<p>类库：</p>
-<ul>
-<li>cocos2d + 白鹭</li>
-<li>threejs面向3D</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/12/01/2017-12-01-游戏开发/" data-id="cjcsr3y0000avww9kv55ghddj" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/12/01/2017-12-01-游戏开发/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -667,7 +651,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -680,6 +664,14 @@
       <ul>
         
           <li>
+            <a href="/2018/01/30/2018-01-30-WebAssembly/">WebAssembly</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/29/2018-01-29-Javascript-querySelectorAll/">JS_querySelectorAll_data</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/">XMLHttpRequest</a>
           </li>
         
@@ -689,14 +681,6 @@
         
           <li>
             <a href="/2018/01/07/2018-01-07-web权威指南-HTTP1.X/">HTTP1.X总结</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/06/2018-01-06-web权威指南-HTTP简史/">HTTP简史</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/">渲染树资源加载</a>
           </li>
         
       </ul>

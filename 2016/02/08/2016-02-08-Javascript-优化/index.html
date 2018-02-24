@@ -5,25 +5,28 @@
   
   <title>优化 | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="优化只要是针对网页的优化
-optimization1网页性能管理详解
-optimization
-网页性能管理详解2">
+  <meta name="description" content="关于web端的性能优化，大致分为：
+
+页面优化
+代码优化
+服务器优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="优化">
 <meta property="og:url" content="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="优化只要是针对网页的优化
-optimization1网页性能管理详解
-optimization
-网页性能管理详解2">
-<meta property="og:updated_time" content="2016-09-19T06:53:12.000Z">
+<meta property="og:description" content="关于web端的性能优化，大致分为：
+
+页面优化
+代码优化
+服务器优化">
+<meta property="og:updated_time" content="2018-02-01T10:00:43.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优化">
-<meta name="twitter:description" content="优化只要是针对网页的优化
-optimization1网页性能管理详解
-optimization
-网页性能管理详解2">
+<meta name="twitter:description" content="关于web端的性能优化，大致分为：
+
+页面优化
+代码优化
+服务器优化">
   
   
     <link rel="icon" href="/favicon.png">
@@ -94,15 +97,35 @@ optimization
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>优化只要是针对网页的优化</p>
-<p><a href="https://csspod.com/frontend-performance-best-practices/" target="_blank" rel="external">optimization1</a><br><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="external">网页性能管理详解</a></p>
-<p><a href="http://blog.csdn.net/li2274221/article/details/25193381" target="_blank" rel="external">optimization</a></p>
-<p><a href="http://www.cnblogs.com/sprying/p/4251682.html" target="_blank" rel="external">网页性能管理详解2</a></p>
+        <p>关于web端的性能优化，大致分为：</p>
+<ul>
+<li>页面优化</li>
+<li>代码优化</li>
+<li>服务器优化</li>
+</ul>
+<a id="more"></a>
+<h3 id="页面优化"><a href="#页面优化" class="headerlink" title="页面优化"></a>页面优化</h3><ul>
+<li>减少HTTP请求</li>
+<li>使用CDN</li>
+<li>图片使用webp，最好标注width，height，避免重绘</li>
+</ul>
+<h3 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h3><ul>
+<li>合并 JavaScript、CSS 等文件</li>
+<li>压缩代码</li>
+</ul>
+<h3 id="服务优化"><a href="#服务优化" class="headerlink" title="服务优化"></a>服务优化</h3><ul>
+<li><p>nginx配置Gzip</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><div class="line"><span class="attribute">gzip</span> <span class="literal">on</span>;</div><div class="line"><span class="attribute">gzip_min_length</span> <span class="number">1k</span>;</div><div class="line"><span class="attribute">gzip_buffers</span> <span class="number">16</span> <span class="number">64k</span>;</div><div class="line"><span class="attribute">gzip_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</div><div class="line"><span class="attribute">gzip_comp_level</span> <span class="number">6</span>;</div><div class="line"><span class="attribute">gzip_types</span> text/plain application/x-javascript text/css application/xml;</div><div class="line"><span class="attribute">gzip_vary</span> <span class="literal">on</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>减少 DNS 查询<br>用户输入 URL 以后，浏览器首先要查询域名（hostname）对应服务器的 IP 地址，一般需要耗费 20-120 毫秒 时间。DNS 查询完成之前，浏览器无法从服务器下载任何数据。</p>
+</li>
+</ul>
+<p><a href="https://csspod.com/frontend-performance-best-practices/" target="_blank" rel="external">optimization1</a><br><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="external">网页性能管理详解</a><br><a href="http://blog.csdn.net/li2274221/article/details/25193381" target="_blank" rel="external">optimization</a><br><a href="http://www.cnblogs.com/sprying/p/4251682.html" target="_blank" rel="external">网页性能</a>   </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="cjcsr3xv4001kww9kru0myvs7" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/" data-id="cje0pt5h1001q5vnkyyp2023b" class="article-share-link">Share</a>
       
         <a href="http://dukegod.github.io/2016/02/08/2016-02-08-Javascript-优化/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -119,7 +142,7 @@ optimization
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          内存分配
+          内存分配与堆栈队列
         
       </div>
     </a>
@@ -176,7 +199,7 @@ optimization
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -189,6 +212,14 @@ optimization
       <ul>
         
           <li>
+            <a href="/2018/01/30/2018-01-30-WebAssembly/">WebAssembly</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/29/2018-01-29-Javascript-querySelectorAll/">JS_querySelectorAll_data</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/">XMLHttpRequest</a>
           </li>
         
@@ -198,14 +229,6 @@ optimization
         
           <li>
             <a href="/2018/01/07/2018-01-07-web权威指南-HTTP1.X/">HTTP1.X总结</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/06/2018-01-06-web权威指南-HTTP简史/">HTTP简史</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/05/2018-01-05-web权威指南-渲染树资源加载/">渲染树资源加载</a>
           </li>
         
       </ul>
