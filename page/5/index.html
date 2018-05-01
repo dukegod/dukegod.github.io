@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2017-01-17-App-滚动优化" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-03-06-Node-path" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/17/2017-01-17-App-滚动优化/" class="article-date">
-  <time datetime="2017-01-16T16:00:00.000Z" itemprop="datePublished">2017-01-17</time>
+    <a href="/2017/03/06/2017-03-06-Node-path/" class="article-date">
+  <time datetime="2017-03-05T16:00:00.000Z" itemprop="datePublished">2017-03-06</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/17/2017-01-17-App-滚动优化/">app滚动优化方案再议</a>
+      <a class="article-title" href="/2017/03/06/2017-03-06-Node-path/">node开发中的path package 总结</a>
     </h1>
   
 
@@ -86,21 +86,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前有个通过css实现的案例<a href="http://blog.stakecode.com/2016/01/12/2016-01-12-Scroll-init/" target="_blank" rel="external">-webkit-overflow-scrolling</a>这个在安卓上效果不是很好。    </p>
-<p>也有个比较笔记考究的实现方法<a href="http://blog.stakecode.com/2016/09/17/2016-09-17-%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E6%BB%9A%E5%8A%A8/" target="_blank" rel="external">scroll</a>   </p>
-<p>知乎上<a href="https://zhuanlan.zhihu.com/p/24934554" target="_blank" rel="external">5行JavaScript代码实现页面平滑滚动</a></p>
-<p>iScroll 可以解决在安卓与iOS 上的滚动优化</p>
-<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>在 ios上会出现，你快速滑动，用手去触摸屏幕，直接点进去的bug</p>
-
+        <p>NodeJS中的Path对象，用于处理目录的对象，提高开发效率。<br>用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。<br>引入path对象:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/03/06/2017-03-06-Node-path/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/17/2017-01-17-App-滚动优化/" data-id="cje0qzl7n00atbenkmnrixw1d" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/03/06/2017-03-06-Node-path/" data-id="cjgnrpi4r008x1g9ktaxqj6b8" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2017/01/17/2017-01-17-App-滚动优化/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2017/03/06/2017-03-06-Node-path/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/App/">App</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
 
     </footer>
   </div>
@@ -114,9 +115,316 @@
   -->
 
   
-    <article id="post-2017-01-16-Browser-sync" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-03-05-Hack-Safari-Date" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/16/2017-01-16-Browser-sync/" class="article-date">
+    <a href="/2017/03/05/2017-03-05-Hack-Safari-Date/" class="article-date">
+  <time datetime="2017-03-04T16:00:00.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/05/2017-03-05-Hack-Safari-Date/">修复Safari 时间显示问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>safari 不支持yyyy-MM-dd这种data类型，因为不是Data的构造函数。但是谷歌浏览器与火狐浏览器都支持。</p>
+<p>标准日期格式：</p>
+<ul>
+<li>MM-dd-yyyy</li>
+<li>yyyy/MM/dd</li>
+<li>MM/dd/yyyy</li>
+<li>MMMM dd, yyyy</li>
+<li>MMM dd, yyyy</li>
+</ul>
+<p>解决方案：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myDate1 = <span class="built_in">Date</span>.parseExact(<span class="string">"29-11-2010"</span>, <span class="string">"dd-MM-yyyy"</span>);</div><div class="line"><span class="keyword">var</span> myDate2 = <span class="built_in">Date</span>.parseExact(<span class="string">"11-29-2010"</span>, <span class="string">"MM-dd-yyyy"</span>);</div><div class="line"><span class="keyword">var</span> myDate3 = <span class="built_in">Date</span>.parseExact(<span class="string">"2010-11-29"</span>, <span class="string">"yyyy-MM-dd"</span>);</div><div class="line"><span class="keyword">var</span> myDate4 = <span class="built_in">Date</span>.parseExact(<span class="string">"2010-29-11"</span>, <span class="string">"yyyy-dd-MM"</span>);</div></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2011-04-12'</span>.replace(<span class="regexp">/-/g</span>, <span class="string">"/"</span>))</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/03/05/2017-03-05-Hack-Safari-Date/" data-id="cjgnrpi4q008u1g9k1xqqpi27" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/03/05/2017-03-05-Hack-Safari-Date/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hack/">Hack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-03-03-Node-should-know" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/03/2017-03-03-Node-should-know/" class="article-date">
+  <time datetime="2017-03-02T16:00:00.000Z" itemprop="datePublished">2017-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/03/2017-03-03-Node-should-know/">node开发应该知道的知识点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>虽然是一个关于推广的一遍文章，当时里面有很多支持点，对于入门的新手还是比较有用的，做一个备份。</p>
+<p><img src="http://7xsubf.com1.z0.glb.clouddn.com/node-g-list.png" alt="image"></p>
+<p>这是个node全局对象的清单</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/03/03/2017-03-03-Node-should-know/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/03/03/2017-03-03-Node-should-know/" data-id="cjgnrpi4k008n1g9ky56pg5vj" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/03/03/2017-03-03-Node-should-know/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reprint/">Reprint</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-02-18-Javascript-callback" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/18/2017-02-18-Javascript-callback/" class="article-date">
+  <time datetime="2017-02-17T16:00:00.000Z" itemprop="datePublished">2017-02-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/18/2017-02-18-Javascript-callback/">异步回调callback与立即执行</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js天生具有的特性。回调用来解决数据请求，肯定是异步调用了。<br>具体点，有的时候我们需要把从服务器中得到的数据，进行拼装，这个时候肯定就需要异步调用了。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/02/18/2017-02-18-Javascript-callback/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/02/18/2017-02-18-Javascript-callback/" data-id="cjgnrpi4n008p1g9knq2gq5h0" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/02/18/2017-02-18-Javascript-callback/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-02-26-Kindle" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/18/2017-02-26-Kindle/" class="article-date">
+  <time datetime="2017-02-17T16:00:00.000Z" itemprop="datePublished">2017-02-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/18/2017-02-26-Kindle/">kindle 用法总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>北漂！<br>爱看书，不能每次都是买纸质书籍，对于搬家简直是个噩梦！<br>kindle解决我每次都要搬家的苦恼！</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/02/18/2017-02-26-Kindle/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/02/18/2017-02-26-Kindle/" data-id="cjgnrpi4p008s1g9kisibddpe" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/02/18/2017-02-26-Kindle/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-01-23-Javascript-Lodash" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/23/2017-01-23-Javascript-Lodash/" class="article-date">
+  <time datetime="2017-01-22T16:00:00.000Z" itemprop="datePublished">2017-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/23/2017-01-23-Javascript-Lodash/">lodash</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>类似underscore.js的一个node 包。封装了，大量的原生js方法。</p>
+<h3 id="lodash-cli"><a href="#lodash-cli" class="headerlink" title="lodash-cli"></a>lodash-cli</h3><p><a href="https://lodash.com/custom-builds" target="_blank" rel="external">lodash doc</a></p>
+<p>lodash 命令客户端，可以根据自己的需求生成代码库。</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><div class="line">lodash <span class="meta"><span class="meta-keyword">include</span>=throttle -o throttle.js</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/01/23/2017-01-23-Javascript-Lodash/" data-id="cjgnrpi4j008k1g9k1tppt8oe" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/01/23/2017-01-23-Javascript-Lodash/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-01-18-Hack-touchmove" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/18/2017-01-18-Hack-touchmove/" class="article-date">
+  <time datetime="2017-01-17T16:00:00.000Z" itemprop="datePublished">2017-01-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/18/2017-01-18-Hack-touchmove/">移动端对touchmove支持度不同</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有的手机支持touchmove方法不是很理想。开发中遇到的如oppo,Nubia</p>
+<p>把对touchmove的监听，换做对scroll的监听</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'category-content-list'</span>).addEventListener(<span class="string">'touchmove'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;,<span class="literal">false</span>)</div><div class="line"></div><div class="line"><span class="comment">// 换做如下</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'category-content-list'</span>).addEventListener(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;,<span class="literal">false</span>)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dukegod.github.io/2017/01/18/2017-01-18-Hack-touchmove/" data-id="cjgnrpi4i008i1g9kt5cgst0v" class="article-share-link">Share</a>
+      
+        <a href="http://dukegod.github.io/2017/01/18/2017-01-18-Hack-touchmove/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hack/">Hack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+<!-- disqus -->
+ 
+<!-- 多说 -->
+<!-- 
+
+  -->
+
+  
+    <article id="post-2017-01-16-Tools-Browser-sync" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/16/2017-01-16-Tools-Browser-sync/" class="article-date">
   <time datetime="2017-01-15T16:00:00.000Z" itemprop="datePublished">2017-01-16</time>
 </a>
     
@@ -128,7 +436,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/16/2017-01-16-Browser-sync/">browser-sync</a>
+      <a class="article-title" href="/2017/01/16/2017-01-16-Tools-Browser-sync/">browser-sync</a>
     </h1>
   
 
@@ -146,12 +454,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/16/2017-01-16-Browser-sync/" data-id="cje0qzl7h00arbenkinmdqdun" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/16/2017-01-16-Tools-Browser-sync/" data-id="cjgnrpi4g008f1g9ksxd6ffit" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2017/01/16/2017-01-16-Browser-sync/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2017/01/16/2017-01-16-Tools-Browser-sync/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/">Tools</a></li></ul>
 
     </footer>
   </div>
@@ -165,9 +473,9 @@
   -->
 
   
-    <article id="post-2017-01-12-Dash" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-01-12-Tools-Dash" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/12/2017-01-12-Dash/" class="article-date">
+    <a href="/2017/01/12/2017-01-12-Tools-Dash/" class="article-date">
   <time datetime="2017-01-11T16:00:00.000Z" itemprop="datePublished">2017-01-12</time>
 </a>
     
@@ -179,7 +487,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/12/2017-01-12-Dash/">Dash 配置笔记</a>
+      <a class="article-title" href="/2017/01/12/2017-01-12-Tools-Dash/">Dash 配置笔记</a>
     </h1>
   
 
@@ -193,12 +501,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/12/2017-01-12-Dash/" data-id="cje0qzl7g00aobenkpis755s1" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/12/2017-01-12-Tools-Dash/" data-id="cjgnrpi4f008d1g9kwo0ftrz2" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2017/01/12/2017-01-12-Dash/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2017/01/12/2017-01-12-Tools-Dash/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/">Tools</a></li></ul>
 
     </footer>
   </div>
@@ -212,9 +520,9 @@
   -->
 
   
-    <article id="post-2017-01-11-Alfred" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2017-01-11-Tools-Alfred" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/11/2017-01-11-Alfred/" class="article-date">
+    <a href="/2017/01/11/2017-01-11-Tools-Alfred/" class="article-date">
   <time datetime="2017-01-10T16:00:00.000Z" itemprop="datePublished">2017-01-11</time>
 </a>
     
@@ -226,7 +534,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/11/2017-01-11-Alfred/">Alfred 配置笔记</a>
+      <a class="article-title" href="/2017/01/11/2017-01-11-Tools-Alfred/">Alfred 配置笔记</a>
     </h1>
   
 
@@ -271,313 +579,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/11/2017-01-11-Alfred/" data-id="cje0qzl7e00akbenkq2p89fs6" class="article-share-link">Share</a>
+      <a data-url="http://dukegod.github.io/2017/01/11/2017-01-11-Tools-Alfred/" data-id="cjgnrpi4d008b1g9ka0ze06bw" class="article-share-link">Share</a>
       
-        <a href="http://dukegod.github.io/2017/01/11/2017-01-11-Alfred/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-01-06-Hack-SafariB" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/06/2017-01-06-Hack-SafariB/" class="article-date">
-  <time datetime="2017-01-05T16:00:00.000Z" itemprop="datePublished">2017-01-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/06/2017-01-06-Hack-SafariB/">Safari不能把事件绑定到body上</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ios开发不能把事件绑定到body上  </p>
-<p>也就是说，window，document，body 绑定click事件时，点击body不会触发，是Safari中的坑，所有的ios设备都是这样。</p>
-<p>解决方案：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"ios"</span>&gt;</div><div class="line"></div><div class="line">  &lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">$('<span class="comment">#ios').on()</span></div></pre></td></tr></table></figure>
-<p>绑定到最近的父一级的DOM</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/" data-id="cje0qzl7f00ambenkhie73ncz" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/01/06/2017-01-06-Hack-SafariB/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://dukegod.github.io/2017/01/11/2017-01-11-Tools-Alfred/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hack/">Hack</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-01-05-Css-Clear-Overflow" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/" class="article-date">
-  <time datetime="2017-01-03T16:00:00.000Z" itemprop="datePublished">2017-01-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/04/2017-01-05-Css-Clear-Overflow/">clear与overflow特别说明</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><p>对于清楚浮动，每一个人都有自己的想法，基本都只知道怎么去清楚浮动，对于一些细节，我们不免需要多注意点，今天主要对于两个属性，强调说明。<br><strong>overflow</strong>与<strong>clear:both</strong></p>
-<h3 id="clear常用写法"><a href="#clear常用写法" class="headerlink" title="clear常用写法"></a>clear常用写法</h3><p>经常使用的是在浮动的下一级的块元素中添加如下代码实现清楚浮动</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.clearfixed</span><span class="selector-pseudo">::after</span>,</div><div class="line"><span class="selector-class">.clearfixed</span><span class="selector-pseudo">::before</span>&#123;</div><div class="line">  <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">  <span class="attribute">display</span>:table;</div><div class="line">  <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2017/01/04/2017-01-05-Css-Clear-Overflow/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/" data-id="cje0qzl7d00aibenk9mvxwu3l" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/01/04/2017-01-05-Css-Clear-Overflow/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2017-01-01" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/01/2017-01-01/" class="article-date">
-  <time datetime="2016-12-31T16:00:00.000Z" itemprop="datePublished">2017-01-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/01/2017-01-01/">新的一年</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2017年如约而至</p>
-<p>2016赋予我们快乐的时光</p>
-<p>2016年也给我们带来伤痛</p>
-<p>我们没有办法去预知明天是怎么样</p>
-<p>但我们可以去过好今天</p>
-<p>期待明天</p>
-<p>2016年一个字去总结</p>
-<p>“家”</p>
-<p>2017年，继续奋斗</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2017/01/01/2017-01-01/" data-id="cje0qzl7c00agbenkj0d2r3oe" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2017/01/01/2017-01-01/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活点滴/">生活点滴</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-12-29-Google-Devtools" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/29/2016-12-29-Google-Devtools/" class="article-date">
-  <time datetime="2016-12-28T16:00:00.000Z" itemprop="datePublished">2016-12-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/29/2016-12-29-Google-Devtools/">谷歌开发工具</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考大象笔记文档</p>
-<p>加上断点后，可以直接在console中直接调用当前字段</p>
-<p><a href="http://www.css88.com/archives/6918" target="_blank" rel="external">谷歌开发文档中文版</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/" data-id="cje0qzl7b00aebenkbmzq2a35" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/12/29/2016-12-29-Google-Devtools/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-12-28-前端持续集成开发" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/28/2016-12-28-前端持续集成开发/" class="article-date">
-  <time datetime="2016-12-27T16:00:00.000Z" itemprop="datePublished">2016-12-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/28/2016-12-28-前端持续集成开发/">前端开源项目持续集成三剑客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://efe.baidu.com/blog/front-end-continuous-integration-tools/" target="_blank" rel="external">转载</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/" data-id="cje0qzl7900acbenk5zprzor3" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/12/28/2016-12-28-前端持续集成开发/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-<!-- disqus -->
- 
-<!-- 多说 -->
-<!-- 
-
-  -->
-
-  
-    <article id="post-2016-12-22-Nginx" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/22/2016-12-22-Nginx/" class="article-date">
-  <time datetime="2016-12-21T16:00:00.000Z" itemprop="datePublished">2016-12-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/22/2016-12-22-Nginx/">Nginx 安装配置简单说明</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Nginx 是一款面向性能设计的 HTTP 服务器，能反向代理 HTTP，HTTPS 和邮件相关(SMTP，POP3，IMAP)的协议链接。并且提供了负载均衡以及 HTTP 缓存。<br>它的设计充分使用异步事件模型，削减上下文调度的开销，提高服务器并发能力。采用了模块化设计，提供了丰富模块的第三方模块。</p>
-<p>所以关于 Nginx，有这些标签：「异步」「事件」「模块化」「高性能」「高并发」「反向代理」「负载均衡」</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/12/22/2016-12-22-Nginx/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/" data-id="cje0qzl7300aabenk93h7vk9w" class="article-share-link">Share</a>
-      
-        <a href="http://dukegod.github.io/2016/12/22/2016-12-22-Nginx/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openResty/">openResty</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/">Tools</a></li></ul>
 
     </footer>
   </div>
@@ -594,7 +601,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
   </nav>
 </section>
         
@@ -607,7 +614,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BackBone/">BackBone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Font/">Font</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Less/">Less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Meta/">Meta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webkit/">Webkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发规范/">开发规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活点滴/">生活点滴</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载翻译/">转载翻译</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/App/">App</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BackBone/">BackBone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chai/">Chai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphgl/">Graphgl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hack/">Hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Karma/">Karma</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Less/">Less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lua/">Lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mocha/">Mocha</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PWA/">PWA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reprint/">Reprint</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Standard/">Standard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebAssembly/">WebAssembly</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zepto/">Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/doT/">doT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openResty/">openResty</a></li></ul>
     </div>
   </div>
 
@@ -617,7 +624,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15px;">App</a> <a href="/tags/BackBone/" style="font-size: 13.57px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 17.14px;">CSS</a> <a href="/tags/Font/" style="font-size: 10px;">Font</a> <a href="/tags/Git/" style="font-size: 12.14px;">Git</a> <a href="/tags/Github/" style="font-size: 10.71px;">Github</a> <a href="/tags/Google/" style="font-size: 12.14px;">Google</a> <a href="/tags/Hack/" style="font-size: 11.43px;">Hack</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Http/" style="font-size: 11.43px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 12.86px;">Mac</a> <a href="/tags/Meta/" style="font-size: 11.43px;">Meta</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node/" style="font-size: 18.57px;">Node</a> <a href="/tags/React/" style="font-size: 14.29px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Sass/" style="font-size: 10.71px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.43px;">Shell</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.71px;">Vue</a> <a href="/tags/Webkit/" style="font-size: 10px;">Webkit</a> <a href="/tags/Zepto/" style="font-size: 11.43px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.14px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/openResty/" style="font-size: 10.71px;">openResty</a> <a href="/tags/开发工具/" style="font-size: 19.29px;">开发工具</a> <a href="/tags/开发规范/" style="font-size: 12.86px;">开发规范</a> <a href="/tags/生活点滴/" style="font-size: 16.43px;">生活点滴</a> <a href="/tags/转载翻译/" style="font-size: 17.86px;">转载翻译</a>
+      <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/App/" style="font-size: 15.83px;">App</a> <a href="/tags/BackBone/" style="font-size: 14.17px;">BackBone</a> <a href="/tags/CSS/" style="font-size: 16.67px;">CSS</a> <a href="/tags/Chai/" style="font-size: 10px;">Chai</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 12.5px;">Google</a> <a href="/tags/Graphgl/" style="font-size: 10px;">Graphgl</a> <a href="/tags/Hack/" style="font-size: 15px;">Hack</a> <a href="/tags/Http/" style="font-size: 11.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Karma/" style="font-size: 10px;">Karma</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Life/" style="font-size: 14.17px;">Life</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Lua/" style="font-size: 10px;">Lua</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Mocha/" style="font-size: 10px;">Mocha</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node/" style="font-size: 19.17px;">Node</a> <a href="/tags/PWA/" style="font-size: 10px;">PWA</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Reprint/" style="font-size: 17.5px;">Reprint</a> <a href="/tags/Sass/" style="font-size: 10.83px;">Sass</a> <a href="/tags/Shell/" style="font-size: 11.67px;">Shell</a> <a href="/tags/Standard/" style="font-size: 12.5px;">Standard</a> <a href="/tags/Tools/" style="font-size: 18.33px;">Tools</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vue/" style="font-size: 15.83px;">Vue</a> <a href="/tags/WebAssembly/" style="font-size: 10px;">WebAssembly</a> <a href="/tags/Webpack/" style="font-size: 10.83px;">Webpack</a> <a href="/tags/Zepto/" style="font-size: 11.67px;">Zepto</a> <a href="/tags/doT/" style="font-size: 10px;">doT</a> <a href="/tags/jQuery/" style="font-size: 12.5px;">jQuery</a> <a href="/tags/openResty/" style="font-size: 10.83px;">openResty</a>
     </div>
   </div>
 
@@ -626,7 +633,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li></ul>
     </div>
   </div>
 
@@ -639,23 +646,23 @@
       <ul>
         
           <li>
-            <a href="/2018/01/30/2018-01-30-WebAssembly/">WebAssembly</a>
+            <a href="/2018/04/19/2018-04-19-Graphgl/">Graphgl</a>
           </li>
         
           <li>
-            <a href="/2018/01/29/2018-01-29-Javascript-querySelectorAll/">JS_querySelectorAll_data</a>
+            <a href="/2018/04/11/2018-04-11-Pwa/">Pwa</a>
           </li>
         
           <li>
-            <a href="/2018/01/09/2018-01-09-web权威指南-XMLHttpRequest/">XMLHttpRequest</a>
+            <a href="/2018/04/10/2018-04-10-Node-Gzip/">Nodejs 项目中配置gzip</a>
           </li>
         
           <li>
-            <a href="/2018/01/08/2018-01-08-web权威指南-HTTP2.0/">HTTP2.0</a>
+            <a href="/2018/04/08/2018-04-08-Google-Amazing-Plugin/">谷歌浏览器超级赞的插件总结</a>
           </li>
         
           <li>
-            <a href="/2018/01/07/2018-01-07-web权威指南-HTTP1.X/">HTTP1.X总结</a>
+            <a href="/2018/04/05/2018-04-05-App-Performance/">前端性能调优</a>
           </li>
         
       </ul>
